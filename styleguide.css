@@ -1,0 +1,32 @@
+:root {
+    --neutral-20: rgba(245, 245, 245, 1);
+    --neutral-70: rgba(117, 117, 117, 1);
+    --neutral-90: rgba(64, 64, 64, 1);
+    --neutral-100: rgba(10, 10, 10, 1);
+    --neutral-10: rgba(255, 255, 255, 1);
+    --body-1-regular-font-family: "Open Sans", Helvetica;
+    --body-1-regular-font-weight: 400;
+    --body-1-regular-font-size: 16px;
+    --body-1-regular-letter-spacing: 0.5px;
+    --body-1-regular-line-height: 150%;
+    --body-1-regular-font-style: normal;
+    --body-1-semibold-font-family: "Open Sans", Helvetica;
+    --body-1-semibold-font-weight: 600;
+    --body-1-semibold-font-size: 16px;
+    --body-1-semibold-letter-spacing: 0.5px;
+    --body-1-semibold-line-height: 150%;
+    --body-1-semibold-font-style: normal;
+    --caption-regular-font-family: "Open Sans", Helvetica;
+    --caption-regular-font-weight: 400;
+    --caption-regular-font-size: 12px;
+    --caption-regular-letter-spacing: 0.4000000059604645px;
+    --caption-regular-line-height: 150%;
+    --caption-regular-font-style: normal;
+    --body-2-regular-font-family: "Open Sans", Helvetica;
+    --body-2-regular-font-weight: 400;
+    --body-2-regular-font-size: 14px;
+    --body-2-regular-letter-spacing: 0.25px;
+    --body-2-regular-line-height: 150%;
+    --body-2-regular-font-style: normal;
+  }
+  

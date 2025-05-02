@@ -1,0 +1,313 @@
+.register {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .register .div-4 {
+    background-color: #f9f9f9;
+    overflow: hidden;
+    width: 1440px;
+    height: 735px;
+    position: relative;
+  }
+  
+  .register .text-wrapper-36 {
+    position: absolute;
+    top: 136px;
+    left: 974px;
+    font-family: "Poppins", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .register .overlap-10 {
+    position: absolute;
+    width: 738px;
+    height: 1163px;
+    top: 79px;
+    left: 33px;
+  }
+  
+  .register .group-4 {
+    position: absolute;
+    width: 738px;
+    height: 1163px;
+    top: 0;
+    left: 0;
+  }
+  
+  .register .overlap-group-6 {
+    position: absolute;
+    width: 738px;
+    height: 671px;
+    top: 0;
+    left: 0;
+  }
+  
+  .register .image {
+    position: absolute;
+    width: 738px;
+    height: 656px;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .register .rectangle-5 {
+    position: absolute;
+    width: 652px;
+    height: 606px;
+    top: 65px;
+    left: 43px;
+    background-color: #ffffffb2;
+    border-radius: 30px;
+    border: 1px solid;
+    border-color: #e5e5e5;
+  }
+  
+  .register .ellipse-3 {
+    position: absolute;
+    width: 20px;
+    height: 23px;
+    top: 835px;
+    left: 359px;
+    border-radius: 10px / 11.36px;
+    background: linear-gradient(
+        0deg,
+        rgba(250, 250, 250, 1) 0%,
+        rgba(250, 250, 250, 1) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(250, 250, 250, 1) 0%,
+        rgba(250, 250, 250, 1) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(250, 250, 250, 1) 0%,
+        rgba(250, 250, 250, 1) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(250, 250, 250, 1) 0%,
+        rgba(250, 250, 250, 1) 100%
+      );
+  }
+  
+  .register .ellipse-4 {
+    position: absolute;
+    width: 16px;
+    height: 18px;
+    top: 837px;
+    left: 391px;
+    border-radius: 8px / 9.09px;
+    background: linear-gradient(
+        0deg,
+        rgba(212, 211, 211, 1) 0%,
+        rgba(212, 211, 211, 1) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(250, 250, 250, 1) 0%,
+        rgba(250, 250, 250, 1) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(250, 250, 250, 1) 0%,
+        rgba(250, 250, 250, 1) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(250, 250, 250, 1) 0%,
+        rgba(250, 250, 250, 1) 100%
+      );
+  }
+  
+  .register .ellipse-5 {
+    position: absolute;
+    width: 16px;
+    height: 18px;
+    top: 837px;
+    left: 331px;
+    border-radius: 8px / 9.09px;
+    background: linear-gradient(
+        0deg,
+        rgba(212, 211, 211, 1) 0%,
+        rgba(212, 211, 211, 1) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(250, 250, 250, 1) 0%,
+        rgba(250, 250, 250, 1) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(250, 250, 250, 1) 0%,
+        rgba(250, 250, 250, 1) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(250, 250, 250, 1) 0%,
+        rgba(250, 250, 250, 1) 100%
+      );
+  }
+  
+  .register .HMS-2 {
+    position: absolute;
+    top: 279px;
+    left: 271px;
+    font-family: "Poppins", Helvetica;
+    font-weight: 500;
+    color: transparent;
+    font-size: 80px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .register .text-wrapper-37 {
+    color: #3252df;
+  }
+  
+  .register .text-wrapper-38 {
+    color: #152c5b;
+  }
+  
+  .register .component-2 {
+    height: 105px;
+    top: 271px;
+    position: absolute;
+    width: 480px;
+    left: 877px;
+  }
+  
+  .register .overlap-11 {
+    position: absolute;
+    width: 480px;
+    height: 70px;
+    top: 35px;
+    left: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2.5px solid;
+    border-color: #d2d2d2;
+  }
+  
+  .register .enter-your-name {
+    position: absolute;
+    top: 14px;
+    left: 22px;
+    font-family: "Poppins", Helvetica;
+    font-weight: 400;
+    color: #d2d2d2;
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .register .name {
+    position: absolute;
+    width: 240px;
+    top: -4px;
+    left: 0;
+    font-family: "Poppins", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  
+  .register .component-3 {
+    height: 105px;
+    top: 412px;
+    position: absolute;
+    width: 480px;
+    left: 877px;
+  }
+  
+  .register .vector-4 {
+    position: absolute;
+    width: 25px;
+    height: 20px;
+    top: 22px;
+    left: 434px;
+  }
+  
+  .register .name-2 {
+    position: absolute;
+    width: 240px;
+    top: -4px;
+    left: 0;
+    font-family: "Poppins", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .register .register-wrapper {
+    height: 80px;
+    top: 618px;
+    background-color: #003cfb;
+    border-radius: 10px;
+    position: absolute;
+    width: 480px;
+    left: 877px;
+  }
+  
+  .register .text-wrapper-39 {
+    position: absolute;
+    top: 16px;
+    left: 200px;
+    font-family: "Poppins", Helvetica;
+    font-weight: 500;
+    color: #f9f9f9;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .register .by-signing-up-you {
+    position: absolute;
+    top: 578px;
+    left: 877px;
+    font-family: "Poppins", Helvetica;
+    font-weight: 400;
+    color: transparent;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .register .text-wrapper-40 {
+    color: #000000;
+  }
+  
+  .register .text-wrapper-41 {
+    color: #003cfb;
+  }
+  
+  .register .text-wrapper-42 {
+    position: absolute;
+    top: 713px;
+    left: 1022px;
+    font-family: "Poppins", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    text-decoration: underline;
+  }
+  
