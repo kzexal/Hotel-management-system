@@ -1,4 +1,4 @@
-CREATE DATABASE HotelManagementSystem;
+﻿CREATE DATABASE HotelManagementSystem;
 DROP DATABASE HotelManagementSystem;
 
 USE HotelManagementSystem;
@@ -15,21 +15,14 @@ GO
 CREATE SCHEMA Bookings;
 GO
 
-CREATE TABLE Authentication.Admin (
-	AdminId INT IDENTITY (1,1),
-	Username NVARCHAR (30) UNIQUE NOT NULL,
-	Password NVARCHAR (30) NOT NULL,
-	CONSTRAINT PK_AdminId PRIMARY KEY (AdminId)
-);
 
-INSERT INTO Authentication.Admin VALUES ('admin110', 'hotels123');
 
 
 CREATE TABLE Authentication.Login (
 	LoginId INT IDENTITY (1,1),
-	Username NVARCHAR (30) NOT NULL UNIQUE,
 	Password NVARCHAR (30) NOT NULL,
 	NewUser CHAR(5) CHECK (NewUser IN ('Yes', 'No')) DEFAULT 'Yes',
+	TypeAccount INT,
 	CONSTRAINT PK_LoginId PRIMARY KEY (LoginId),
 );
 
@@ -39,7 +32,6 @@ CREATE TABLE Hotels.Guests(
 	GuestLastName NVARCHAR (50) NOT NULL,
 	GuestEmailAddress NVARCHAR(50) NOT NULL ,
 	GuestContactNumber NVARCHAR (15) NOT NULL,
-	AddressLine NVARCHAR(50) NOT NULL,
 	Street NVARCHAR(50) NOT NULL,
 	City NVARCHAR(20) NOT NULL,
 	Zip NVARCHAR(50) NOT NULL,
@@ -65,7 +57,6 @@ CREATE TABLE HotelService.Services (
 CREATE TABLE Bookings.Booking(
 	BookingId INT IDENTITY (1,1),
 	BookingDate DATE NOT NULL,
-	StayDuration INT NOT NULL,
 	CheckInDate DATE NOT NULL,
 	CheckOutDate DATE NOT NULL,
 	BookingAmount INT NOT NULL,
@@ -129,7 +120,30 @@ CREATE TABLE Bookings.Payments(
 	CONSTRAINT FK_BookingId_Payments FOREIGN KEY(BookingId)
 	REFERENCES Bookings.Booking(BookingId) ON DELETE CASCADE ON UPDATE CASCADE
 );
+CREATE TABLE Hotels.StayHistory (
+    StayId INT IDENTITY(1,1),
+    GuestId INT NOT NULL,
+    PaymentId INT,
+    RoomId INT NOT NULL,
+    TotalAmount DECIMAL(10, 2) NOT NULL,
+    CONSTRAINT PK_StayId PRIMARY KEY (StayId),
+    CONSTRAINT FK_GuestId_StayHistory FOREIGN KEY (GuestId)
+        REFERENCES Hotels.Guests(GuestId) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT FK_RoomId_StayHistory FOREIGN KEY (RoomId)
+        REFERENCES Rooms.Room(RoomId) ON DELETE NO ACTION ON UPDATE NO ACTION
+);
 
+-- Tạo bảng Khách hàng thân thiết
+CREATE TABLE Hotels.LoyalCustomers (
+    LoyalCustomerId INT IDENTITY(1,1),
+    GuestId INT NOT NULL,
+    MembershipLevel NVARCHAR(20) NOT NULL CHECK (MembershipLevel IN ('Silver', 'Gold', 'Platinum')),
+    Points INT NOT NULL DEFAULT 0,
+    JoinDate DATE NOT NULL,
+    CONSTRAINT PK_LoyalCustomerId PRIMARY KEY (LoyalCustomerId),
+    CONSTRAINT FK_GuestId_LoyalCustomers FOREIGN KEY (GuestId)
+        REFERENCES Hotels.Guests(GuestId) ON DELETE NO ACTION ON UPDATE NO ACTION
+		);
 SELECT SUM(PaymentAmount) FROM Bookings.Payments WHERE BookingId IN (SELECT BookingId FROM Bookings.Booking WHERE HotelId = 3); 
 
 SELECT PaymentId, PaymentStatus, PaymentType, PaymentAmount, BookingId FROM Bookings.Payments WHERE BookingId = (SELECT BookingId FROM Bookings.Booking WHERE HotelId = 3);
