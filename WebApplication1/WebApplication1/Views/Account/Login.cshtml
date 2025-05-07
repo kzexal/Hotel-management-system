@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<link rel="stylesheet" href="@Url.Content("~/Content/login.css")" />
+
+@model WebApplication1.Models.LoginViewModel
+<main aria-labelledby="title">
+    <div class="container">
+        <div class="login-wrapper">
+            <div class="login-box">
+                <h2 class="login-title">Login</h2>
+                <form id="loginForm">
+                    <div>
+                        <label for="username" class="label">Username</label>
+                        <input type="text" name="username" id="username" placeholder="Enter Username" class="input" />
+                    </div>
+                    <div class="margin-top">
+                        <label for="password" class="label">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Enter Password" class="input" />
+                    </div>
+                    <p id="message" class="message"></p>
+                    <div class="button-wrapper">
+                        <button type="submit" class="login-button">Login</button>
+                    </div>
+                </form>
+                <p class="register-text">
+                    Haven't an account? Please
+                    <a href="/Account/Register" class="register-link">Register</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</main>

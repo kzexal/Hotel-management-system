@@ -1,0 +1,799 @@
+﻿body {
+}
+.home-page {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+    .home-page .div {
+        background-color: #ffffff;
+        overflow: hidden;
+        width: 1441px;
+        height: 2526px;
+        position: relative;
+    }
+
+    .home-page .most-picked {
+        position: absolute;
+        width: 1143px;
+        height: 516px;
+        top: 754px;
+        left: 151px;
+    }
+
+    .home-page .overlap {
+        position: absolute;
+        width: 361px;
+        height: 516px;
+        top: 0;
+        left: 0;
+    }
+
+    .home-page .text-wrapper {
+        position: absolute;
+        top: 50;
+        left: 0;
+        font-family: "Poppins", Helvetica;
+        font-weight: 500;
+        color: #152c5b;
+        font-size: 24px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+    .home-page .group {
+        position: absolute;
+        width: 361px;
+        height: 490px;
+        top: 26px;
+        left: 0;
+    }
+
+    .home-page .featured {
+        width: 365px;
+        height: 490px;
+    }
+
+    .home-page .overlap-group {
+        position: relative;
+        width: 361px;
+        height: 490px;
+        border-radius: 15px;
+    }
+
+    .home-page .pic {
+        position: absolute;
+        width: 361px;
+        height: 460px;
+        top: 30px;
+        left: 0;
+        background-image: url(https://c.animaapp.com/CYJfBrwE/img/rectangle-3@2x.png);
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .home-page .overlay {
+        height: 490px;
+        border-radius: 15px;
+        position: absolute;
+        width: 361px;
+        top: 0;
+        left: 0;
+    }
+
+    .home-page .badge {
+        position: absolute;
+        top: 30px;
+        left: 181px;
+        width: 180px;
+        height: 40px;
+        background-color: #3252df;
+    }
+
+    .home-page .p {
+        position: absolute;
+        width: 156px;
+        top: 5px;
+        left: 10px;
+        font-family: "Poppins", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 16px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: 27.2px;
+    }
+
+    .home-page .span {
+        font-weight: 500;
+    }
+
+    .home-page .text-wrapper-2 {
+        font-weight: 300;
+    }
+
+    .home-page .text-wrapper-3 {
+        position: absolute;
+        top: 413px;
+        left: 24px;
+        font-family: "Poppins", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 20px;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+    .home-page .text-wrapper-4 {
+        position: absolute;
+        top: 443px;
+        left: 24px;
+        font-family: "Poppins", Helvetica;
+        font-weight: 300;
+        color: #ffffff;
+        font-size: 15px;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+    .home-page .overlap-wrapper {
+        top: 56px;
+        left: 390px;
+        position: absolute;
+        width: 365px;
+        height: 215px;
+    }
+
+    .home-page .overlap-2 {
+        position: relative;
+        width: 361px;
+        height: 215px;
+        background-image: url(https://c.animaapp.com/CYJfBrwE/img/rectangle-3-1@2x.png);
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .home-page .overlay-2 {
+        height: 215px;
+        background-image: url(https://c.animaapp.com/CYJfBrwE/img/rectangle-3-2.png);
+        background-size: 100% 100%;
+        position: absolute;
+        width: 361px;
+        top: 0;
+        left: 0;
+    }
+
+    .home-page .text-wrapper-5 {
+        position: absolute;
+        top: 138px;
+        left: 24px;
+        font-family: "Poppins", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 20px;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+    .home-page .text-wrapper-6 {
+        position: absolute;
+        top: 168px;
+        left: 24px;
+        font-family: "Poppins", Helvetica;
+        font-weight: 300;
+        color: #ffffff;
+        font-size: 15px;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+    .home-page .element-per-night-wrapper {
+        position: absolute;
+        width: 180px;
+        height: 40px;
+        top: 0;
+        left: 181px;
+        background-color: #3252df;
+    }
+
+    .home-page .overlap-group-wrapper {
+        top: 56px;
+        left: 780px;
+        position: absolute;
+        width: 365px;
+        height: 215px;
+    }
+
+    .home-page .overlap-3 {
+        position: relative;
+        width: 361px;
+        height: 215px;
+        background-image: url(https://c.animaapp.com/CYJfBrwE/img/rectangle-3-3@2x.png);
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .home-page .overlay-3 {
+        position: absolute;
+        width: 361px;
+        height: 215px;
+        top: 0;
+        left: 0;
+        border-radius: 15px;
+    }
+
+    .home-page .div-wrapper {
+        top: 301px;
+        left: 390px;
+        position: absolute;
+        width: 365px;
+        height: 215px;
+    }
+
+    .home-page .overlap-4 {
+        position: relative;
+        width: 361px;
+        height: 215px;
+        background-image: url(https://c.animaapp.com/CYJfBrwE/img/rectangle-3-4@2x.png);
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .home-page .featured-2 {
+        top: 301px;
+        left: 780px;
+        position: absolute;
+        width: 365px;
+        height: 215px;
+    }
+
+    .home-page .overlap-5 {
+        position: relative;
+        width: 361px;
+        height: 215px;
+        background-image: url(https://c.animaapp.com/CYJfBrwE/img/rectangle-3-5@2x.png);
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .home-page .house-with-backyard {
+        position: absolute;
+        width: 1141px;
+        height: 249px;
+        top: 1430px;
+        left: 151px;
+    }
+
+    .home-page .div-2 {
+        position: absolute;
+        width: 267px;
+        height: 249px;
+        top: 0;
+        left: 0;
+    }
+
+    .home-page .badge-wrapper {
+        position: absolute;
+        width: 263px;
+        height: 180px;
+        top: 0;
+        left: 0;
+        background-image: url(https://c.animaapp.com/CYJfBrwE/img/rectangle-3-6@2x.png);
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .home-page .popular-choice-wrapper {
+        position: relative;
+        left: 83px;
+        width: 180px;
+        height: 40px;
+        background-color: #3252df;
+    }
+
+    .home-page .text-wrapper-7 {
+        position: absolute;
+        top: 196px;
+        left: 0;
+        font-family: "Poppins", Helvetica;
+        font-weight: 400;
+        color: #152c5b;
+        font-size: 20px;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+    .home-page .text-wrapper-8 {
+        position: absolute;
+        top: 226px;
+        left: 0;
+        font-family: "Poppins", Helvetica;
+        font-weight: 300;
+        color: #b0b0b0;
+        font-size: 15px;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+    .home-page .div-3 {
+        left: 292px;
+        position: absolute;
+        width: 267px;
+        height: 249px;
+        top: 0;
+    }
+
+    .home-page .pic-2 {
+        background-image: url(https://c.animaapp.com/CYJfBrwE/img/rectangle-3-7@2x.png);
+        position: absolute;
+        width: 263px;
+        height: 180px;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .home-page .div-4 {
+        left: 585px;
+        position: absolute;
+        width: 267px;
+        height: 249px;
+        top: 0;
+    }
+
+    .home-page .pic-3 {
+        background-image: url(https://c.animaapp.com/CYJfBrwE/img/rectangle-3-8@2x.png);
+        position: absolute;
+        width: 263px;
+        height: 180px;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .home-page .div-5 {
+        left: 878px;
+        position: absolute;
+        width: 267px;
+        height: 249px;
+        top: 0;
+    }
+
+    .home-page .pic-4 {
+        background-image: url(https://c.animaapp.com/CYJfBrwE/img/rectangle-3-9@2x.png);
+        position: absolute;
+        width: 263px;
+        height: 180px;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .home-page .hotels-living-room {
+        position: absolute;
+        width: 1141px;
+        height: 249px;
+        top: 1740px;
+        left: 151px;
+    }
+
+    .home-page .pic-5 {
+        background-image: url(https://c.animaapp.com/CYJfBrwE/img/rectangle-3-10@2x.png);
+        position: absolute;
+        width: 263px;
+        height: 180px;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .home-page .pic-6 {
+        background-image: url(https://c.animaapp.com/CYJfBrwE/img/rectangle-3-11@2x.png);
+        position: absolute;
+        width: 263px;
+        height: 180px;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .home-page .pic-7 {
+        background-image: url(https://c.animaapp.com/CYJfBrwE/img/rectangle-3-12@2x.png);
+        position: absolute;
+        width: 263px;
+        height: 180px;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .home-page .overlap-group-2 {
+        position: absolute;
+        width: 263px;
+        height: 180px;
+        top: 0;
+        left: 0;
+        background-image: url(https://c.animaapp.com/CYJfBrwE/img/rectangle-3-13@2x.png);
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    .home-page .overlap-6 {
+        position: absolute;
+        width: 1444px;
+        height: 607px;
+        top: 1px;
+        left: 0;
+    }
+
+    .home-page .hero {
+        position: absolute;
+        width: 1142px;
+        height: 458px;
+        top: 149px;
+        left: 148px;
+    }
+
+    .home-page .content {
+        position: absolute;
+        width: 428px;
+        height: 458px;
+        top: 0;
+        left: 0;
+    }
+
+    .home-page .forget-busy-work {
+        position: absolute;
+        top: 0;
+        left: 2px;
+        font-family: "Poppins", Helvetica;
+        font-weight: 700;
+        color: #152c5b;
+        font-size: 42px;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+    .home-page .we-provide-what-you {
+        position: absolute;
+        top: 146px;
+        left: 0;
+        font-family: "Poppins", Helvetica;
+        font-weight: 300;
+        color: #b0b0b0;
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: 27.2px;
+    }
+
+    .home-page .item {
+        position: absolute;
+        width: 89px;
+        height: 69px;
+        top: 389px;
+        left: 2px;
+    }
+
+    .home-page .img {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+
+    .home-page .element-users {
+        position: absolute;
+        top: 42px;
+        left: 0;
+        font-family: "Poppins", Helvetica;
+        font-weight: 400;
+        color: transparent;
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: 27.2px;
+        white-space: nowrap;
+    }
+
+    .home-page .text-wrapper-9 {
+        font-weight: 500;
+        color: #152c5b;
+    }
+
+    .home-page .text-wrapper-10 {
+        font-weight: 300;
+        color: #b0b0b0;
+    }
+
+    .home-page .item-2 {
+        position: absolute;
+        width: 75px;
+        height: 69px;
+        top: 389px;
+        left: 331px;
+    }
+
+    .home-page .div-6 {
+        position: absolute;
+        top: 42px;
+        left: 1px;
+        font-family: "Poppins", Helvetica;
+        font-weight: 400;
+        color: transparent;
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: 27.2px;
+        white-space: nowrap;
+    }
+
+    .home-page .item-3 {
+        position: absolute;
+        width: 104px;
+        height: 69px;
+        top: 389px;
+        left: 180px;
+    }
+
+    .home-page .banner {
+        position: absolute;
+        width: 559px;
+        height: 450px;
+        top: 0;
+        left: 583px;
+    }
+
+    .home-page .overlap-group-3 {
+        position: relative;
+        height: 450px;
+    }
+
+    .home-page .frame {
+        position: absolute;
+        width: 506px;
+        height: 398px;
+        top: 52px;
+        left: 53px;
+        border-radius: 15px;
+        border: 2px solid;
+        border-color: #e5e5e5;
+    }
+
+    .home-page .picture {
+        position: absolute;
+        width: 520px;
+        height: 411px;
+        top: 0;
+        left: 0;
+    }
+
+    .home-page .div-7 {
+        position: absolute;
+        width: 1444px;
+        height: 453px;
+        top: 0;
+        left: 0;
+    }
+
+    .home-page .overlap-7 {
+        position: relative;
+        height: 453px;
+    }
+
+    .home-page .overlap-8 {
+        position: absolute;
+        width: 1440px;
+        height: 80px;
+        top: 0;
+        left: 0;
+        background-color: #ffffff;
+    }
+
+    .home-page .rectangle {
+        position: absolute;
+        width: 106px;
+        height: 41px;
+        top: 19px;
+        left: 1184px;
+        background-color: #3252df;
+        border-radius: 7px;
+        box-shadow: 0px 0px 16.1px -1px #00000040;
+    }
+
+    .home-page .text-wrapper-11 {
+        position: absolute;
+        top: 24px;
+        left: 1210px;
+        font-family: "Poppins", Helvetica;
+        font-weight: 500;
+        color: #ffffff;
+        font-size: 20px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+    .home-page .overlap-group-4 {
+        position: absolute;
+        width: 167px;
+        height: 41px;
+        top: 412px;
+        left: 148px;
+        background-color: #3252df;
+        border-radius: 7px;
+        box-shadow: 0px 0px 16.1px -1px #00000040;
+    }
+
+    .home-page .text-wrapper-12 {
+        position: absolute;
+        top: 5px;
+        left: 29px;
+        font-family: "Poppins", Helvetica;
+        font-weight: 500;
+        color: #ffffff;
+        font-size: 20px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+    .home-page .divider {
+        position: absolute;
+        width: 1440px;
+        height: 1px;
+        top: 79px;
+        left: 0;
+        background-color: #e5e5e5;
+    }
+
+    .home-page .HMS {
+        position: absolute;
+        top: 20px;
+        left: 150px;
+        font-family: "Poppins", Helvetica;
+        font-weight: 700;
+        color: #3252df;
+        font-size: 28px;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+        .home-page .HMS::before {
+            content: "";
+            position: absolute;
+            left: -35px;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-image: url("./image/Picture2.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+        }
+
+    .home-page .text-wrapper-13 {
+        color: #3252df;
+    }
+
+    .home-page .text-wrapper-14 {
+        color: #152c5b;
+    }
+
+    .home-page .home-hotels-rooms {
+        position: absolute;
+        width: 460px;
+        top: 27px;
+        left: 675px;
+        font-family: "Poppins", Helvetica;
+        font-weight: 400;
+        color: transparent;
+        font-size: 16px;
+        text-align: right;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+    .home-page .navigation {
+        position: absolute;
+        width: 1447px;
+        height: 310px;
+        top: 2294px;
+        left: 0;
+    }
+
+    .home-page .overlap-9 {
+        position: relative;
+        width: 1441px;
+        height: 310px;
+    }
+
+    .home-page .bg {
+        position: absolute;
+        width: 1440px;
+        height: 310px;
+        top: 0;
+        left: 0;
+    }
+
+    .home-page .rectangle-2 {
+        position: absolute;
+        width: 1440px;
+        height: 27px;
+        top: 205px;
+        left: 1px;
+        background-color: #3252df;
+    }
+
+    .home-page .divider-2 {
+        position: absolute;
+        width: 1440px;
+        height: 1px;
+        top: 0;
+        left: 0;
+        background-color: #e5e5e5;
+    }
+
+    .home-page .HMS-2 {
+        position: absolute;
+        top: 51px;
+        left: 150px;
+        font-family: "Poppins", Helvetica;
+        font-weight: 700;
+        color: transparent;
+        font-size: 26px;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+        .home-page .HMS-2::before {
+            content: "";
+            position: absolute;
+            left: -35px;
+            top: -3px;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-image: url("./image/Picture2.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+        }
+
+    .home-page .we-kaboom-your {
+        position: absolute;
+        top: 98px;
+        left: 150px;
+        font-family: "Poppins", Helvetica;
+        font-weight: 300;
+        color: #b0b0b0;
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+    .home-page .text-wrapper-15 {
+        position: absolute;
+        top: 208px;
+        left: 550px;
+        font-family: "Poppins", Helvetica;
+        font-weight: 300;
+        color: #f5f6f8;
+        font-size: 14px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+   
+
+   

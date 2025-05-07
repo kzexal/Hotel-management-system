@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<link rel="stylesheet" href="@Url.Content("~/Content/register.css")" />
+<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+@model WebApplication1.Models.LoginViewModel
+<main aria-labelledby="title">
+    <div class="container">
+        <div class="register-wrapper">
+            <div class="register-box">
+                <h2 class="register-title">Register</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="Username">Username</label>
+                        <input type="text" id="Username" class="form-control" placeholder="Enter Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="email" id="Email" class="form-control" placeholder="Enter Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="Password">Password</label>
+                        <input type="password" id="Password" class="form-control" placeholder="Enter Password">
+                    </div>
+                    <div style="text-align: center;">
+                        <button type="submit" class="register-button">Register</button>
+                    </div>
+                </form>
+                <div class="back-link">
+                    <a href="/Account/Login" class="back-button"><i class="fa fa-arrow-left"></i> Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</main>
