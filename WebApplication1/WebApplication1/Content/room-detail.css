@@ -1,0 +1,120 @@
+﻿/* ===== General Reset ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* ===== Main Container ===== */
+.room-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Two-Column Layout ===== */
+.room-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* ===== Left: Image Section ===== */
+.room-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+    .room-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+/* ===== Right: Info Section ===== */
+.room-info {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+    /* ===== Room Title ===== */
+    .room-info h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .room-info .room-location {
+        color: #666;
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+/* ===== Description ===== */
+.room-description {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* ===== Features ===== */
+.room-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #f3f4f6;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+/* ===== Price ===== */
+.room-price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* ===== Book Now Button ===== */
+.book-now-btn {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+    .book-now-btn:hover {
+        background-color: #0056b3;
+    }
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+    .room-main {
+        flex-direction: column;
+    }
+
+    .room-image img {
+        width: 100%;
+    }
+}

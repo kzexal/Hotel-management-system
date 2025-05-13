@@ -1,35 +1,68 @@
-﻿
+﻿@model WebApplication1.Models.LoginViewModel
 @{
     ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.HideNavbar = true;
 }
 
+<!-- CSS -->
 <link rel="stylesheet" href="@Url.Content("~/Content/login.css")" />
 
-@model WebApplication1.Models.LoginViewModel
 <main aria-labelledby="title">
     <div class="container">
         <div class="login-wrapper">
             <div class="login-box">
                 <h2 class="login-title">Login</h2>
-                <form id="loginForm">
+                <form id="loginForm" method="post">
                     <div>
                         <label for="username" class="label">Username</label>
-                        <input type="text" name="username" id="username" placeholder="Enter Username" class="input" />
+                        <input type="text" name="Username" id="username" placeholder="Enter Username" class="input" required />
                     </div>
                     <div class="margin-top">
                         <label for="password" class="label">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Enter Password" class="input" />
+                        <input type="password" name="Password" id="password" placeholder="Enter Password" class="input" required />
                     </div>
-                    <p id="message" class="message"></p>
+                    <p id="message" class="message text-danger"></p>
                     <div class="button-wrapper">
                         <button type="submit" class="login-button">Login</button>
                     </div>
                 </form>
                 <p class="register-text">
-                    Haven't an account? Please
-                    <a href="/Account/Register" class="register-link">Register</a>
+                    Haven't an account? Please <a href="@Url.Action("Register", "Account")" class="register-link">Register</a>
                 </p>
             </div>
         </div>
     </div>
 </main>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#loginForm').on('submit', function (e) {
+                e.preventDefault(); // Ngăn form gửi mặc định
+
+                const data = {
+                    Username: $('#username').val(),
+                    Password: $('#password').val()
+                };
+
+                $.ajax({
+                    url: '@Url.Action("Login", "Account")',
+                    type: 'POST',
+                    data: data,
+                    success: function (res) {
+                        if (res.success) {
+                            window.location.href = '/'; // Chuyển trang khi thành công
+                        } else {
+                            $('#message').text(res.message || 'Login failed.');
+                        }
+                    },
+                    error: function () {
+                        $('#message').text("Server error occurred.");
+                    }
+                });
+            });
+        });
+    </script>
+}

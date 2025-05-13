@@ -3,11 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|c:\\users\\asus\\onedrive\\ta\u0300i li\u00EA\u0323u\\github\\hotel-management-system\\webapplication1\\webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|c:\\users\\asus\\onedrive\\ta\u0300i li\u00EA\u0323u\\github\\hotel-management-system\\webapplication1\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -15,44 +11,91 @@
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\views\\room\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\room\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\content\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\content\\styleguide.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\styleguide.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\content\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\content\\register.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\register.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\content\\room-detail.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\room-detail.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\content\\styleguide.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\styleguide.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\content\\register.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\register.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\content\\booking-page.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\booking-page.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\content\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\content\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|WebApplication1||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\content\\globals.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -61,18 +104,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\webapplication1\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -94,216 +125,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "style.css",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\style.css",
-              "RelativeDocumentMoniker": "WebApplication1\\Content\\style.css",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\style.css",
-              "RelativeToolTip": "WebApplication1\\Content\\style.css",
-              "ViewState": "AgIAABMDAAAAAAAAAAAiwBwDAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-03T13:10:50.865Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Site.css",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\Site.css",
-              "RelativeDocumentMoniker": "WebApplication1\\Content\\Site.css",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\Site.css",
-              "RelativeToolTip": "WebApplication1\\Content\\Site.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-03T14:09:55.614Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "login.css",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\login.css",
-              "RelativeDocumentMoniker": "WebApplication1\\Content\\login.css",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\login.css",
-              "RelativeToolTip": "WebApplication1\\Content\\login.css",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAUwFcAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-03T13:43:03.238Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FilterConfig.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\App_Start\\FilterConfig.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\App_Start\\FilterConfig.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\App_Start\\FilterConfig.cs",
-              "RelativeToolTip": "WebApplication1\\App_Start\\FilterConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T11:38:27.778Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Register.cshtml",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Account\\Register.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Account\\Register.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-03T13:58:56.078Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAAALkAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-02T11:24:42.268Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "LoginViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Models\\LoginViewModel.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\LoginViewModel.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Models\\LoginViewModel.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\LoginViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T13:24:50.612Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABYAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-03T12:52:50.143Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Login.cshtml",
               "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Account\\Login.cshtml",
               "RelativeToolTip": "WebApplication1\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAAA4AAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-02T12:59:15.863Z"
+              "WhenOpened": "2025-05-02T12:59:15.863Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAAAaAAAAAAAAAA==",
+              "Title": "RoomController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Controllers\\RoomController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\RoomController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Controllers\\RoomController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\RoomController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T11:44:31.268Z"
+              "WhenOpened": "2025-05-12T15:51:46.171Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "register.css",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\register.css",
-              "RelativeDocumentMoniker": "WebApplication1\\Content\\register.css",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\register.css",
-              "RelativeToolTip": "WebApplication1\\Content\\register.css",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAAAQAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-03T14:01:26.807Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T11:25:17.456Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "styleguide.css",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\styleguide.css",
-              "RelativeDocumentMoniker": "WebApplication1\\Content\\styleguide.css",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\styleguide.css",
-              "RelativeToolTip": "WebApplication1\\Content\\styleguide.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-03T13:43:40.987Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Global.asax.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Global.asax.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Global.asax.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Global.asax.cs",
-              "RelativeToolTip": "WebApplication1\\Global.asax.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T13:25:05.586Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "RouteConfig.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\App_Start\\RouteConfig.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\App_Start\\RouteConfig.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\App_Start\\RouteConfig.cs",
-              "RelativeToolTip": "WebApplication1\\App_Start\\RouteConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T11:29:30.688Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "BundleConfig.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\App_Start\\BundleConfig.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\App_Start\\BundleConfig.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\App_Start\\BundleConfig.cs",
-              "RelativeToolTip": "WebApplication1\\App_Start\\BundleConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T11:38:20.461Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "globals.css",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\globals.css",
-              "RelativeDocumentMoniker": "WebApplication1\\Content\\globals.css",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\globals.css",
-              "RelativeToolTip": "WebApplication1\\Content\\globals.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-03T13:09:51.504Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 8,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\Error.cshtml",
@@ -315,31 +166,308 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAAUwEQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-03T12:52:50.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "room-detail.css",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\room-detail.css",
+              "RelativeDocumentMoniker": "WebApplication1\\Content\\room-detail.css",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\room-detail.css",
+              "RelativeToolTip": "WebApplication1\\Content\\room-detail.css",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAUwHgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-12T16:21:18.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAACAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T11:25:17.456Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "styleguide.css",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\styleguide.css",
+              "RelativeDocumentMoniker": "WebApplication1\\Content\\styleguide.css",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\styleguide.css",
+              "RelativeToolTip": "WebApplication1\\Content\\styleguide.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-03T13:43:40.987Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Room\\Details.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Room\\Details.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Room\\Details.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Room\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-12T15:25:51.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Room.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Models\\Room.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Room.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Models\\Room.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Room.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T15:19:02.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Models\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Models\\LoginViewModel.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T13:24:50.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-03T13:58:56.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "register.css",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\register.css",
+              "RelativeDocumentMoniker": "WebApplication1\\Content\\register.css",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\register.css",
+              "RelativeToolTip": "WebApplication1\\Content\\register.css",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAAAQAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-03T14:01:26.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-02T11:24:42.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "booking-page.css",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\booking-page.css",
+              "RelativeDocumentMoniker": "WebApplication1\\Content\\booking-page.css",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\booking-page.css",
+              "RelativeToolTip": "WebApplication1\\Content\\booking-page.css",
+              "ViewState": "AgIAAJUBAAAAAAAAAAAUwPcBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-12T16:07:03.328Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Web.config",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Web.config",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Web.config",
+              "RelativeToolTip": "WebApplication1\\Views\\Web.config",
+              "ViewState": "AgIAACEAAAAAAAAAAAAwwEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-05-02T13:28:03.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "style.css",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\style.css",
+              "RelativeDocumentMoniker": "WebApplication1\\Content\\style.css",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\style.css",
+              "RelativeToolTip": "WebApplication1\\Content\\style.css",
+              "ViewState": "AgIAAAACAAAAAAAAAAAgwDkCAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-03T13:10:50.865Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAUwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T11:44:31.268Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 17,
               "Title": "WebApiConfig.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\App_Start\\WebApiConfig.cs",
               "RelativeDocumentMoniker": "WebApplication1\\App_Start\\WebApiConfig.cs",
               "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\App_Start\\WebApiConfig.cs",
               "RelativeToolTip": "WebApplication1\\App_Start\\WebApiConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-02T11:29:30.127Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Web.config",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Web.config",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\Web.config",
-              "RelativeToolTip": "WebApplication1\\Views\\Web.config",
+              "DocumentIndex": 20,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\_ViewStart.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-05-02T13:28:03.265Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-12T13:47:34.744Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 18,
+              "Title": "Site.css",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\Site.css",
+              "RelativeDocumentMoniker": "WebApplication1\\Content\\Site.css",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\Site.css",
+              "RelativeToolTip": "WebApplication1\\Content\\Site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-03T14:09:55.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "login.css",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\login.css",
+              "RelativeDocumentMoniker": "WebApplication1\\Content\\login.css",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\login.css",
+              "RelativeToolTip": "WebApplication1\\Content\\login.css",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAUwFcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-03T13:43:03.238Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "WebApplication1",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+              "RelativeDocumentMoniker": "WebApplication1\\WebApplication1.csproj",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+              "RelativeToolTip": "WebApplication1\\WebApplication1.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-12T13:42:05.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Web.config",
+              "RelativeDocumentMoniker": "WebApplication1\\Web.config",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Web.config",
+              "RelativeToolTip": "WebApplication1\\Web.config",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-05-12T13:41:46.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "FilterConfig.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\App_Start\\FilterConfig.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\App_Start\\FilterConfig.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\App_Start\\FilterConfig.cs",
+              "RelativeToolTip": "WebApplication1\\App_Start\\FilterConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T11:38:27.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Global.asax.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Global.asax.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Global.asax.cs",
+              "RelativeToolTip": "WebApplication1\\Global.asax.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T13:25:05.586Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\App_Start\\RouteConfig.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "WebApplication1\\App_Start\\RouteConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T11:29:30.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "BundleConfig.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\App_Start\\BundleConfig.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\App_Start\\BundleConfig.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\App_Start\\BundleConfig.cs",
+              "RelativeToolTip": "WebApplication1\\App_Start\\BundleConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T11:38:20.461Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "globals.css",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\globals.css",
+              "RelativeDocumentMoniker": "WebApplication1\\Content\\globals.css",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\Content\\globals.css",
+              "RelativeToolTip": "WebApplication1\\Content\\globals.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-03T13:09:51.504Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
               "Title": "favicon.ico - Icon [16x16, 32 bit, BMP]",
               "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Hotel-management-system\\WebApplication1\\WebApplication1\\favicon.ico",
               "RelativeDocumentMoniker": "WebApplication1\\favicon.ico",

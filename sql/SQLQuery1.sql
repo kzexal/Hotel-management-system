@@ -1,5 +1,5 @@
 ﻿CREATE DATABASE HotelManagementSystem;
-DROP DATABASE HotelManagementSystem;
+
 
 USE HotelManagementSystem;
 
@@ -21,6 +21,7 @@ GO
 CREATE TABLE Authentication.Login (
 	LoginId INT IDENTITY (1,1),
 	Password NVARCHAR (30) NOT NULL,
+	Username NVARCHAR(30) NOT NULL UNIQUE,
 	NewUser CHAR(5) CHECK (NewUser IN ('Yes', 'No')) DEFAULT 'Yes',
 	TypeAccount INT,
 	CONSTRAINT PK_LoginId PRIMARY KEY (LoginId),

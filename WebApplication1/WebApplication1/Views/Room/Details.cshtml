@@ -1,0 +1,37 @@
+﻿@model WebApplication1.Models.Room
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="~/Content/room-detail.css" />
+
+<div class="room-container">
+    <div class="room-main">
+        <!-- Left: Image -->
+        <div class="room-image">
+            <img src="@Model.ImageUrl" alt="@Model.Name">
+        </div>
+
+        <!-- Right: Information -->
+        <div class="room-info">
+            <h2>@Model.Name</h2>
+            <div class="room-location">@Model.Location</div>
+
+            <div class="room-description">
+                Trải nghiệm nghỉ dưỡng thư giãn tuyệt đối tại khu nghỉ dưỡng bên hồ tuyệt đẹp, đầy đủ tiện nghi và phù hợp cho cả gia đình.
+            </div>
+
+            <div class="room-features">
+                <div class="feature"><i class="fas fa-bed"></i> 2 Bedrooms</div>
+                <div class="feature"><i class="fas fa-bath"></i> 1 Bathroom</div>
+                <div class="feature"><i class="fas fa-tv"></i> TV</div>
+                <div class="feature"><i class="fas fa-wifi"></i> Wifi</div>
+                <div class="feature"><i class="fas fa-snowflake"></i> Air Condition</div>
+                <div class="feature"><i class="fas fa-utensils"></i> Dining Room</div>
+            </div>
+
+            <div class="room-price">@Model.PricePerDay  <span>per day</span></div>
+
+            <a href="/Booking/Start" class="book-now-btn">Book Now</a>
+        </div>
+    </div>
+</div>
+

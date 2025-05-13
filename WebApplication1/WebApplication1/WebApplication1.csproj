@@ -135,14 +135,19 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\Room.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Content\booking-page.css" />
     <Content Include="Content\globals.css" />
+    <Content Include="Content\image\Rectangle 3.png" />
     <Content Include="Content\login.css" />
     <Content Include="Content\register.css" />
+    <Content Include="Content\room-detail.css" />
     <Content Include="Content\style.css" />
   </ItemGroup>
   <ItemGroup>
@@ -197,9 +202,11 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Room\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Booking\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
