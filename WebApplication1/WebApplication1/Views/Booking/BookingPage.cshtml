@@ -1,0 +1,95 @@
+﻿@model WebApplication1.Models.Room
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.HideNavbar = true;
+}
+
+<link rel="stylesheet" href="@Url.Content("~/Content/booking-page.css")" />
+
+
+<div class="booking-container">
+    <header class="booking-header">
+        <div class="logo">HMS</div>
+    </header>
+
+    <div class="steps">
+        <div class="step done">✔</div>
+        <div class="step">2</div>
+        <div class="step">3</div>
+    </div>
+
+    <h1 class="booking-title">Booking Your Stay</h1>
+    <p class="booking-subtitle">Please provide details below to proceed</p>
+
+    <div class="booking-content">
+        <!-- Room Info from Model -->
+        <div class="room-card">
+            <img src="@Model.ImageUrl" alt="Room Image" />
+            <div class="room-info">
+                <div class="room-name">@Model.Name</div>
+                <div class="room-location">@Model.Location</div>
+            </div>
+        </div>
+
+        <!-- Booking Form -->
+        <div class="booking-details">
+            <div class="date-inputs">
+                <div class="date-field">
+                    <label for="checkin">Check-in</label>
+                    <input type="date" id="checkin" class="date-picker" />
+                </div>
+                <div class="date-field">
+                    <label for="checkout">Check-out</label>
+                    <input type="date" id="checkout" class="date-picker" />
+                </div>
+            </div>
+
+            <div class="stay-display">
+                <span class="price-summary">Price per night: <strong>$@Model.PricePerDay</strong></span><br />
+                <span id="totalPriceDisplay">Total price: <strong>$0</strong></span>
+            </div>
+
+            <div class="booking-actions">
+                <a class="btn-secondary" href="@Url.Action("Details", "Room", new { id = Model.Id })">Cancel</a>
+
+                <form id="bookingForm" method="get" action="@Url.Action("Payment", "Booking")">
+                    <input type="hidden" name="roomId" value="@Model.Id" />
+                    <input type="hidden" name="checkin" id="checkin-hidden" />
+                    <input type="hidden" name="checkout" id="checkout-hidden" />
+                    <input type="hidden" name="totalPrice" id="totalPrice-hidden" />
+                    <button type="submit" class="btn-primary">Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+        <script>
+    const checkinInput = document.getElementById("checkin");
+    const checkoutInput = document.getElementById("checkout");
+    const totalPriceDisplay = document.getElementById("totalPriceDisplay");
+
+    const pricePerNight = @Model.PricePerDay;
+
+    function calculateTotalPrice() {
+        const checkinDate = new Date(checkinInput.value);
+        const checkoutDate = new Date(checkoutInput.value);
+
+        if (checkinInput.value && checkoutInput.value && checkoutDate > checkinDate) {
+            const timeDiff = checkoutDate - checkinDate;
+            const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+            const totalPrice = days * pricePerNight;
+
+            totalPriceDisplay.innerHTML = `Total price: <strong>$${totalPrice}</strong>`;
+
+            // Gán vào input ẩn
+            document.getElementById("checkin-hidden").value = checkinInput.value;
+            document.getElementById("checkout-hidden").value = checkoutInput.value;
+            document.getElementById("totalPrice-hidden").value = totalPrice;
+        } else {
+            totalPriceDisplay.innerHTML = `Total price: <strong>$0</strong>`;
+        }
+    }
+
+    checkinInput.addEventListener("change", calculateTotalPrice);
+    checkoutInput.addEventListener("change", calculateTotalPrice);
+        </script>

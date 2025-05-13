@@ -95,7 +95,7 @@ body {
 .book-now-btn {
     display: inline-block;
     margin-top: 10px;
-    background-color: #007bff;
+    background-color: #1a3eb1;
     color: white;
     padding: 10px 22px;
     border-radius: 8px;
@@ -105,7 +105,7 @@ body {
 }
 
     .book-now-btn:hover {
-        background-color: #0056b3;
+        background-color: #1a31b1;
     }
 
 /* ===== Responsive ===== */

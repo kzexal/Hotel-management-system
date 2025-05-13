@@ -41,5 +41,9 @@
                 Session.Clear();
                 return RedirectToAction("Login", "Account");
             }
+        public ActionResult Register()
+        {
+            return View();
         }
+    }
     }

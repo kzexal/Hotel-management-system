@@ -16,7 +16,7 @@
             <div class="room-location">@Model.Location</div>
 
             <div class="room-description">
-                Trải nghiệm nghỉ dưỡng thư giãn tuyệt đối tại khu nghỉ dưỡng bên hồ tuyệt đẹp, đầy đủ tiện nghi và phù hợp cho cả gia đình.
+                Experience ultimate relaxation at a stunning lakeside resort, fully equipped with modern amenities and perfect for the whole family.
             </div>
 
             <div class="room-features">
@@ -28,9 +28,9 @@
                 <div class="feature"><i class="fas fa-utensils"></i> Dining Room</div>
             </div>
 
-            <div class="room-price">@Model.PricePerDay  <span>per day</span></div>
+            <div class="room-price">$@Model.PricePerDay  <span>per day</span></div>
 
-            <a href="/Booking/Start" class="book-now-btn">Book Now</a>
+            <a href="@Url.Action("BookingPage", "Booking", new { roomId = Model.Id })" class="book-now-btn">Book Now</a>
         </div>
     </div>
 </div>

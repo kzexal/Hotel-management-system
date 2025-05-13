@@ -1,0 +1,83 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    color: #152c5b;
+    text-align: center;
+}
+
+.payment-success-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #1a3eb1;
+}
+
+    .logo .highlight {
+        color: #3252df;
+    }
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 10px 0;
+}
+
+.step {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #999;
+}
+
+    .step.done {
+        background-color: #00c9a7;
+        color: white;
+    }
+
+.title {
+    font-size: 28px;
+    color: #0c2142;
+    margin-bottom: 30px;
+}
+
+.image-area img {
+    width: 160px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.message {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.dashboard-link {
+    text-decoration: none;
+    color: #999;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+    .dashboard-link:hover {
+        color: #1a31b1;
+    }

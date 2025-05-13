@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.HideNavbar = true;
+}
+
+<link rel="stylesheet" href="@Url.Content("~/Content/paymentfailed.css")" />
+<div class="payment-success-container">
+    <div class="logo">HMS</div>
+
+    <div class="steps">
+        <div class="step done">❌</div>
+        <div class="step done">❌</div>
+        <div class="step done">❌</div>
+    </div>
+   
+    <h1 class="title" style="color: #e74c3c;">Oops! Payment Failed</h1>
+
+    <div class="image-area">
+        <img src="https://static.vecteezy.com/system/resources/previews/004/896/101/non_2x/payment-failed-concept-illustration-flat-design-eps10-simple-and-modern-graphic-element-for-empty-state-app-or-web-ui-vector.jpg" alt="Failure Illustration" style="width: 160px;">
+    </div>
+
+    <p class="message">
+        Something went wrong with your payment.<br>
+        Please try again or use another card.
+    </p>
+
+    <a href="/booking" class="dashboard-link" style="background-color: #e74c3c; color: white; padding: 10px 24px; border-radius: 8px;">Try Again</a>
+</div>

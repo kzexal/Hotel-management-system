@@ -1,0 +1,58 @@
+﻿@model WebApplication1.Models.Room
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.HideNavbar = true;
+
+    string checkin = Request.QueryString["checkin"];
+    string checkout = Request.QueryString["checkout"];
+    string totalPrice = Request.QueryString["totalPrice"];
+}
+<link rel="stylesheet" href="@Url.Content("~/Content/payment.css")" />
+
+<div class="payment-container">
+    <div class="payment-header">
+        <h2><span class="brand">HMS</span></h2>
+        <div class="steps">
+            <div class="step done">✔</div>
+            <div class="step done">✔</div>
+            <div class="step">3</div>
+        </div>
+        <h3>Payment</h3>
+        <p>Kindly follow the instructions below</p>
+    </div>
+
+    <div class="payment-content">
+        <div class="payment-summary">
+            <p><strong>Transfer LankaStay:</strong></p>
+            <p>@checkin → @checkout</p>
+            <p>@Model.Name, @Model.Location</p>
+            <p>Total: <strong>$@totalPrice</strong></p>
+            <p>Initial Payment: <strong>$@(Int32.TryParse(totalPrice, out int t) ? t / 2 : 0)</strong></p>
+        </div>
+
+        <form method="post" action="@Url.Action("ProcessPayment", "Payment")">
+            <div class="payment-form">
+                <label>Card Number</label>
+                <input type="text" name="CardNumber" placeholder="Payment card number" required />
+
+                <label>Bank</label>
+                <select name="Bank" required>
+                    <option value="">Select Bank</option>
+                    <option value="Bank A">Bank A</option>
+                    <option value="Bank B">Bank B</option>
+                </select>
+
+                <label>Exp Date</label>
+                <input type="text" name="ExpDate" placeholder="MM/YY" required />
+
+                <label>CVV</label>
+                <input type="text" name="CVV" placeholder="Beside the card" required />
+            </div>
+
+            <div class="payment-buttons">
+                <button type="submit" class="btn-primary">Pay Now</button>
+                <a href="@Url.Action("BookingPage", "Booking", new { roomId = Model.Id })" class="btn-secondary">Cancel</a>
+            </div>
+        </form>
+
+
