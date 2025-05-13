@@ -60,7 +60,7 @@ CREATE TABLE Bookings.Booking(
 	CheckInDate DATE NOT NULL,
 	CheckOutDate DATE NOT NULL,
 	BookingAmount INT NOT NULL,
-	GuestId INT NOT NULL,
+	GuestId NVARCHAR(30) NOT NULL,
 	Status NVARCHAR (10) NOT NULL CHECK (Status IN ('Checkin', 'Checkout')) DEFAULT 'Checkin',
 	CONSTRAINT PK_BookingId PRIMARY KEY (BookingId),
 	CONSTRAINT FK_GuestId_Booking FOREIGN KEY (GuestId)
@@ -122,7 +122,7 @@ CREATE TABLE Bookings.Payments(
 );
 CREATE TABLE Hotels.StayHistory (
     StayId INT IDENTITY(1,1),
-    GuestId INT NOT NULL,
+    GuestId NVARCHAR(30) NOT NULL,
     PaymentId INT,
     RoomId INT NOT NULL,
     TotalAmount DECIMAL(10, 2) NOT NULL,
@@ -136,7 +136,7 @@ CREATE TABLE Hotels.StayHistory (
 -- Tạo bảng Khách hàng thân thiết
 CREATE TABLE Hotels.LoyalCustomers (
     LoyalCustomerId INT IDENTITY(1,1),
-    GuestId INT NOT NULL,
+    GuestId NVARCHAR(30) NOT NULL,
     MembershipLevel NVARCHAR(20) NOT NULL CHECK (MembershipLevel IN ('Silver', 'Gold', 'Platinum')),
     Points INT NOT NULL DEFAULT 0,
     JoinDate DATE NOT NULL,
