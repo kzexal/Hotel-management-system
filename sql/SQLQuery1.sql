@@ -19,16 +19,15 @@ GO
 
 
 CREATE TABLE Authentication.Login (
-	LoginId INT IDENTITY (1,1),
 	Password NVARCHAR (30) NOT NULL,
-	Username NVARCHAR(30) NOT NULL UNIQUE,
+	Username NVARCHAR(30) NOT NULL ,
 	NewUser CHAR(5) CHECK (NewUser IN ('Yes', 'No')) DEFAULT 'Yes',
 	TypeAccount INT,
-	CONSTRAINT PK_LoginId PRIMARY KEY (LoginId),
+	CONSTRAINT PK_Username PRIMARY KEY (Username),
 );
 
 CREATE TABLE Hotels.Guests(
-	GuestId INT IDENTITY (1,1),
+	GuestId NVARCHAR(30) NOT NULL,
 	GuestFirstName NVARCHAR (50) NOT NULL,
 	GuestLastName NVARCHAR (50) NOT NULL,
 	GuestEmailAddress NVARCHAR(50) NOT NULL ,
