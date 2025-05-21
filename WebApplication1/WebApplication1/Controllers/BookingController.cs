@@ -29,7 +29,7 @@ namespace WebApplication1.Controllers
         public ActionResult Payment(int roomId)
 
         {
-            // Danh sách tĩnh các phòng (tạm thời)
+          
             var rooms = new List<Room>
             {
                 new Room { Id = 1, Name = "Blue Origin Fams", Location = "Galle", PricePerDay = 200, ImageUrl = "https://c.animaapp.com/CYJfBrwE/img/rectangle-3@2x.png" },

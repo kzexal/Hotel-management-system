@@ -31,6 +31,12 @@
         </div>
 
         <form method="post" action="@Url.Action("ProcessPayment", "Payment")">
+            <!-- Các trường ẩn để gửi dữ liệu cần thiết -->
+            <input type="hidden" name="roomId" value="@Model.Id" />
+            <input type="hidden" name="checkin" value="@checkin" />
+            <input type="hidden" name="checkout" value="@checkout" />
+            <input type="hidden" name="totalPrice" value="@totalPrice" />
+
             <div class="payment-form">
                 <label>Card Number</label>
                 <input type="text" name="CardNumber" placeholder="Payment card number" required />

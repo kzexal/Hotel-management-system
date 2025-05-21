@@ -1,6 +1,10 @@
-﻿@{
+﻿@model WebApplication1.Models.Room
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.HideNavbar = true;
+    string checkin = Request.QueryString["checkin"];
+    string checkout = Request.QueryString["checkout"];
+    string totalPrice = Request.QueryString["totalPrice"];
 }
 
 <link rel="stylesheet" href="@Url.Content("~/Content/paymentfailed.css")" />
@@ -12,7 +16,7 @@
         <div class="step done">❌</div>
         <div class="step done">❌</div>
     </div>
-   
+
     <h1 class="title" style="color: #e74c3c;">Oops! Payment Failed</h1>
 
     <div class="image-area">
@@ -24,5 +28,12 @@
         Please try again or use another card.
     </p>
 
-    <a href="/booking" class="dashboard-link" style="background-color: #e74c3c; color: white; padding: 10px 24px; border-radius: 8px;">Try Again</a>
+    <a href="@Url.Action("Payment", "Booking", new {
+    roomId = Model.Id,
+    checkin = checkin,
+    checkout = checkout,
+    totalPrice = totalPrice
+})" class="dashboard-link" style="background-color: #e74c3c; color: white; padding: 10px 24px; border-radius: 8px;">
+        Try Again
+    </a>
 </div>

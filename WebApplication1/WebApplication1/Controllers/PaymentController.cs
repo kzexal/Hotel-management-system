@@ -4,16 +4,22 @@ using System.Linq;
 using System.Web;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
+using static WebApplication1.Controllers.RoomController;
 
 namespace WebApplication1.Controllers
 {
     public class PaymentController : Controller
     {
         // GET: Payment
-        public ActionResult PaymentFailed()
+        public ActionResult PaymentFailed(int roomId, string checkin, string checkout, string totalPrice)
         {
-            return View();
+            var room = RoomData.GetRoomById(roomId); 
+            ViewBag.Checkin = checkin;
+            ViewBag.Checkout = checkout;
+            ViewBag.TotalPrice = totalPrice;
+            return View(room);
         }
+
 
         public ActionResult PaymentSuccess()
         {
@@ -21,22 +27,22 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public ActionResult ProcessPayment(string CardNumber, string Bank, string ExpDate, string CVV)
+        public ActionResult ProcessPayment(string CardNumber, string Bank, string ExpDate, string CVV, int roomId, string checkin, string checkout, string totalPrice)
         {
-            // Kiểm tra null hoặc rỗng
-            if (string.IsNullOrWhiteSpace(CardNumber) || string.IsNullOrWhiteSpace(CVV))
+            if (string.IsNullOrWhiteSpace(CardNumber) || string.IsNullOrWhiteSpace(CVV)
+                || !Regex.IsMatch(CardNumber, @"^\d+$") || !Regex.IsMatch(CVV, @"^\d+$"))
             {
-                return RedirectToAction("PaymentFailed");
+                return RedirectToAction("PaymentFailed", new
+                {
+                    roomId = roomId,
+                    checkin = checkin,
+                    checkout = checkout,
+                    totalPrice = totalPrice
+                });
             }
 
-            // Kiểm tra nếu CardNumber hoặc CVV chứa ký tự không phải số (chữ cái, ký hiệu,...)
-            if (!Regex.IsMatch(CardNumber, @"^\d+$") || !Regex.IsMatch(CVV, @"^\d+$"))
-            {
-                return RedirectToAction("PaymentFailed");
-            }
-
-            // Nếu hợp lệ
             return RedirectToAction("PaymentSuccess");
         }
+
     }
 }
