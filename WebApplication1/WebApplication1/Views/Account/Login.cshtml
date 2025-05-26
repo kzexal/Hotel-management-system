@@ -13,20 +13,30 @@
         <div class="login-wrapper">
             <div class="login-box">
                 <h2 class="login-title">Login</h2>
-                <form id="loginForm" method="post">
+
+                @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "loginForm" }))
+                {
+                    @Html.AntiForgeryToken()
+
                     <div>
-                        <label for="username" class="label">Username</label>
-                        <input type="text" name="Username" id="username" placeholder="Enter Username" class="input" required />
+                        @Html.LabelFor(m => m.Username, new { @class = "label" })
+                        @Html.TextBoxFor(m => m.Username, new { @class = "input", placeholder = "Enter Username", autocomplete = "username" })
+                        @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
                     </div>
+
                     <div class="margin-top">
-                        <label for="password" class="label">Password</label>
-                        <input type="password" name="Password" id="password" placeholder="Enter Password" class="input" required />
+                        @Html.LabelFor(m => m.Password, new { @class = "label" })
+                        @Html.PasswordFor(m => m.Password, new { @class = "input", placeholder = "Enter Password", autocomplete = "current-password" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     </div>
+
                     <p id="message" class="message text-danger"></p>
+
                     <div class="button-wrapper">
                         <button type="submit" class="login-button">Login</button>
                     </div>
-                </form>
+                }
+
                 <p class="register-text">
                     Haven't an account? Please <a href="@Url.Action("Register", "Account")" class="register-link">Register</a>
                 </p>
@@ -37,23 +47,29 @@
 
 @section Scripts {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.12/jquery.validate.unobtrusive.min.js"></script>
+
     <script>
         $(document).ready(function () {
-            $('#loginForm').on('submit', function (e) {
+            $('#loginForm').submit(function (e) {
                 e.preventDefault(); // Ngăn form gửi mặc định
 
+                const form = $(this);
+                const token = $('input[name="__RequestVerificationToken"]').val();
                 const data = {
-                    Username: $('#username').val(),
-                    Password: $('#password').val()
+                    __RequestVerificationToken: token,
+                    Username: $('#Username').val(),
+                    Password: $('#Password').val()
                 };
 
                 $.ajax({
-                    url: '@Url.Action("Login", "Account")',
+                    url: form.attr('action'),
                     type: 'POST',
                     data: data,
                     success: function (res) {
                         if (res.success) {
-                            window.location.href = '/'; // Chuyển trang khi thành công
+                            window.location.href = res.redirectUrl || '/';
                         } else {
                             $('#message').text(res.message || 'Login failed.');
                         }

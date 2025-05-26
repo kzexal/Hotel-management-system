@@ -338,3 +338,7 @@ D:\Hotel-management-system-main\WebApplication1\WebApplication1\obj\Debug\WebApp
 D:\Hotel-management-system-main\WebApplication1\WebApplication1\obj\Debug\WebAppli.7D14BD69.Up2Date
 D:\Hotel-management-system-main\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 D:\Hotel-management-system-main\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\ASUS\OneDrive\Tài liệu\GitHub\Hotel-management-system\WebApplication1\WebApplication1\bin\EntityFramework.dll
+C:\Users\ASUS\OneDrive\Tài liệu\GitHub\Hotel-management-system\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.dll
+C:\Users\ASUS\OneDrive\Tài liệu\GitHub\Hotel-management-system\WebApplication1\WebApplication1\bin\EntityFramework.xml
+C:\Users\ASUS\OneDrive\Tài liệu\GitHub\Hotel-management-system\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.xml

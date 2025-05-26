@@ -1,6 +1,7 @@
-﻿
+﻿@model WebApplication1.Models.RegisterViewModel
+
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.HideNavbar = true;
 }
@@ -8,35 +9,75 @@
 <link rel="stylesheet" href="@Url.Content("~/Content/register.css")" />
 <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
-@model WebApplication1.Models.LoginViewModel
 <main aria-labelledby="title">
     <div class="container">
         <div class="register-wrapper">
             <div class="register-box">
                 <h2 class="register-title">Register</h2>
-                <form>
+
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { id = "registerForm" }))
+                {
+                    @Html.AntiForgeryToken()
+
                     <div class="form-group">
-                        <label for="Username">Username</label>
-                        <input type="text" id="Username" class="form-control" placeholder="Enter Username">
+                        @Html.LabelFor(m => m.Username)
+                        @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Enter Username" })
+                        @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
                     </div>
+
+
                     <div class="form-group">
-                        <label for="Email">Email</label>
-                        <input type="email" id="Email" class="form-control" placeholder="Enter Email">
+                        @Html.LabelFor(m => m.Password)
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Enter Password" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     </div>
-                    <div class="form-group">
-                        <label for="Password">Password</label>
-                        <input type="password" id="Password" class="form-control" placeholder="Enter Password">
-                    </div>
+
+                    <p id="message" class="text-danger"></p>
+
                     <div style="text-align: center;">
                         <button type="submit" class="register-button">Register</button>
                     </div>
-                </form>
+                }
+
                 <div class="back-link">
-                    <a href="/Account/Login" class="back-button"><i class="fa fa-arrow-left"></i> Back</a>
+                    <a href="/Account/Login" class="back-button"><i class="ri-arrow-left-line"></i> Back</a>
                 </div>
             </div>
         </div>
     </div>
-
-
 </main>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#registerForm').submit(function (e) {
+                e.preventDefault();
+
+                const token = $('input[name="__RequestVerificationToken"]').val();
+                const data = {
+                    __RequestVerificationToken: token,
+                    Username: $('#Username').val(),
+
+                    Password: $('#Password').val()
+                };
+
+                $.ajax({
+                    url: '@Url.Action("Register", "Account")',
+                    type: 'POST',
+                    data: data,
+                    success: function (res) {
+                        if (res.success) {
+                            window.location.href = res.redirectUrl || '/Account/Login';
+                        } else {
+                            $('#message').text(res.message || "Registration failed.");
+                        }
+                    },
+                    error: function () {
+                        $('#message').text("Server error occurred.");
+                    }
+                });
+            });
+        });
+    </script>
+}

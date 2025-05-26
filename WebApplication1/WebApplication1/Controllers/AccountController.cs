@@ -1,49 +1,83 @@
-﻿    using System.Collections.Generic;
-    using System.Web.Mvc;
-    using WebApplication1.Models;
+﻿using System.Linq;
+using System.Web.Mvc;
+using WebApplication1.Models;
 
-    namespace WebApplication1.Controllers
+namespace WebApplication1.Controllers
+{
+    public class AccountController : Controller
     {
-        public class AccountController : Controller
+        private AppDbContext db = new AppDbContext();
+
+        // === LOGIN ===
+        [HttpGet]
+        public ActionResult Login()
         {
-            // Fake user data for demo
-            private readonly Dictionary<string, string> users = new Dictionary<string, string>
-            {
-                { "admin", "123456" },
-                { "user", "password" }
-            };
+            return View();
+        }
 
-            [HttpGet]
-            public ActionResult Login()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public JsonResult Login(LoginViewModel model)
+        {
+            if (!ModelState.IsValid)
             {
-                return View();
+                return Json(new { success = false, message = "Please enter username and password" });
             }
 
-            [HttpPost]
-            public JsonResult Login(LoginViewModel model)
+            var user = db.Logins.FirstOrDefault(u => u.Username == model.Username && u.Password == model.Password);
+
+            if (user != null)
             {
-                if (string.IsNullOrEmpty(model.Username) || string.IsNullOrEmpty(model.Password))
-                {
-                    return Json(new { success = false, message = "Please enter username and password" });
-                }
+                Session["Username"] = user.Username;
+                Session["TypeAccount"] = user.TypeAccount;
 
-                if (users.ContainsKey(model.Username) && users[model.Username] == model.Password)
-                {
-                    Session["Username"] = model.Username;
-                    return Json(new { success = true });
-                }
-
-                return Json(new { success = false, message = "Invalid username or password" });
+                return Json(new { success = true, redirectUrl = Url.Action("Index", "Home") });
             }
 
-            public ActionResult Logout()
-            {
-                Session.Clear();
-                return RedirectToAction("Login", "Account");
-            }
+            return Json(new { success = false, message = "Invalid username or password" });
+        }
+
+        // === LOGOUT ===
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Login", "Account");
+        }
+
+        // === REGISTER ===
+        [HttpGet]
         public ActionResult Register()
         {
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public JsonResult Register(RegisterViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Json(new { success = false, message = "Please fill in all required fields." });
+            }
+
+            var exists = db.Logins.Any(u => u.Username == model.Username);
+            if (exists)
+            {
+                return Json(new { success = false, message = "Username already exists." });
+            }
+
+            var newUser = new Login
+            {
+                Username = model.Username,
+                Password = model.Password,
+                TypeAccount = model.TypeAccount,
+                NewUser = "Yes" 
+            };
+
+            db.Logins.Add(newUser);
+            db.SaveChanges();
+
+            return Json(new { success = true, redirectUrl = Url.Action("Login", "Account") });
+        }
     }
-    }
+}
