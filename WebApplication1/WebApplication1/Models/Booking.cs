@@ -1,8 +1,10 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using WebApplication1.Models;
 
 public class Booking
 {
+    [Key]
     public int BookingId { get; set; }
     public DateTime BookingDate { get; set; }
     public DateTime CheckInDate { get; set; }

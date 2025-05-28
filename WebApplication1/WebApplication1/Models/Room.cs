@@ -1,19 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication1.Models
 {
+    [Table("Room", Schema = "Rooms")]
     public class Room
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Location { get; set; }
-        public decimal PricePerNight { get; set; }
-        public decimal PricePerDay { get; set; }
-        public string ImageUrl { get; set; }
-        public string Description { get; set; }
-    }
+        [Key]
+        public int RoomId { get; set; }
 
+        [Required]
+        public string RoomNumber { get; set; }
+
+        [ForeignKey("RoomType")]
+        public int RoomTypeId { get; set; }
+
+        public bool Available { get; set; }
+
+        // ✅ Mới thêm: đường dẫn ảnh
+        [Required]
+        [StringLength(255)]
+        public string Image { get; set; }
+
+        // Điều hướng
+        public virtual RoomType RoomType { get; set; }
+    }
 }

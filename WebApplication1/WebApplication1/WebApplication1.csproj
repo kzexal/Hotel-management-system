@@ -155,6 +155,7 @@
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\RoomType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Content\booking-page.css" />
     <Content Include="Content\globals.css" />

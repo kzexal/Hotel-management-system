@@ -1,5 +1,11 @@
 ﻿@model WebApplication1.Models.Room
 
+@{
+    ViewBag.Title = "Room Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Stylesheets -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <link rel="stylesheet" href="~/Content/room-detail.css" />
 
@@ -7,31 +13,32 @@
     <div class="room-main">
         <!-- Left: Image -->
         <div class="room-image">
-            <img src="@Model.ImageUrl" alt="@Model.Name">
+            <img src="@Model.Image" alt="Room @Model.RoomNumber" />
         </div>
 
-        <!-- Right: Information -->
+        <!-- Right: Room Information -->
         <div class="room-info">
-            <h2>@Model.Name</h2>
-            <div class="room-location">@Model.Location</div>
+            <h2>Room @Model.RoomNumber</h2>
+            <div class="room-location">@Model.RoomType?.Name</div>
 
             <div class="room-description">
-                Experience ultimate relaxation at a stunning lakeside resort, fully equipped with modern amenities and perfect for the whole family.
+                Enjoy your stay in this luxurious room with modern amenities, ideal for both families and solo travelers.
             </div>
 
             <div class="room-features">
-                <div class="feature"><i class="fas fa-bed"></i> 2 Bedrooms</div>
+                <div class="feature"><i class="fas fa-bed"></i> 1 Bed</div>
                 <div class="feature"><i class="fas fa-bath"></i> 1 Bathroom</div>
-                <div class="feature"><i class="fas fa-tv"></i> TV</div>
-                <div class="feature"><i class="fas fa-wifi"></i> Wifi</div>
-                <div class="feature"><i class="fas fa-snowflake"></i> Air Condition</div>
-                <div class="feature"><i class="fas fa-utensils"></i> Dining Room</div>
+                <div class="feature"><i class="fas fa-tv"></i> Television</div>
+                <div class="feature"><i class="fas fa-wifi"></i> Free Wifi</div>
+                <div class="feature"><i class="fas fa-snowflake"></i> Air Conditioner</div>
+                <div class="feature"><i class="fas fa-utensils"></i> Dining Space</div>
             </div>
 
-            <div class="room-price">$@Model.PricePerDay  <span>per day</span></div>
+            <div class="room-price">
+                @Model.RoomType?.Cost.ToString("C0") <span>per night</span>
+            </div>
 
-            <a href="@Url.Action("BookingPage", "Booking", new { roomId = Model.Id })" class="book-now-btn">Book Now</a>
+            <a href="@Url.Action("BookingPage", "Booking", new { roomId = Model.RoomId })" class="book-now-btn">Book Now</a>
         </div>
     </div>
 </div>
-
