@@ -88,16 +88,32 @@ CREATE TABLE Rooms.RoomType (
 	Cost INT NOT NULL,
 	CONSTRAINT PK_RoomTypeId PRIMARY KEY (RoomTypeId),
 );
+INSERT INTO Rooms.RoomType ( Name, Cost) 
+VALUES
+('Deluxe Suite',120),
+('Standard Room',75),
+('Family Room',150),
+('Single Room',50);
 
 CREATE TABLE Rooms.Room (
 	RoomId INT IDENTITY (1,1),
 	RoomNumber NVARCHAR (10) NOT NULL,
 	RoomTypeId INT,
 	Available NVARCHAR (5) NOT NULL CHECK (Available IN ('Yes', 'No')) DEFAULT 'Yes',
+	Image VARCHAR(255)  NULL,
 	CONSTRAINT PK_RoomId PRIMARY KEY (RoomId),
 	CONSTRAINT FK_RoomTypeID_Room FOREIGN KEY (RoomTypeId)
 	REFERENCES Rooms.RoomType (RoomTypeId) ON DELETE CASCADE ON UPDATE NO ACTION
 );
+INSERT INTO Rooms.Room (RoomNumber, RoomTypeId, Available, Image)
+VALUES 
+('A101', 1, 'Yes', 'https://tse3.mm.bing.net/th/id/OIP.f653efCDL592sv5Z0y75EwHaE7?cb=iwp2&rs=1&pid=ImgDetMain'),
+('B202', 2, 'No', 'https://tse2.mm.bing.net/th/id/OIP.GqL7sKHuM8iiVWX3Xqct7QHaEh?cb=iwp2&rs=1&pid=ImgDetMain'),
+('C303', 3, 'Yes', 'https://i2.wp.com/thecarriedeer.com/wp-content/uploads/2022/02/living-room-and-family-room-ideas-scaled.jpg'),
+('D404', 4, 'Yes', 'https://tse4.mm.bing.net/th/id/OIP.7irKaSESaO2vdOB13R_1zAHaE8?cb=iwp2&rs=1&pid=ImgDetMain'),
+('B201', 1, 'Yes', 'https://tse3.mm.bing.net/th/id/OIP.f653efCDL592sv5Z0y75EwHaE7?cb=iwp2&rs=1&pid=ImgDetMain'),
+('C301', 1, 'Yes', 'https://tse3.mm.bing.net/th/id/OIP.f653efCDL592sv5Z0y75EwHaE7?cb=iwp2&rs=1&pid=ImgDetMain'),
+('D401', 1, 'Yes', 'https://tse3.mm.bing.net/th/id/OIP.f653efCDL592sv5Z0y75EwHaE7?cb=iwp2&rs=1&pid=ImgDetMain');
 
 CREATE TABLE Rooms.RoomBooked (
 	RoomBookedId INT IDENTITY (1,1),
