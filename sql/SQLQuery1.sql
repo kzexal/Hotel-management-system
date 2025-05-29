@@ -1,22 +1,13 @@
-﻿CREATE DATABASE HotelManagementSystem;
-
-
+CREATE DATABASE HotelManagementSystem;
+GO
 USE HotelManagementSystem;
-
 GO
 CREATE SCHEMA Authentication;
 GO
-
-GO
-CREATE SCHEMA Hotels;
-GO
-
+CREATE SCHEMA Hotel;
 GO
 CREATE SCHEMA Bookings;
 GO
-
-
-
 
 CREATE TABLE Authentication.Login (
 	Password NVARCHAR (30) NOT NULL,
@@ -26,7 +17,7 @@ CREATE TABLE Authentication.Login (
 	CONSTRAINT PK_Username PRIMARY KEY (Username),
 );
 
-CREATE TABLE Hotels.Guests(
+CREATE TABLE Hotel.Guests(
 	GuestId NVARCHAR(30) NOT NULL,
 	GuestFirstName NVARCHAR (50) NOT NULL,
 	GuestLastName NVARCHAR (50) NOT NULL,
@@ -37,7 +28,6 @@ CREATE TABLE Hotels.Guests(
 	Zip NVARCHAR(50) NOT NULL,
 	Status NVARCHAR(20) CHECK (Status IN ('Reserved', 'Not Reserved')) NOT NULL DEFAULT 'Not Reserved',
 	CONSTRAINT PK_GuestId PRIMARY KEY (GuestId),
-	
 );
 
 GO
@@ -50,9 +40,7 @@ CREATE TABLE HotelService.Services (
 	ServiceDescription NVARCHAR (50) NOT NULL,
 	ServiceCost INT NOT NULL,
 	CONSTRAINT PK_ServicesId PRIMARY KEY (ServiceId),
-
 );
-
 
 CREATE TABLE Bookings.Booking(
 	BookingId INT IDENTITY (1,1),
@@ -64,7 +52,7 @@ CREATE TABLE Bookings.Booking(
 	Status NVARCHAR (10) NOT NULL CHECK (Status IN ('Checkin', 'Checkout')) DEFAULT 'Checkin',
 	CONSTRAINT PK_BookingId PRIMARY KEY (BookingId),
 	CONSTRAINT FK_GuestId_Booking FOREIGN KEY (GuestId)
-	REFERENCES Hotels.Guests(GuestId) ON DELETE NO ACTION ON UPDATE NO ACTION,
+	REFERENCES Hotel.Guests(GuestId) ON DELETE NO ACTION ON UPDATE NO ACTION,
 );
 
 
@@ -136,7 +124,7 @@ CREATE TABLE Bookings.Payments(
 	CONSTRAINT FK_BookingId_Payments FOREIGN KEY(BookingId)
 	REFERENCES Bookings.Booking(BookingId) ON DELETE CASCADE ON UPDATE CASCADE
 );
-CREATE TABLE Hotels.StayHistory (
+CREATE TABLE Hotel.StayHistory (
     StayId INT IDENTITY(1,1),
     GuestId NVARCHAR(30) NOT NULL,
     PaymentId INT,
@@ -144,13 +132,13 @@ CREATE TABLE Hotels.StayHistory (
     TotalAmount DECIMAL(10, 2) NOT NULL,
     CONSTRAINT PK_StayId PRIMARY KEY (StayId),
     CONSTRAINT FK_GuestId_StayHistory FOREIGN KEY (GuestId)
-        REFERENCES Hotels.Guests(GuestId) ON DELETE NO ACTION ON UPDATE NO ACTION,
+        REFERENCES Hotel.Guests(GuestId) ON DELETE NO ACTION ON UPDATE NO ACTION,
     CONSTRAINT FK_RoomId_StayHistory FOREIGN KEY (RoomId)
         REFERENCES Rooms.Room(RoomId) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
 -- Tạo bảng Khách hàng thân thiết
-CREATE TABLE Hotels.LoyalCustomers (
+CREATE TABLE Hotel.LoyalCustomers (
     LoyalCustomerId INT IDENTITY(1,1),
     GuestId NVARCHAR(30) NOT NULL,
     MembershipLevel NVARCHAR(20) NOT NULL CHECK (MembershipLevel IN ('Silver', 'Gold', 'Platinum')),
@@ -158,7 +146,7 @@ CREATE TABLE Hotels.LoyalCustomers (
     JoinDate DATE NOT NULL,
     CONSTRAINT PK_LoyalCustomerId PRIMARY KEY (LoyalCustomerId),
     CONSTRAINT FK_GuestId_LoyalCustomers FOREIGN KEY (GuestId)
-        REFERENCES Hotels.Guests(GuestId) ON DELETE NO ACTION ON UPDATE NO ACTION
+        REFERENCES Hotel.Guests(GuestId) ON DELETE NO ACTION ON UPDATE NO ACTION
 		);
 SELECT SUM(PaymentAmount) FROM Bookings.Payments WHERE BookingId IN (SELECT BookingId FROM Bookings.Booking WHERE HotelId = 3); 
 
