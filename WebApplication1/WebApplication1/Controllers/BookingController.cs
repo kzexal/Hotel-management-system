@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Web.Mvc;
 using WebApplication1.Models;
 
@@ -7,44 +6,61 @@ namespace WebApplication1.Controllers
 {
     public class BookingController : Controller
     {
+        private readonly AppDbContext db = new AppDbContext();
+
+        // [1] Hiển thị trang đặt phòng
         public ActionResult BookingPage(int roomId)
-
         {
-            // Danh sách tĩnh các phòng (tạm thời)
-            var rooms = new List<Room>
-            {
-                new Room { Id = 1, Name = "Blue Origin Fams", Location = "Galle", PricePerDay = 200, ImageUrl = "https://c.animaapp.com/CYJfBrwE/img/rectangle-3@2x.png" },
-                new Room { Id = 2, Name = "Ocean Land", Location = "Trincomalee", PricePerDay = 100, ImageUrl = "https://c.animaapp.com/CYJfBrwE/img/rectangle-3@2x.png" },
-                new Room { Id = 3, Name = "Stark House", Location = "Dehiwala", PricePerDay = 1000, ImageUrl = "https://c.animaapp.com/CYJfBrwE/img/rectangle-3@2x.png" },
-                new Room { Id = 4, Name = "Vinna Vill", Location = "Beruwala", PricePerDay = 250, ImageUrl = "https://c.animaapp.com/CYJfBrwE/img/rectangle-3@2x.png" },
-                new Room { Id = 5, Name = "Bobox", Location = "Kandy", PricePerDay = 350, ImageUrl = "https://c.animaapp.com/CYJfBrwE/img/rectangle-3@2x.png" }
-            };
-
-            var room = rooms.FirstOrDefault(r => r.Id == roomId);
+            var room = db.Rooms.Find(roomId);
             if (room == null)
                 return HttpNotFound();
 
-            return View(room);
+            return View(room); // View nhận @model Room
         }
-        public ActionResult Payment(int roomId)
 
+        // [2] Lưu dữ liệu booking tạm thời rồi chuyển đến trang thanh toán
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Payment(FormCollection form)
         {
-          
-            var rooms = new List<Room>
+            try
             {
-                new Room { Id = 1, Name = "Blue Origin Fams", Location = "Galle", PricePerDay = 200, ImageUrl = "https://c.animaapp.com/CYJfBrwE/img/rectangle-3@2x.png" },
-                new Room { Id = 2, Name = "Ocean Land", Location = "Trincomalee", PricePerDay = 100, ImageUrl = "https://c.animaapp.com/CYJfBrwE/img/rectangle-3@2x.png" },
-                new Room { Id = 3, Name = "Stark House", Location = "Dehiwala", PricePerDay = 1000, ImageUrl = "https://c.animaapp.com/CYJfBrwE/img/rectangle-3@2x.png" },
-                new Room { Id = 4, Name = "Vinna Vill", Location = "Beruwala", PricePerDay = 250, ImageUrl = "https://c.animaapp.com/CYJfBrwE/img/rectangle-3@2x.png" },
-                new Room { Id = 5, Name = "Bobox", Location = "Kandy", PricePerDay = 350, ImageUrl = "https://c.animaapp.com/CYJfBrwE/img/rectangle-3@2x.png" }
-            };
+                if (!int.TryParse(form["RoomId"], out int roomId) ||
+                    !int.TryParse(form["BookingAmount"], out int totalPrice) ||
+                    !DateTime.TryParse(form["CheckInDate"], out DateTime checkinDate) ||
+                    !DateTime.TryParse(form["CheckOutDate"], out DateTime checkoutDate))
+                {
+                    TempData["BookingError"] = "Thông tin đặt phòng không hợp lệ.";
+                    return RedirectToAction("BookingPage", new { roomId });
+                }
 
-            var room = rooms.FirstOrDefault(r => r.Id == roomId);
-            if (room == null)
-                return HttpNotFound();
+                // Lưu tạm thông tin để sử dụng ở bước thanh toán
+                TempData["RoomId"] = roomId;
+                TempData["BookingCheckIn"] = checkinDate;
+                TempData["BookingCheckOut"] = checkoutDate;
+                TempData["BookingTotal"] = totalPrice;
 
-            return View(room);
+                return RedirectToAction("ShowPaymentForm", "Payment", new
+                {
+                    roomId = roomId,
+                    checkin = checkinDate,
+                    checkout = checkoutDate,
+                    totalPrice = totalPrice
+                });
+
+            }
+            catch (Exception)
+            {
+                TempData["BookingError"] = "Đã xảy ra lỗi khi xử lý đặt phòng.";
+                return RedirectToAction("BookingPage", new { roomId = form["RoomId"] });
+            }
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+                db.Dispose();
+            base.Dispose(disposing);
         }
     }
 }
-

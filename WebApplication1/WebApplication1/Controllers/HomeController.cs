@@ -18,7 +18,7 @@ namespace WebApplication1.Controllers
         {
             var rooms = db.Rooms
                           .Include(r => r.RoomType)
-                          .Where(r => r.Available == "Yes")
+                          .Where(r => r.Available == "Yes") 
                           .Take(15)
                           .ToList();
 

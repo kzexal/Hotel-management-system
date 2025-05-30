@@ -15,9 +15,10 @@ namespace WebApplication1.Models
         [ForeignKey("RoomType")]
         public int RoomTypeId { get; set; }
 
-        public bool Available { get; set; }
+        [Required]
+        [StringLength(5)]
+        public string Available { get; set; } 
 
-        // ✅ Mới thêm: đường dẫn ảnh
         [Required]
         [StringLength(255)]
         public string Image { get; set; }

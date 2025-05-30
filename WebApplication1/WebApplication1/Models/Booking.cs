@@ -1,21 +1,34 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using WebApplication1.Models;
+using System;
 
 public class Booking
 {
     [Key]
     public int BookingId { get; set; }
-    public DateTime BookingDate { get; set; }
-    public DateTime CheckInDate { get; set; }
-    public DateTime CheckOutDate { get; set; }
-    public decimal BookingAmount { get; set; }
 
-    public int GuestId { get; set; }          // UserId (from UserController)
-    public int RoomId { get; set; }           // RoomId (from RoomController)
+    [Required]
+    public DateTime BookingDate { get; set; }
+
+    [Required]
+    public DateTime CheckInDate { get; set; }
+
+    [Required]
+    public DateTime CheckOutDate { get; set; }
+
+    [Required]
+    public int BookingAmount { get; set; }
+
+    public int GuestId { get; set; }
+
+    [StringLength(20)]
     public string Status { get; set; }
 
-    // Optional: Navigation properties
-    public virtual LoginViewModel Guest { get; set; }
-    public virtual Room Room { get; set; }
+    // Navigation properties
+    [ForeignKey("GuestId")]
+    public virtual Guest Guest { get; set; }
+
+    // Mối quan hệ 1 booking - nhiều phòng (RoomBooked)
+    public virtual ICollection<RoomBooked> RoomBookings { get; set; }
 }

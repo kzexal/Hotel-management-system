@@ -19,7 +19,7 @@
         <!-- Right: Room Information -->
         <div class="room-info">
             <h2>Room @Model.RoomNumber</h2>
-            <div class="room-location">@Model.RoomType?.Name</div>
+            <div class="room-location">@(Model.RoomType?.Name)</div>
 
             <div class="room-description">
                 Enjoy your stay in this luxurious room with modern amenities, ideal for both families and solo travelers.
@@ -35,7 +35,7 @@
             </div>
 
             <div class="room-price">
-                @Model.RoomType?.Cost.ToString("C0") <span>per night</span>
+                @(Model.RoomType?.Cost) <span>per day</span>
             </div>
 
             <a href="@Url.Action("BookingPage", "Booking", new { roomId = Model.RoomId })" class="book-now-btn">Book Now</a>
