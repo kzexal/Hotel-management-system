@@ -21,7 +21,7 @@ namespace WebApplication1.Models
             modelBuilder.Entity<RoomBooked>().ToTable("RoomBooked", "Rooms");
             modelBuilder.Entity<Booking>().ToTable("Booking", "Bookings");
             modelBuilder.Entity<Payment>().ToTable("Payments", "Bookings");
-            modelBuilder.Entity<Guest>().ToTable("Guest", "Bookings"); 
+            modelBuilder.Entity<Guest>().ToTable("Guests", "Hotels"); 
 
             base.OnModelCreating(modelBuilder);
         }

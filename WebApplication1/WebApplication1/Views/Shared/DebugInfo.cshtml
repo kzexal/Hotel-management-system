@@ -1,0 +1,55 @@
+﻿@{
+    Layout = null;
+}
+
+<div style="background-color: #f8f9fa; border: 1px solid #ddd; padding: 20px; margin-top: 40px; font-family: Arial; font-size: 14px;">
+    <h3 style="margin-bottom: 10px;">🔍 Debug Info</h3>
+
+    <h4>📦 TempData</h4>
+    <ul>
+        @if (TempData != null && TempData.Keys.Any())
+        {
+            foreach (var key in TempData.Keys)
+            {
+                <li><strong>@key:</strong> @TempData[key]</li>
+            }
+        }
+        else
+        {
+            <li><em>(Empty)</em></li>
+        }
+    </ul>
+
+    <h4>👜 ViewBag</h4>
+    <ul>
+        @{
+            var viewBagProps = ViewBag.GetType().GetProperties();
+            if (viewBagProps.Length > 0)
+            {
+                foreach (var prop in viewBagProps)
+                {
+                    <li><strong>@prop.Name:</strong> @prop.GetValue(ViewBag)</li>
+                }
+            }
+            else
+            {
+                <li><em>(Empty)</em></li>
+            }
+        }
+    </ul>
+
+    <h4>💼 Session</h4>
+    <ul>
+        @if (Session != null && Session.Keys.Count > 0)
+        {
+            foreach (string key in Session.Keys)
+            {
+                <li><strong>@key:</strong> @Session[key]</li>
+            }
+        }
+        else
+        {
+            <li><em>(Empty)</em></li>
+        }
+    </ul>
+</div>

@@ -1,5 +1,6 @@
-﻿using WebApplication1.Models;
-
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using WebApplication1.Models;
+[Table("RoomBooked", Schema = "Rooms")]
 public class RoomBooked
 {
     public int RoomBookedId { get; set; }

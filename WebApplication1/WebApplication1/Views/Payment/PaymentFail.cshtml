@@ -1,0 +1,67 @@
+﻿@model WebApplication1.Models.Room
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.HideNavbar = true;
+
+    // Lấy dữ liệu từ TempData
+    var checkin = TempData["BookingCheckIn"] as DateTime?;
+    var checkout = TempData["BookingCheckOut"] as DateTime?;
+    var totalPrice = TempData["BookingTotal"] as int?;
+    var errorMessage = TempData["BookingError"] as string;
+
+    // Giữ lại TempData cho vòng sau
+    TempData.Keep();
+}
+
+<link rel="stylesheet" href="@Url.Content("~/Content/paymentfailed.css")" />
+
+<div class="payment-success-container">
+    <div class="logo">HMS</div>
+
+    <div class="steps">
+        <div class="step done">❌</div>
+        <div class="step done">❌</div>
+        <div class="step done">❌</div>
+    </div>
+
+    <h1 class="title" style="color: #e74c3c;">Oops! Payment Failed</h1>
+
+    <div class="image-area">
+        <img src="https://static.vecteezy.com/system/resources/previews/004/896/101/non_2x/payment-failed-concept-illustration-flat-design-eps10-simple-and-modern-graphic-element-for-empty-state-app-or-web-ui-vector.jpg" alt="Payment Failed" style="width: 160px;">
+    </div>
+
+    <p class="message">
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <span style="color: red; font-weight: bold;">@errorMessage</span>
+        }
+        else
+        {
+            <text>Something went wrong with your payment.<br />Please try again or use another method.</text>
+        }
+    </p>
+
+    @if (Model != null && checkin != null && checkout != null && totalPrice != null)
+    {
+        <a href="@Url.Action("ShowPaymentForm", "Payment", new {
+                roomId = Model.RoomId,
+                checkin = checkin.Value.ToString("yyyy-MM-dd"),
+                checkout = checkout.Value.ToString("yyyy-MM-dd"),
+                totalPrice = totalPrice.Value
+            })"
+           class="dashboard-link"
+           style="background-color: #e74c3c; color: white; padding: 10px 24px; border-radius: 8px; text-decoration: none;">
+            Try Again
+        </a>
+    }
+    else
+    {
+        <a href="@Url.Action("Index", "Home")"
+           class="dashboard-link"
+           style="background-color: #e74c3c; color: white; padding: 10px 24px; border-radius: 8px; text-decoration: none;">
+            Back to Home
+        </a>
+    }
+</div>
+
