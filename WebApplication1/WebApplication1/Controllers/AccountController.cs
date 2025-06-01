@@ -71,11 +71,10 @@ namespace WebApplication1.Controllers
                 Username = model.Username,
                 Password = model.Password,
                 TypeAccount = model.TypeAccount,
-                NewUser = "Yes" 
+                NewUser = "Yes"
             };
 
             db.Logins.Add(newUser);
-            db.SaveChanges();
 
             return Json(new { success = true, redirectUrl = Url.Action("Login", "Account") });
         }

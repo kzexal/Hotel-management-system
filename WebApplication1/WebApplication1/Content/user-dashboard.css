@@ -1,0 +1,214 @@
+/* Dashboard Container */
+.dashboard-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* User Info Section */
+.user-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.user-avatar {
+    color: #3B82F6;
+}
+
+.user-details h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #1f2937;
+}
+
+/* Section Styles */
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+}
+
+/* Current Booking Card */
+.booking-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.booking-details {
+    padding: 1rem 0;
+}
+
+.booking-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-item i {
+    color: #3B82F6;
+}
+
+/* Services Section */
+.services-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.service-item:last-child {
+    border-bottom: none;
+}
+
+.service-icon {
+    width: 40px;
+    height: 40px;
+    background: #EFF6FF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3B82F6;
+    margin-right: 1rem;
+}
+
+.service-details {
+    flex: 1;
+}
+
+.service-details h5 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.service-price {
+    font-weight: 600;
+    color: #2563eb;
+}
+
+.service-total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border-top: 2px solid #e5e7eb;
+    font-weight: 600;
+}
+
+.total-amount {
+    color: #2563eb;
+}
+
+/* History Section */
+.history-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-date {
+    text-align: center;
+    margin-right: 1rem;
+    min-width: 60px;
+}
+
+.history-date .month {
+    display: block;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.history-date .day {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.history-details {
+    flex: 1;
+}
+
+.history-details h5 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Offers Section */
+.offer-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-badge {
+    position: absolute;
+    top: 1rem;
+    right: -2rem;
+    background: #3B82F6;
+    color: white;
+    padding: 0.25rem 2rem;
+    transform: rotate(45deg);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.offer-validity {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 1rem 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 1rem;
+    }
+
+    .booking-info {
+        grid-template-columns: 1fr;
+    }
+
+    .user-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+} 

@@ -344,3 +344,7 @@ D:\Hotel-management-system\WebApplication1\WebApplication1\bin\Microsoft.CodeDom
 D:\Hotel-management-system\WebApplication1\WebApplication1\obj\Debug\WebAppli.7D14BD69.Up2Date
 D:\Hotel-management-system\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 D:\Hotel-management-system\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\buidu\OneDrive\Máy tính\code\Hotel-system-management-\WebApplication1\WebApplication1\bin\EntityFramework.dll
+C:\Users\buidu\OneDrive\Máy tính\code\Hotel-system-management-\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.dll
+C:\Users\buidu\OneDrive\Máy tính\code\Hotel-system-management-\WebApplication1\WebApplication1\bin\EntityFramework.xml
+C:\Users\buidu\OneDrive\Máy tính\code\Hotel-system-management-\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.xml

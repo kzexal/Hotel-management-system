@@ -1,0 +1,170 @@
+@{
+    ViewBag.Title = "My Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/user-dashboard.css" rel="stylesheet" />
+
+<div class="dashboard-container">
+    <!-- User Info Section -->
+    <section class="user-info-section mb-4">
+        <div class="user-header">
+            <div class="user-avatar">
+                <i class="fas fa-user-circle fa-4x"></i>
+            </div>
+            <div class="user-details">
+                <h2>Welcome back, @ViewBag.UserName!</h2>
+                <p class="text-muted">Member since @ViewBag.MemberSince.ToString("MMMM yyyy")</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current/Upcoming Booking -->
+    <section class="current-booking-section mb-4">
+        <h3 class="section-title">Current/Upcoming Booking</h3>
+        <div class="booking-card">
+            @if (ViewBag.CurrentBooking != null)
+            {
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="@ViewBag.CurrentBooking.RoomImage" alt="Room" class="img-fluid rounded" />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="booking-details">
+                            <h4>@ViewBag.CurrentBooking.RoomType</h4>
+                            <div class="booking-info">
+                                <div class="info-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>Check-in: @ViewBag.CurrentBooking.CheckIn.ToString("MMM dd, yyyy")</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-calendar-check"></i>
+                                    <span>Check-out: @ViewBag.CurrentBooking.CheckOut.ToString("MMM dd, yyyy")</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-door-closed"></i>
+                                    <span>Room: @ViewBag.CurrentBooking.RoomNumber</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>Guests: @ViewBag.CurrentBooking.GuestCount</span>
+                                </div>
+                            </div>
+                            <div class="booking-status">
+                                <span class="badge bg-success">Confirmed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="text-center py-4">
+                    <i class="fas fa-hotel fa-3x text-muted mb-3"></i>
+                    <p>No current or upcoming bookings</p>
+                    <a href="@Url.Action("Index", "Booking")" class="btn btn-primary">Book Now</a>
+                </div>
+            }
+        </div>
+    </section>
+
+    <div class="row g-4">
+        <!-- Used Services Section -->
+        <div class="col-md-6">
+            <section class="services-section">
+                <h3 class="section-title">Services Used</h3>
+                <div class="services-card">
+                    @if (ViewBag.UsedServices != null && ViewBag.UsedServices.Count > 0)
+                    {
+                        foreach (var service in ViewBag.UsedServices)
+                        {
+                            <div class="service-item">
+                                <div class="service-icon">
+                                    <i class="@service.Icon"></i>
+                                </div>
+                                <div class="service-details">
+                                    <h5>@service.Name</h5>
+                                    <p class="text-muted">@service.Date.ToString("MMM dd, yyyy")</p>
+                                </div>
+                                <div class="service-price">
+                                    $@service.Price
+                                </div>
+                            </div>
+                        }
+                        <div class="service-total">
+                            <span>Total Services:</span>
+                            <span class="total-amount">$@ViewBag.TotalServicesAmount</span>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-center py-4">
+                            <p>No services used yet</p>
+                        </div>
+                    }
+                </div>
+            </section>
+        </div>
+
+        <!-- Booking History -->
+        <div class="col-md-6">
+            <section class="history-section">
+                <h3 class="section-title">Booking History</h3>
+                <div class="history-card">
+                    @if (ViewBag.BookingHistory != null && ViewBag.BookingHistory.Count > 0)
+                    {
+                        foreach (var booking in ViewBag.BookingHistory)
+                        {
+                            <div class="history-item">
+                                <div class="history-date">
+                                    <span class="month">@booking.CheckIn.ToString("MMM")</span>
+                                    <span class="day">@booking.CheckIn.ToString("dd")</span>
+                                </div>
+                                <div class="history-details">
+                                    <h5>@booking.RoomType</h5>
+                                    <p class="text-muted">
+                                        @booking.CheckIn.ToString("MMM dd") - @booking.CheckOut.ToString("MMM dd, yyyy")
+                                    </p>
+                                </div>
+                                <div class="history-status">
+                                    <span class="badge bg-secondary">Completed</span>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="text-center py-4">
+                            <p>No booking history available</p>
+                        </div>
+                    }
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Special Offers -->
+    <section class="offers-section mt-4">
+        <h3 class="section-title">Special Offers For You</h3>
+        <div class="row g-4">
+            @if (ViewBag.SpecialOffers != null && ViewBag.SpecialOffers.Count > 0)
+            {
+                foreach (var offer in ViewBag.SpecialOffers)
+                {
+                    <div class="col-md-4">
+                        <div class="offer-card">
+                            <div class="offer-badge">@offer.DiscountPercentage% OFF</div>
+                            <h5>@offer.Title</h5>
+                            <p class="text-muted">@offer.Description</p>
+                            <div class="offer-validity">
+                                Valid until: @offer.ValidUntil.ToString("MMM dd, yyyy")
+                            </div>
+                            <a href="@Url.Action("BookNow", "Booking", new { offerId = offer.Id })" 
+                               class="btn btn-outline-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </section>
+</div> 
