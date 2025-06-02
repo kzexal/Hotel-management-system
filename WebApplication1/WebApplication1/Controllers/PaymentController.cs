@@ -103,14 +103,7 @@ namespace WebApplication1.Controllers
                 });
                 db.SaveChanges();
 
-                // [G] Cập nhật trạng thái phòng
-                var room = db.Rooms.Find(roomId);
-                if (room != null)
-                {
-                    room.Available = "No";
-                    db.SaveChanges();
-                }
-
+               
                 // [H] Tạo Payment
                 var payment = new Payment
                 {

@@ -9,5 +9,9 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+        public ActionResult AdminDashBoard()
+        {
+            return View();
+        }
     }
 }

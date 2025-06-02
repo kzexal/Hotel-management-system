@@ -1,0 +1,153 @@
+﻿/* Dashboard Container */
+.dashboard-container {
+    padding: 2rem;
+}
+
+/* Section Styles */
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+}
+
+/* Overview Cards */
+.stat-card {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.stat-label {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Room Cards */
+.room-card {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.room-count {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+    .room-count .text-muted {
+        font-size: 1rem;
+        font-weight: normal;
+    }
+
+.room-price {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+    .room-price .text-muted {
+        font-size: 0.875rem;
+        font-weight: normal;
+    }
+
+/* Status Cards */
+.status-card {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+    .status-item:last-child {
+        border-bottom: none;
+    }
+
+/* Progress Circle */
+.progress-circle {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+    background: conic-gradient(#3B82F6 80%, #e5e7eb 0);
+    border-radius: 50%;
+}
+
+.progress-circle-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.progress-value {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.progress-label {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+/* Chart Container */
+.chart-container {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    height: 300px;
+}
+
+/* Feedback Section */
+.feedback-list {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.feedback-item {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+    .feedback-item:last-child {
+        border-bottom: none;
+    }
+
+.feedback-id {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 1rem;
+    }
+
+    .progress-circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .progress-value {
+        font-size: 1.5rem;
+    }
+}

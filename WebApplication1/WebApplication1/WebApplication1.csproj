@@ -160,6 +160,8 @@
     <Compile Include="Models\RoomBooked.cs" />
     <Compile Include="Models\RoomType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Views\DashBoard\AdminDashBoard.cshtml" />
+    <Content Include="Content\admin-dashboard.css" />
     <Content Include="Content\UserDashBoard.css" />
     <Content Include="Views\DashBoard\UserDashBoard.cshtml" />
     <None Include="Views\Shared\DebugInfo.cshtml" />

@@ -1,0 +1,257 @@
+﻿@{
+   Layout = "~/Views/Shared/_Layout.cshtml";
+ViewBag.HideNavbar = true;
+}
+
+<link href="~/Content/admin-dashboard.css" rel="stylesheet" />
+
+<div class="dashboard-container">
+    <!-- Overview Section -->
+    <section class="overview-section mb-4">
+        <h2 class="section-title">Overview</h2>
+        <div class="row g-4">
+            <div class="col-md">
+                <div class="stat-card">
+                    <div class="stat-label">Today's Check-in</div>
+                    <div class="stat-value text-primary">@ViewBag.TodayCheckIns</div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="stat-card">
+                    <div class="stat-label">Today's Check-out</div>
+                    <div class="stat-value text-primary">@ViewBag.TodayCheckOuts</div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="stat-card">
+                    <div class="stat-label">In hotel</div>
+                    <div class="stat-value text-primary">@ViewBag.InHotel</div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="stat-card">
+                    <div class="stat-label">Available rooms</div>
+                    <div class="stat-value text-primary">@ViewBag.AvailableRooms</div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="stat-card">
+                    <div class="stat-label">Occupied rooms</div>
+                    <div class="stat-value text-primary">@ViewBag.OccupiedRooms</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section class="rooms-section mb-4">
+        <h2 class="section-title">Rooms</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="room-card">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-success">2 Deals</span>
+                        <button class="btn btn-link p-0"><i class="fas fa-ellipsis-v"></i></button>
+                    </div>
+                    <h5>Single sharing</h5>
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <div class="room-count">2<span class="text-muted">/30</span></div>
+                        <div class="room-price">$ 568<span class="text-muted">/day</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="room-card">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-success">2 Deals</span>
+                        <button class="btn btn-link p-0"><i class="fas fa-ellipsis-v"></i></button>
+                    </div>
+                    <h5>Double sharing</h5>
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <div class="room-count">2<span class="text-muted">/35</span></div>
+                        <div class="room-price">$ 1,068<span class="text-muted">/day</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="room-card">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <button class="btn btn-link p-0"><i class="fas fa-ellipsis-v"></i></button>
+                    </div>
+                    <h5>Triple sharing</h5>
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <div class="room-count">2<span class="text-muted">/25</span></div>
+                        <div class="room-price">$ 1,568<span class="text-muted">/day</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="room-card">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <button class="btn btn-link p-0"><i class="fas fa-ellipsis-v"></i></button>
+                    </div>
+                    <h5>VIP Suite</h5>
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <div class="room-count">4<span class="text-muted">/10</span></div>
+                        <div class="room-price">$ 2,568<span class="text-muted">/day</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="row g-4">
+        <!-- Room Status Section -->
+        <div class="col-md-6">
+            <section class="room-status-section">
+                <h2 class="section-title">Room status</h2>
+                <div class="status-card">
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <h6>Occupied rooms</h6>
+                            <div class="status-item">
+                                <span>Clean</span>
+                                <span class="text-end">90</span>
+                            </div>
+                            <div class="status-item">
+                                <span>Dirty</span>
+                                <span class="text-end">4</span>
+                            </div>
+                            <div class="status-item">
+                                <span>Inspected</span>
+                                <span class="text-end">60</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h6>Available rooms</h6>
+                            <div class="status-item">
+                                <span>Clean</span>
+                                <span class="text-end">30</span>
+                            </div>
+                            <div class="status-item">
+                                <span>Dirty</span>
+                                <span class="text-end">19</span>
+                            </div>
+                            <div class="status-item">
+                                <span>Inspected</span>
+                                <span class="text-end">30</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Floor Status Section -->
+        <div class="col-md-6">
+            <section class="floor-status-section">
+                <h2 class="section-title">Floor status</h2>
+                <div class="status-card text-center">
+                    <div class="progress-circle">
+                        <div class="progress-circle-inner">
+                            <div class="progress-value">80%</div>
+                            <div class="progress-label">Completed</div>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <span class="badge rounded-pill bg-primary">Completed</span>
+                        <span class="badge rounded-pill bg-light text-dark">Yet to Complete</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row g-4 mt-2">
+        <!-- Occupancy Statistics Section -->
+        <div class="col-md-6">
+            <section class="occupancy-section">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 class="section-title">Occupancy Statistics</h2>
+                    <button class="btn btn-outline-primary btn-sm">Monthly</button>
+                </div>
+                <div class="chart-container">
+                    <canvas id="occupancyChart"></canvas>
+                </div>
+            </section>
+        </div>
+
+        <!-- Customer Feedback Section -->
+        <div class="col-md-6">
+            <section class="feedback-section">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 class="section-title">Customers feedback</h2>
+                    <button class="btn btn-link p-0"><i class="fas fa-ellipsis-v"></i></button>
+                </div>
+                <div class="feedback-list">
+                    <div class="feedback-item">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h6>Mark</h6>
+                                <p class="text-muted">Food could be better.</p>
+                            </div>
+                            <span class="feedback-id">A201</span>
+                        </div>
+                    </div>
+                    <div class="feedback-item">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h6>Christian</h6>
+                                <p class="text-muted">Facilities are not enough for amount paid.</p>
+                            </div>
+                            <span class="feedback-id">A101</span>
+                        </div>
+                    </div>
+                    <div class="feedback-item">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h6>Alexander</h6>
+                                <p class="text-muted">Room cleaning could be better.</p>
+                            </div>
+                            <span class="feedback-id">A301</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Occupancy Chart
+        const ctx = document.getElementById('occupancyChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
+                datasets: [{
+                    label: 'Occupancy Rate',
+                    data: [85, 65, 80, 45, 90, 85, 85, 85, 90, 85],
+                    backgroundColor: '#3B82F6',
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
+} 
