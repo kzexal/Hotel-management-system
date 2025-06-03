@@ -13,6 +13,8 @@ namespace WebApplication1.Models
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Guest> Guests { get; set; }
         public DbSet<RoomBooked> RoomBooked { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<ServicesUsed> ServicesUsed { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Login>().ToTable("Login", "Authentication");
@@ -21,7 +23,9 @@ namespace WebApplication1.Models
             modelBuilder.Entity<RoomBooked>().ToTable("RoomBooked", "Rooms");
             modelBuilder.Entity<Booking>().ToTable("Booking", "Bookings");
             modelBuilder.Entity<Payment>().ToTable("Payments", "Bookings");
-            modelBuilder.Entity<Guest>().ToTable("Guests", "Hotels"); 
+            modelBuilder.Entity<Guest>().ToTable("Guests", "Hotels");
+            modelBuilder.Entity<Service>().ToTable("Services", "HotelService");
+            modelBuilder.Entity<ServicesUsed>().ToTable("ServicesUsed", "HotelService");
 
             base.OnModelCreating(modelBuilder);
         }

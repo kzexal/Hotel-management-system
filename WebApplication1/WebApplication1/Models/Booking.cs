@@ -30,5 +30,5 @@ public class Booking
     public virtual Guest Guest { get; set; }
 
     // Mối quan hệ 1 booking - nhiều phòng (RoomBooked)
-    public virtual ICollection<RoomBooked> RoomBookings { get; set; }
+    public virtual ICollection<WebApplication1.Models.RoomBooked> RoomBookings { get; set; }
 }

@@ -1,221 +1,233 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Hotel\\WebApplication1\\",
+  "WorkspaceRootPath": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\views\\dashboard\\admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\dashboard\\admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|d:\\ktpmud\\hotel-management-system-main\\webapplication1\\webapplication1\\views\\user\\userdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\user\\userdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|d:\\hotel\\webapplication1\\webapplication1\\views\\dashboard\\userdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\dashboard\\userdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\views\\payment\\paymentfail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\payment\\paymentfail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Room\\Details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Views\\Room\\Details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\views\\booking\\bookingpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\booking\\bookingpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\RoomType.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Models\\RoomType.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\models\\roombooked.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\roombooked.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Controllers\\AccountController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Controllers\\AccountController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\views\\payment\\paymentsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\payment\\paymentsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\views\\booking\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\booking\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\content\\admin-dashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\admin-dashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\views\\dashboard\\admindashboard.cshtml||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\dashboard\\admindashboard.cshtml||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\content\\payment.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\payment.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\styleguide.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Content\\styleguide.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\RegisterViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Models\\RegisterViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\models\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\LoginViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Models\\LoginViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\content\\userdashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\content\\userdashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\userdashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\views\\shared\\debuginfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\debuginfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Room\\Details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Views\\Room\\Details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\views\\shared\\debuginfo.cshtml||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\debuginfo.cshtml||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\models\\servicesused.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\servicesused.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\content\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\RoomType.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Models\\RoomType.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\Login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Models\\Login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\paymentfailed.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Content\\paymentfailed.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\App_Start\\RouteConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\App_Start\\RouteConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\App_Start\\WebApiConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\App_Start\\WebApiConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\views\\booking\\bookingpage.cshtml||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\booking\\bookingpage.cshtml||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\globals.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Content\\globals.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\App_Start\\BundleConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\App_Start\\BundleConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\favicon.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\favicon.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Shared\\Error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Views\\Shared\\Error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Views\\Web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\_ViewStart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\_ViewStart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Views\\_ViewStart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\views\\booking\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\booking\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\views\\booking\\bookingpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\booking\\bookingpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\views\\dashboard\\admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\dashboard\\admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\controllers\\servicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\servicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\Login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Models\\Login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Shared\\Error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Views\\Shared\\Error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\models\\roombooked.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\roombooked.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Controllers\\AccountController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Controllers\\AccountController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\views\\payment\\paymentfail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\payment\\paymentfail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\models\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\LoginViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Models\\LoginViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\RegisterViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Models\\RegisterViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\views\\payment\\paymentsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\payment\\paymentsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\content\\admin-dashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\admin-dashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\views\\dashboard\\admindashboard.cshtml||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\dashboard\\admindashboard.cshtml||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\content\\payment.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\payment.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\styleguide.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Content\\styleguide.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\views\\shared\\debuginfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\debuginfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\views\\shared\\debuginfo.cshtml||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\debuginfo.cshtml||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\content\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\paymentfailed.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Content\\paymentfailed.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\App_Start\\RouteConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\App_Start\\RouteConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\App_Start\\WebApiConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\App_Start\\WebApiConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\webapplication1\\views\\booking\\bookingpage.cshtml||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\booking\\bookingpage.cshtml||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\globals.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Content\\globals.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\App_Start\\BundleConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\App_Start\\BundleConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\favicon.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\favicon.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Views\\Web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Account\\Register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Account\\Register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Views\\Account\\Register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\register.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\register.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Content\\register.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\paymentsuccess.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\paymentsuccess.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Content\\paymentsuccess.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\room-detail.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\room-detail.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Content\\room-detail.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Content\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\Site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\Site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Content\\Site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
@@ -226,17 +238,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 25,
               "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Account\\Login.cshtml",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Login.cshtml",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Account\\Login.cshtml",
               "RelativeToolTip": "WebApplication1\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-02T12:59:15.863Z",
               "IsPinned": true
@@ -251,145 +263,377 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "PaymentSuccess.cshtml",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Payment\\PaymentSuccess.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Payment\\PaymentSuccess.cshtml",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Payment\\PaymentSuccess.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Payment\\PaymentSuccess.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAGAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "UserDashBoard.cshtml",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\User\\UserDashBoard.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\User\\UserDashBoard.cshtml",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\User\\UserDashBoard.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\User\\UserDashBoard.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB0AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T04:07:41.393Z"
+              "WhenOpened": "2025-06-03T11:14:30.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RoomType.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\RoomType.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\RoomType.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\RoomType.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\RoomType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T07:38:40.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\PaymentController.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\PaymentController.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAAANIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:50:55.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ServicesUsed.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\ServicesUsed.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\ServicesUsed.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\ServicesUsed.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\ServicesUsed.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T14:41:11.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Room\\Details.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Room\\Details.cshtml",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Room\\Details.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Room\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-12T15:25:51.826Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserDashBoard.cshtml",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\DashBoard\\UserDashBoard.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\DashBoard\\UserDashBoard.cshtml",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\DashBoard\\UserDashBoard.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\DashBoard\\UserDashBoard.cshtml",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAIwGQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-31T16:06:36.595Z",
+              "Title": "UserDashBoard.css",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\UserDashBoard.css",
+              "RelativeDocumentMoniker": "WebApplication1\\Content\\UserDashBoard.css",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\UserDashBoard.css",
+              "RelativeToolTip": "WebApplication1\\Content\\UserDashBoard.css",
+              "ViewState": "AgIAADIAAAAAAAAAAAAmwG0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-31T16:10:21.268Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "BookingPage.cshtml",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Booking\\BookingPage.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Booking\\BookingPage.cshtml",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Booking\\BookingPage.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Booking\\BookingPage.cshtml",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAIwJQAAAAHAAAAAAAAAA==",
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-28T14:29:22.173Z"
+              "WhenOpened": "2025-05-12T13:47:34.744Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RoomType.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\RoomType.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\RoomType.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\RoomType.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\RoomType.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T07:38:40.053Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "RoomBooked.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\RoomBooked.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\RoomBooked.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\RoomBooked.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\RoomBooked.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T03:21:01.649Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "AdminDashBoard.cshtml",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\DashBoard\\AdminDashBoard.cshtml",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\DashBoard\\AdminDashBoard.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\DashBoard\\AdminDashBoard.cshtml",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\DashBoard\\AdminDashBoard.cshtml",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\DashBoard\\AdminDashBoard.cshtml",
               "RelativeToolTip": "WebApplication1\\Views\\DashBoard\\AdminDashBoard.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-01T16:56:04.862Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BookingPage.cshtml",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Booking\\BookingPage.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Booking\\BookingPage.cshtml",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Booking\\BookingPage.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Booking\\BookingPage.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAJYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-28T14:29:22.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\BookingController.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\BookingController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAADgvxsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T06:54:46.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Payment.cshtml",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Booking\\Payment.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Booking\\Payment.cshtml",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Booking\\Payment.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Booking\\Payment.cshtml",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAAFkAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-28T15:13:56.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Controllers\\UserController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAADwvw8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T10:55:13.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RoomController.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Controllers\\RoomController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\RoomController.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Controllers\\RoomController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\RoomController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T15:51:46.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ServicesController.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Controllers\\ServicesController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\ServicesController.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Controllers\\ServicesController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\ServicesController.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAABkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T14:35:16.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T11:25:17.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Login.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\Login.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Login.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\Login.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Login.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T15:22:37.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\Booking.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Booking.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\Booking.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Booking.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAWwCAAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T06:53:06.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-02T11:24:42.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-03T13:01:40.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "RoomBooked.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\RoomBooked.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\RoomBooked.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\RoomBooked.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\RoomBooked.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T03:21:01.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Service.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\Service.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Service.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\Service.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Service.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T14:40:39.6Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Controllers\\AccountController.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Controllers\\AccountController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAswEIAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAiwBoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-02T11:44:31.268Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Room\\Details.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Room\\Details.cshtml",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Room\\Details.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Room\\Details.cshtml",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAIwDEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-12T15:25:51.826Z"
+              "DocumentIndex": 21,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\AppDbContext.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\AppDbContext.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\AppDbContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBsAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T16:43:00.092Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAABYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-02T11:24:42.268Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 23,
               "Title": "PaymentFail.cshtml",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Payment\\PaymentFail.cshtml",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Payment\\PaymentFail.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Payment\\PaymentFail.cshtml",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Payment\\PaymentFail.cshtml",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Payment\\PaymentFail.cshtml",
               "RelativeToolTip": "WebApplication1\\Views\\Payment\\PaymentFail.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-30T04:08:17.616Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BookingController.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Controllers\\BookingController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\BookingController.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Controllers\\BookingController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\BookingController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T06:54:46.821Z"
+              "DocumentIndex": 24,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAC8AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-03T12:52:50.143Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 26,
+              "Title": "Guest.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\Guest.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Guest.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\Guest.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Guest.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAewC8AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T15:00:07.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Room.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\Room.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Room.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\Room.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Room.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T15:19:02.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\LoginViewModel.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\LoginViewModel.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T13:24:50.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\RegisterViewModel.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\RegisterViewModel.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\RegisterViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T16:50:10.176Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
               "Title": "Payment.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\Payment.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\Payment.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\Payment.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\Payment.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Models\\Payment.cs",
               "RelativeToolTip": "WebApplication1\\Models\\Payment.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -397,83 +641,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Booking.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\Booking.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\Booking.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\Booking.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\Booking.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwAQAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T06:53:06.567Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "PaymentController.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Controllers\\PaymentController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\PaymentController.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Controllers\\PaymentController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\PaymentController.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAYwG0AAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:50:55.614Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "RoomController.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Controllers\\RoomController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\RoomController.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Controllers\\RoomController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\RoomController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T15:51:46.171Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAmwFgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T11:25:17.456Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Payment.cshtml",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Booking\\Payment.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Booking\\Payment.cshtml",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Booking\\Payment.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Booking\\Payment.cshtml",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 31,
+              "Title": "PaymentSuccess.cshtml",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Payment\\PaymentSuccess.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Payment\\PaymentSuccess.cshtml",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Payment\\PaymentSuccess.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Payment\\PaymentSuccess.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-28T15:13:56.037Z"
+              "WhenOpened": "2025-05-30T04:07:41.393Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "DashBoardController.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Controllers\\DashBoardController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\DashBoardController.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Controllers\\DashBoardController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\DashBoardController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T16:07:59.109Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 34,
               "Title": "payment.css",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\payment.css",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\payment.css",
               "RelativeDocumentMoniker": "WebApplication1\\Content\\payment.css",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\payment.css",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\payment.css",
               "RelativeToolTip": "WebApplication1\\Content\\payment.css",
               "ViewState": "AgIAAEkAAAAAAAAAAAAIwKwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -481,11 +665,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 35,
               "Title": "styleguide.css",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\styleguide.css",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\styleguide.css",
               "RelativeDocumentMoniker": "WebApplication1\\Content\\styleguide.css",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\styleguide.css",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\styleguide.css",
               "RelativeToolTip": "WebApplication1\\Content\\styleguide.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -493,23 +677,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Guest.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\Guest.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\Guest.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\Guest.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\Guest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T15:00:07.076Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 33,
               "Title": "AdminDashBoard.cshtml",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\DashBoard\\AdminDashBoard.cshtml",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\DashBoard\\AdminDashBoard.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\DashBoard\\AdminDashBoard.cshtml",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\DashBoard\\AdminDashBoard.cshtml",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\DashBoard\\AdminDashBoard.cshtml",
               "RelativeToolTip": "WebApplication1\\Views\\DashBoard\\AdminDashBoard.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAABAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -518,11 +690,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 32,
               "Title": "admin-dashboard.css",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\admin-dashboard.css",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\admin-dashboard.css",
               "RelativeDocumentMoniker": "WebApplication1\\Content\\admin-dashboard.css",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\admin-dashboard.css",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\admin-dashboard.css",
               "RelativeToolTip": "WebApplication1\\Content\\admin-dashboard.css",
               "ViewState": "AgIAAF4AAAAAAAAAAAAmwJkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -530,71 +702,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "RegisterViewModel.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\RegisterViewModel.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\RegisterViewModel.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\RegisterViewModel.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\RegisterViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T16:50:10.176Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\AppDbContext.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\AppDbContext.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T16:43:00.092Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Room.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\Room.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\Room.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\Room.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\Room.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T15:19:02.096Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "LoginViewModel.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\LoginViewModel.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\LoginViewModel.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\LoginViewModel.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\LoginViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T13:24:50.612Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "UserDashBoard.css",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\UserDashBoard.css",
-              "RelativeDocumentMoniker": "WebApplication1\\Content\\UserDashBoard.css",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\UserDashBoard.css",
-              "RelativeToolTip": "WebApplication1\\Content\\UserDashBoard.css",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAIwMYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-31T16:10:21.268Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 36,
               "Title": "DebugInfo.cshtml",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Shared\\DebugInfo.cshtml",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Shared\\DebugInfo.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\DebugInfo.cshtml",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Shared\\DebugInfo.cshtml",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Shared\\DebugInfo.cshtml",
               "RelativeToolTip": "WebApplication1\\Views\\Shared\\DebugInfo.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -602,11 +714,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 37,
               "Title": "DebugInfo.cshtml",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Shared\\DebugInfo.cshtml",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Shared\\DebugInfo.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\DebugInfo.cshtml",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Shared\\DebugInfo.cshtml",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Shared\\DebugInfo.cshtml",
               "RelativeToolTip": "WebApplication1\\Views\\Shared\\DebugInfo.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -614,11 +726,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 39,
               "Title": "style.css",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\style.css",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\style.css",
               "RelativeDocumentMoniker": "WebApplication1\\Content\\style.css",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\style.css",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\style.css",
               "RelativeToolTip": "WebApplication1\\Content\\style.css",
               "ViewState": "AgIAAIoAAAAAAAAAAAAmwLkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -626,11 +738,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 38,
               "Title": "FilterConfig.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\App_Start\\FilterConfig.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\App_Start\\FilterConfig.cs",
               "RelativeDocumentMoniker": "WebApplication1\\App_Start\\FilterConfig.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\App_Start\\FilterConfig.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\App_Start\\FilterConfig.cs",
               "RelativeToolTip": "WebApplication1\\App_Start\\FilterConfig.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -638,23 +750,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "Login.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\Login.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\Login.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Models\\Login.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\Login.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T15:22:37.343Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 40,
               "Title": "paymentfailed.css",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\paymentfailed.css",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\paymentfailed.css",
               "RelativeDocumentMoniker": "WebApplication1\\Content\\paymentfailed.css",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\paymentfailed.css",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\paymentfailed.css",
               "RelativeToolTip": "WebApplication1\\Content\\paymentfailed.css",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAACgAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -662,11 +762,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 41,
               "Title": "RouteConfig.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\App_Start\\RouteConfig.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\App_Start\\RouteConfig.cs",
               "RelativeDocumentMoniker": "WebApplication1\\App_Start\\RouteConfig.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\App_Start\\RouteConfig.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\App_Start\\RouteConfig.cs",
               "RelativeToolTip": "WebApplication1\\App_Start\\RouteConfig.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwAwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -674,11 +774,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 42,
               "Title": "WebApiConfig.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\App_Start\\WebApiConfig.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\App_Start\\WebApiConfig.cs",
               "RelativeDocumentMoniker": "WebApplication1\\App_Start\\WebApiConfig.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\App_Start\\WebApiConfig.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\App_Start\\WebApiConfig.cs",
               "RelativeToolTip": "WebApplication1\\App_Start\\WebApiConfig.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -686,23 +786,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 43,
               "Title": "BookingPage.cshtml",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Booking\\BookingPage.cshtml",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Booking\\BookingPage.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Booking\\BookingPage.cshtml",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Booking\\BookingPage.cshtml",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Booking\\BookingPage.cshtml",
               "RelativeToolTip": "WebApplication1\\Views\\Booking\\BookingPage.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-28T06:57:00.605Z"
+              "WhenOpened": "2025-05-28T06:57:00.605Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 44,
               "Title": "globals.css",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\globals.css",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\globals.css",
               "RelativeDocumentMoniker": "WebApplication1\\Content\\globals.css",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\globals.css",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\globals.css",
               "RelativeToolTip": "WebApplication1\\Content\\globals.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -710,23 +811,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAmwCgAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-03T12:52:50.143Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 45,
               "Title": "BundleConfig.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\App_Start\\BundleConfig.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\App_Start\\BundleConfig.cs",
               "RelativeDocumentMoniker": "WebApplication1\\App_Start\\BundleConfig.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\App_Start\\BundleConfig.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\App_Start\\BundleConfig.cs",
               "RelativeToolTip": "WebApplication1\\App_Start\\BundleConfig.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -734,11 +823,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 46,
               "Title": "Global.asax.cs",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Global.asax.cs",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Global.asax.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Global.asax.cs",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Global.asax.cs",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Global.asax.cs",
               "RelativeToolTip": "WebApplication1\\Global.asax.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -746,34 +835,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 48,
               "Title": "favicon.ico - Icon [16x16, 32 bit, BMP]",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\favicon.ico",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\favicon.ico",
               "RelativeDocumentMoniker": "WebApplication1\\favicon.ico",
               "ToolTip": "D:\\Hotel-management-system\\WebApplication1\\WebApplication1\\favicon.ico - Icon [16x16, 32 bit, BMP]",
-              "RelativeToolTip": "..\\..\\Hotel-management-system\\WebApplication1\\WebApplication1\\favicon.ico - Icon [16x16, 32 bit, BMP]",
+              "RelativeToolTip": "..\\..\\..\\Hotel-management-system\\WebApplication1\\WebApplication1\\favicon.ico - Icon [16x16, 32 bit, BMP]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001525|",
               "WhenOpened": "2025-05-01T16:39:17.714Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "Error.cshtml",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Shared\\Error.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\Error.cshtml",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Shared\\Error.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Shared\\Error.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-03T13:01:40.614Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 47,
               "Title": "Web.config",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Web.config",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Web.config",
               "RelativeDocumentMoniker": "WebApplication1\\Web.config",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Web.config",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Web.config",
               "RelativeToolTip": "WebApplication1\\Web.config",
               "ViewState": "AgIAAAIAAAAAAAAAAAAmwBUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
@@ -782,11 +859,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 49,
               "Title": "Web.config",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Web.config",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Web.config",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Web.config",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Web.config",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Web.config",
               "RelativeToolTip": "WebApplication1\\Views\\Web.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
@@ -794,23 +871,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\_ViewStart.cshtml",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-12T13:47:34.744Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "packages.config",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\packages.config",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\packages.config",
               "RelativeDocumentMoniker": "WebApplication1\\packages.config",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\packages.config",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\packages.config",
               "RelativeToolTip": "WebApplication1\\packages.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
@@ -818,11 +883,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "Register.cshtml",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Account\\Register.cshtml",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Register.cshtml",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Views\\Account\\Register.cshtml",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Views\\Account\\Register.cshtml",
               "RelativeToolTip": "WebApplication1\\Views\\Account\\Register.cshtml",
               "ViewState": "AgIAABUAAAAAAAAAAAAUwDwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -830,11 +895,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 52,
               "Title": "register.css",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\register.css",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\register.css",
               "RelativeDocumentMoniker": "WebApplication1\\Content\\register.css",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\register.css",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\register.css",
               "RelativeToolTip": "WebApplication1\\Content\\register.css",
               "ViewState": "AgIAADkAAAAAAAAAAAAAAEcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -842,11 +907,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 53,
               "Title": "paymentsuccess.css",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\paymentsuccess.css",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\paymentsuccess.css",
               "RelativeDocumentMoniker": "WebApplication1\\Content\\paymentsuccess.css",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\paymentsuccess.css",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\paymentsuccess.css",
               "RelativeToolTip": "WebApplication1\\Content\\paymentsuccess.css",
               "ViewState": "AgIAAC0AAAAAAAAAAAAAADEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -854,11 +919,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 54,
               "Title": "room-detail.css",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\room-detail.css",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\room-detail.css",
               "RelativeDocumentMoniker": "WebApplication1\\Content\\room-detail.css",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\room-detail.css",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\room-detail.css",
               "RelativeToolTip": "WebApplication1\\Content\\room-detail.css",
               "ViewState": "AgIAAEkAAAAAAAAAAAAUwGEAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -866,11 +931,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 55,
               "Title": "login.css",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\login.css",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\login.css",
               "RelativeDocumentMoniker": "WebApplication1\\Content\\login.css",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\login.css",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\login.css",
               "RelativeToolTip": "WebApplication1\\Content\\login.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -878,11 +943,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 56,
               "Title": "Site.css",
-              "DocumentMoniker": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\Site.css",
+              "DocumentMoniker": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\Site.css",
               "RelativeDocumentMoniker": "WebApplication1\\Content\\Site.css",
-              "ToolTip": "D:\\Hotel\\WebApplication1\\WebApplication1\\Content\\Site.css",
+              "ToolTip": "D:\\KTPMUD\\Hotel-management-system-main\\WebApplication1\\WebApplication1\\Content\\Site.css",
               "RelativeToolTip": "WebApplication1\\Content\\Site.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",

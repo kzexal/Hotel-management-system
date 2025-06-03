@@ -21,18 +21,17 @@ namespace WebApplication1.Controllers
                 return RedirectToAction("Login", "Account", new { returnUrl = Request.RawUrl });
             }
 
-            // Lấy danh sách khoảng ngày đã được đặt (CheckIn -> CheckOut)
+         
             var bookings = db.RoomBooked
                 .Where(rb => rb.RoomId == roomId)
                 .Join(db.Bookings, rb => rb.BookingId, b => b.BookingId, (rb, b) => new { b.CheckInDate, b.CheckOutDate })
-                .ToList(); // Chạy EF tại đây → sau đó xử lý bằng LINQ to Objects
+                .ToList(); 
 
-            // Duyệt từng booking, cộng thêm 1 ngày trước và 1 ngày sau (ngày cách ly)
             var unavailableDates = new HashSet<string>();
             foreach (var booking in bookings)
             {
                 var start = booking.CheckInDate.AddDays(-1);
-                var end = booking.CheckOutDate; // không +1 vì CheckOut không còn ở
+                var end = booking.CheckOutDate; 
 
                 for (var date = start; date <= end; date = date.AddDays(1))
                 {
