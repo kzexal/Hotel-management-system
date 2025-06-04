@@ -10,9 +10,9 @@ CREATE SCHEMA Bookings;
 GO
 
 CREATE TABLE Authentication.Login (
+	LoginID INT IDENTITY(1,1),
 	Password NVARCHAR (30) NOT NULL,
 	Username NVARCHAR(30) NOT NULL ,
-	LoginID INT NOT NULL,
 	NewUser CHAR(5) CHECK (NewUser IN ('Yes', 'No')) DEFAULT 'Yes',
 	TypeAccount INT,
 	CONSTRAINT PK_Username PRIMARY KEY (LoginID),
@@ -42,7 +42,13 @@ CREATE TABLE HotelService.Services (
 	ServiceCost INT NOT NULL,
 	CONSTRAINT PK_ServicesId PRIMARY KEY (ServiceId),
 );
-
+INSERT INTO HotelService.Services (ServiceName, ServiceDescription, ServiceCost)
+VALUES 
+('Laundry', 'Washing and ironing clothes', 5),           
+('Airport Pickup', 'Pickup service from airport', 20),   
+('Spa', 'Relaxing body massage', 30),                    
+('Breakfast', 'Buffet breakfast', 10),                   
+('Room Cleaning', 'Daily room cleaning service', 3);  
 CREATE TABLE Bookings.Booking(
 	BookingId INT IDENTITY (1,1),
 	BookingDate DATE NOT NULL,
@@ -136,7 +142,11 @@ ALTER TABLE Bookings.Payments ADD HotelId INT NOT NULL;
 ALTER TABLE Bookings.Payments ADD CONSTRAINT FK_HotelId_Payments FOREIGN KEY (HotelId)
 	REFERENCES Hotels.Hotel(HotelId) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-
+ALTER TABLE Hotels.Guests
+ADD UserId INT;
+ALTER TABLE Hotels.Guests
+ADD CONSTRAINT FK_Guests_Login
+FOREIGN KEY (UserId) REFERENCES Authentication.Login(LoginId);
 
 
 
