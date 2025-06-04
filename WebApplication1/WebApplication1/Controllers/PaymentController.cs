@@ -9,7 +9,7 @@ namespace WebApplication1.Controllers
     {
         private readonly AppDbContext db = new AppDbContext();
 
-        // Hiển thị form thanh toán
+        // Display the payment form
         public ActionResult ShowPaymentForm(int roomId, DateTime checkin, DateTime checkout, int totalPrice)
         {
             var room = db.Rooms.Find(roomId);
@@ -20,10 +20,10 @@ namespace WebApplication1.Controllers
             ViewBag.CheckOut = checkout;
             ViewBag.TotalPrice = totalPrice;
 
-            return View("~/Views/Booking/Payment.cshtml", room); // View dùng @model Room
+            return View("~/Views/Booking/Payment.cshtml", room); // View uses @model Room
         }
 
-        // Xử lý thanh toán
+        // Handle payment processing
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ProcessPayment(FormCollection form)
@@ -35,14 +35,14 @@ namespace WebApplication1.Controllers
                     !DateTime.TryParse(form["checkin"], out DateTime checkinDate) ||
                     !DateTime.TryParse(form["checkout"], out DateTime checkoutDate))
                 {
-                    TempData["BookingError"] = "Dữ liệu đầu vào không hợp lệ.";
+                    TempData["BookingError"] = "Invalid input data.";
                     return RedirectToAction("PaymentFail");
                 }
 
                 string paymentType = form["PaymentType"];
                 if (string.IsNullOrEmpty(paymentType))
                 {
-                    TempData["BookingError"] = "Vui lòng chọn phương thức thanh toán.";
+                    TempData["BookingError"] = "Please select a payment method.";
                     return RedirectToAction("PaymentFail");
                 }
 
@@ -107,19 +107,19 @@ namespace WebApplication1.Controllers
                 });
                 db.SaveChanges();
 
-                TempData["BookingSuccess"] = $"Đặt phòng và thanh toán thành công! Mã đặt: {booking.BookingId}";
+                TempData["BookingSuccess"] = $"Booking and payment successful! Booking ID: {booking.BookingId}";
                 return RedirectToAction("PaymentSuccess");
             }
             catch (Exception ex)
             {
                 string errorMessage = GetFullErrorMessage(ex);
-                System.Diagnostics.Debug.WriteLine("Lỗi khi thanh toán: " + errorMessage);
-                TempData["BookingError"] = "Đã xảy ra lỗi khi xử lý thanh toán: " + errorMessage;
+                System.Diagnostics.Debug.WriteLine("Error during payment: " + errorMessage);
+                TempData["BookingError"] = "An error occurred while processing the payment: " + errorMessage;
                 return RedirectToAction("PaymentFail");
             }
         }
 
-        // Xử lý thanh toán dịch vụ
+        // Handle service payment
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ProcessServicePayment(int bookingId, string PaymentType, int[] selectedServiceIds)
@@ -129,7 +129,7 @@ namespace WebApplication1.Controllers
                 var booking = db.Bookings.FirstOrDefault(b => b.BookingId == bookingId);
                 if (booking == null || selectedServiceIds == null || selectedServiceIds.Length == 0)
                 {
-                    TempData["ServiceError"] = "Không tìm thấy booking hoặc chưa chọn dịch vụ.";
+                    TempData["ServiceError"] = "Booking not found or no services selected.";
                     return RedirectToAction("UserDashboard", "User");
                 }
 
@@ -144,7 +144,8 @@ namespace WebApplication1.Controllers
                         db.ServicesUsed.Add(new ServicesUsed
                         {
                             BookingId = bookingId,
-                            ServiceId = serviceId
+                            ServiceId = serviceId,
+                            ServiceBookingDate = DateTime.Now,
                         });
                         db.SaveChanges();
                     }
@@ -162,19 +163,19 @@ namespace WebApplication1.Controllers
                 });
                 db.SaveChanges();
 
-                TempData["ServiceSuccess"] = "Dịch vụ đã được thanh toán thành công.";
+                TempData["ServiceSuccess"] = "Service payment was successful.";
             }
             catch (Exception ex)
             {
                 string errorMessage = GetFullErrorMessage(ex);
-                System.Diagnostics.Debug.WriteLine("Lỗi dịch vụ: " + errorMessage);
-                TempData["ServiceError"] = "Lỗi khi xử lý thanh toán dịch vụ: " + errorMessage;
+                System.Diagnostics.Debug.WriteLine("Service payment error: " + errorMessage);
+                TempData["ServiceError"] = "Error while processing service payment: " + errorMessage;
             }
 
             return RedirectToAction("UserDashboard", "User");
         }
 
-        // Trang lỗi
+        // Error page
         public ActionResult PaymentFail()
         {
             ViewBag.Message = TempData["BookingError"];
@@ -187,7 +188,7 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        // Hàm xử lý lỗi chi tiết
+        // Detailed error message handler
         private string GetFullErrorMessage(Exception ex)
         {
             string message = ex.Message;
@@ -208,3 +209,4 @@ namespace WebApplication1.Controllers
         }
     }
 }
+    

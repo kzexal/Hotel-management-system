@@ -15,5 +15,6 @@ namespace WebApplication1.Models
 
         public int ServiceId { get; set; }
         public virtual Service Service { get; set; }
+        public DateTime ServiceBookingDate { get; set; }
     }
 }

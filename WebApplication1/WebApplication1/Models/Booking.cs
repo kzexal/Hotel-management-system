@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System;
+using WebApplication1.Models;
 [Table("Booking", Schema = "Bookings")]
 public class Booking
 {
@@ -31,4 +32,5 @@ public class Booking
 
     // Mối quan hệ 1 booking - nhiều phòng (RoomBooked)
     public virtual ICollection<WebApplication1.Models.RoomBooked> RoomBookings { get; set; }
+    public virtual ICollection<ServicesUsed> ServicesUsed { get; set; }
 }

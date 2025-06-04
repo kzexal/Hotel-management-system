@@ -29,7 +29,10 @@ CREATE TABLE Hotel.Guests(
 	Status NVARCHAR(20) CHECK (Status IN ('Reserved', 'Not Reserved')) NOT NULL DEFAULT 'Not Reserved',
 	CONSTRAINT PK_GuestId PRIMARY KEY (GuestId),
 );
-
+ALTER TABLE Hotels.Guests
+ADD UserId INT;
+ADD CONSTRAINT FK_Guests_Login
+FOREIGN KEY (UserId) REFERENCES Authentication.Login(LoginId);
 GO
 CREATE SCHEMA HotelService;
 GO
@@ -41,7 +44,13 @@ CREATE TABLE HotelService.Services (
 	ServiceCost INT NOT NULL,
 	CONSTRAINT PK_ServicesId PRIMARY KEY (ServiceId),
 );
-
+INSERT INTO HotelService.Services (ServiceName, ServiceDescription, ServiceCost)
+VALUES 
+('Laundry', 'Washing and ironing clothes', 5),           
+('Airport Pickup', 'Pickup service from airport', 20),   
+('Spa', 'Relaxing body massage', 30),                    
+('Breakfast', 'Buffet breakfast', 10),                   
+('Room Cleaning', 'Daily room cleaning service', 3);  
 CREATE TABLE Bookings.Booking(
 	BookingId INT IDENTITY (1,1),
 	BookingDate DATE NOT NULL,

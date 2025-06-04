@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity; // EF6
+using System.Data.Entity; 
 using System.Linq;
 using System.Web.Mvc;
 using WebApplication1.Models;
