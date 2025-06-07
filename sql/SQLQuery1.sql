@@ -28,12 +28,9 @@ CREATE TABLE Hotel.Guests(
 	City NVARCHAR(20) NOT NULL,
 	Zip NVARCHAR(50) NOT NULL,
 	Status NVARCHAR(20) CHECK (Status IN ('Reserved', 'Not Reserved')) NOT NULL DEFAULT 'Not Reserved',
-	CONSTRAINT PK_GuestId PRIMARY KEY (GuestId),
+	CONSTRAINT PK_GuestId PRIMARY KEY (GuestId)
 );
-ALTER TABLE Hotels.Guests
-ADD UserId INT;
-ADD CONSTRAINT FK_Guests_Login
-FOREIGN KEY (UserId) REFERENCES Authentication.Login(LoginId);
+
 GO
 CREATE SCHEMA HotelService;
 GO
@@ -145,9 +142,9 @@ ALTER TABLE Bookings.Payments ADD HotelId INT NOT NULL;
 ALTER TABLE Bookings.Payments ADD CONSTRAINT FK_HotelId_Payments FOREIGN KEY (HotelId)
 	REFERENCES Hotels.Hotel(HotelId) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-ALTER TABLE Hotels.Guests
+ALTER TABLE Hotel.Guests
 ADD UserId INT;
-ALTER TABLE Hotels.Guests
+ALTER TABLE Hotel.Guests
 ADD CONSTRAINT FK_Guests_Login
 FOREIGN KEY (UserId) REFERENCES Authentication.Login(LoginId);
 
