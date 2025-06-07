@@ -14,7 +14,20 @@ namespace WebApplication1.Controllers
         // GET: Admin
         public ActionResult AdminDashBoard()
         {
-                    
+            if (Session["UserId"] == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            int userId = Convert.ToInt32(Session["UserId"]);
+            var user = db.Logins.FirstOrDefault(u => u.LoginId == userId);
+
+          
+            if (user == null || user.TypeAccount != 1) 
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             // Lấy dữ liệu RoomBooked
             var roomBookings = db.RoomBooked
                 .Include(rb => rb.Room)
@@ -109,11 +122,18 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(service).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("AdminDashBoard");
+                try
+                {
+                    db.Entry(service).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return Json(new { success = true });
+                }
+                catch (Exception ex)
+                {
+                    return Json(new { success = false, message = "Error updating service: " + ex.Message });
+                }
             }
-            return View(service);
+            return Json(new { success = false, message = "Invalid model state" });
         }
 
         // POST: Admin/DeleteService
@@ -228,6 +248,7 @@ namespace WebApplication1.Controllers
                     .Include(rb => rb.Room.RoomType)
                     .Include(rb => rb.Booking)
                     .Include(rb => rb.Booking.Guest)
+                    .Include(rb => rb.Booking.ServicesUsed)
                     .FirstOrDefault(rb => rb.Booking.BookingId == id);
 
                 if (roomBooked == null)
@@ -262,7 +283,14 @@ namespace WebApplication1.Controllers
                             roomBooked.Room.RoomType.Name,
                             roomBooked.Room.RoomType.Cost
                         }
-                    }
+                    },
+                   services = roomBooked.Booking.ServicesUsed
+                .Where(su => su.Service != null)
+                .Select(su => new
+                {
+                    ServiceName = su.Service.ServiceName,
+                    Price = su.Service.ServiceCost
+                }).ToList()
                 };
 
                 return Json(result, JsonRequestBehavior.AllowGet);
@@ -296,6 +324,71 @@ namespace WebApplication1.Controllers
             }
         }
 
-        // GET: Admin/GetRoomAvailability
+
+
+        // GET: Admin/GetService
+        public JsonResult GetService(int id)
+        {
+            var service = db.Services.Find(id);
+            if (service == null)
+            {
+                return Json(new { success = false, message = "Service not found" }, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new { 
+                success = true,
+                service = new {
+                    service.ServiceId,
+                    service.ServiceName,
+                    service.ServiceDescription,
+                    service.ServiceCost
+                }
+            }, JsonRequestBehavior.AllowGet);
+        }
+       // GET: Admin/GetRoom
+        public JsonResult GetRoom(int id)
+        {
+            var room = db.Rooms.Include(r => r.RoomType).FirstOrDefault(r => r.RoomId == id);
+            if (room == null)
+            {
+                return Json(new { success = false, message = "Room not found" }, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new
+            {
+                success = true,
+                room = new
+                {
+                    room.RoomId,
+                    room.RoomNumber,
+                    room.RoomTypeId,
+                    RoomTypeName = room.RoomType.Name,
+                    room.Image,
+                    room.Available
+                }
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        // POST: Admin/EditRoom
+        [HttpPost]
+        public ActionResult EditRoom(Room room)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    db.Entry(room).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return Json(new { success = true });
+                }
+                catch (Exception ex)
+                {
+                    return Json(new { success = false, message = "Error updating room: " + ex.Message });
+                }
+            }
+            return Json(new { success = false, message = "Invalid model state" });
+        }
+
+      
     }
 }

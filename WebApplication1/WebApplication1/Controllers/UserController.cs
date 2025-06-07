@@ -20,8 +20,14 @@ namespace WebApplication1.Controllers
             }
 
             int userId = Convert.ToInt32(Session["UserId"]);
+            var user = db.Logins.FirstOrDefault(u => u.LoginId == userId);
 
-           
+
+            if (user == null || user.TypeAccount != 0)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var roomBookings = db.RoomBooked
                 .Include(rb => rb.Room.RoomType)
                 .Include(rb => rb.Booking.Guest)
