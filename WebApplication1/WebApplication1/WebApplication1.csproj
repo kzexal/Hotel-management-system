@@ -141,6 +141,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
@@ -163,10 +164,10 @@
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\ServicesUsed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="Views\DashBoard\AdminDashBoard.cshtml" />
-    <Content Include="Content\admin-dashboard.css" />
+    <Content Include="Content\AdminDashBoard.css" />
     <Content Include="Content\image\favicon.png" />
     <Content Include="Content\UserDashBoard.css" />
+    <Content Include="Views\Admin\AdminDashBoard.cshtml" />
     <None Include="Views\Shared\DebugInfo.cshtml" />
     <None Include="Views\Booking\BookingPage.cshtml" />
     <Content Include="Content\booking-page.css" />

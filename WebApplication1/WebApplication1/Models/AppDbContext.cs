@@ -15,6 +15,7 @@ namespace WebApplication1.Models
         public DbSet<RoomBooked> RoomBooked { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<ServicesUsed> ServicesUsed { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Login>().ToTable("Login", "Authentication");

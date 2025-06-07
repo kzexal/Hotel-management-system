@@ -20,11 +20,7 @@ namespace WebApplication1.Controllers
             
             UpdateRoomStatusByToday();
 
-            var rooms = db.Rooms
-                          .Include(r => r.RoomType)
-                          .Where(r => r.Available == "Yes")
-                          .Take(15)
-                          .ToList();
+            var rooms = db.Rooms.ToList();
 
             return View(rooms);
         }

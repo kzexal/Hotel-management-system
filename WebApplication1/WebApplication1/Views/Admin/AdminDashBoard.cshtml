@@ -1,0 +1,777 @@
+@model IEnumerable<WebApplication1.Models.RoomBooked>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Admin Dashboard";
+    ViewBag.HideNavbar = true;
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+<link href="~/Content/AdminDashboard.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="@Url.Action("Index", "Home")" class="brand-container">
+            <img src="~/Content/image/favicon.png" alt="HMS Logo" class="brand-logo" />
+            <h1>HMS Admin</h1>
+        </a>
+        <nav class="nav flex-column">
+            <a class="nav-link active" data-bs-toggle="tab" href="#overview-tab-pane">
+                <i class="bi bi-speedometer2"></i> Overview
+            </a>
+            <a class="nav-link" data-bs-toggle="tab" href="#rooms-tab-pane">
+                <i class="bi bi-house-door"></i> Rooms
+            </a>
+            <a class="nav-link" data-bs-toggle="tab" href="#bookings-tab-pane">
+                <i class="bi bi-calendar-check"></i> Bookings
+            </a>
+            <a class="nav-link" data-bs-toggle="tab" href="#services-tab-pane">
+                <i class="bi bi-bell"></i> Services
+            </a>
+            <a class="nav-link" data-bs-toggle="tab" href="#users-tab-pane">
+                <i class="bi bi-people"></i> Users
+            </a>
+            <a class="nav-link" data-bs-toggle="tab" href="#reports-tab-pane">
+                <i class="bi bi-graph-up"></i> Reports
+            </a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content-wrapper">
+        <div class="top-bar">
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @TempData["Success"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @TempData["Error"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+            <div class="user-box">
+                <div class="user-greeting">
+                    <p class="mb-0">Welcome back, Admin</p>
+                    <small class="text-muted">Manage your hotel system</small>
+                </div>
+                <div class="user-profile">
+                    <div class="user-avatar-wrapper">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.9_MptOLxjJEGSGukPt9FWQHaHa" alt="Admin" class="user-avatar" />
+                        <div class="user-info">
+                            <div class="user-name">@Session["Username"]</div>
+                            <div class="user-role">Administrator</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content p-4">
+            <!-- Overview Tab -->
+            <div class="tab-pane fade show active" id="overview-tab-pane">
+                <h4 class="mb-4 fw-bold"><i class="bi bi-speedometer2"></i> Dashboard Overview</h4>
+
+                <!-- Statistics Cards -->
+                <div class="row g-4">
+                    <div class="col-md-3">
+                        <div class="stat-card bg-primary bg-gradient text-white">
+                            <div class="stat-icon">
+                                <i class="bi bi-house-door"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>@ViewBag.TotalRooms</h3>
+                                <p>Total Rooms</p>
+                            </div>
+                            <div class="stat-link">
+                                <a href="#rooms-tab-pane" data-bs-toggle="tab" class="text-white">View Details <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card bg-success bg-gradient text-white">
+                            <div class="stat-icon">
+                                <i class="bi bi-calendar-check"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>@ViewBag.TotalBookings</h3>
+                                <p>Active Bookings</p>
+                            </div>
+                            <div class="stat-link">
+                                <a href="#bookings-tab-pane" data-bs-toggle="tab" class="text-white">View Details <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card bg-warning bg-gradient text-white">
+                            <div class="stat-icon">
+                                <i class="bi bi-bell"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>@ViewBag.TotalServices</h3>
+                                <p>Available Services</p>
+                            </div>
+                            <div class="stat-link">
+                                <a href="#services-tab-pane" data-bs-toggle="tab" class="text-white">View Details <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card bg-danger bg-gradient text-white">
+                            <div class="stat-icon">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>@ViewBag.TotalUsers</h3>
+                                <p>Registered Users</p>
+                            </div>
+                            <div class="stat-link">
+                                <a href="#users-tab-pane" data-bs-toggle="tab" class="text-white">View Details <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions mt-5">
+                    <h5 class="mb-3">Quick Actions</h5>
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <a href="#" class="action-card">
+                                <i class="bi bi-plus-circle"></i>
+                                <span>Add New Room</span>
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="#" class="action-card">
+                                <i class="bi bi-calendar-plus"></i>
+                                <span>Create Booking</span>
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="#" class="action-card">
+                                <i class="bi bi-gear"></i>
+                                <span>Manage Services</span>
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="#" class="action-card">
+                                <i class="bi bi-person-plus"></i>
+                                <span>Add User</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rooms Tab -->
+            <div class="tab-pane fade" id="rooms-tab-pane">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="fw-bold"><i class="bi bi-house-door"></i> Room Management</h4>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRoomModal">
+                        <i class="bi bi-plus-lg"></i> Add New Room
+                    </button>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Room No.</th>
+                                        <th>Image</th>
+                                        <th>Type</th>
+                                        <th>Current Booking</th>
+                                        <th>Status</th>
+                                        <th>Price</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var room in ViewBag.Rooms)
+                                    {
+                                        var currentBooking = Model.FirstOrDefault(rb => rb.RoomId == room.RoomId && rb.Room.Available == "No");
+
+                                        <tr data-room-id="@room.RoomId">
+                                            <td>@room.RoomNumber</td>
+                                            <td>
+                                                <img src="@room.Image" alt="Room @room.RoomNumber" class="room-thumbnail" style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px;">
+                                            </td>
+                                            <td>@room.RoomType.Name</td>
+                                            <td class="booking-info">
+                                                @if (currentBooking != null)
+                                                {
+                                                    <div>
+                                                        <small class="text-muted">Booked by:</small>
+                                                        <div>@currentBooking.Booking.Guest.GuestFirstName @currentBooking.Booking.Guest.GuestLastName</div>
+                                                        <small class="text-muted">Until: @currentBooking.Booking.CheckOutDate.ToString("yyyy-MM-dd")</small>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <span class="text-muted">No current booking</span>
+                                                }
+                                            </td>
+                                            <td class="status-cell">
+                                                @if (currentBooking != null)
+                                                {
+                                                    <span class="badge bg-danger">Occupied</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge bg-success">Available</span>
+                                                }
+                                            </td>
+                                            <td>$@room.RoomType.Cost</td>
+                                            <td>
+                                                <a href="@Url.Action("Edit", "Room", new { id = room.RoomId })" class="btn btn-sm btn-outline-primary me-1">
+                                                    <i class="bi bi-pencil"></i>
+                                                </a>
+                                                <a href="@Url.Action("Delete", "Room", new { id = room.RoomId })" class="btn btn-sm btn-outline-danger">
+                                                    <i class="bi bi-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bookings Tab -->
+            <div class="tab-pane fade" id="bookings-tab-pane">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="fw-bold"><i class="bi bi-calendar-check"></i> Booking Management</h4>
+                    <button class="btn btn-primary" onclick="location.href='@Url.Action("Create", "Booking")'">
+                        <i class="bi bi-plus-lg"></i> Create Booking
+                    </button>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Booking ID</th>
+                                        <th>Guest</th>
+                                        <th>Room</th>
+                                        <th>Check-in</th>
+                                        <th>Check-out</th>
+                                        <th>Total Amount</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var roomBooked in Model)
+                                    {
+                                        <tr>
+                                            <td>#@roomBooked.BookingId</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div>
+                                                        <div class="fw-bold">@roomBooked.Booking.Guest.GuestFirstName @roomBooked.Booking.Guest.GuestLastName</div>
+                                                        <small class="text-muted">@roomBooked.Booking.Guest.GuestEmailAddress</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                Room @roomBooked.Room.RoomNumber
+                                                <br />
+                                                <small class="text-muted">@roomBooked.Room.RoomType.Name</small>
+                                            </td>
+                                            <td>@roomBooked.Booking.CheckInDate.ToString("yyyy-MM-dd")</td>
+                                            <td>@roomBooked.Booking.CheckOutDate.ToString("yyyy-MM-dd")</td>
+                                            <td>$@roomBooked.Booking.BookingAmount</td>
+                                            <td>
+                                                <span class="badge bg-@(roomBooked.Booking.Status == "Confirmed" ? "success" : "warning text-dark")">
+                                                    @roomBooked.Booking.Status
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <a href="#" class="btn btn-sm btn-outline-primary me-1 booking-details-btn" data-booking-id="@roomBooked.Booking.BookingId">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-sm btn-outline-danger" onclick="cancelBooking(@roomBooked.BookingId)">
+                                                    <i class="bi bi-x-circle"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Tab -->
+            <div class="tab-pane fade" id="services-tab-pane">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="fw-bold"><i class="bi bi-bell"></i> Service Management</h4>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addServiceModal">
+                        <i class="bi bi-plus-lg"></i> Add New Service
+                    </button>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Service ID</th>
+                                        <th>Service Name</th>
+                                        <th>Description</th>
+                                        <th>Price</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var service in ViewBag.Services)
+                                    {
+                                        <tr>
+                                            <td>#@service.ServiceId</td>
+                                            <td>@service.ServiceName</td>
+                                            <td>@service.ServiceDescription</td>
+                                            <td>$@service.ServiceCost</td>
+                                            <td>
+                                                <span class="badge bg-success">Active</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary me-1" onclick="editService(@service.ServiceId)">
+                                                    <i class="bi bi-pencil"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger" onclick="deleteService(@service.ServiceId)">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Users Tab -->
+            <div class="tab-pane fade" id="users-tab-pane">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="fw-bold"><i class="bi bi-people"></i> User Management</h4>
+                    <button class="btn btn-primary">
+                        <i class="bi bi-plus-lg"></i> Add New User
+                    </button>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>UserId</th>
+                                        <th>Username</th>
+                                        <th>Role</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var user in ViewBag.Users)
+                                    {
+                                        <tr>
+                                            <td>@user.LoginId</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div>@user.Username</div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <span class="badge bg-primary">User</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-success">Active</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary me-1">
+                                                    <i class="bi bi-pencil"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reports Tab -->
+            <div class="tab-pane fade" id="reports-tab-pane">
+                <h4 class="fw-bold mb-4"><i class="bi bi-graph-up"></i> Reports & Analytics</h4>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Revenue Overview</h5>
+                            </div>
+                            <div class="card-body">
+                                <!-- Revenue chart will be added here -->
+                                <div class="chart-placeholder">
+                                    Revenue Chart
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Occupancy Rate</h5>
+                            </div>
+                            <div class="card-body">
+                                <!-- Occupancy chart will be added here -->
+                                <div class="chart-placeholder">
+                                    Occupancy Chart
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Room Modal -->
+<div class="modal fade" id="addRoomModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="@Url.Action("CreateRoom", "Admin")" method="post" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Room</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Room Number</label>
+                        <input type="text" class="form-control" name="RoomNumber" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Room Type</label>
+                        <select class="form-select" name="RoomTypeId" required>
+                            @if (ViewBag.RoomType != null && ViewBag.RoomType.Count > 0)
+                            {
+                                foreach (var roomType in ViewBag.RoomType)
+                                {
+                                    <option value="@roomType.RoomTypeId">@roomType.Name</option>
+                                }
+                            }
+                            else
+                            {
+                                <option value="">No room types available</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Room Image URL</label>
+                        <input type="url" class="form-control" name="Image" placeholder="Enter image URL" required>
+                        <small class="text-muted">Enter a direct link to the room image (e.g., https://example.com/image.jpg)</small>
+                    </div>
+                    <input type="hidden" name="Available" value="Yes">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Room</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Add Service Modal -->
+<div class="modal fade" id="addServiceModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="@Url.Action("CreateService", "Admin")" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Service Name</label>
+                        <input type="text" class="form-control" name="ServiceName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <input type="text" class="form-control" name="ServiceDescription" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Price</label>
+                        <input type="number" class="form-control" name="ServiceCost" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Service</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Booking Details Modal -->
+<div class="modal fade" id="bookingDetailsModal" tabindex="-1" aria-labelledby="bookingDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="bookingDetailsModalLabel"><i class="bi bi-info-circle"></i> Booking Details</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-4">
+                    <!-- Guest Info -->
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-header bg-primary text-white">
+                                <h6 class="card-title mb-0"><i class="bi bi-person-circle"></i> Guest Information</h6>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-unstyled mb-0">
+                                    <li class="mb-3"><i class="bi bi-person text-primary"></i> <strong>Name:</strong> <span id="guestName" class="ms-2">Loading...</span></li>
+                                    <li class="mb-3"><i class="bi bi-envelope text-primary"></i> <strong>Email:</strong> <span id="guestEmail" class="ms-2">Loading...</span></li>
+                                    <li><i class="bi bi-telephone text-primary"></i> <strong>Phone:</strong> <span id="guestPhone" class="ms-2">Loading...</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Room Info -->
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-header bg-success text-white">
+                                <h6 class="card-title mb-0"><i class="bi bi-house-door"></i> Room Details</h6>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-unstyled mb-0">
+                                    <li class="mb-3"><i class="bi bi-door-closed text-success"></i> <strong>Room Number:</strong> <span id="roomNumber" class="ms-2">Loading...</span></li>
+                                    <li class="mb-3"><i class="bi bi-tag text-success"></i> <strong>Room Type:</strong> <span id="roomType" class="ms-2">Loading...</span></li>
+                                    <li><i class="bi bi-currency-dollar text-success"></i> <strong>Price:</strong> <span id="roomPrice" class="ms-2">Loading...</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking Info -->
+                    <div class="col-12">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-info text-white">
+                                <h6 class="card-title mb-0"><i class="bi bi-calendar-check"></i> Booking Information</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="mb-3"><i class="bi bi-hash text-info"></i> <strong>Booking ID:</strong> <span id="bookingId" class="ms-2">Loading...</span></li>
+                                            <li class="mb-3"><i class="bi bi-calendar text-info"></i> <strong>Booking Date:</strong> <span id="bookingDate" class="ms-2">Loading...</span></li>
+                                            <li class="mb-3"><i class="bi bi-calendar-event text-info"></i> <strong>Check-in:</strong> <span id="checkInDate" class="ms-2">Loading...</span></li>
+                                            <li><i class="bi bi-calendar-event-fill text-info"></i> <strong>Check-out:</strong> <span id="checkOutDate" class="ms-2">Loading...</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="mb-3"><i class="bi bi-moon-stars text-info"></i> <strong>Total Days:</strong> <span id="totalDays" class="ms-2">Loading...</span></li>
+                                            <li class="mb-3"><i class="bi bi-cash text-info"></i> <strong>Total Amount:</strong> <span id="totalAmount" class="ms-2">Loading...</span></li>
+                                            <li><i class="bi bi-check-circle text-info"></i> <strong>Status:</strong> <span id="bookingStatus" class="ms-2">Loading...</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="bi bi-x-circle"></i> Close
+                </button>
+                <button type="button" class="btn btn-danger" id="cancelBookingBtn">
+                    <i class="bi bi-trash"></i> Cancel Booking
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function showBookingDetails(bookingId) {
+    if (!bookingId || isNaN(bookingId)) {
+        alert("Invalid booking ID.");
+        return;
+    }
+
+    $('#bookingDetailsModal').modal('show');
+    $('#guestName, #guestEmail, #guestPhone, #roomNumber, #roomType, #roomPrice, #bookingId, #bookingDate, #checkInDate, #checkOutDate, #totalDays, #totalAmount, #bookingStatus').text('Loading...');
+
+    $.ajax({
+        url: '@Url.Action("GetBookingDetails", "Admin")',
+        type: 'GET',
+        data: { id: bookingId },
+        success: function (response) {
+            console.log('Response:', response);
+
+            if (!response || response.success === false) {
+                alert(response?.message || "Booking not found.");
+                $('#bookingDetailsModal').modal('hide');
+                return;
+            }
+
+            try {
+                // Guest Information
+                const guest = response.guest || {};
+                const guestName = `${guest.GuestFirstName || ''} ${guest.GuestLastName || ''}`.trim();
+                $('#guestName').text(guestName || 'N/A');
+                $('#guestEmail').text(guest.GuestEmailAddress || 'N/A');
+                $('#guestPhone').text(guest.GuestContactNumber || 'N/A');
+
+                // Room Information
+                const room = response.room || {};
+                $('#roomNumber').text(room.RoomNumber ? `Room ${room.RoomNumber}` : 'N/A');
+
+                // Safe access to room type and cost
+                const roomTypeName = room.RoomType?.Name;
+                const roomTypeCost = room.RoomType?.Cost;
+                
+                $('#roomType').text(roomTypeName || 'N/A');
+                $('#roomPrice').text(roomTypeCost ? `$${roomTypeCost}` : 'N/A');
+
+                // Log for debugging
+                console.log('Room:', room);
+                console.log('Room Type:', room.RoomType);
+                console.log('Room Type Name:', roomTypeName);
+                console.log('Room Type Cost:', roomTypeCost);
+
+                // Booking Information
+                const booking = response.booking || {};
+                $('#bookingId').text(booking.BookingId ? `#${booking.BookingId}` : 'N/A');
+
+                // Parse dates
+                const bookingDate = booking.BookingDate ? new Date(booking.BookingDate) : null;
+                const checkIn = booking.CheckInDate ? new Date(booking.CheckInDate) : null;
+                const checkOut = booking.CheckOutDate ? new Date(booking.CheckOutDate) : null;
+
+                // Format dates
+                const dateOptions = { year: 'numeric', month: '2-digit', day: '2-digit' };
+                $('#bookingDate').text(bookingDate ? bookingDate.toLocaleDateString('en-US', dateOptions) : 'N/A');
+                $('#checkInDate').text(checkIn ? checkIn.toLocaleDateString('en-US', dateOptions) : 'N/A');
+                $('#checkOutDate').text(checkOut ? checkOut.toLocaleDateString('en-US', dateOptions) : 'N/A');
+
+                // Calculate nights
+                if (checkIn && checkOut && checkIn < checkOut) {
+                    const days = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+                    $('#totalDays').text(`${days} ${days === 1 ? 'day' : 'days'}`);
+                } else {
+                    $('#totalDays').text('N/A');
+                }
+
+                // Total Amount
+                $('#totalAmount').text(booking.BookingAmount != null ? `$${booking.BookingAmount}` : 'N/A');
+
+                // Status
+                const status = booking.Status || 'Unknown';
+                const statusClass = status.toLowerCase() === 'checkin' ? 'primary' :
+                                  status.toLowerCase() === 'checkout' ? 'success' : 'warning';
+                $('#bookingStatus').html(`<span class="badge bg-${statusClass}">${status}</span>`);
+
+                // Cancel button
+                const canCancel = status.toLowerCase() === 'checkin';
+                $('#cancelBookingBtn')
+                    .prop('disabled', !canCancel)
+                    .toggleClass('btn-danger', canCancel)
+                    .toggleClass('btn-secondary', !canCancel)
+                    .data('booking-id', booking.BookingId);
+            } catch (err) {
+                console.error("Error processing booking details:", err);
+                alert("Error processing booking details. Please try again.");
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error("AJAX Error:", status, error);
+            alert("Error loading booking details. Please try again.");
+            $('#bookingDetailsModal').modal('hide');
+        }
+    });
+}
+
+
+// Update the booking details link in the bookings table
+$(document).ready(function() {
+    $('.booking-details-btn').click(function(e) {
+        e.preventDefault();
+        const bookingId = $(this).data('booking-id');
+        showBookingDetails(bookingId);
+    });
+
+    // Add handler for cancel booking button
+    $('#cancelBookingBtn').click(function() {
+        const bookingId = $(this).data('booking-id');
+        if (confirm('Are you sure you want to cancel this booking?')) {
+            $.post('@Url.Action("CancelBooking", "Admin")', { id: bookingId })
+            .done(function(result) {
+            if (result.success) {
+            $('#bookingDetailsModal').modal('hide');
+            location.reload();
+            } else {
+            alert(result.message || 'Error cancelling booking');
+            }
+            })
+            .fail(function() {
+            alert('Error cancelling booking. Please try again.');
+            });
+            }
+            });
+            });
+
+            function editService(id) {
+            // Implement edit service logic
+            }
+
+            function deleteService(id) {
+            if (confirm('Are you sure you want to delete this service?')) {
+            $.post('@Url.Action("DeleteService", "Admin")', { id: id }, function() {
+            location.reload();
+            });
+            }
+            }
+
+            function cancelBooking(id) {
+            if (confirm('Are you sure you want to cancel this booking?')) {
+            $.post('@Url.Action("CancelBooking", "Admin")', { id: id }, function(result) {
+            if (result.success) {
+            location.reload();
+            } else {
+            alert(result.message || 'Error cancelling booking');
+            }
+            });
+            }
+            }
+
+          
+
+            </script>

@@ -27,7 +27,18 @@ namespace WebApplication1.Controllers
                 .Include(rb => rb.Booking.Guest)
                 .Where(rb => rb.Booking.Guest.UserId == userId)
                 .ToList();
-
+            foreach (var rb in roomBookings)
+            {
+                if (rb.Booking.Status != "Checkout" && rb.Booking.CheckOutDate < DateTime.Today)
+                {
+                    rb.Booking.Status = "Checkout";
+                }
+            }
+            db.SaveChanges();
+            roomBookings = roomBookings
+        .OrderBy(rb => rb.Booking.Status == "Checkout" ? 1 : 0) 
+        .ThenBy(rb => rb.Booking.CheckInDate)
+        .ToList();
             return View(roomBookings); 
         }
 

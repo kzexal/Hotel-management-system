@@ -12,16 +12,16 @@
 <div class="dashboard-container">
     <!-- Sidebar -->
     <div class="sidebar">
-        <div class="brand-container">
+        <a href="@Url.Action("Index", "Home")" class="brand-container">
             <img src="~/Content/image/favicon.png" alt="HMS Logo" class="brand-logo" />
             <h1>HMS</h1>
-        </div>
+        </a>
         <nav class="nav flex-column">
             <a class="nav-link active" data-bs-toggle="tab" href="#booking-tab-pane">
                 <i class="bi bi-clipboard-check"></i> Bookings
             </a>
             <a class="nav-link" data-bs-toggle="tab" href="#history-tab-pane">
-                <i class="bi bi-clock-history"></i> Service History
+                <i class="bi bi-clock-history"></i> History
             </a>
         </nav>
     </div>
@@ -62,7 +62,8 @@
                     <div class="card-container">
                         @foreach (var rb in Model)
                         {
-                            <div class="card">
+                            var isPast = rb.Booking.CheckOutDate < DateTime.Today;
+                            <div class="card @(isPast ? "past-booking" : "")">
                                 <div class="card-img">
                                     <img src="@rb.Room.Image" alt="Room Image" />
                                 </div>
@@ -70,18 +71,29 @@
                                     <h3>Room @rb.Room.RoomNumber - @rb.Room.RoomType.Name</h3>
                                     <p><i class="bi bi-calendar-check"></i> Check-in: @rb.Booking.CheckInDate.ToString("dd MMM yyyy")</p>
                                     <p><i class="bi bi-calendar-x"></i> Check-out: @rb.Booking.CheckOutDate.ToString("dd MMM yyyy")</p>
-                                    <p><i class="bi bi-info-circle"></i> Status: Booked</p>
+                                    <p>
+                                        <i class="bi bi-info-circle"></i> Status:
+                                        @if (isPast)
+                                        {
+                                            <span class="text-muted">Expired</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-success">Booked</span>
+                                        }
+                                    </p>
                                     <div class="actions">
-                                        <button class="btn btn-primary" onclick="openServiceModal(@rb.Booking.BookingId)">
+                                        <button class="btn btn-primary" onclick="openServiceModal(@rb.Booking.BookingId)" @(isPast ? "disabled" : "")>
                                             <i class="bi bi-plus-circle"></i> Book Service
                                         </button>
-                                        <button class="btn btn-danger">
+                                        <button class="btn btn-danger" @(isPast ? "disabled" : "")>
                                             <i class="bi bi-trash"></i> Delete
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         }
+
                     </div>
                 </div>
             </div>
@@ -125,7 +137,7 @@
                                                 - <span class="text-success">$@s.Service.ServiceCost</span>
                                                 <br />
                                                 <small class="text-muted">
-                                                    <i class="bi bi-calendar-event"></i> Used on: @s.ServiceBookingDate.ToString("dd MMM yyyy")
+                                                    <i class="bi bi-calendar-event"></i> Booked on: @s.ServiceBookingDate.ToString("dd MMM yyyy")
                                                 </small>
                                             </li>
                                         }
