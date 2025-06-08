@@ -34,10 +34,7 @@
                                 <a class="nav-link @(ViewBag.Title == "Home Page" ? "active text-primary fw-semibold" : "")" href="@Url.Action("Index", "Home")">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="@Url.Action("About", "Home")">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="@Url.Action("Contact", "Home")">Contact</a>
+                                <a class="nav-link" href="#footer">About</a>
                             </li>
                             @if (Session["Username"] != null)
                             {

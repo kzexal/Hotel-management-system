@@ -171,6 +171,20 @@
     .footer .copyright {
         font-size: 12px;
     }
+    
+    .footer .contact-info {
+        margin: 15px 0;
+    }
+    
+    .footer .contact-info p {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+    
+    .footer .contact-info i {
+        margin-right: 8px;
+        color: #3252df;
+    }
 
 /* Responsive */
 @media (max-width: 992px) {
