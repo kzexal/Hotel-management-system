@@ -30,12 +30,22 @@ namespace WebApplication1.Controllers
         {
             try
             {
-                if (!int.TryParse(form["roomId"], out int roomId) ||
-                    !int.TryParse(form["totalPrice"], out int totalPrice) ||
-                    !DateTime.TryParse(form["checkin"], out DateTime checkinDate) ||
-                    !DateTime.TryParse(form["checkout"], out DateTime checkoutDate))
+                int roomId = 0;
+                int totalPrice = 0;
+                DateTime checkinDate = DateTime.MinValue;
+                DateTime checkoutDate = DateTime.MinValue;
+
+                if (!int.TryParse(form["roomId"], out roomId) ||
+                    !int.TryParse(form["totalPrice"], out totalPrice) ||
+                    !DateTime.TryParse(form["checkin"], out checkinDate) ||
+                    !DateTime.TryParse(form["checkout"], out checkoutDate))
                 {
                     TempData["BookingError"] = "Invalid input data.";
+                    // Store room information in TempData
+                    TempData["RoomId"] = form["roomId"];
+                    TempData["BookingCheckIn"] = checkinDate;
+                    TempData["BookingCheckOut"] = checkoutDate;
+                    TempData["BookingTotal"] = totalPrice;
                     return RedirectToAction("PaymentFail");
                 }
 
@@ -52,26 +62,27 @@ namespace WebApplication1.Controllers
                 string lastName = form["GuestLastName"];
                 string street = form["Street"];
                 string city = form["City"];
-                string zip = form["Zip"];
+                string guestId = form["GuestId"];
+                
+                if (string.IsNullOrEmpty(guestId))
+                {
+                    TempData["BookingError"] = "CCCD không được để trống.";
+                    return RedirectToAction("PaymentFail");
+                }
 
-                var guest = db.Guests.FirstOrDefault(g =>
-                    g.GuestEmailAddress == email &&
-                    g.GuestContactNumber == contact &&
-                    g.GuestFirstName == firstName &&
-                    g.GuestLastName == lastName
-                );
+                var guest = db.Guests.FirstOrDefault(g => g.GuestId == guestId);
 
                 if (guest == null)
                 {
                     guest = new Guest
                     {
+                        GuestId = guestId,
                         GuestFirstName = firstName,
                         GuestLastName = lastName,
                         GuestEmailAddress = email,
                         GuestContactNumber = contact,
                         Street = street,
                         City = city,
-                        Zip = zip,
                         Status = "Reserved",
                         UserId = Session["UserId"] != null ? Convert.ToInt32(Session["UserId"]) : (int?)null
                     };
@@ -145,7 +156,7 @@ namespace WebApplication1.Controllers
                         {
                             BookingId = bookingId,
                             ServiceId = serviceId,
-                            ServiceBookingDate = DateTime.Now,
+                            ServiceBookingDate = DateTime.Now
                         });
                         db.SaveChanges();
                     }
@@ -179,6 +190,15 @@ namespace WebApplication1.Controllers
         public ActionResult PaymentFail()
         {
             ViewBag.Message = TempData["BookingError"];
+            
+            // Get room information from TempData
+            if (TempData["RoomId"] != null)
+            {
+                var roomId = Convert.ToInt32(TempData["RoomId"]);
+                var room = db.Rooms.Find(roomId);
+                return View(room);
+            }
+            
             return View();
         }
 

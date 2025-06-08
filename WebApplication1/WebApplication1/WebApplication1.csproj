@@ -143,6 +143,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
@@ -168,6 +169,8 @@
     <Content Include="Content\image\favicon.png" />
     <Content Include="Content\UserDashBoard.css" />
     <Content Include="Views\Admin\AdminDashBoard.cshtml" />
+    <Content Include="Views\DashBoard\AdminDashBoard.cshtml" />
+    <Content Include="Views\DashBoard\UserDashBoard.cshtml" />
     <None Include="Views\Shared\DebugInfo.cshtml" />
     <None Include="Views\Booking\BookingPage.cshtml" />
     <Content Include="Content\booking-page.css" />

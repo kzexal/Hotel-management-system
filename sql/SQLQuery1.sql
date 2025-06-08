@@ -26,11 +26,14 @@ CREATE TABLE Hotel.Guests(
 	GuestContactNumber NVARCHAR (15) NOT NULL,
 	Street NVARCHAR(50) NOT NULL,
 	City NVARCHAR(20) NOT NULL,
-	Zip NVARCHAR(50) NOT NULL,
 	Status NVARCHAR(20) CHECK (Status IN ('Reserved', 'Not Reserved')) NOT NULL DEFAULT 'Not Reserved',
 	CONSTRAINT PK_GuestId PRIMARY KEY (GuestId)
 );
-
+ALTER TABLE Hotel.Guests
+ADD UserId INT;
+ALTER TABLE Hotel.Guests
+ADD CONSTRAINT FK_Guests_Login
+FOREIGN KEY (UserId) REFERENCES Authentication.Login(LoginId);
 GO
 CREATE SCHEMA HotelService;
 GO
@@ -67,6 +70,7 @@ CREATE TABLE HotelService.ServicesUsed (
 	ServicesUserId INT IDENTITY (1,1),
 	ServiceId INT,
 	BookingId INT NOT NULL,
+	ServiceBookingDate DATETIME NOT NULL DEFAULT GETDATE(),
 	CONSTRAINT FK_ServiceId_ServicesUsed FOREIGN KEY (ServiceId)
 	REFERENCES HotelService.Services(ServiceId) ON DELETE CASCADE ON UPDATE NO ACTION,
 	CONSTRAINT FK_BookingId_ServicesUsed FOREIGN KEY (BookingId)
@@ -137,16 +141,12 @@ DROP TABLE Bookings.Payments;
 ALTER TABLE Bookings.Payments DROP CONSTRAINT FK_BookingId_Payments;
 ALTER TABLE Bookings.Payments ADD CONSTRAINT FK_BookingId_Payments FOREIGN KEY(BookingId)
 	REFERENCES Bookings.Booking(BookingId) ON DELETE NO ACTION ON UPDATE NO ACTION;
+	INSERT INTO Authentication.Login (Password, Username, TypeAccount)
+VALUES (N'123', N'khanh', 0);
+INSERT INTO Authentication.Login (Password, Username, TypeAccount)
+VALUES (N'123', N'hung', 1);
 
-ALTER TABLE Bookings.Payments ADD HotelId INT NOT NULL;
-ALTER TABLE Bookings.Payments ADD CONSTRAINT FK_HotelId_Payments FOREIGN KEY (HotelId)
-	REFERENCES Hotels.Hotel(HotelId) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-ALTER TABLE Hotel.Guests
-ADD UserId INT;
-ALTER TABLE Hotel.Guests
-ADD CONSTRAINT FK_Guests_Login
-FOREIGN KEY (UserId) REFERENCES Authentication.Login(LoginId);
 
 
 

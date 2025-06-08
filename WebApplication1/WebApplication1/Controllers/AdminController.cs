@@ -11,6 +11,7 @@ namespace WebApplication1.Controllers
     public class AdminController : Controller
     {
         private readonly AppDbContext db = new AppDbContext();
+
         // GET: Admin
         public ActionResult AdminDashBoard()
         {
@@ -22,8 +23,7 @@ namespace WebApplication1.Controllers
             int userId = Convert.ToInt32(Session["UserId"]);
             var user = db.Logins.FirstOrDefault(u => u.LoginId == userId);
 
-          
-            if (user == null || user.TypeAccount != 1) 
+            if (user == null || user.TypeAccount != 1)
             {
                 return RedirectToAction("Index", "Home");
             }
@@ -50,6 +50,7 @@ namespace WebApplication1.Controllers
 
             return View(roomBookings);
         }
+
         // POST: Room/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -218,8 +219,7 @@ namespace WebApplication1.Controllers
                             var serviceUsed = new ServicesUsed
                             {
                                 BookingId = booking.BookingId,
-                                ServiceId = serviceId,
-                                ServiceBookingDate = DateTime.Now
+                                ServiceId = serviceId
                             };
                             db.ServicesUsed.Add(serviceUsed);
                         }
@@ -236,7 +236,6 @@ namespace WebApplication1.Controllers
                 }
             }
         }
-
 
         // GET: Admin/GetBookingDetails
         public JsonResult GetBookingDetails(int id)
@@ -284,7 +283,7 @@ namespace WebApplication1.Controllers
                             roomBooked.Room.RoomType.Cost
                         }
                     },
-                   services = roomBooked.Booking.ServicesUsed
+                    services = roomBooked.Booking.ServicesUsed
                 .Where(su => su.Service != null)
                 .Select(su => new
                 {
@@ -300,7 +299,6 @@ namespace WebApplication1.Controllers
                 return Json(new { success = false, message = "Error: " + ex.Message }, JsonRequestBehavior.AllowGet);
             }
         }
-
 
         // POST: Admin/CancelBooking
         [HttpPost]
@@ -324,8 +322,6 @@ namespace WebApplication1.Controllers
             }
         }
 
-
-
         // GET: Admin/GetService
         public JsonResult GetService(int id)
         {
@@ -335,9 +331,11 @@ namespace WebApplication1.Controllers
                 return Json(new { success = false, message = "Service not found" }, JsonRequestBehavior.AllowGet);
             }
 
-            return Json(new { 
+            return Json(new
+            {
                 success = true,
-                service = new {
+                service = new
+                {
                     service.ServiceId,
                     service.ServiceName,
                     service.ServiceDescription,
@@ -345,7 +343,8 @@ namespace WebApplication1.Controllers
                 }
             }, JsonRequestBehavior.AllowGet);
         }
-       // GET: Admin/GetRoom
+
+        // GET: Admin/GetRoom
         public JsonResult GetRoom(int id)
         {
             var room = db.Rooms.Include(r => r.RoomType).FirstOrDefault(r => r.RoomId == id);
@@ -388,7 +387,5 @@ namespace WebApplication1.Controllers
             }
             return Json(new { success = false, message = "Invalid model state" });
         }
-
-      
     }
 }

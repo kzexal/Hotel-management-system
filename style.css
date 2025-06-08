@@ -655,28 +655,27 @@
 }
 
 .home-page .HMS {
-  position: absolute;
-  top: 20px;
-  left: 150px;
+  position: relative;
+  display: flex;
+  align-items: center;
   font-family: "Poppins", Helvetica;
   font-weight: 700;
   color: #3252df;  
   font-size: 28px;
-  letter-spacing: 0;
-  line-height: normal;
 }
-.home-page .HMS::before {
-  content: "";
-  position: absolute;
-  left: -35px;
-  display: inline-block;
+
+.brand-logo {
   width: 30px;
   height: 30px;
-  background-image: url("./image/Picture2.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  vertical-align: middle;
+  margin-right: 10px;
+  object-fit: contain;
 }
+
+.wraper-icon {
+  display: flex;
+  align-items: center;
+}
+
 .home-page .text-wrapper-13 {
   color: #3252df;
 }
@@ -758,7 +757,7 @@
   display: inline-block;
   width: 30px;
   height: 30px;
-  background-image: url("./image/Picture2.png");
+  background-image: url("../WebApplication1/WebApplication1/Content/image/favicon.png");
   background-size: contain;
   background-repeat: no-repeat;
   vertical-align: middle;
@@ -830,6 +829,39 @@
   font-size: 14px;
   letter-spacing: 0;
   line-height: normal;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.nav-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #152c5b;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #3252df;
 }
 
 

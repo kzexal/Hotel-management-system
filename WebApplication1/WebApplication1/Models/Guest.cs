@@ -1,13 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using WebApplication1.Models;
-[Table("Guests", Schema = "Hotels")]
+
+[Table("Guests", Schema = "Hotel")]
 public class Guest
-     
 {
     [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int GuestId { get; set; }
+    public string GuestId { get; set; }
 
     [Required]
     [StringLength(50)]
@@ -37,11 +36,8 @@ public class Guest
 
     [Required]
     [StringLength(20)]
-    public string Zip { get; set; }
-
-    [Required]
-    [StringLength(20)]
     public string Status { get; set; }
+
     public int? UserId { get; set; }
 
     [ForeignKey("UserId")]

@@ -21,7 +21,9 @@
         {
             <header>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm px-4 py-2 custom-navbar">
-                    <a class="navbar-brand fw-bold text-primary" href="@Url.Action("Index", "Home")">HMS</a>
+                    <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="@Url.Action("Index", "Home")">
+                        HMS
+                    </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -30,9 +32,6 @@
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
                                 <a class="nav-link @(ViewBag.Title == "Home Page" ? "active text-primary fw-semibold" : "")" href="@Url.Action("Index", "Home")">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="@Url.Action("Rooms", "Home")">Rooms</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="@Url.Action("About", "Home")">About</a>

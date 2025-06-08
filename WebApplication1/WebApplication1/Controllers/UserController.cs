@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity; 
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using WebApplication1.Models;
@@ -13,7 +13,6 @@ namespace WebApplication1.Controllers
 
         public ActionResult UserDashboard()
         {
-        
             if (Session["UserId"] == null)
             {
                 return RedirectToAction("Login", "Account");
@@ -21,7 +20,6 @@ namespace WebApplication1.Controllers
 
             int userId = Convert.ToInt32(Session["UserId"]);
             var user = db.Logins.FirstOrDefault(u => u.LoginId == userId);
-
 
             if (user == null || user.TypeAccount != 0)
             {
@@ -42,10 +40,10 @@ namespace WebApplication1.Controllers
             }
             db.SaveChanges();
             roomBookings = roomBookings
-        .OrderBy(rb => rb.Booking.Status == "Checkout" ? 1 : 0) 
+        .OrderBy(rb => rb.Booking.Status == "Checkout" ? 1 : 0)
         .ThenBy(rb => rb.Booking.CheckInDate)
         .ToList();
-            return View(roomBookings); 
+            return View(roomBookings);
         }
 
         protected override void Dispose(bool disposing)

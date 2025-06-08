@@ -4,7 +4,9 @@ namespace WebApplication1.Models
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext() : base("HotelDbConnection") { }
+        public AppDbContext() : base("HotelDbConnection")
+        {
+        }
 
         public DbSet<Room> Rooms { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
@@ -24,7 +26,7 @@ namespace WebApplication1.Models
             modelBuilder.Entity<RoomBooked>().ToTable("RoomBooked", "Rooms");
             modelBuilder.Entity<Booking>().ToTable("Booking", "Bookings");
             modelBuilder.Entity<Payment>().ToTable("Payments", "Bookings");
-            modelBuilder.Entity<Guest>().ToTable("Guests", "Hotels");
+            modelBuilder.Entity<Guest>().ToTable("Guests", "Hotel");
             modelBuilder.Entity<Service>().ToTable("Services", "HotelService");
             modelBuilder.Entity<ServicesUsed>().ToTable("ServicesUsed", "HotelService");
 
