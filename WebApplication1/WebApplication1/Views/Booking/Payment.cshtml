@@ -26,6 +26,16 @@
     <h4 class="payment-title">Payment</h4>
     <p class="payment-subtitle">Please fill in your guest information and select a payment method</p>
 
+<<<<<<< HEAD
+=======
+    @if (!string.IsNullOrEmpty(TempData["BookingError"]?.ToString()))
+    {
+        <div class="alert alert-danger mt-3">
+            @TempData["BookingError"]
+        </div>
+    }
+
+>>>>>>> b8825aeab2dcd453c462c0321de4bc1f713010c5
     @using (Html.BeginForm("ProcessPayment", "Payment", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
@@ -60,7 +70,7 @@
                         <input name="GuestContactNumber" class="form-control mb-2" placeholder="Phone Number" required />
                         <input name="Street" class="form-control mb-2" placeholder="Street Address" required />
                         <input name="City" class="form-control mb-2" placeholder="City" required />
-                        <input name="Zip" class="form-control mb-2" placeholder="ZIP Code" required />
+                        <input name="GuestId" type="number" class="form-control mb-2" placeholder="CCCD" required maxlength="12" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
                     </div>
                 </div>
             </div>
@@ -76,14 +86,26 @@
                             <option value="Momo">Momo</option>
                             <option value="VNPay">VNPay</option>
                         </select>
+                        <button type="submit" class="btn btn-primary mt-auto">
+                            <i class="fas fa-credit-card me-2"></i> Process Payment
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Submit Button -->
-        <div class="text-end mt-4">
-            <button type="submit" class="btn btn-success px-4">Confirm & Pay</button>
-        </div>
     }
 </div>
+<<<<<<< HEAD
+=======
+
+@section Scripts {
+    <script>
+        // Xác nhận trước khi thanh toán
+        document.querySelector("form").addEventListener("submit", function (e) {
+            if (!confirm("Bạn có chắc muốn thanh toán và đặt phòng không?")) {
+                e.preventDefault();
+            }
+        });
+    </script>
+}
+>>>>>>> b8825aeab2dcd453c462c0321de4bc1f713010c5

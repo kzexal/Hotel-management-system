@@ -1,8 +1,19 @@
 ﻿using System.ComponentModel.DataAnnotations;
+<<<<<<< HEAD
 
 public class Guest
 {
     public int GuestId { get; set; }
+=======
+using System.ComponentModel.DataAnnotations.Schema;
+using WebApplication1.Models;
+
+[Table("Guests", Schema = "Hotel")]
+public class Guest
+{
+    [Key]
+    public string GuestId { get; set; }
+>>>>>>> b8825aeab2dcd453c462c0321de4bc1f713010c5
 
     [Required]
     [StringLength(50)]
@@ -32,9 +43,14 @@ public class Guest
 
     [Required]
     [StringLength(20)]
-    public string Zip { get; set; }
-
-    [Required]
-    [StringLength(20)]
     public string Status { get; set; }
+<<<<<<< HEAD
 }
+=======
+
+    public int? UserId { get; set; }
+
+    [ForeignKey("UserId")]
+    public virtual Login Login { get; set; }
+}
+>>>>>>> b8825aeab2dcd453c462c0321de4bc1f713010c5

@@ -239,6 +239,23 @@
     height: 45px;
     object-fit: contain;
 }
+
+.brand-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-link:hover {
+    text-decoration: none;
+}
+
+.brand-link h1 {
+    color: #3252df;
+    margin: 0;
+}
+
 .past-booking {
     opacity: 0.6;
     background-color: #f9f9f9;

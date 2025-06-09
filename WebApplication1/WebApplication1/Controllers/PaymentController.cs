@@ -30,12 +30,22 @@ namespace WebApplication1.Controllers
         {
             try
             {
-                if (!int.TryParse(form["roomId"], out int roomId) ||
-                    !int.TryParse(form["totalPrice"], out int totalPrice) ||
-                    !DateTime.TryParse(form["checkin"], out DateTime checkinDate) ||
-                    !DateTime.TryParse(form["checkout"], out DateTime checkoutDate))
+                int roomId = 0;
+                int totalPrice = 0;
+                DateTime checkinDate = DateTime.MinValue;
+                DateTime checkoutDate = DateTime.MinValue;
+
+                if (!int.TryParse(form["roomId"], out roomId) ||
+                    !int.TryParse(form["totalPrice"], out totalPrice) ||
+                    !DateTime.TryParse(form["checkin"], out checkinDate) ||
+                    !DateTime.TryParse(form["checkout"], out checkoutDate))
                 {
                     TempData["BookingError"] = "Invalid input data.";
+                    // Store room information in TempData
+                    TempData["RoomId"] = form["roomId"];
+                    TempData["BookingCheckIn"] = checkinDate;
+                    TempData["BookingCheckOut"] = checkoutDate;
+                    TempData["BookingTotal"] = totalPrice;
                     return RedirectToAction("PaymentFail");
                 }
 
@@ -46,6 +56,7 @@ namespace WebApplication1.Controllers
                     return RedirectToAction("PaymentFail");
                 }
 
+<<<<<<< HEAD
                 // [1] Lưu thông tin Guest
                 var guest = new Guest
                 {
@@ -60,6 +71,41 @@ namespace WebApplication1.Controllers
                 };
                 db.Guests.Add(guest);
                 db.SaveChanges();
+=======
+                string email = form["GuestEmailAddress"];
+                string contact = form["GuestContactNumber"];
+                string firstName = form["GuestFirstName"];
+                string lastName = form["GuestLastName"];
+                string street = form["Street"];
+                string city = form["City"];
+                string guestId = form["GuestId"];
+                
+                if (string.IsNullOrEmpty(guestId))
+                {
+                    TempData["BookingError"] = "CCCD không được để trống.";
+                    return RedirectToAction("PaymentFail");
+                }
+
+                var guest = db.Guests.FirstOrDefault(g => g.GuestId == guestId);
+
+                if (guest == null)
+                {
+                    guest = new Guest
+                    {
+                        GuestId = guestId,
+                        GuestFirstName = firstName,
+                        GuestLastName = lastName,
+                        GuestEmailAddress = email,
+                        GuestContactNumber = contact,
+                        Street = street,
+                        City = city,
+                        Status = "Reserved",
+                        UserId = Session["UserId"] != null ? Convert.ToInt32(Session["UserId"]) : (int?)null
+                    };
+                    db.Guests.Add(guest);
+                    db.SaveChanges();
+                }
+>>>>>>> b8825aeab2dcd453c462c0321de4bc1f713010c5
 
                 // [2] Tạo Booking
                 var booking = new Booking
@@ -109,9 +155,78 @@ namespace WebApplication1.Controllers
             }
         }
 
+<<<<<<< HEAD
+=======
+        // Handle service payment
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ProcessServicePayment(int bookingId, string PaymentType, int[] selectedServiceIds)
+        {
+            try
+            {
+                var booking = db.Bookings.FirstOrDefault(b => b.BookingId == bookingId);
+                if (booking == null || selectedServiceIds == null || selectedServiceIds.Length == 0)
+                {
+                    TempData["ServiceError"] = "Booking not found or no services selected.";
+                    return RedirectToAction("UserDashboard", "User");
+                }
+
+                int totalCost = 0;
+                foreach (var serviceId in selectedServiceIds)
+                {
+                    var service = db.Services.Find(serviceId);
+                    if (service != null)
+                    {
+                        totalCost += service.ServiceCost;
+
+                        db.ServicesUsed.Add(new ServicesUsed
+                        {
+                            BookingId = bookingId,
+                            ServiceId = serviceId,
+                            ServiceBookingDate = DateTime.Now
+                        });
+                        db.SaveChanges();
+                    }
+                }
+
+                booking.BookingAmount += totalCost;
+                db.SaveChanges();
+
+                db.Payments.Add(new Payment
+                {
+                    BookingId = booking.BookingId,
+                    PaymentAmount = totalCost,
+                    PaymentStatus = "1",
+                    PaymentType = PaymentType
+                });
+                db.SaveChanges();
+
+                TempData["ServiceSuccess"] = "Service payment was successful.";
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = GetFullErrorMessage(ex);
+                System.Diagnostics.Debug.WriteLine("Service payment error: " + errorMessage);
+                TempData["ServiceError"] = "Error while processing service payment: " + errorMessage;
+            }
+
+            return RedirectToAction("UserDashboard", "User");
+        }
+
+        // Error page
+>>>>>>> b8825aeab2dcd453c462c0321de4bc1f713010c5
         public ActionResult PaymentFail()
         {
             ViewBag.Message = TempData["BookingError"];
+            
+            // Get room information from TempData
+            if (TempData["RoomId"] != null)
+            {
+                var roomId = Convert.ToInt32(TempData["RoomId"]);
+                var room = db.Rooms.Find(roomId);
+                return View(room);
+            }
+            
             return View();
         }
 

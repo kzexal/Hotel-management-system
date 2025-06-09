@@ -20,7 +20,7 @@ public class Booking
     [Required]
     public int BookingAmount { get; set; }
 
-    public int GuestId { get; set; }
+    public string GuestId { get; set; }
 
     [StringLength(20)]
     public string Status { get; set; }
