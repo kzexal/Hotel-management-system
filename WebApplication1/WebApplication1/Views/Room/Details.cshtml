@@ -35,18 +35,10 @@
             </div>
 
             <div class="room-price">
-                @(Model.RoomType?.Cost)$ <span>per day</span>
+                @(Model.RoomType?.Cost) <span>per day</span>
             </div>
 
-            @if (Session["Username"] != null)
-            {
-                <a href="@Url.Action("BookingPage", "Booking", new { roomId = Model.RoomId })" class="book-now-btn">Book Now</a>
-            }
-            else
-            {
-                <a href="@Url.Action("Login", "Account", new { returnUrl = Request.RawUrl })" class="book-now-btn">Login to Book</a>
-            }
-
+            <a href="@Url.Action("BookingPage", "Booking", new { roomId = Model.RoomId })" class="book-now-btn">Book Now</a>
         </div>
     </div>
 </div>

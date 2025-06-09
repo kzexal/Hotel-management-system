@@ -1,12 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using WebApplication1.Models;
-[Table("Guests", Schema = "Hotels")]
+
 public class Guest
-     
 {
-    [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int GuestId { get; set; }
 
     [Required]
@@ -42,8 +37,4 @@ public class Guest
     [Required]
     [StringLength(20)]
     public string Status { get; set; }
-    public int? UserId { get; set; }
-
-    [ForeignKey("UserId")]
-    public virtual Login Login { get; set; }
 }

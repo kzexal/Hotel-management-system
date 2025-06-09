@@ -30,8 +30,7 @@ namespace WebApplication1.Controllers
             {
                 Session["Username"] = user.Username;
                 Session["TypeAccount"] = user.TypeAccount;
-                Session["UserId"] = user.LoginId;
-                @Session["Role"] = user.TypeAccount;
+
                 return Json(new { success = true, redirectUrl = Url.Action("Index", "Home") });
             }
 

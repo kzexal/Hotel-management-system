@@ -4,8 +4,6 @@
     ViewBag.HideNavbar = true;
 }
 
-<!-- Flatpickr Styles -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <link rel="stylesheet" href="@Url.Content("~/Content/booking-page.css")" />
 
 <div class="booking-container">
@@ -39,11 +37,11 @@
                 <div class="date-inputs">
                     <div class="date-field">
                         <label for="checkin">Check-in</label>
-                        <input type="text" id="checkin" name="CheckInDate" class="date-picker" />
+                        <input type="date" id="checkin" name="CheckInDate" class="date-picker" min="@DateTime.Today.ToString("yyyy-MM-dd")" />
                     </div>
                     <div class="date-field">
                         <label for="checkout">Check-out</label>
-                        <input type="text" id="checkout" name="CheckOutDate" class="date-picker" />
+                        <input type="date" id="checkout" name="CheckOutDate" class="date-picker" min="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")" />
                     </div>
                 </div>
 
@@ -61,21 +59,16 @@
                 </div>
             }
         </div>
+
     </div>
 </div>
 
-<!-- Flatpickr Script -->
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
-<!-- Unavailable dates từ controller -->
 <script>
-    const unavailableDates = @Html.Raw(Json.Encode(ViewBag.UnavailableDates ?? new List<string>()));
-    const pricePerDay = @(Model.RoomType?.Cost ?? 0);
-
     const checkinInput = document.getElementById("checkin");
     const checkoutInput = document.getElementById("checkout");
     const totalPriceDisplay = document.getElementById("totalPriceDisplay");
     const totalPriceInput = document.getElementById("BookingAmount");
+    const pricePerDay = @(Model.RoomType?.Cost ?? 0);
 
     function calculateTotalPrice() {
         const checkinDate = new Date(checkinInput.value);
@@ -101,50 +94,6 @@
         return true;
     }
 
-    flatpickr("#checkin", {
-        dateFormat: "Y-m-d",
-        disable: unavailableDates,
-        minDate: "today",
-        onChange: function() {
-            calculateTotalPrice();
-        }
-    });
-
-    flatpickr("#checkout", {
-        dateFormat: "Y-m-d",
-        disable: unavailableDates,
-        minDate: "today",
-        onChange: function() {
-            calculateTotalPrice();
-        }
-    });
-    function getFirstUnavailableAfter(dateStr) {
-        const date = new Date(dateStr);
-        const futureDates = unavailableDates
-            .map(d => new Date(d))
-            .filter(d => d > date)
-            .sort((a, b) => a - b);
-        return futureDates.length ? futureDates[0] : null;
-    }
-
-    function validateCheckinCheckoutLogic() {
-        const checkinDate = new Date(checkinInput.value);
-        const checkoutDate = new Date(checkoutInput.value);
-
-        if (!checkinInput.value || !checkoutInput.value) return;
-
-        const nextUnavailable = getFirstUnavailableAfter(checkinInput.value);
-        if (nextUnavailable && checkoutDate >= nextUnavailable) {
-            alert("Ngày check-out phải trước ngày đã có người đặt hoặc cách ly.");
-            checkoutInput.value = "";
-        }
-    }
-
-    checkinInput.addEventListener("change", () => {
-        validateCheckinCheckoutLogic();
-    });
-
-    checkoutInput.addEventListener("change", () => {
-        validateCheckinCheckoutLogic();
-    });
+    checkinInput.addEventListener("change", calculateTotalPrice);
+    checkoutInput.addEventListener("change", calculateTotalPrice);
 </script>

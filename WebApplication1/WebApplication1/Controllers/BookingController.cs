@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
 using WebApplication1.Models;
 
@@ -12,38 +10,15 @@ namespace WebApplication1.Controllers
 
         // [1] Hiển thị trang đặt phòng
         public ActionResult BookingPage(int roomId)
-        {  
+        {
             var room = db.Rooms.Find(roomId);
             if (room == null)
                 return HttpNotFound();
-            if (Session["Username"] == null)
-            {
-                return RedirectToAction("Login", "Account", new { returnUrl = Request.RawUrl });
-            }
 
-         
-            var bookings = db.RoomBooked
-                .Where(rb => rb.RoomId == roomId)
-                .Join(db.Bookings, rb => rb.BookingId, b => b.BookingId, (rb, b) => new { b.CheckInDate, b.CheckOutDate })
-                .ToList(); 
-
-            var unavailableDates = new HashSet<string>();
-            foreach (var booking in bookings)
-            {
-                var start = booking.CheckInDate.AddDays(-1);
-                var end = booking.CheckOutDate; 
-
-                for (var date = start; date <= end; date = date.AddDays(1))
-                {
-                    unavailableDates.Add(date.ToString("yyyy-MM-dd"));
-                }
-            }
-
-            ViewBag.UnavailableDates = unavailableDates.ToList();
-            return View(room); // View: BookingPage.cshtml
+            return View(room); // View nhận @model Room
         }
 
-        // [2] Nhận dữ liệu từ form và chuyển sang trang thanh toán
+        // [2] Lưu dữ liệu booking tạm thời rồi chuyển đến trang thanh toán
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Payment(FormCollection form)
@@ -59,7 +34,7 @@ namespace WebApplication1.Controllers
                     return RedirectToAction("BookingPage", new { roomId });
                 }
 
-                // Lưu thông tin tạm thời qua TempData
+                // Lưu tạm thông tin để sử dụng ở bước thanh toán
                 TempData["RoomId"] = roomId;
                 TempData["BookingCheckIn"] = checkinDate;
                 TempData["BookingCheckOut"] = checkoutDate;
@@ -72,6 +47,7 @@ namespace WebApplication1.Controllers
                     checkout = checkoutDate,
                     totalPrice = totalPrice
                 });
+
             }
             catch (Exception)
             {

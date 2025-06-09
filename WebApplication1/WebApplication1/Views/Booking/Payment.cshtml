@@ -1,5 +1,4 @@
 ﻿@model WebApplication1.Models.Room
-
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <link href="~/Content/payment.css" rel="stylesheet" />
 
@@ -27,14 +26,6 @@
     <h4 class="payment-title">Payment</h4>
     <p class="payment-subtitle">Please fill in your guest information and select a payment method</p>
 
-    @* Hiển thị lỗi nếu có *@
-    @if (TempData["BookingError"] != null)
-    {
-        <div class="alert alert-danger mt-3">
-            @TempData["BookingError"]
-        </div>
-    }
-
     @using (Html.BeginForm("ProcessPayment", "Payment", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
@@ -48,14 +39,11 @@
             <!-- Room Summary -->
             <div class="col-md-4">
                 <div class="card h-100 shadow-sm">
-                    <img src="@(!string.IsNullOrEmpty(Model.Image) ? Model.Image : Url.Content("~/Images/no-image.png"))"
-                         alt="Room @Model.RoomNumber"
-                         class="card-img-top rounded-top"
-                         style="object-fit: cover; height: 180px;" />
+                    <img src="@Model.Image" alt="Room @Model.RoomNumber" class="card-img-top rounded-top" style="object-fit: cover; height: 180px;" />
                     <div class="card-body">
                         <h5 class="card-title">Room Summary</h5>
                         <p><strong>Room:</strong> Room @Model.RoomNumber (@(Model.RoomType?.Name))</p>
-                        <p><strong>Stay:</strong> @checkin.ToString("dd/MM/yyyy") → @checkout.ToString("dd/MM/yyyy")</p>
+                        <p><strong>Stay:</strong> @checkin → @checkout</p>
                         <p><strong>Total Price:</strong> <span class="text-success fw-bold">$@totalPrice</span></p>
                     </div>
                 </div>
@@ -83,8 +71,7 @@
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Payment Method</h5>
                         <select name="PaymentType" class="form-control mb-3" required>
-                            <option value="" disabled selected>-- Select Payment Method --</option>
-                            <option value="Cash">Cash</option>
+                            <option value="">-- Select Payment Method --</option>
                             <option value="CreditCard">Credit Card</option>
                             <option value="Momo">Momo</option>
                             <option value="VNPay">VNPay</option>
@@ -99,17 +86,4 @@
             <button type="submit" class="btn btn-success px-4">Confirm & Pay</button>
         </div>
     }
-
 </div>
-
-
-@section Scripts {
-    <script>
-        // Xác nhận trước khi thanh toán
-        document.querySelector("form").addEventListener("submit", function (e) {
-            if (!confirm("Bạn có chắc muốn thanh toán và đặt phòng không?")) {
-                e.preventDefault();
-            }
-        });
-    </script>
-}

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
 
 namespace WebApplication1.Models
 {
-    [Table("Login")]
+    [Table("Login", Schema = "Authentication")]
     public class Login
     {
         [Key]
@@ -18,7 +14,6 @@ namespace WebApplication1.Models
 
         [Required]
         public string Password { get; set; }
-
 
         public string NewUser { get; set; }
 

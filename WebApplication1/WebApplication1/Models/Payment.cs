@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication1.Models
 {
-    [Table("Payment", Schema = "Bookings")]
+    [Table("Bookings.Payments")]
     public class Payment
     {
         [Key]

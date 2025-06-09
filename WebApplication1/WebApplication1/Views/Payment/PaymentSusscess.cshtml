@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.HideNavbar = true;
+}
+
+<link rel="stylesheet" href="@Url.Content("~/Content/paymentsuccess.css")" />
+<div class="payment-success-container">
+    <div class="logo">HMS</div>
+
+    <div class="steps">
+        <div class="step done">✔</div>
+        <div class="step done">✔</div>
+        <div class="step done">✔</div>
+    </div>
+
+    <h1 class="title">Yay! Payment Completed</h1>
+
+    <div class="image-area">
+        <img src="https://static.vecteezy.com/system/resources/previews/015/876/098/non_2x/success-payment-icon-in-flat-style-approved-money-illustration-on-isolated-background-successful-pay-sign-business-concept-vector.jpg" alt="Success Illustration">
+    </div>
+
+    <p class="message">
+        Please check your email & phone message.<br>
+        We have sent all the information.
+    </p>
+
+    <a href="/dashboard" class="dashboard-link">Go to Dashboard</a>
+</div>
