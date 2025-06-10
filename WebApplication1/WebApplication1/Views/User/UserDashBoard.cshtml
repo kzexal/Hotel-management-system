@@ -12,10 +12,12 @@
 <div class="dashboard-container">
     <!-- Sidebar -->
     <div class="sidebar">
-        <a href="@Url.Action("Index", "Home")" class="brand-container">
-            <img src="~/Content/image/favicon.png" alt="HMS Logo" class="brand-logo" />
-            <h1>HMS</h1>
-        </a>
+        <div class="brand-container">
+            <a href="@Url.Action("Index", "Home")" class="brand-link">
+                <img src="~/Content/image/favicon.png" alt="HMS Logo" class="brand-logo" />
+                <h1>HMS</h1>
+            </a>
+        </div>
         <nav class="nav flex-column">
             <a class="nav-link active" data-bs-toggle="tab" href="#booking-tab-pane">
                 <i class="bi bi-clipboard-check"></i> Bookings
@@ -25,38 +27,22 @@
             </a>
         </nav>
     </div>
+
     <div class="main-content-wrapper">
         <div class="top-bar">
-            @if (TempData["Success"] != null)
-            {
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    @TempData["Success"]
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            }
-            @if (TempData["Error"] != null)
-            {
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    @TempData["Error"]
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            }
             <div class="user-box">
                 <div class="user-greeting">
                     <p class="mb-0">Hello, User</p>
                     <small class="text-muted">Have a nice day</small>
-</div>
-                <div class="user-profile d-flex align-items-center justify-content-end">
-                    <div class="d-flex align-items-center me-3">
-                        <img src="https://tse4.mm.bing.net/th/id/OIP.9_MptOLxjJEGSGukPt9FWQHaHa" alt="Admin" class="user-avatar me-2" style="width: 40px; height: 40px; border-radius: 50%;" />
-                        <div>
-                            <div class="fw-bold">@Session["Username"]</div>
-                            <div class="text-muted small">User</div>
+                </div>
+                <div class="user-profile">
+                    <div class="user-avatar-wrapper">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.9_MptOLxjJEGSGukPt9FWQHaHa" alt="User" class="user-avatar" />
+                        <div class="user-info">
+                            <div class="user-name">@Session["Username"]</div>
+                            <div class="user-role">User</div>
                         </div>
                     </div>
-                    <a href="@Url.Action("Logout", "Account")" class="btn btn-outline-danger btn-sm">
-                        <i class="bi bi-box-arrow-right"></i> Logout
-                    </a>
                 </div>
             </div>
         </div>
@@ -232,4 +218,4 @@
                 modal.show();
             });
     }
-</script>   
+</script>
