@@ -5,10 +5,61 @@
     ViewBag.HideNavbar = true;
 
     // Lấy dữ liệu từ TempData
-    var checkin = TempData["BookingCheckIn"] as DateTime?;
-    var checkout = TempData["BookingCheckOut"] as DateTime?;
+    DateTime? checkin = null;
+    DateTime? checkout = null;
+
+    if (TempData["BookingCheckIn"] is DateTime tempCheckin)
+    {
+        checkin = tempCheckin;
+    }
+    else if (Request["checkin"] != null)
+    {
+        // Explicitly parse using dd/MM/yyyy format (day/month/year)
+        // This ensures dates are interpreted as day first, then month
+        var dateFormat = "dd/MM/yyyy";
+        var culture = System.Globalization.CultureInfo.InvariantCulture;
+        DateTime parsedDate;
+        if (DateTime.TryParseExact(Request["checkin"], 
+            dateFormat, 
+            culture,
+            System.Globalization.DateTimeStyles.None, 
+            out parsedDate))
+        {
+            checkin = parsedDate;
+        }
+    }
+
+    if (TempData["BookingCheckOut"] is DateTime tempCheckout)
+    {
+        checkout = tempCheckout;
+    }
+    else if (Request["checkout"] != null)
+    {
+        // Explicitly parse using dd/MM/yyyy format (day/month/year)
+        var dateFormat = "dd/MM/yyyy";
+        var culture = System.Globalization.CultureInfo.InvariantCulture;
+        DateTime parsedDate;
+        if (DateTime.TryParseExact(Request["checkout"], 
+            dateFormat, 
+            culture,
+            System.Globalization.DateTimeStyles.None, 
+            out parsedDate))
+        {
+            checkout = parsedDate;
+        }
+    }
+
     var totalPrice = TempData["BookingTotal"] as int?;
     var errorMessage = TempData["BookingError"] as string;
+
+    // Lấy thông tin khách hàng đã nhập
+    var guestFirstName = TempData["GuestFirstName"] as string;
+    var guestLastName = TempData["GuestLastName"] as string;
+    var guestEmail = TempData["GuestEmailAddress"] as string;
+    var guestPhone = TempData["GuestContactNumber"] as string;
+    var guestStreet = TempData["Street"] as string;
+    var guestCity = TempData["City"] as string;
+    var guestId = TempData["GuestId"] as string;
 
     // Giữ lại TempData cho vòng sau
     TempData.Keep();
@@ -44,16 +95,26 @@
 
     @if (Model != null && checkin != null && checkout != null && totalPrice != null)
     {
-        <a href="@Url.Action("ShowPaymentForm", "Payment", new {
-                roomId = Model.RoomId,
-                checkin = checkin.Value.ToString("yyyy-MM-dd"),
-                checkout = checkout.Value.ToString("yyyy-MM-dd"),
-                totalPrice = totalPrice.Value
-            })"
-           class="dashboard-link"
-           style="background-color: #e74c3c; color: white; padding: 10px 24px; border-radius: 8px; text-decoration: none;">
-            Try Again
-        </a>
+        using (Html.BeginForm("ShowPaymentForm", "Payment", FormMethod.Post))
+        {
+            @Html.Hidden("roomId", Model.RoomId)
+            @Html.Hidden("checkin", checkin.Value.ToString("dd/MM/yyyy"))
+            @Html.Hidden("checkout", checkout.Value.ToString("dd/MM/yyyy"))
+            @Html.Hidden("totalPrice", totalPrice.Value)
+            
+            // Thêm các trường thông tin đã nhập
+            @Html.Hidden("GuestFirstName", guestFirstName)
+            @Html.Hidden("GuestLastName", guestLastName)
+            @Html.Hidden("GuestEmailAddress", guestEmail)
+            @Html.Hidden("GuestContactNumber", guestPhone)
+            @Html.Hidden("Street", guestStreet)
+            @Html.Hidden("City", guestCity)
+            @Html.Hidden("GuestId", guestId)
+
+            <button type="submit" class="dashboard-link" style="background-color: #e74c3c; color: white; padding: 10px 24px; border-radius: 8px; border: none; cursor: pointer;">
+                Try Again
+            </button>
+        }
     }
     else
     {

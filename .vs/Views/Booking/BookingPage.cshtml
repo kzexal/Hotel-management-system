@@ -1,0 +1,78 @@
+@{
+    ViewData["Title"] = "Đặt phòng";
+}
+
+<div class="container mt-4">
+    <h2>Đặt phòng</h2>
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            @Html.ValidationSummary(false)
+        </div>
+    }
+
+    <form asp-action="BookRoom" asp-controller="Booking" method="post">
+        <input type="hidden" name="roomId" value="@ViewBag.RoomId" />
+        
+        <div class="form-group">
+            <label for="checkInDate">Ngày nhận phòng:</label>
+            <input type="date" class="form-control" id="checkInDate" name="checkInDate" required />
+        </div>
+
+        <div class="form-group">
+            <label for="checkOutDate">Ngày trả phòng:</label>
+            <input type="date" class="form-control" id="checkOutDate" name="checkOutDate" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Đặt phòng</button>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        // Chuyển đổi danh sách ngày không khả dụng từ ViewBag
+        var unavailableDates = @Html.Raw(Json.Serialize(ViewBag.UnavailableDates));
+
+        // Hàm kiểm tra ngày có khả dụng không
+        function isDateAvailable(date) {
+            var dateString = date.toISOString().split('T')[0];
+            return !unavailableDates.includes(dateString);
+        }
+
+        // Thiết lập các ràng buộc cho input date
+        document.addEventListener('DOMContentLoaded', function() {
+            var today = new Date().toISOString().split('T')[0];
+            var checkInDate = document.getElementById('checkInDate');
+            var checkOutDate = document.getElementById('checkOutDate');
+
+            // Thiết lập ngày tối thiểu là ngày hiện tại
+            checkInDate.min = today;
+            
+            checkInDate.addEventListener('change', function() {
+                // Thiết lập ngày trả phòng tối thiểu là ngày sau ngày nhận phòng
+                checkOutDate.min = checkInDate.value;
+                if (checkOutDate.value && checkOutDate.value <= checkInDate.value) {
+                    checkOutDate.value = '';
+                }
+            });
+
+            // Kiểm tra ngày có khả dụng khi người dùng chọn
+            function validateDate(input) {
+                var selectedDate = new Date(input.value);
+                if (!isDateAvailable(selectedDate)) {
+                    alert('Ngày này đã được đặt. Vui lòng chọn ngày khác.');
+                    input.value = '';
+                }
+            }
+
+            checkInDate.addEventListener('change', function() {
+                validateDate(this);
+            });
+
+            checkOutDate.addEventListener('change', function() {
+                validateDate(this);
+            });
+        });
+    </script>
+} 

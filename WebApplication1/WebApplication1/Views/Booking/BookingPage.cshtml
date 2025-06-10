@@ -4,11 +4,13 @@
     ViewBag.HideNavbar = true;
 }
 
+<!-- Flatpickr Styles -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <link rel="stylesheet" href="@Url.Content("~/Content/booking-page.css")" />
 
 <div class="booking-container">
     <header class="booking-header">
-        <div class="logo">HMS</div>
+        <a href="@Url.Action("Index", "Home")" class="logo" style="text-decoration: none;">HMS</a>
     </header>
 
     <div class="steps">
@@ -30,28 +32,28 @@
         </div>
 
         <div class="booking-details">
-            @using (Html.BeginForm("Payment", "Booking", FormMethod.Post, new { onsubmit = "return prepareFormBeforeSubmit()" }))
+            @using (Html.BeginForm("ShowPaymentForm", "Payment", FormMethod.Post, new { id = "bookingForm", onsubmit = "return prepareFormBeforeSubmit()" }))
             {
                 @Html.AntiForgeryToken()
 
                 <div class="date-inputs">
                     <div class="date-field">
                         <label for="checkin">Check-in</label>
-                        <input type="date" id="checkin" name="CheckInDate" class="date-picker" min="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                        <input type="text" id="checkin" name="checkin" class="date-picker" required readonly />
                     </div>
                     <div class="date-field">
                         <label for="checkout">Check-out</label>
-                        <input type="date" id="checkout" name="CheckOutDate" class="date-picker" min="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")" />
+                        <input type="text" id="checkout" name="checkout" class="date-picker" required readonly />
                     </div>
                 </div>
 
                 <div class="stay-display">
                     <span class="price-summary">Price per day: <strong>$@(Model.RoomType?.Cost)</strong></span><br />
-                    <span id="totalPriceDisplay">Total price: <strong>$0</strong></span>
+                    <span id="totalPriceDisplay">&nbsp;&nbsp;Total price: <strong>$0</strong></span>
                 </div>
 
-                <input type="hidden" name="RoomId" value="@Model.RoomId" />
-                <input type="hidden" id="BookingAmount" name="BookingAmount" />
+                <input type="hidden" name="roomId" value="@Model.RoomId" />
+                <input type="hidden" id="BookingAmount" name="totalPrice" />
 
                 <div class="booking-actions">
                     <a class="btn-secondary" href="@Url.Action("Details", "Room", new { id = Model.RoomId })">Cancel</a>
@@ -59,28 +61,68 @@
                 </div>
             }
         </div>
-
     </div>
 </div>
 
+<!-- Flatpickr Script -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<!-- Unavailable dates từ controller -->
 <script>
+    const unavailableDates = @Html.Raw(Json.Encode(ViewBag.UnavailableDates ?? new List<string>()));
+    const pricePerDay = @(Model.RoomType?.Cost ?? 0);
+
     const checkinInput = document.getElementById("checkin");
     const checkoutInput = document.getElementById("checkout");
     const totalPriceDisplay = document.getElementById("totalPriceDisplay");
     const totalPriceInput = document.getElementById("BookingAmount");
-    const pricePerDay = @(Model.RoomType?.Cost ?? 0);
+
+    flatpickr("#checkin", {
+        dateFormat: "d/m/Y",
+        disable: unavailableDates,
+        minDate: "today",
+        onChange: function(selectedDates, dateStr) {
+            calculateTotalPrice();
+            // Cập nhật ngày tối thiểu cho checkout
+            const checkoutFp = document.querySelector("#checkout")._flatpickr;
+            checkoutFp.set("minDate", dateStr);
+        }
+    });
+
+    flatpickr("#checkout", {
+        dateFormat: "d/m/Y",
+        disable: unavailableDates,
+        minDate: "today",
+        onChange: function(selectedDates, dateStr) {
+            calculateTotalPrice();
+        }
+    });
 
     function calculateTotalPrice() {
-        const checkinDate = new Date(checkinInput.value);
-        const checkoutDate = new Date(checkoutInput.value);
+        if (!checkinInput.value || !checkoutInput.value) return;
 
-        if (checkinInput.value && checkoutInput.value && checkoutDate > checkinDate) {
+        // Chuyển đổi từ dd/mm/yyyy sang Date object
+        const checkinParts = checkinInput.value.split('/');
+        const checkoutParts = checkoutInput.value.split('/');
+        
+        const checkinDate = new Date(
+            parseInt(checkinParts[2]), // year
+            parseInt(checkinParts[1]) - 1, // month (0-11)
+            parseInt(checkinParts[0]) // day
+        );
+        const checkoutDate = new Date(
+            parseInt(checkoutParts[2]), // year
+            parseInt(checkoutParts[1]) - 1, // month (0-11)
+            parseInt(checkoutParts[0]) // day
+        );
+
+        if (checkoutDate > checkinDate) {
             const days = Math.ceil((checkoutDate - checkinDate) / (1000 * 60 * 60 * 24));
             const total = days * pricePerDay;
-            totalPriceDisplay.innerHTML = `Total price: <strong>$${total}</strong>`;
+            totalPriceDisplay.innerHTML = `&nbsp;&nbsp;Total price: <strong>$${total}</strong>`;
             totalPriceInput.value = total;
         } else {
-            totalPriceDisplay.innerHTML = `Total price: <strong>$0</strong>`;
+            totalPriceDisplay.innerHTML = `&nbsp;&nbsp;Total price: <strong>$0</strong>`;
             totalPriceInput.value = "";
         }
     }
@@ -88,12 +130,90 @@
     function prepareFormBeforeSubmit() {
         calculateTotalPrice();
         if (!checkinInput.value || !checkoutInput.value || !totalPriceInput.value) {
-            alert("Please select valid check-in and check-out dates.");
+            alert("Vui lòng chọn ngày check-in và check-out hợp lệ.");
             return false;
         }
-        return true;
+
+        try {
+            // Đảm bảo định dạng ngày là dd/MM/yyyy
+            const checkinParts = checkinInput.value.split('/');
+            const checkoutParts = checkoutInput.value.split('/');
+
+            // Kiểm tra tính hợp lệ của ngày
+            const checkinDate = new Date(
+                parseInt(checkinParts[2]), // year
+                parseInt(checkinParts[1]) - 1, // month (0-11)
+                parseInt(checkinParts[0]) // day
+            );
+            const checkoutDate = new Date(
+                parseInt(checkoutParts[2]), // year
+                parseInt(checkoutParts[1]) - 1, // month (0-11)
+                parseInt(checkoutParts[0]) // day
+            );
+            
+            if (isNaN(checkinDate.getTime()) || isNaN(checkoutDate.getTime())) {
+                alert("Ngày không hợp lệ");
+                return false;
+            }
+
+            if (checkinDate >= checkoutDate) {
+                alert("Ngày check-out phải sau ngày check-in.");
+                return false;
+            }
+
+            // Format dates as dd/MM/yyyy
+            const formatDate = (date) => {
+                const day = date.getDate().toString().padStart(2, '0');
+                const month = (date.getMonth() + 1).toString().padStart(2, '0');
+                const year = date.getFullYear();
+                return `${day}/${month}/${year}`;
+            };
+
+            // Set the formatted dates back to inputs
+            checkinInput.value = formatDate(checkinDate);
+            checkoutInput.value = formatDate(checkoutDate);
+
+            return true;
+        } catch (error) {
+            console.error("Date processing error:", error);
+            alert("Có lỗi xảy ra khi xử lý ngày tháng. Vui lòng thử lại.");
+            return false;
+        }
     }
 
-    checkinInput.addEventListener("change", calculateTotalPrice);
-    checkoutInput.addEventListener("change", calculateTotalPrice);
+    function getFirstUnavailableAfter(dateStr) {
+        // Chuyển đổi từ dd/mm/yyyy sang Date object
+        const [day, month, year] = dateStr.split('/');
+        const date = new Date(year, month - 1, day);
+        
+        const futureDates = unavailableDates
+            .map(d => {
+                const [unavailDay, unavailMonth, unavailYear] = d.split('/');
+                return new Date(unavailYear, unavailMonth - 1, unavailDay);
+            })
+            .filter(d => d > date)
+            .sort((a, b) => a - b);
+        return futureDates.length ? futureDates[0] : null;
+    }
+
+    function validateCheckinCheckoutLogic() {
+        const checkinDate = new Date(checkinInput.value);
+        const checkoutDate = new Date(checkoutInput.value);
+
+        if (!checkinInput.value || !checkoutInput.value) return;
+
+        const nextUnavailable = getFirstUnavailableAfter(checkinInput.value);
+        if (nextUnavailable && checkoutDate >= nextUnavailable) {
+            alert("Ngày check-out phải trước ngày đã có người đặt hoặc cách ly.");
+            checkoutInput.value = "";
+        }
+    }
+
+    checkinInput.addEventListener("change", () => {
+        validateCheckinCheckoutLogic();
+    });
+
+    checkoutInput.addEventListener("change", () => {
+        validateCheckinCheckoutLogic();
+    });
 </script>

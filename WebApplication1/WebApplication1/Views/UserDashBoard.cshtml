@@ -1,0 +1,103 @@
+﻿@model List<WebApplication1.Models.RoomBooked>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.HideNavbar = true;
+}
+
+<link rel="stylesheet" href="~/Content/UserDashboard.css" />
+
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h1>Lanka<span style="color:black">Stay.</span></h1>
+        <nav>
+            <a class="active" href="#">📘 Bookings</a>
+            <a href="#">💰 Refunds</a>
+            <a href="#">✉️ Message</a>
+            <a href="#">❓ Help</a>
+            <a href="#">⚙️ Setting</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div>
+                <p>Hello, User</p>
+                <h2>John Wick</h2>
+            </div>
+            <div class="user-info">
+                <img src="~/Content/avatar.png" alt="User" />
+                <div>
+                    <p>John Wick</p>
+                    <small>User</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search & Filter -->
+        <div class="search-filter">
+            <input type="text" placeholder="Search documents" />
+            <div>
+                <select id="tab-select" onchange="toggleTab()">
+                    <option value="booking">Booking</option>
+                    <option value="refund">Refund</option>
+                </select>
+                <button>+</button>
+            </div>
+        </div>
+
+        <!-- Booking Section -->
+        <div id="booking-section" class="card-container">
+            @foreach (var rb in Model)
+            {
+                <div class="card">
+                    <div class="card-img">
+                        <img src="@rb.Room.Image" alt="Room Image" />
+                        <span class="card-price-badge">$@rb.Booking.BookingAmount</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Room @rb.Room.RoomNumber - @rb.Room.RoomType.Name</h3>
+                        <p>Check-in: @rb.Booking.CheckInDate.ToString("dd MMM yyyy")</p>
+                        <p>Check-out: @rb.Booking.CheckOutDate.ToString("dd MMM yyyy")</p>
+                        <p>Status: @rb.Booking.Status</p>
+                        <div class="actions">
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Refund Section -->
+        <div id="refund-section" class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Refund Request</h3>
+                    <p>Booking ID: #BKG2025</p>
+                    <p>Reason: Payment issue</p>
+                    <p>Requested Date: 23 Jan 2025</p>
+                    <p>Status: Pending</p>
+                    <div class="actions">
+                        <button>Approve</button>
+                        <button>Reject</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function toggleTab() {
+        var selected = document.getElementById("tab-select").value;
+        document.getElementById("booking-section").style.display = selected === "booking" ? "flex" : "none";
+        document.getElementById("refund-section").style.display = selected === "refund" ? "flex" : "none";
+    }
+</script>

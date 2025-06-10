@@ -1,11 +1,16 @@
-﻿using WebApplication1.Models;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using WebApplication1.Models;
 
-public class RoomBooked
+namespace WebApplication1.Models
 {
-    public int RoomBookedId { get; set; }
-    public int BookingId { get; set; }
-    public int RoomId { get; set; }
+    [Table("RoomBooked", Schema = "Rooms")]
+    public class RoomBooked
+    {
+        public int RoomBookedId { get; set; }
+        public int BookingId { get; set; }
+        public int RoomId { get; set; }
 
-    public Booking Booking { get; set; }
-    public Room Room { get; set; }
+        public Booking Booking { get; set; }
+        public Room Room { get; set; }
+    }
 }

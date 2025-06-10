@@ -40,7 +40,7 @@
 
             <!-- Available Rooms Section -->
             <section class="available-rooms">
-                <h2 class="section-title">Available Rooms</h2>
+                <h2 class="section-title">List Rooms</h2>
                 <div class="room-grid">
                     @foreach (var room in Model)
                     {
@@ -53,7 +53,7 @@
                             <div class="room-info">
                                 <h3>Room @room.RoomNumber</h3>
                                 <p>Type: @(room.RoomType?.Name ?? "Unknown")</p>
-                                <div class="price-badge">@($"{room.RoomType?.Cost:N0}") <span>per night</span></div>
+                                <div class="price-badge">@($"{room.RoomType?.Cost:N0}")$ <span>per day</span></div>
                             </div>
                         </a>
                     }

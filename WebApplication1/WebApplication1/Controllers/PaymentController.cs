@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using WebApplication1.Models;
 
@@ -8,22 +9,36 @@ namespace WebApplication1.Controllers
     {
         private readonly AppDbContext db = new AppDbContext();
 
-     
-        // [1] Hiển thị form thanh toán
-        public ActionResult ShowPaymentForm(int roomId, DateTime checkin, DateTime checkout, int totalPrice)
+        // Display the payment form
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ShowPaymentForm(int roomId, string checkin, string checkout, int totalPrice)
         {
-            var room = db.Rooms.Find(roomId);
-            if (room == null)
+            try
+            {
+                var room = db.Rooms.Find(roomId);
+                if (room == null)
+                {
+                    TempData["BookingError"] = "Room not found.";
+                    return RedirectToAction("PaymentFail");
+                }
+
+                // Store the original date strings in TempData
+                TempData["BookingCheckIn"] = checkin;
+                TempData["BookingCheckOut"] = checkout;
+                TempData["BookingTotal"] = totalPrice;
+                TempData["RoomId"] = roomId;
+
+                return View("~/Views/Booking/Payment.cshtml", room);
+            }
+            catch (Exception ex)
+            {
+                TempData["BookingError"] = "An error occurred: " + ex.Message;
                 return RedirectToAction("PaymentFail");
-
-            ViewBag.CheckIn = checkin;
-            ViewBag.CheckOut = checkout;
-            ViewBag.TotalPrice = totalPrice;
-
-            return View("~/Views/Booking/Payment.cshtml", room); // View dùng @model Room
+            }
         }
 
-
+        // Handle payment processing
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ProcessPayment(FormCollection form)
@@ -37,15 +52,33 @@ namespace WebApplication1.Controllers
 
                 if (!int.TryParse(form["roomId"], out roomId) ||
                     !int.TryParse(form["totalPrice"], out totalPrice) ||
-                    !DateTime.TryParse(form["checkin"], out checkinDate) ||
-                    !DateTime.TryParse(form["checkout"], out checkoutDate))
+                    !DateTime.TryParseExact(form["checkin"],
+                        "dd/MM/yyyy",
+                        System.Globalization.CultureInfo.InvariantCulture,
+                        System.Globalization.DateTimeStyles.None,
+                        out checkinDate) ||
+                    !DateTime.TryParseExact(form["checkout"],
+                        "dd/MM/yyyy",
+                        System.Globalization.CultureInfo.InvariantCulture,
+                        System.Globalization.DateTimeStyles.None,
+                        out checkoutDate))
                 {
                     TempData["BookingError"] = "Invalid input data.";
-                    // Store room information in TempData
-                    TempData["RoomId"] = form["roomId"];
-                    TempData["BookingCheckIn"] = checkinDate;
-                    TempData["BookingCheckOut"] = checkoutDate;
+                    // Store form data in TempData
+                    TempData["RoomId"] = roomId;
+                    TempData["BookingCheckIn"] = form["checkin"];
+                    TempData["BookingCheckOut"] = form["checkout"];
                     TempData["BookingTotal"] = totalPrice;
+                    
+                    // Store guest information
+                    TempData["GuestFirstName"] = form["GuestFirstName"];
+                    TempData["GuestLastName"] = form["GuestLastName"];
+                    TempData["GuestEmailAddress"] = form["GuestEmailAddress"];
+                    TempData["GuestContactNumber"] = form["GuestContactNumber"];
+                    TempData["Street"] = form["Street"];
+                    TempData["City"] = form["City"];
+                    TempData["GuestId"] = form["GuestId"];
+                    
                     return RedirectToAction("PaymentFail");
                 }
 
@@ -56,22 +89,6 @@ namespace WebApplication1.Controllers
                     return RedirectToAction("PaymentFail");
                 }
 
-<<<<<<< HEAD
-                // [1] Lưu thông tin Guest
-                var guest = new Guest
-                {
-                    GuestFirstName = form["GuestFirstName"],
-                    GuestLastName = form["GuestLastName"],
-                    GuestEmailAddress = form["GuestEmailAddress"],
-                    GuestContactNumber = form["GuestContactNumber"],
-                    Street = form["Street"],
-                    City = form["City"],
-                    Zip = form["Zip"],
-                    Status = "Active"
-                };
-                db.Guests.Add(guest);
-                db.SaveChanges();
-=======
                 string email = form["GuestEmailAddress"];
                 string contact = form["GuestContactNumber"];
                 string firstName = form["GuestFirstName"];
@@ -105,9 +122,7 @@ namespace WebApplication1.Controllers
                     db.Guests.Add(guest);
                     db.SaveChanges();
                 }
->>>>>>> b8825aeab2dcd453c462c0321de4bc1f713010c5
 
-                // [2] Tạo Booking
                 var booking = new Booking
                 {
                     GuestId = guest.GuestId,
@@ -115,48 +130,39 @@ namespace WebApplication1.Controllers
                     CheckInDate = checkinDate,
                     CheckOutDate = checkoutDate,
                     BookingAmount = totalPrice,
-                    Status = "Confirmed" // ✅ Đặt luôn là Confirmed
+                    Status = "Checkin"
                 };
                 db.Bookings.Add(booking);
                 db.SaveChanges();
 
-                // [3] Đánh dấu Room đã được đặt
                 db.RoomBooked.Add(new RoomBooked
                 {
                     BookingId = booking.BookingId,
                     RoomId = roomId
                 });
-
-                var room = db.Rooms.Find(roomId);
-                if (room != null)
-                {
-                    room.Available = "No";
-                }
                 db.SaveChanges();
 
-                // [4] Tạo bản ghi Payment (thanh toán giả lập thành công)
-                var payment = new Payment
+                db.Payments.Add(new Payment
                 {
                     BookingId = booking.BookingId,
                     PaymentAmount = totalPrice,
-                    PaymentStatus = "Success",
+                    PaymentStatus = "1",
                     PaymentType = paymentType
-                };
-                db.Payments.Add(payment);
+                });
                 db.SaveChanges();
 
-                TempData["BookingSuccess"] = $"Đặt phòng và thanh toán thành công! Mã đặt: {booking.BookingId}";
-                return RedirectToAction("BookingSuccess", "Booking");
+                TempData["BookingSuccess"] = $"Booking and payment successful! Booking ID: {booking.BookingId}";
+                return RedirectToAction("PaymentSuccess");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                TempData["BookingError"] = "Đã xảy ra lỗi khi xử lý thanh toán.";
+                string errorMessage = GetFullErrorMessage(ex);
+                System.Diagnostics.Debug.WriteLine("Error during payment: " + errorMessage);
+                TempData["BookingError"] = "An error occurred while processing the payment: " + errorMessage;
                 return RedirectToAction("PaymentFail");
             }
         }
 
-<<<<<<< HEAD
-=======
         // Handle service payment
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -214,7 +220,6 @@ namespace WebApplication1.Controllers
         }
 
         // Error page
->>>>>>> b8825aeab2dcd453c462c0321de4bc1f713010c5
         public ActionResult PaymentFail()
         {
             ViewBag.Message = TempData["BookingError"];
@@ -230,6 +235,25 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        public ActionResult PaymentSuccess()
+        {
+            ViewBag.Message = TempData["BookingSuccess"];
+            return View();
+        }
+
+        // Detailed error message handler
+        private string GetFullErrorMessage(Exception ex)
+        {
+            string message = ex.Message;
+            Exception inner = ex.InnerException;
+            while (inner != null)
+            {
+                message += " | Inner: " + inner.Message;
+                inner = inner.InnerException;
+            }
+            return message;
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -238,3 +262,4 @@ namespace WebApplication1.Controllers
         }
     }
 }
+    

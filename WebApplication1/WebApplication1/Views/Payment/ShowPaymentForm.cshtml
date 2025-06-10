@@ -1,0 +1,273 @@
+@model WebApplication1.Models.Booking
+
+<div class="payment-container">
+    <header class="payment-header">
+        <div class="logo">HMS</div>
+        <div class="steps">
+            <div class="step done">✔</div>
+            <div class="step done">✔</div>
+            <div class="step">3</div>
+        </div>
+    </header>
+
+    <h1>Payment</h1>
+    <p class="subtitle">Please fill in your guest information and scan QR code to complete payment</p>
+
+    <div class="payment-content">
+        <div class="room-summary-card">
+            <img src="@Url.Content(Model.Room.Image)" alt="Room Image" />
+            <div class="summary-details">
+                <h2>Room Summary</h2>
+                <p><strong>Room:</strong> @Model.Room.RoomNumber (@Model.Room.RoomType.Name)</p>
+                <p><strong>Stay:</strong> @Model.CheckInDate.ToString("dd/MM/yyyy") → @Model.CheckOutDate.ToString("dd/MM/yyyy")</p>
+                <p class="total-price"><strong>Total Price:</strong> <span class="price">$@Model.TotalAmount</span></p>
+            </div>
+        </div>
+
+        @using (Html.BeginForm("ProcessPayment", "Payment", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.RoomId)
+            @Html.HiddenFor(m => m.CheckInDate)
+            @Html.HiddenFor(m => m.CheckOutDate)
+            @Html.HiddenFor(m => m.TotalAmount)
+
+            <div class="form-sections">
+                <div class="guest-info-section">
+                    <h2>Guest Information</h2>
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.GuestName, new { @class = "form-control", placeholder = "Full Name" })
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email Address" })
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", placeholder = "Phone Number" })
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.Address, new { @class = "form-control", placeholder = "Street Address" })
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.City, new { @class = "form-control", placeholder = "City" })
+                    </div>
+                </div>
+
+                <div class="payment-method">
+                    <h2>Payment Method</h2>
+                    <div class="qr-payment-container">
+                        <div class="qr-code">
+                            <img src="@Url.Content("~/Content/image/qr.png")" alt="QR Payment Code" style="max-width: 300px;" />
+                        </div>
+                        <div class="qr-instructions">
+                            <h3>Quét mã QR để thanh toán</h3>
+                            <p>Bước 1: Mở ứng dụng ngân hàng hoặc ví điện tử</p>
+                            <p>Bước 2: Quét mã QR</p>
+                            <p>Bước 3: Kiểm tra thông tin và xác nhận thanh toán</p>
+                            <p>Số tiền cần thanh toán: <strong>$@Model.TotalAmount</strong></p>
+                        </div>
+                        @Html.Hidden("PaymentMethod", "QR")
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <a href="@Url.Action("BookingPage", "Booking", new { roomId = Model.RoomId })" class="btn-secondary">Back</a>
+                <button type="submit" class="btn-primary">Process Payment</button>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+.payment-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.payment-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a73e8;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.step.done {
+    background: #34a853;
+}
+
+h1 {
+    text-align: center;
+    color: #202124;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #5f6368;
+    margin-bottom: 40px;
+}
+
+.payment-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.room-summary-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+}
+
+.room-summary-card img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.summary-details {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.form-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.guest-info-section, .payment-method-section {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.qr-payment-container {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.qr-code {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.qr-code img {
+    max-width: 300px;
+    height: auto;
+}
+
+.qr-instructions {
+    text-align: center;
+}
+
+.qr-instructions h3 {
+    color: #1a73e8;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.qr-instructions p {
+    margin: 8px 0;
+    color: #5f6368;
+}
+
+.qr-instructions strong {
+    color: #1a73e8;
+    font-size: 1.2em;
+}
+
+.payment-method {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.payment-method h2 {
+    margin-bottom: 20px;
+    color: #202124;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #1a73e8;
+    color: white;
+    border: none;
+}
+
+.btn-secondary {
+    background: #f1f3f4;
+    color: #5f6368;
+    border: none;
+}
+
+.total-price {
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+.price {
+    color: #1a73e8;
+    font-weight: bold;
+}
+</style> 
