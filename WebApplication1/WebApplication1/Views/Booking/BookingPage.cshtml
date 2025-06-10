@@ -8,6 +8,16 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <link rel="stylesheet" href="@Url.Content("~/Content/booking-page.css")" />
 
+<style>
+    .flatpickr-day.disabled,
+    .flatpickr-day.disabled:hover {
+        background-color: #ffebee !important;
+        color: #f44336 !important;
+        text-decoration: line-through;
+        cursor: not-allowed;
+    }
+</style>
+
 <div class="booking-container">
     <header class="booking-header">
         <a href="@Url.Action("Index", "Home")" class="logo" style="text-decoration: none;">HMS</a>
@@ -32,7 +42,7 @@
         </div>
 
         <div class="booking-details">
-            @using (Html.BeginForm("ShowPaymentForm", "Payment", FormMethod.Post, new { id = "bookingForm", onsubmit = "return prepareFormBeforeSubmit()" }))
+            @using (Html.BeginForm("ShowPaymentForm", "Payment", FormMethod.Post, new { id = "bookingForm", onsubmit = "return validateBookingForm()" }))
             {
                 @Html.AntiForgeryToken()
 
@@ -47,6 +57,8 @@
                     </div>
                 </div>
 
+                <div id="availability-message" class="alert" style="display: none;"></div>
+
                 <div class="stay-display">
                     <span class="price-summary">Price per day: <strong>$@(Model.RoomType?.Cost)</strong></span><br />
                     <span id="totalPriceDisplay">&nbsp;&nbsp;Total price: <strong>$0</strong></span>
@@ -57,7 +69,7 @@
 
                 <div class="booking-actions">
                     <a class="btn-secondary" href="@Url.Action("Details", "Room", new { id = Model.RoomId })">Cancel</a>
-                    <button type="submit" class="btn-primary">Next Step</button>
+                    <button type="submit" class="btn-primary" id="submitButton">Next Step</button>
                 </div>
             }
         </div>
@@ -67,153 +79,161 @@
 <!-- Flatpickr Script -->
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-<!-- Unavailable dates từ controller -->
 <script>
-    const unavailableDates = @Html.Raw(Json.Encode(ViewBag.UnavailableDates ?? new List<string>()));
+    const disabledDates = @Html.Raw(Json.Encode(ViewBag.DisabledDates ?? new List<string>()));
     const pricePerDay = @(Model.RoomType?.Cost ?? 0);
+    const roomId = @Model.RoomId;
 
     const checkinInput = document.getElementById("checkin");
     const checkoutInput = document.getElementById("checkout");
     const totalPriceDisplay = document.getElementById("totalPriceDisplay");
     const totalPriceInput = document.getElementById("BookingAmount");
+    const availabilityMessage = document.getElementById("availability-message");
+    const submitButton = document.getElementById("submitButton");
 
-    flatpickr("#checkin", {
+    let isRoomAvailable = true;
+
+    function showAvailabilityMessage(isAvailable, message) {
+        availabilityMessage.style.display = "block";
+        availabilityMessage.className = isAvailable ? "alert alert-success" : "alert alert-danger";
+        availabilityMessage.textContent = message;
+        submitButton.disabled = !isAvailable;
+        isRoomAvailable = isAvailable;
+    }
+
+    // Hàm kiểm tra xem một ngày có bị vô hiệu hóa không
+    function isDateDisabled(date) {
+        const dateString = flatpickr.formatDate(date, "d/m/Y");
+        return disabledDates.includes(dateString);
+    }
+
+    // Hàm kiểm tra xem một khoảng thời gian có hợp lệ không
+    function isDateRangeValid(startDate, endDate) {
+        if (!startDate || !endDate || startDate >= endDate) return false;
+
+        // Chuyển đổi ngày thành timestamp để so sánh
+        const startTime = startDate.getTime();
+        const endTime = endDate.getTime();
+        
+        // Kiểm tra từng ngày trong khoảng
+        for (let date = startTime; date <= endTime; date += 86400000) {
+            if (isDateDisabled(new Date(date))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Cấu hình chung cho flatpickr
+    const commonConfig = {
         dateFormat: "d/m/Y",
-        disable: unavailableDates,
         minDate: "today",
-        onChange: function(selectedDates, dateStr) {
+        disable: [
+            function(date) {
+                return isDateDisabled(date);
+            }
+        ],
+        onChange: function(selectedDates, dateStr, instance) {
             calculateTotalPrice();
-            // Cập nhật ngày tối thiểu cho checkout
-            const checkoutFp = document.querySelector("#checkout")._flatpickr;
-            checkoutFp.set("minDate", dateStr);
+            updateAvailabilityMessage();
+        }
+    };
+
+    // Hàm cập nhật thông báo tính khả dụng
+    function updateAvailabilityMessage() {
+        const checkinDate = checkinPicker.selectedDates[0];
+        const checkoutDate = checkoutPicker.selectedDates[0];
+
+        if (checkinDate && checkoutDate) {
+            const isValid = isDateRangeValid(checkinDate, checkoutDate);
+            showAvailabilityMessage(
+                isValid,
+                isValid ? "Selected dates are available!" : "Some dates in this range are not available."
+            );
+        }
+    }
+
+    // Cấu hình cho check-in date
+    const checkinPicker = flatpickr("#checkin", {
+        ...commonConfig,
+        onChange: function(selectedDates, dateStr) {
+            const selectedDate = selectedDates[0];
+            if (selectedDate) {
+                // Cập nhật ngày tối thiểu cho checkout
+                checkoutPicker.set("minDate", dateStr);
+                
+                // Reset checkout nếu ngày check-out hiện tại nhỏ hơn hoặc bằng ngày check-in mới
+                const checkoutDate = checkoutPicker.selectedDates[0];
+                if (checkoutDate && checkoutDate <= selectedDate) {
+                    checkoutPicker.clear();
+                }
+            }
+            calculateTotalPrice();
+            updateAvailabilityMessage();
         }
     });
 
-    flatpickr("#checkout", {
-        dateFormat: "d/m/Y",
-        disable: unavailableDates,
-        minDate: "today",
+    // Cấu hình cho check-out date
+    const checkoutPicker = flatpickr("#checkout", {
+        ...commonConfig,
         onChange: function(selectedDates, dateStr) {
             calculateTotalPrice();
+            updateAvailabilityMessage();
         }
     });
 
     function calculateTotalPrice() {
-        if (!checkinInput.value || !checkoutInput.value) return;
-
-        // Chuyển đổi từ dd/mm/yyyy sang Date object
-        const checkinParts = checkinInput.value.split('/');
-        const checkoutParts = checkoutInput.value.split('/');
-        
-        const checkinDate = new Date(
-            parseInt(checkinParts[2]), // year
-            parseInt(checkinParts[1]) - 1, // month (0-11)
-            parseInt(checkinParts[0]) // day
-        );
-        const checkoutDate = new Date(
-            parseInt(checkoutParts[2]), // year
-            parseInt(checkoutParts[1]) - 1, // month (0-11)
-            parseInt(checkoutParts[0]) // day
-        );
-
-        if (checkoutDate > checkinDate) {
-            const days = Math.ceil((checkoutDate - checkinDate) / (1000 * 60 * 60 * 24));
-            const total = days * pricePerDay;
-            totalPriceDisplay.innerHTML = `&nbsp;&nbsp;Total price: <strong>$${total}</strong>`;
-            totalPriceInput.value = total;
-        } else {
-            totalPriceDisplay.innerHTML = `&nbsp;&nbsp;Total price: <strong>$0</strong>`;
-            totalPriceInput.value = "";
+        if (!checkinInput.value || !checkoutInput.value) {
+            totalPriceDisplay.innerHTML = "&nbsp;&nbsp;Total price: <strong>$0</strong>";
+            totalPriceInput.value = "0";
+            return;
         }
+
+        const checkinDate = flatpickr.parseDate(checkinInput.value, "d/m/Y");
+        const checkoutDate = flatpickr.parseDate(checkoutInput.value, "d/m/Y");
+        
+        if (!checkinDate || !checkoutDate || checkinDate >= checkoutDate) {
+            totalPriceDisplay.innerHTML = "&nbsp;&nbsp;Total price: <strong>$0</strong>";
+            totalPriceInput.value = "0";
+            return;
+        }
+
+        const days = Math.ceil((checkoutDate - checkinDate) / (1000 * 60 * 60 * 24));
+        const total = days * pricePerDay;
+        
+        totalPriceDisplay.innerHTML = `&nbsp;&nbsp;Total price: <strong>$${total}</strong>`;
+        totalPriceInput.value = total.toString();
     }
 
-    function prepareFormBeforeSubmit() {
-        calculateTotalPrice();
-        if (!checkinInput.value || !checkoutInput.value || !totalPriceInput.value) {
-            alert("Vui lòng chọn ngày check-in và check-out hợp lệ.");
+    function validateBookingForm() {
+        if (!checkinInput.value || !checkoutInput.value) {
+            alert("Please select check-in and check-out dates.");
             return false;
         }
 
-        try {
-            // Đảm bảo định dạng ngày là dd/MM/yyyy
-            const checkinParts = checkinInput.value.split('/');
-            const checkoutParts = checkoutInput.value.split('/');
-
-            // Kiểm tra tính hợp lệ của ngày
-            const checkinDate = new Date(
-                parseInt(checkinParts[2]), // year
-                parseInt(checkinParts[1]) - 1, // month (0-11)
-                parseInt(checkinParts[0]) // day
-            );
-            const checkoutDate = new Date(
-                parseInt(checkoutParts[2]), // year
-                parseInt(checkoutParts[1]) - 1, // month (0-11)
-                parseInt(checkoutParts[0]) // day
-            );
-            
-            if (isNaN(checkinDate.getTime()) || isNaN(checkoutDate.getTime())) {
-                alert("Ngày không hợp lệ");
-                return false;
-            }
-
-            if (checkinDate >= checkoutDate) {
-                alert("Ngày check-out phải sau ngày check-in.");
-                return false;
-            }
-
-            // Format dates as dd/MM/yyyy
-            const formatDate = (date) => {
-                const day = date.getDate().toString().padStart(2, '0');
-                const month = (date.getMonth() + 1).toString().padStart(2, '0');
-                const year = date.getFullYear();
-                return `${day}/${month}/${year}`;
-            };
-
-            // Set the formatted dates back to inputs
-            checkinInput.value = formatDate(checkinDate);
-            checkoutInput.value = formatDate(checkoutDate);
-
-            return true;
-        } catch (error) {
-            console.error("Date processing error:", error);
-            alert("Có lỗi xảy ra khi xử lý ngày tháng. Vui lòng thử lại.");
+        if (!isRoomAvailable) {
+            alert("This room is not available for the selected dates. Please choose different dates.");
             return false;
         }
-    }
 
-    function getFirstUnavailableAfter(dateStr) {
-        // Chuyển đổi từ dd/mm/yyyy sang Date object
-        const [day, month, year] = dateStr.split('/');
-        const date = new Date(year, month - 1, day);
-        
-        const futureDates = unavailableDates
-            .map(d => {
-                const [unavailDay, unavailMonth, unavailYear] = d.split('/');
-                return new Date(unavailYear, unavailMonth - 1, unavailDay);
-            })
-            .filter(d => d > date)
-            .sort((a, b) => a - b);
-        return futureDates.length ? futureDates[0] : null;
-    }
+        const checkinDate = flatpickr.parseDate(checkinInput.value, "d/m/Y");
+        const checkoutDate = flatpickr.parseDate(checkoutInput.value, "d/m/Y");
 
-    function validateCheckinCheckoutLogic() {
-        const checkinDate = new Date(checkinInput.value);
-        const checkoutDate = new Date(checkoutInput.value);
-
-        if (!checkinInput.value || !checkoutInput.value) return;
-
-        const nextUnavailable = getFirstUnavailableAfter(checkinInput.value);
-        if (nextUnavailable && checkoutDate >= nextUnavailable) {
-            alert("Ngày check-out phải trước ngày đã có người đặt hoặc cách ly.");
-            checkoutInput.value = "";
+        if (!checkinDate || !checkoutDate) {
+            alert("Invalid dates selected.");
+            return false;
         }
+
+        if (checkinDate >= checkoutDate) {
+            alert("Check-out date must be after check-in date.");
+            return false;
+        }
+
+        if (!isDateRangeValid(checkinDate, checkoutDate)) {
+            alert("Selected date range includes unavailable dates. Please choose different dates.");
+            return false;
+        }
+
+        return true;
     }
-
-    checkinInput.addEventListener("change", () => {
-        validateCheckinCheckoutLogic();
-    });
-
-    checkoutInput.addEventListener("change", () => {
-        validateCheckinCheckoutLogic();
-    });
 </script>

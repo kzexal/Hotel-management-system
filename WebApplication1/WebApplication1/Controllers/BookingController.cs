@@ -21,32 +21,75 @@ namespace WebApplication1.Controllers
                 return RedirectToAction("Login", "Account", new { returnUrl = Request.RawUrl });
             }
 
-         
+            // Lấy tất cả các booking hiện tại và trong tương lai của phòng này
             var bookings = db.RoomBooked
-                .Where(rb => rb.RoomId == roomId)
-                .Join(db.Bookings, rb => rb.BookingId, b => b.BookingId, (rb, b) => new { b.CheckInDate, b.CheckOutDate })
-                .ToList(); 
+                .Where(rb => rb.RoomId == roomId && rb.Booking.Status != "Cancelled")
+                .Select(rb => new { rb.Booking.CheckInDate, rb.Booking.CheckOutDate })
+                .ToList();
 
-            var unavailableDates = new HashSet<string>();
+            var disabledDates = new HashSet<string>();
             foreach (var booking in bookings)
             {
                 var start = booking.CheckInDate;
-                var end = booking.CheckOutDate; 
+                var end = booking.CheckOutDate;
 
                 if (start <= end && start != DateTime.MinValue && end != DateTime.MinValue)
                 {
-                for (var date = start; date <= end; date = date.AddDays(1))
-                {
-                    unavailableDates.Add(date.ToString("yyyy-MM-dd"));
+                    // Thêm tất cả các ngày từ check-in đến check-out vào danh sách
+                    for (var date = start; date <= end; date = date.AddDays(1))
+                    {
+                        disabledDates.Add(date.ToString("dd/MM/yyyy"));
                     }
                 }
             }
 
-            ViewBag.UnavailableDates = unavailableDates.ToList();
-            return View(room); // View: BookingPage.cshtml
+            ViewBag.DisabledDates = disabledDates.ToList();
+            return View(room);
         }
 
-        // [2] Nhận dữ liệu từ form và chuyển sang trang thanh toán
+        // [2] Kiểm tra tính khả dụng của phòng
+        [HttpPost]
+        public JsonResult CheckRoomAvailability(int roomId, string checkinDate, string checkoutDate)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(checkinDate) || string.IsNullOrEmpty(checkoutDate))
+                {
+                    return Json(new { success = false, message = "Dates cannot be empty" });
+                }
+
+                var dateFormat = "dd/MM/yyyy";
+                var culture = System.Globalization.CultureInfo.InvariantCulture;
+                
+                if (!DateTime.TryParseExact(checkinDate, dateFormat, 
+                    culture,
+                    System.Globalization.DateTimeStyles.None, 
+                    out DateTime parsedCheckin) ||
+                    !DateTime.TryParseExact(checkoutDate, dateFormat,
+                    culture,
+                    System.Globalization.DateTimeStyles.None,
+                    out DateTime parsedCheckout))
+                {
+                    return Json(new { success = false, message = "Invalid date format. Use dd/MM/yyyy" });
+                }
+
+                // Kiểm tra xem phòng có được đặt trong khoảng thời gian này không
+                var isBooked = db.RoomBooked
+                    .Any(rb => rb.RoomId == roomId &&
+                         rb.Booking.Status != "Cancelled" &&
+                         ((rb.Booking.CheckInDate <= parsedCheckin && rb.Booking.CheckOutDate > parsedCheckin) ||
+                          (rb.Booking.CheckInDate < parsedCheckout && rb.Booking.CheckOutDate >= parsedCheckout) ||
+                          (rb.Booking.CheckInDate >= parsedCheckin && rb.Booking.CheckOutDate <= parsedCheckout)));
+
+                return Json(new { success = true, isAvailable = !isBooked });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
+
+        // [3] Nhận dữ liệu từ form và chuyển sang trang thanh toán
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Payment(FormCollection form)
