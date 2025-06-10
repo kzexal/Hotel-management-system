@@ -158,7 +158,7 @@
                                 </a>
                             </div>
                             <div class="col-md-3">
-                                <a href="#" class="action-card">
+                                <a href="#" class="action-card" data-bs-toggle="modal" data-bs-target="#createBookingModal">
                                     <i class="bi bi-calendar-plus"></i>
                                     <span>Create Booking</span>
                                 </a>
@@ -1082,13 +1082,78 @@
         let selectedDates = [];
         let currentRoomPrice = 0;
         let selectedRoomId = null;
-
-        // Initialize Flatpickr for date inputs
-        const checkInInput = document.getElementById('checkInDate');
-        const checkOutInput = document.getElementById('checkOutDate');
         let unavailableDates = [];
+        let checkInPicker = null;
+        let checkOutPicker = null;
 
-        // Initialize Flatpickr immediately
+        function initializeFlatpickr() {
+            try {
+                // Destroy existing instances if any
+                if (checkInPicker && typeof checkInPicker.destroy === 'function') {
+                    checkInPicker.destroy();
+                }
+                if (checkOutPicker && typeof checkOutPicker.destroy === 'function') {
+                    checkOutPicker.destroy();
+                }
+
+                checkInPicker = null;
+                checkOutPicker = null;
+
+                const commonConfig = {
+                    dateFormat: "Y-m-d",
+                    disable: unavailableDates,
+                    minDate: "today",
+                    allowInput: false,
+                    disableMobile: true,
+                    enableTime: false
+                };
+
+                // Initialize check-in date picker
+                checkInPicker = flatpickr("#checkInDate", {
+                    ...commonConfig,
+                    onChange: function(selectedDates, dateStr) {
+                        console.log('Check-in date changed:', dateStr);
+                        
+                        if (selectedDates[0]) {
+                            const nextDay = new Date(selectedDates[0]);
+                            nextDay.setDate(nextDay.getDate() + 1);
+                            
+                            if (checkOutPicker && typeof checkOutPicker.clear === 'function') {
+                                checkOutPicker.clear();
+                                checkOutPicker.set('minDate', nextDay);
+                                console.log('Updated check-out min date:', nextDay);
+                            }
+                        }
+                        calculateTotalCost();
+                    }
+                });
+
+                // Initialize check-out date picker
+                checkOutPicker = flatpickr("#checkOutDate", {
+                    ...commonConfig,
+                    onChange: function(selectedDates, dateStr) {
+                        console.log('Check-out date changed:', dateStr);
+                        if (selectedDates[0]) {
+                            calculateTotalCost();
+                        }
+                    }
+                });
+
+                // Reset dates
+                if (checkInPicker && typeof checkInPicker.clear === 'function') {
+                    checkInPicker.clear();
+                }
+                if (checkOutPicker && typeof checkOutPicker.clear === 'function') {
+                    checkOutPicker.clear();
+                }
+
+                console.log('Flatpickr initialized successfully');
+            } catch (error) {
+                console.error('Error initializing Flatpickr:', error);
+            }
+        }
+
+        // Initialize on page load
         initializeFlatpickr();
 
         // Reset form and reinitialize Flatpickr when modal is shown
@@ -1098,96 +1163,31 @@
             selectedRoomId = null;
             unavailableDates = [];
             $('#roomSelect').val('');
-            checkInInput.value = '';
-            checkOutInput.value = '';
-            calculateTotalCost();
+            
+            // Reset the date inputs
+            $('#checkInDate').val('');
+            $('#checkOutDate').val('');
+            
             initializeFlatpickr();
+            calculateTotalCost();
         });
-
-        function initializeFlatpickr() {
-            if (!checkInInput || !checkOutInput) {
-                console.error('Missing date inputs');
-                return;
-            }
-
-            // Destroy existing instances if any
-            if (checkInInput._flatpickr) {
-                checkInInput._flatpickr.destroy();
-            }
-            if (checkOutInput._flatpickr) {
-                checkOutInput._flatpickr.destroy();
-            }
-
-            const commonConfig = {
-                dateFormat: "Y-m-d",
-                disable: unavailableDates,
-                minDate: "today",
-                allowInput: true,
-                disableMobile: true
-            };
-
-            flatpickr("#checkInDate", {
-                ...commonConfig,
-                onChange: function(selectedDates, dateStr) {
-                    // Update checkout min date
-                    if (selectedDates[0]) {
-                        const nextDay = new Date(selectedDates[0]);
-                        nextDay.setDate(nextDay.getDate() + 1);
-                        checkOutInput._flatpickr.set('minDate', nextDay);
-                    }
-                    calculateTotalCost();
-                    validateCheckinCheckoutLogic();
-                }
-            });
-
-            flatpickr("#checkOutDate", {
-                ...commonConfig,
-                onChange: function(selectedDates) {
-                    calculateTotalCost();
-                    validateCheckinCheckoutLogic();
-                }
-            });
-
-            console.log('Flatpickr initialized with config:', commonConfig);
-        }
-
-        function getFirstUnavailableAfter(dateStr) {
-            const date = new Date(dateStr);
-            const futureDates = unavailableDates
-                .map(d => new Date(d))
-                .filter(d => d > date)
-                .sort((a, b) => a - b);
-            return futureDates.length ? futureDates[0] : null;
-        }
-
-        function validateCheckinCheckoutLogic() {
-            if (!checkInInput._flatpickr || !checkOutInput._flatpickr) return;
-
-            const checkinDate = checkInInput._flatpickr.selectedDates[0];
-            const checkoutDate = checkOutInput._flatpickr.selectedDates[0];
-
-            if (!checkinDate || !checkoutDate) return;
-
-            console.log('Validating dates:', { checkinDate, checkoutDate });
-
-            const nextUnavailable = getFirstUnavailableAfter(checkinDate);
-            if (nextUnavailable && checkoutDate >= nextUnavailable) {
-                alert("Check-out date must be before the next unavailable date.");
-                checkOutInput._flatpickr.clear();
-                calculateTotalCost();
-            }
-        }
 
         // Room selection handler
         $('#roomSelect').change(function() {
             selectedRoomId = $(this).val();
             currentRoomPrice = parseFloat($(this).find('option:selected').data('price')) || 0;
-            console.log('Selected room ID:', selectedRoomId);
-            console.log('Room price:', currentRoomPrice);
+            console.log('Selected room:', {
+                roomId: selectedRoomId,
+                price: currentRoomPrice
+            });
 
             if (!selectedRoomId) {
-                checkInInput.value = '';
-                checkOutInput.value = '';
+                if (checkInPicker && typeof checkInPicker.clear === 'function') {
+                    checkInPicker.clear();
+                }
+                if (checkOutPicker && typeof checkOutPicker.clear === 'function') {
+                    checkOutPicker.clear();
+                }
                 selectedDates = [];
                 calculateTotalCost();
                 return;
@@ -1201,8 +1201,9 @@
                 success: function(response) {
                     console.log('Unavailable dates response:', response);
                     if (response.success && response.dates) {
-                        unavailableDates = response.dates;
+                        unavailableDates = response.dates.map(date => new Date(date));
                         initializeFlatpickr();
+                        console.log('Reinitialized date pickers with new unavailable dates');
                     }
                 },
                 error: function(xhr, status, error) {
@@ -1217,11 +1218,18 @@
                 let servicesCost = 0;
 
                 // Calculate room cost
-                if (checkInInput._flatpickr && checkOutInput._flatpickr) {
-                    const checkinDate = checkInInput._flatpickr.selectedDates[0];
-                    const checkoutDate = checkOutInput._flatpickr.selectedDates[0];
+                if (checkInPicker && checkOutPicker && 
+                    typeof checkInPicker.selectedDates !== 'undefined' && 
+                    typeof checkOutPicker.selectedDates !== 'undefined') {
                     
-                    console.log('Calculating cost for dates:', { checkinDate, checkoutDate, currentRoomPrice });
+                    const checkinDate = checkInPicker.selectedDates[0];
+                    const checkoutDate = checkOutPicker.selectedDates[0];
+                    
+                    console.log('Calculating cost for dates:', { 
+                        checkinDate: checkinDate ? checkinDate.toISOString() : null, 
+                        checkoutDate: checkoutDate ? checkoutDate.toISOString() : null,
+                        currentRoomPrice 
+                    });
                     
                     if (checkinDate && checkoutDate && checkoutDate > checkinDate) {
                         const days = Math.ceil((checkoutDate - checkinDate) / (1000 * 60 * 60 * 24));
@@ -1258,8 +1266,16 @@
         $('#createBookingForm').on('submit', function(e) {
             e.preventDefault();
 
-            if (!selectedRoomId || !checkInInput._flatpickr || !checkOutInput._flatpickr) {
+            if (!selectedRoomId || !checkInPicker || !checkOutPicker) {
                 alert('Please complete all booking information');
+                return;
+            }
+
+            const checkinDate = checkInPicker.selectedDates && checkInPicker.selectedDates[0];
+            const checkoutDate = checkOutPicker.selectedDates && checkOutPicker.selectedDates[0];
+
+            if (!checkinDate || !checkoutDate) {
+                alert('Please select both check-in and check-out dates');
                 return;
             }
 
@@ -1272,8 +1288,8 @@
                 City: $('#guestCity').val(),
                 Zip: $('#guestZip').val(),
                 RoomId: selectedRoomId,
-                CheckInDate: checkInInput._flatpickr.selectedDates[0].toISOString().split('T')[0],
-                CheckOutDate: checkOutInput._flatpickr.selectedDates[0].toISOString().split('T')[0],
+                CheckInDate: checkinDate.toISOString().split('T')[0],
+                CheckOutDate: checkoutDate.toISOString().split('T')[0],
                 Services: $('.service-checkbox:checked').map(function() {
                     return $(this).val();
                 }).get(),
@@ -1305,6 +1321,14 @@
             selectedDates = [];
             selectedRoomId = null;
             currentRoomPrice = 0;
+            
+            if (checkInPicker && typeof checkInPicker.clear === 'function') {
+                checkInPicker.clear();
+            }
+            if (checkOutPicker && typeof checkOutPicker.clear === 'function') {
+                checkOutPicker.clear();
+            }
+            
             calculateTotalCost();
         });
     });

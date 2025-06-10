@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using WebApplication1.Models;
-[Table("Guests", Schema = "Hotels")]
+[Table("Guests", Schema = "Hotel")]
 public class Guest
      
 {
@@ -37,7 +37,7 @@ public class Guest
 
     [Required]
     [StringLength(20)]
-    public string Zip { get; set; }
+    public string CCCD { get; set; }
 
     [Required]
     [StringLength(20)]

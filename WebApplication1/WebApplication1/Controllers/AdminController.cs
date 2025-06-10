@@ -341,7 +341,7 @@ namespace WebApplication1.Controllers
                             existingGuest.GuestLastName = guest.GuestLastName;
                             existingGuest.Street = guest.Street;
                             existingGuest.City = guest.City;
-                            existingGuest.Zip = guest.Zip;
+                            existingGuest.CCCD = guest.CCCD;
                             guest = existingGuest;
                         }
                         else
