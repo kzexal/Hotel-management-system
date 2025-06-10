@@ -34,6 +34,8 @@ ADD UserId INT;
 ALTER TABLE Hotel.Guests
 ADD CONSTRAINT FK_Guests_Login
 FOREIGN KEY (UserId) REFERENCES Authentication.Login(LoginId);
+ALTER TABLE Hotel.Guests
+ADD CCCD INT;
 GO
 CREATE SCHEMA HotelService;
 GO
