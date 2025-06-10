@@ -28,44 +28,52 @@ namespace WebApplication1.Controllers
      
         private void UpdateRoomStatusByToday()
         {
-            var today = DateTime.Today;
-            var yesterday = today.AddDays(-1);
-
-    
-            var roomsToSetNo = db.RoomBooked
-                .Join(db.Bookings, rb => rb.BookingId, b => b.BookingId, (rb, b) => new { rb.RoomId, b.CheckInDate })
-                .Where(x => DbFunctions.TruncateTime(x.CheckInDate) == today)
-                .Select(x => x.RoomId)
-                .Distinct()
-                .ToList();
-
-            foreach (var roomId in roomsToSetNo)
+            try
             {
-                var room = db.Rooms.Find(roomId);
-                if (room != null && room.Available != "No")
+                var today = DateTime.Today;
+                var yesterday = today.AddDays(-1);
+
+                // Lấy danh sách phòng cần set Available = "No" (phòng được check-in hôm nay)
+                var roomsToSetNo = db.RoomBooked
+                    .Include(rb => rb.Booking)
+                    .Where(rb => DbFunctions.TruncateTime(rb.Booking.CheckInDate) == today)
+                    .Select(rb => rb.RoomId)
+                    .Distinct()
+                    .ToList();
+
+                foreach (var roomId in roomsToSetNo)
                 {
-                    room.Available = "No";
+                    var room = db.Rooms.Find(roomId);
+                    if (room != null && room.Available != "No")
+                    {
+                        room.Available = "No";
+                    }
                 }
+
+                // Lấy danh sách phòng cần set Available = "Yes" (phòng đã check-out hôm qua)
+                var roomsToSetYes = db.RoomBooked
+                    .Include(rb => rb.Booking)
+                    .Where(rb => DbFunctions.TruncateTime(rb.Booking.CheckOutDate) == yesterday)
+                    .Select(rb => rb.RoomId)
+                    .Distinct()
+                    .ToList();
+
+                foreach (var roomId in roomsToSetYes)
+                {
+                    var room = db.Rooms.Find(roomId);
+                    if (room != null && room.Available != "Yes")
+                    {
+                        room.Available = "Yes";
+                    }
+                }
+
+                db.SaveChanges();
             }
-
-       
-            var roomsToSetYes = db.RoomBooked
-                .Join(db.Bookings, rb => rb.BookingId, b => b.BookingId, (rb, b) => new { rb.RoomId, b.CheckOutDate })
-                .Where(x => DbFunctions.TruncateTime(x.CheckOutDate) == yesterday)
-                .Select(x => x.RoomId)
-                .Distinct()
-                .ToList();
-
-            foreach (var roomId in roomsToSetYes)
+            catch (Exception ex)
             {
-                var room = db.Rooms.Find(roomId);
-                if (room != null && room.Available != "Yes")
-                {
-                    room.Available = "Yes";
-                }
+                // Log lỗi nếu cần
+                System.Diagnostics.Debug.WriteLine("Error in UpdateRoomStatusByToday: " + ex.Message);
             }
-
-            db.SaveChanges();
         }
 
         protected override void Dispose(bool disposing)

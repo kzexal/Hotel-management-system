@@ -1,4 +1,4 @@
-﻿@{
+﻿﻿@{
     Layout = null;
 }
 
@@ -40,11 +40,11 @@
                             {
                                 <li class="nav-item">
                                     @{
-                                        var dashboardUrl = ((int)Session["Role"] == 1) 
-                                            ? Url.Action("AdminDashBoard", "Admin") 
+                                        var dashboardUrl = ((int)Session["Role"] == 1)
+                                            ? Url.Action("AdminDashBoard", "Admin")
                                             : Url.Action("UserDashBoard", "User");
                                     }
-                                    <a class="nav-link @(ViewBag.Title == "Dashboard" ? "active text-primary fw-semibold" : "")" 
+                                    <a class="nav-link @(ViewBag.Title == "Dashboard" ? "active text-primary fw-semibold" : "")"
                                        href="@dashboardUrl">
                                         Dashboard
                                     </a>

@@ -84,6 +84,8 @@ body {
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
     margin-bottom: 2rem;
+    right: 1px;
+    left: 235px;
 }
 
 .user-box {

@@ -7,74 +7,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.HideNavbar = true;
 
-    // Get dates from TempData or form data with proper parsing
-    DateTime checkin, checkout;
-    
-    // Try to parse from TempData first
-    if (TempData["BookingCheckIn"] is DateTime tempCheckin)
-    {
-        checkin = tempCheckin;
-    }
-    else if (Request["checkin"] != null)
-    {
-        // Explicitly parse using dd/MM/yyyy format (day/month/year)
-        // This ensures dates are interpreted as day first, then month
-        var dateFormat = "dd/MM/yyyy";
-        var culture = System.Globalization.CultureInfo.InvariantCulture;
-        if (!DateTime.TryParseExact(Request["checkin"], 
-            dateFormat, 
-            culture,
-            System.Globalization.DateTimeStyles.None, 
-            out checkin))
-        {
-            checkin = DateTime.Today;
-        }
-    }
-    else
-    {
-        checkin = DateTime.Today;
-    }
-
-    if (TempData["BookingCheckOut"] is DateTime tempCheckout)
-    {
-        checkout = tempCheckout;
-    }
-    else if (Request["checkout"] != null)
-    {
-        // Explicitly parse using dd/MM/yyyy format (day/month/year)
-        var dateFormat = "dd/MM/yyyy";
-        var culture = System.Globalization.CultureInfo.InvariantCulture;
-        if (!DateTime.TryParseExact(Request["checkout"], 
-            dateFormat, 
-            culture,
-            System.Globalization.DateTimeStyles.None, 
-            out checkout))
-        {
-            checkout = DateTime.Today.AddDays(1);
-        }
-    }
-    else
-    {
-        checkout = DateTime.Today.AddDays(1);
-    }
-
+    var checkin = TempData["BookingCheckIn"] as DateTime? ?? DateTime.Today;
+    var checkout = TempData["BookingCheckOut"] as DateTime? ?? DateTime.Today.AddDays(1);
     var totalPrice = TempData["BookingTotal"] as int? ?? 0;
-
-    // Get guest information from Request or TempData
-    var guestFirstName = Request["GuestFirstName"] ?? TempData["GuestFirstName"] as string ?? "";
-    var guestLastName = Request["GuestLastName"] ?? TempData["GuestLastName"] as string ?? "";
-    var guestEmail = Request["GuestEmailAddress"] ?? TempData["GuestEmailAddress"] as string ?? "";
-    var guestPhone = Request["GuestContactNumber"] ?? TempData["GuestContactNumber"] as string ?? "";
-    var guestStreet = Request["Street"] ?? TempData["Street"] as string ?? "";
-    var guestCity = Request["City"] ?? TempData["City"] as string ?? "";
-    var guestId = Request["GuestId"] ?? TempData["GuestId"] as string ?? "";
-
     TempData.Keep();
 }
 
 <div class="Payment-container">
     <header class="booking-header">
-        <a href="@Url.Action("Index", "Home")" class="logo" style="text-decoration: none;">HMS</a>
+        <div class="logo">HMS</div>
     </header>
 
     <div class="steps">
@@ -86,13 +27,21 @@
     <h4 class="payment-title">Payment</h4>
     <p class="payment-subtitle">Please fill in your guest information and select a payment method</p>
 
+    @* Hiển thị lỗi nếu có *@
+    @if (TempData["BookingError"] != null)
+    {
+        <div class="alert alert-danger mt-3">
+            @TempData["BookingError"]
+        </div>
+    }
+
     @using (Html.BeginForm("ProcessPayment", "Payment", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
 
         @Html.Hidden("roomId", Model.RoomId)
-        @Html.Hidden("checkin", checkin.ToString("dd/MM/yyyy"))
-        @Html.Hidden("checkout", checkout.ToString("dd/MM/yyyy"))
+        @Html.Hidden("checkin", checkin.ToString("yyyy-MM-dd"))
+        @Html.Hidden("checkout", checkout.ToString("yyyy-MM-dd"))
         @Html.Hidden("totalPrice", totalPrice)
 
         <div class="row g-4">
@@ -117,27 +66,13 @@
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">Guest Information</h5>
-                        <input name="GuestFirstName" class="form-control mb-2" placeholder="First Name" required value="@guestFirstName" />
-                        <input name="GuestLastName" class="form-control mb-2" placeholder="Last Name" required value="@guestLastName" />
-                        <input name="GuestEmailAddress" type="email" class="form-control mb-2" placeholder="Email Address" required value="@guestEmail" />
-                        <input name="GuestContactNumber" 
-                               class="form-control mb-2" 
-                               placeholder="Phone Number (10 digits)" 
-                               required 
-                               pattern="[0-9]{10}"
-                               title="Phone number must be exactly 10 digits"
-                               oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);"
-                               value="@guestPhone" />
-                        <input name="Street" class="form-control mb-2" placeholder="Street Address" required value="@guestStreet" />
-                        <input name="City" class="form-control mb-2" placeholder="City" required value="@guestCity" />
-                        <input name="GuestId" 
-                               class="form-control mb-2" 
-                               placeholder="CCCD (12 digits)" 
-                               required 
-                               pattern="[0-9]{12}"
-                               title="CCCD must be exactly 12 digits"
-                               oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 12);"
-                               value="@guestId" />
+                        <input name="GuestFirstName" class="form-control mb-2" placeholder="First Name" required />
+                        <input name="GuestLastName" class="form-control mb-2" placeholder="Last Name" required />
+                        <input name="GuestEmailAddress" type="email" class="form-control mb-2" placeholder="Email Address" required />
+                        <input name="GuestContactNumber" class="form-control mb-2" placeholder="Phone Number" required />
+                        <input name="Street" class="form-control mb-2" placeholder="Street Address" required />
+                        <input name="City" class="form-control mb-2" placeholder="City" required />
+                        <input name="Zip" class="form-control mb-2" placeholder="ZIP Code" required />
                     </div>
                 </div>
             </div>
@@ -147,86 +82,26 @@
                 <div class="card h-100 shadow-sm">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Payment Method</h5>
-                        <div class="qr-payment-container">
-                            <div class="qr-code mb-3">
-                                <img src="@Url.Content("~/Content/image/qr.png")" alt="QR Payment Code" class="img-fluid" />
-                            </div>
-                            <div class="payment-instructions">
-                                <h6 class="text-primary">Hướng dẫn thanh toán</h6>
-                                <ol class="instruction-list">
-                                    <li>Mở ứng dụng ngân hàng hoặc ví điện tử</li>
-                                    <li>Quét mã QR</li>
-                                    <li>Kiểm tra thông tin và xác nhận thanh toán</li>
-                                </ol>
-                                <div class="transfer-info mt-3">
-                                    <p class="mb-1"><strong>Số tiền:</strong> <span class="text-success">$@totalPrice</span></p>
-                                    <p class="mb-1"><strong>Nội dung chuyển khoản:</strong></p>
-                                    <div class="transfer-content" id="transferContent">
-                                        Loading...
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        @Html.Hidden("PaymentType", "QR")
-                        <button type="submit" class="btn btn-primary mt-3">
-                            <i class="fas fa-credit-card me-2"></i> Process Payment
-                        </button>
+                        <select name="PaymentType" class="form-control mb-3" required>
+                            <option value="" disabled selected>-- Select Payment Method --</option>
+                            <option value="Cash">Cash</option>
+                            <option value="CreditCard">Credit Card</option>
+                            <option value="Momo">Momo</option>
+                            <option value="VNPay">VNPay</option>
+                        </select>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Submit Button -->
+        <div class="text-end mt-4">
+            <button type="submit" class="btn btn-success px-4">Confirm & Pay</button>
+        </div>
     }
+
 </div>
 
-<style>
-.qr-payment-container {
-    text-align: center;
-}
-
-.qr-code {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    display: inline-block;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.qr-code img {
-    max-width: 100%;
-    height: auto;
-}
-
-.payment-instructions {
-    text-align: left;
-    margin-top: 15px;
-}
-
-.instruction-list {
-    padding-left: 20px;
-    margin-bottom: 15px;
-}
-
-.instruction-list li {
-    margin-bottom: 8px;
-    color: #5f6368;
-}
-
-.transfer-info {
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 15px;
-}
-
-.transfer-content {
-    background: #e8f0fe;
-    padding: 10px;
-    border-radius: 4px;
-    font-family: monospace;
-    margin-top: 5px;
-    word-break: break-all;
-}
-</style>
 
 @section Scripts {
     <script>
@@ -236,27 +111,5 @@
                 e.preventDefault();
             }
         });
-
-        // Tạo nội dung chuyển khoản
-        function updateTransferContent() {
-            const phone = document.querySelector('input[name="GuestContactNumber"]').value;
-            const firstName = document.querySelector('input[name="GuestFirstName"]').value;
-            const lastName = document.querySelector('input[name="GuestLastName"]').value;
-            
-            if (phone && firstName && lastName) {
-                const content = `${phone}_${firstName} ${lastName}`;
-                document.getElementById('transferContent').textContent = content;
-            } else {
-                document.getElementById('transferContent').textContent = "Vui lòng điền số điện thoại và tên";
-            }
-        }
-
-        // Theo dõi thay đổi của các trường input
-        document.querySelector('input[name="GuestContactNumber"]').addEventListener('input', updateTransferContent);
-        document.querySelector('input[name="GuestFirstName"]').addEventListener('input', updateTransferContent);
-        document.querySelector('input[name="GuestLastName"]').addEventListener('input', updateTransferContent);
-
-        // Cập nhật lần đầu
-        updateTransferContent();
     </script>
 }
