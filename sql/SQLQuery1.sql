@@ -19,7 +19,7 @@ CREATE TABLE Authentication.Login (
 );
 
 CREATE TABLE Hotel.Guests(
-	GuestId NVARCHAR(30) NOT NULL,
+	GuestId INT IDENTITY(1,1) NOT NULL,
 	GuestFirstName NVARCHAR (50) NOT NULL,
 	GuestLastName NVARCHAR (50) NOT NULL,
 	GuestEmailAddress NVARCHAR(50) NOT NULL ,
@@ -34,6 +34,8 @@ ADD UserId INT;
 ALTER TABLE Hotel.Guests
 ADD CONSTRAINT FK_Guests_Login
 FOREIGN KEY (UserId) REFERENCES Authentication.Login(LoginId);
+ALTER TABLE Hotel.Guests
+ADD CCCD NVARCHAR(30);
 GO
 CREATE SCHEMA HotelService;
 GO
@@ -58,7 +60,7 @@ CREATE TABLE Bookings.Booking(
 	CheckInDate DATE NOT NULL,
 	CheckOutDate DATE NOT NULL,
 	BookingAmount INT NOT NULL,
-	GuestId NVARCHAR(30) NOT NULL,
+	GuestId INT NOT NULL,
 	Status NVARCHAR (10) NOT NULL CHECK (Status IN ('Checkin', 'Checkout')) DEFAULT 'Checkin',
 	CONSTRAINT PK_BookingId PRIMARY KEY (BookingId),
 	CONSTRAINT FK_GuestId_Booking FOREIGN KEY (GuestId)
@@ -136,7 +138,6 @@ CREATE TABLE Bookings.Payments(
 	REFERENCES Bookings.Booking(BookingId) ON DELETE CASCADE ON UPDATE CASCADE
 );
       
-DROP TABLE Bookings.Payments;
 
 ALTER TABLE Bookings.Payments DROP CONSTRAINT FK_BookingId_Payments;
 ALTER TABLE Bookings.Payments ADD CONSTRAINT FK_BookingId_Payments FOREIGN KEY(BookingId)
