@@ -11,6 +11,7 @@
 <main>
     <div class="home-page">
         <div class="container">
+
             <!-- Hero Section -->
             <section class="hero">
                 <div class="content">
@@ -40,7 +41,7 @@
 
             <!-- Available Rooms Section -->
             <section class="available-rooms">
-                <h2 class="section-title">Available Rooms</h2>
+                <h2 class="section-title">List Rooms</h2>
                 <div class="room-grid">
                     @foreach (var room in Model)
                     {
@@ -53,7 +54,7 @@
                             <div class="room-info">
                                 <h3>Room @room.RoomNumber</h3>
                                 <p>Type: @(room.RoomType?.Name ?? "Unknown")</p>
-                                <div class="price-badge">@($"{room.RoomType?.Cost:N0}") <span>per night</span></div>
+                                <div class="price-badge">@($"{room.RoomType?.Cost:N0}")$ <span>per day</span></div>
                             </div>
                         </a>
                     }
@@ -61,14 +62,10 @@
             </section>
 
             <!-- Footer -->
-            <footer id="footer" class="footer">
+            <footer class="footer">
                 <p class="logo">HMS</p>
                 <p class="tagline">We kaboom your beauty holiday instantly and memorable.</p>
-                <div class="contact-info">
-                    <p><i class="fas fa-phone"></i> 0704160332</p>
-                    <p><i class="fas fa-envelope"></i> hms@gmail.com</p>
-                </div>
-                <p class="copyright">© 2025 • All rights reserved</p>
+                <p class="copyright">© 2024 • All rights reserved • Salman Faris</p>
             </footer>
 
         </div>

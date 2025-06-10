@@ -1,4 +1,5 @@
 ﻿@model WebApplication1.Models.Room
+
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <link href="~/Content/payment.css" rel="stylesheet" />
 
@@ -26,16 +27,14 @@
     <h4 class="payment-title">Payment</h4>
     <p class="payment-subtitle">Please fill in your guest information and select a payment method</p>
 
-<<<<<<< HEAD
-=======
-    @if (!string.IsNullOrEmpty(TempData["BookingError"]?.ToString()))
+    @* Hiển thị lỗi nếu có *@
+    @if (TempData["BookingError"] != null)
     {
         <div class="alert alert-danger mt-3">
             @TempData["BookingError"]
         </div>
     }
 
->>>>>>> b8825aeab2dcd453c462c0321de4bc1f713010c5
     @using (Html.BeginForm("ProcessPayment", "Payment", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
@@ -49,11 +48,14 @@
             <!-- Room Summary -->
             <div class="col-md-4">
                 <div class="card h-100 shadow-sm">
-                    <img src="@Model.Image" alt="Room @Model.RoomNumber" class="card-img-top rounded-top" style="object-fit: cover; height: 180px;" />
+                    <img src="@(!string.IsNullOrEmpty(Model.Image) ? Model.Image : Url.Content("~/Images/no-image.png"))"
+                         alt="Room @Model.RoomNumber"
+                         class="card-img-top rounded-top"
+                         style="object-fit: cover; height: 180px;" />
                     <div class="card-body">
                         <h5 class="card-title">Room Summary</h5>
                         <p><strong>Room:</strong> Room @Model.RoomNumber (@(Model.RoomType?.Name))</p>
-                        <p><strong>Stay:</strong> @checkin → @checkout</p>
+                        <p><strong>Stay:</strong> @checkin.ToString("dd/MM/yyyy") → @checkout.ToString("dd/MM/yyyy")</p>
                         <p><strong>Total Price:</strong> <span class="text-success fw-bold">$@totalPrice</span></p>
                     </div>
                 </div>
@@ -70,7 +72,7 @@
                         <input name="GuestContactNumber" class="form-control mb-2" placeholder="Phone Number" required />
                         <input name="Street" class="form-control mb-2" placeholder="Street Address" required />
                         <input name="City" class="form-control mb-2" placeholder="City" required />
-                        <input name="GuestId" type="number" class="form-control mb-2" placeholder="CCCD" required maxlength="12" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+                        <input name="Zip" class="form-control mb-2" placeholder="ZIP Code" required />
                     </div>
                 </div>
             </div>
@@ -81,22 +83,25 @@
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Payment Method</h5>
                         <select name="PaymentType" class="form-control mb-3" required>
-                            <option value="">-- Select Payment Method --</option>
+                            <option value="" disabled selected>-- Select Payment Method --</option>
+                            <option value="Cash">Cash</option>
                             <option value="CreditCard">Credit Card</option>
                             <option value="Momo">Momo</option>
                             <option value="VNPay">VNPay</option>
                         </select>
-                        <button type="submit" class="btn btn-primary mt-auto">
-                            <i class="fas fa-credit-card me-2"></i> Process Payment
-                        </button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Submit Button -->
+        <div class="text-end mt-4">
+            <button type="submit" class="btn btn-success px-4">Confirm & Pay</button>
+        </div>
     }
+
 </div>
-<<<<<<< HEAD
-=======
+
 
 @section Scripts {
     <script>
@@ -108,4 +113,3 @@
         });
     </script>
 }
->>>>>>> b8825aeab2dcd453c462c0321de4bc1f713010c5

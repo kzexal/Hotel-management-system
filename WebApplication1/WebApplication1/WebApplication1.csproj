@@ -141,11 +141,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
-    <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -159,17 +161,14 @@
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\RoomBooked.cs" />
     <Compile Include="Models\RoomType.cs" />
+    <Compile Include="Models\Service.cs" />
+    <Compile Include="Models\ServicesUsed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-=======
     <Content Include="Content\AdminDashBoard.css" />
     <Content Include="Content\image\favicon.png" />
     <Content Include="Content\UserDashBoard.css" />
     <Content Include="Views\Admin\AdminDashBoard.cshtml" />
-    <Content Include="Views\DashBoard\AdminDashBoard.cshtml" />
-    <Content Include="Views\DashBoard\UserDashBoard.cshtml" />
     <None Include="Views\Shared\DebugInfo.cshtml" />
->>>>>>> b8825aeab2dcd453c462c0321de4bc1f713010c5
     <None Include="Views\Booking\BookingPage.cshtml" />
     <Content Include="Content\booking-page.css" />
     <Content Include="Content\globals.css" />
@@ -182,8 +181,9 @@
     <Content Include="Content\room-detail.css" />
     <Content Include="Content\style.css" />
     <Content Include="Views\Booking\Payment.cshtml" />
-    <Content Include="Views\Payment\PaymentSusscess.cshtml" />
-    <Content Include="Views\Payment\PaymentFailed.cshtml" />
+    <Content Include="Views\Payment\PaymentSuccess.cshtml" />
+    <Content Include="Views\Payment\PaymentFail.cshtml" />
+    <Content Include="Views\User\UserDashBoard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />

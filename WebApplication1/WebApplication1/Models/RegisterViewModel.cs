@@ -15,6 +15,6 @@ namespace WebApplication1.Models
         [Required, DataType(DataType.Password)]
         public string Password { get; set; }
 
-        public int TypeAccount { get; set; } = 0; // default user
+        public int TypeAccount { get; set; } = 0; 
     }
 }

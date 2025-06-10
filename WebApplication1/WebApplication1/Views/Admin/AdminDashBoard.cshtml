@@ -1,1164 +1,2122 @@
-@model IEnumerable<WebApplication1.Models.RoomBooked>
+﻿    @model IEnumerable<WebApplication1.Models.RoomBooked>
 
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Admin Dashboard";
-    ViewBag.HideNavbar = true;
-}
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
-<link href="~/Content/AdminDashboard.css" rel="stylesheet" />
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<div class="dashboard-container">
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <a href="@Url.Action("Index", "Home")" class="brand-container">
-            <img src="~/Content/image/favicon.png" alt="HMS Logo" class="brand-logo" />
-            <h1>HMS Admin</h1>
-        </a>
-        <nav class="nav flex-column">
-            <a class="nav-link active" data-bs-toggle="tab" href="#overview-tab-pane">
-                <i class="bi bi-speedometer2"></i> Overview
-            </a>
-            <a class="nav-link" data-bs-toggle="tab" href="#rooms-tab-pane">
-                <i class="bi bi-house-door"></i> Rooms
-            </a>
-            <a class="nav-link" data-bs-toggle="tab" href="#bookings-tab-pane">
-                <i class="bi bi-calendar-check"></i> Bookings
-            </a>
-            <a class="nav-link" data-bs-toggle="tab" href="#services-tab-pane">
-                <i class="bi bi-bell"></i> Services
-            </a>
-            <a class="nav-link" data-bs-toggle="tab" href="#users-tab-pane">
-                <i class="bi bi-people"></i> Users
-            </a>
-            <a class="nav-link" data-bs-toggle="tab" href="#reports-tab-pane">
-                <i class="bi bi-graph-up"></i> Reports
-            </a>
-        </nav>
-    </div>
-
-    <!-- Main Content -->
-    <div class="main-content-wrapper">
-        <div class="top-bar">
-            @if (TempData["Success"] != null)
-            {
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    @TempData["Success"]
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            }
-            @if (TempData["Error"] != null)
-            {
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    @TempData["Error"]
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            }
-            <div class="user-box">
-                <div class="user-greeting">
-                    <p class="mb-0">Welcome back, Admin</p>
-                    <small class="text-muted">Manage your hotel system</small>
-                </div>
-                <div class="user-profile">
-                    <div class="user-avatar-wrapper">
-                        <img src="https://tse4.mm.bing.net/th/id/OIP.9_MptOLxjJEGSGukPt9FWQHaHa" alt="Admin" class="user-avatar" />
-                        <div class="user-info">
-                            <div class="user-name">@Session["Username"]</div>
-                            <div class="user-role">Administrator</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="tab-content p-4">
-            <!-- Overview Tab -->
-            <div class="tab-pane fade show active" id="overview-tab-pane">
-                <h4 class="mb-4 fw-bold"><i class="bi bi-speedometer2"></i> Dashboard Overview</h4>
-
-                <!-- Statistics Cards -->
-                <div class="row g-4">
-                    <div class="col-md-3">
-                        <div class="stat-card bg-primary bg-gradient text-white">
-                            <div class="stat-icon">
-                                <i class="bi bi-house-door"></i>
-                            </div>
-                            <div class="stat-details">
-                                <h3>@ViewBag.TotalRooms</h3>
-                                <p>Total Rooms</p>
-                            </div>
-                            <div class="stat-link">
-                                <a href="#rooms-tab-pane" data-bs-toggle="tab" class="text-white">View Details <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-card bg-success bg-gradient text-white">
-                            <div class="stat-icon">
-                                <i class="bi bi-calendar-check"></i>
-                            </div>
-                            <div class="stat-details">
-                                <h3>@ViewBag.TotalBookings</h3>
-                                <p>Active Bookings</p>
-                            </div>
-                            <div class="stat-link">
-                                <a href="#bookings-tab-pane" data-bs-toggle="tab" class="text-white">View Details <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-card bg-warning bg-gradient text-white">
-                            <div class="stat-icon">
-                                <i class="bi bi-bell"></i>
-                            </div>
-                            <div class="stat-details">
-                                <h3>@ViewBag.TotalServices</h3>
-                                <p>Available Services</p>
-                            </div>
-                            <div class="stat-link">
-                                <a href="#services-tab-pane" data-bs-toggle="tab" class="text-white">View Details <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-card bg-danger bg-gradient text-white">
-                            <div class="stat-icon">
-                                <i class="bi bi-people"></i>
-                            </div>
-                            <div class="stat-details">
-                                <h3>@ViewBag.TotalUsers</h3>
-                                <p>Registered Users</p>
-                            </div>
-                            <div class="stat-link">
-                                <a href="#users-tab-pane" data-bs-toggle="tab" class="text-white">View Details <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quick Actions -->
-                <div class="quick-actions mt-5">
-                    <h5 class="mb-3">Quick Actions</h5>
-                    <div class="row g-3">
-                        <div class="col-md-3">
-                            <a href="#" class="action-card">
-                                <i class="bi bi-plus-circle"></i>
-                                <span>Add New Room</span>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="#" class="action-card">
-                                <i class="bi bi-calendar-plus"></i>
-                                <span>Create Booking</span>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="#" class="action-card">
-                                <i class="bi bi-gear"></i>
-                                <span>Manage Services</span>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="#" class="action-card">
-                                <i class="bi bi-person-plus"></i>
-                                <span>Add User</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Rooms Tab -->
-            <div class="tab-pane fade" id="rooms-tab-pane">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h4 class="fw-bold"><i class="bi bi-house-door"></i> Room Management</h4>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRoomModal">
-                        <i class="bi bi-plus-lg"></i> Add New Room
-                    </button>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Room No.</th>
-                                        <th>Image</th>
-                                        <th>Type</th>
-                                        <th>Current Booking</th>
-                                        <th>Status</th>
-                                        <th>Price</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var room in ViewBag.Rooms)
-                                    {
-                                        var currentBooking = Model.FirstOrDefault(rb => rb.RoomId == room.RoomId && rb.Room.Available == "No");
-
-                                        <tr data-room-id="@room.RoomId">
-                                            <td>@room.RoomNumber</td>
-                                            <td>
-                                                <img src="@room.Image" alt="Room @room.RoomNumber" class="room-thumbnail" style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px;">
-                                            </td>
-                                            <td>@room.RoomType.Name</td>
-                                            <td class="booking-info">
-                                                @if (currentBooking != null)
-                                                {
-                                                    <div>
-                                                        <small class="text-muted">Booked by:</small>
-                                                        <div>@currentBooking.Booking.Guest.GuestFirstName @currentBooking.Booking.Guest.GuestLastName</div>
-                                                        <small class="text-muted">Until: @currentBooking.Booking.CheckOutDate.ToString("yyyy-MM-dd")</small>
-                                                    </div>
-                                                }
-                                                else
-                                                {
-                                                    <span class="text-muted">No current booking</span>
-                                                }
-                                            </td>
-                                            <td class="status-cell">
-                                                @if (currentBooking != null)
-                                                {
-                                                    <span class="badge bg-danger">Occupied</span>
-                                                }
-                                                else
-                                                {
-                                                    <span class="badge bg-success">Available</span>
-                                                }
-                                            </td>
-                                            <td>$@room.RoomType.Cost</td>
-                                            <td>
-                                                <a href="#" class="btn btn-sm btn-outline-primary me-1" onclick="editRoom(@room.RoomId)">
-                                                    <i class="bi bi-pencil"></i>
-                                                </a>
-                                                <a href="@Url.Action("Delete", "Room", new { id = room.RoomId })" class="btn btn-sm btn-outline-danger">
-                                                    <i class="bi bi-trash"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bookings Tab -->
-            <div class="tab-pane fade" id="bookings-tab-pane">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h4 class="fw-bold"><i class="bi bi-calendar-check"></i> Booking Management</h4>
-                    <button class="btn btn-primary" onclick="location.href='@Url.Action("Create", "Booking")'">
-                        <i class="bi bi-plus-lg"></i> Create Booking
-                    </button>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Booking ID</th>
-                                        <th>Guest</th>
-                                        <th>Room</th>
-                                        <th>Check-in</th>
-                                        <th>Check-out</th>
-                                        <th>Total Amount</th>
-                                        <th>Status</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var roomBooked in Model)
-                                    {
-                                        <tr>
-                                            <td>#@roomBooked.BookingId</td>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <div>
-                                                        <div class="fw-bold">@roomBooked.Booking.Guest.GuestFirstName @roomBooked.Booking.Guest.GuestLastName</div>
-                                                        <small class="text-muted">@roomBooked.Booking.Guest.GuestEmailAddress</small>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                Room @roomBooked.Room.RoomNumber
-                                                <br />
-                                                <small class="text-muted">@roomBooked.Room.RoomType.Name</small>
-                                            </td>
-                                            <td>@roomBooked.Booking.CheckInDate.ToString("yyyy-MM-dd")</td>
-                                            <td>@roomBooked.Booking.CheckOutDate.ToString("yyyy-MM-dd")</td>
-                                            <td>$@roomBooked.Booking.BookingAmount</td>
-                                            <td>
-                                                <span class="badge bg-@(roomBooked.Booking.Status == "Confirmed" ? "success" : "warning text-dark")">
-                                                    @roomBooked.Booking.Status
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <a href="#" class="btn btn-sm btn-outline-primary me-1 booking-details-btn" data-booking-id="@roomBooked.Booking.BookingId">
-                                                    <i class="bi bi-eye"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-sm btn-outline-danger" onclick="cancelBooking(@roomBooked.BookingId)">
-                                                    <i class="bi bi-x-circle"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Services Tab -->
-            <div class="tab-pane fade" id="services-tab-pane">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h4 class="fw-bold"><i class="bi bi-bell"></i> Service Management</h4>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addServiceModal">
-                        <i class="bi bi-plus-lg"></i> Add New Service
-                    </button>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Service ID</th>
-                                        <th>Service Name</th>
-                                        <th>Description</th>
-                                        <th>Price</th>
-                                        <th>Status</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var service in ViewBag.Services)
-                                    {
-                                        <tr>
-                                            <td>#@service.ServiceId</td>
-                                            <td>@service.ServiceName</td>
-                                            <td>@service.ServiceDescription</td>
-                                            <td>$@service.ServiceCost</td>
-                                            <td>
-                                                <span class="badge bg-success">Active</span>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-sm btn-outline-primary me-1" onclick="editService(@service.ServiceId)">
-                                                    <i class="bi bi-pencil"></i>
-                                                </button>
-                                                <button class="btn btn-sm btn-outline-danger" onclick="deleteService(@service.ServiceId)">
-                                                    <i class="bi bi-trash"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Users Tab -->
-            <div class="tab-pane fade" id="users-tab-pane">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h4 class="fw-bold"><i class="bi bi-people"></i> User Management</h4>
-                    <button class="btn btn-primary">
-                        <i class="bi bi-plus-lg"></i> Add New User
-                    </button>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>UserId</th>
-                                        <th>Username</th>
-                                        <th>Role</th>
-                                        <th>Status</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var user in ViewBag.Users)
-                                    {
-                                        <tr>
-                                            <td>@user.LoginId</td>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-
-                                                    <div>@user.Username</div>
-                                                </div>
-                                            </td>
-
-                                            <td>
-                                                <span class="badge bg-primary">User</span>
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-success">Active</span>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-sm btn-outline-primary me-1" onclick="editUser(@user.LoginId)">
-                                                    <i class="bi bi-pencil"></i>
-                                                </button>
-                                                <button class="btn btn-sm btn-outline-danger">
-                                                    <i class="bi bi-trash"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Reports Tab -->
-            <div class="tab-pane fade" id="reports-tab-pane">
-                <h4 class="fw-bold mb-4"><i class="bi bi-graph-up"></i> Reports & Analytics</h4>
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="card h-100">
-                            <div class="card-header">
-                                <h5 class="card-title mb-0">Revenue Overview</h5>
-                            </div>
-                            <div class="card-body">
-                                <!-- Revenue chart will be added here -->
-                                <div class="chart-placeholder">
-                                    Revenue Chart
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card h-100">
-                            <div class="card-header">
-                                <h5 class="card-title mb-0">Occupancy Rate</h5>
-                            </div>
-                            <div class="card-body">
-                                <!-- Occupancy chart will be added here -->
-                                <div class="chart-placeholder">
-                                    Occupancy Chart
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Add Room Modal -->
-<div class="modal fade" id="addRoomModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form action="@Url.Action("CreateRoom", "Admin")" method="post" enctype="multipart/form-data">
-                @Html.AntiForgeryToken()
-                <div class="modal-header">
-                    <h5 class="modal-title">Add New Room</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label class="form-label">Room Number</label>
-                        <input type="text" class="form-control" name="RoomNumber" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Room Type</label>
-                        <select class="form-select" name="RoomTypeId" required>
-                            @if (ViewBag.RoomType != null && ViewBag.RoomType.Count > 0)
-                            {
-                                foreach (var roomType in ViewBag.RoomType)
-                                {
-                                    <option value="@roomType.RoomTypeId">@roomType.Name</option>
-                                }
-                            }
-                            else
-                            {
-                                <option value="">No room types available</option>
-                            }
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Room Image URL</label>
-                        <input type="url" class="form-control" name="Image" placeholder="Enter image URL" required>
-                        <small class="text-muted">Enter a direct link to the room image (e.g., https://example.com/image.jpg)</small>
-                    </div>
-                    <input type="hidden" name="Available" value="Yes">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Add Room</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- Edit Room Modal -->
-<div class="modal fade" id="editRoomModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form id="editRoomForm">
-                <div class="modal-header bg-warning text-dark">
-                    <h5 class="modal-title"><i class="bi bi-pencil-square"></i> Edit Room</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <input type="hidden" id="editRoomId" name="RoomId" />
-                    
-                    <div class="mb-3">
-                        <label class="form-label">Room Number</label>
-                        <input type="text" class="form-control" id="editRoomNumber" name="RoomNumber" required>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label class="form-label">Room Type</label>
-                        <select class="form-select" id="editRoomTypeId" name="RoomTypeId" required>
-                            @if (ViewBag.RoomType != null && ViewBag.RoomType.Count > 0)
-                            {
-                                foreach (var roomType in ViewBag.RoomType)
-                                {
-                                    <option value="@roomType.RoomTypeId">@roomType.Name</option>
-                                }
-                            }
-                            else
-                            {
-                                <option value="">No room types available</option>
-                            }
-                        </select>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label class="form-label">Room Image URL</label>
-                        <input type="url" class="form-control" id="editRoomImage" name="Image" placeholder="Enter image URL" required>
-                        <small class="text-muted">Enter a direct link to the room image (e.g., https://example.com/image.jpg)</small>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label class="form-label">Status</label>
-                        <select class="form-select" id="editRoomAvailable" name="Available">
-                            <option value="Yes">Available</option>
-                            <option value="No">Not Available</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        <i class="bi bi-x-circle"></i> Cancel
-                    </button>
-                    <button type="submit" class="btn btn-success">
-                        <i class="bi bi-save"></i> Save Changes
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- Add Service Modal -->
-<div class="modal fade" id="addServiceModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form action="@Url.Action("CreateService", "Admin")" method="post">
-                <div class="modal-header">
-                    <h5 class="modal-title">Add New Service</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label class="form-label">Service Name</label>
-                        <input type="text" class="form-control" name="ServiceName" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Description</label>
-                        <input type="text" class="form-control" name="ServiceDescription" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Price</label>
-                        <input type="number" class="form-control" name="ServiceCost" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Add Service</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="editServiceModal" tabindex="-1" aria-labelledby="editServiceModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header bg-warning text-dark">
-                <h5 class="modal-title" id="editServiceModalLabel"><i class="bi bi-pencil-square"></i> Edit Service</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form id="editServiceForm">
-                <div class="modal-body">
-                    <input type="hidden" id="editServiceId" name="ServiceId" />
-
-                    <div class="mb-3">
-                        <label for="editServiceName" class="form-label">Service Name</label>
-                        <input type="text" class="form-control" id="editServiceName" name="ServiceName" required />
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="editServicePrice" class="form-label">Price ($)</label>
-                        <input type="number" class="form-control" id="editServicePrice" name="Price" min="0" step="0.01" required />
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="editServiceDescription" class="form-label">Description</label>
-                        <textarea class="form-control" id="editServiceDescription" name="Description" rows="3"></textarea>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        <i class="bi bi-x-circle"></i> Cancel
-                    </button>
-                    <button type="submit" class="btn btn-success">
-                        <i class="bi bi-save"></i> Save Changes
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- Edit User Modal -->
-<div class="modal fade" id="editUserModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form id="editUserForm">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title"><i class="bi bi-person-gear"></i> Edit User</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <input type="hidden" id="editUserId" name="LoginId" />
-                    
-                    <div class="mb-3">
-                        <label class="form-label">Username</label>
-                        <input type="text" class="form-control" id="editUsername" name="Username" required>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-control" id="editEmail" name="Email" required>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label class="form-label">New Password (leave blank to keep current)</label>
-                        <input type="password" class="form-control" id="editPassword" name="Password">
-                        <small class="text-muted">Only fill this if you want to change the password</small>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label class="form-label">Role</label>
-                        <select class="form-select" id="editRole" name="Role">
-                            <option value="User">User</option>
-                            <option value="Admin">Admin</option>
-                        </select>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label class="form-label">Status</label>
-                        <select class="form-select" id="editStatus" name="Status">
-                            <option value="Active">Active</option>
-                            <option value="Inactive">Inactive</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        <i class="bi bi-x-circle"></i> Cancel
-                    </button>
-                    <button type="submit" class="btn btn-success">
-                        <i class="bi bi-save"></i> Save Changes
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- Booking Details Modal -->
-<div class="modal fade" id="bookingDetailsModal" tabindex="-1" aria-labelledby="bookingDetailsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title" id="bookingDetailsModalLabel"><i class="bi bi-info-circle"></i> Booking Details</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row g-4">
-                    <!-- Guest Info -->
-                    <div class="col-md-6">
-                        <div class="card border-0 shadow-sm h-100">
-                            <div class="card-header bg-primary text-white">
-                                <h6 class="card-title mb-0"><i class="bi bi-person-circle"></i> Guest Information</h6>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-unstyled mb-0">
-                                    <li class="mb-3"><i class="bi bi-person text-primary"></i> <strong>Name:</strong> <span id="guestName" class="ms-2">Loading...</span></li>
-                                    <li class="mb-3"><i class="bi bi-envelope text-primary"></i> <strong>Email:</strong> <span id="guestEmail" class="ms-2">Loading...</span></li>
-                                    <li><i class="bi bi-telephone text-primary"></i> <strong>Phone:</strong> <span id="guestPhone" class="ms-2">Loading...</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Room Info -->
-                    <div class="col-md-6">
-                        <div class="card border-0 shadow-sm h-100">
-                            <div class="card-header bg-success text-white">
-                                <h6 class="card-title mb-0"><i class="bi bi-house-door"></i> Room Details</h6>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-unstyled mb-0">
-                                    <li class="mb-3"><i class="bi bi-door-closed text-success"></i> <strong>Room Number:</strong> <span id="roomNumber" class="ms-2">Loading...</span></li>
-                                    <li class="mb-3"><i class="bi bi-tag text-success"></i> <strong>Room Type:</strong> <span id="roomType" class="ms-2">Loading...</span></li>
-                                    <li><i class="bi bi-currency-dollar text-success"></i> <strong>Price:</strong> <span id="roomPrice" class="ms-2">Loading...</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Service Info -->
-                    <div class="col-12">
-                        <div class="card border-0 shadow-sm">
-                            <div class="card-header bg-warning text-dark">
-                                <h6 class="card-title mb-0"><i class="bi bi-cone-striped"></i> Service Booked</h6>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-unstyled mb-0" id="serviceInfoList">
-                                    <li>Loading services...</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Booking Info -->
-                    <div class="col-12">
-                        <div class="card border-0 shadow-sm">
-                            <div class="card-header bg-info text-white">
-                                <h6 class="card-title mb-0"><i class="bi bi-calendar-check"></i> Booking Information</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <ul class="list-unstyled mb-0">
-                                            <li class="mb-3"><i class="bi bi-hash text-info"></i> <strong>Booking ID:</strong> <span id="bookingId" class="ms-2">Loading...</span></li>
-                                            <li class="mb-3"><i class="bi bi-calendar text-info"></i> <strong>Booking Date:</strong> <span id="bookingDate" class="ms-2">Loading...</span></li>
-                                            <li class="mb-3"><i class="bi bi-calendar-event text-info"></i> <strong>Check-in:</strong> <span id="checkInDate" class="ms-2">Loading...</span></li>
-                                            <li><i class="bi bi-calendar-event-fill text-info"></i> <strong>Check-out:</strong> <span id="checkOutDate" class="ms-2">Loading...</span></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul class="list-unstyled mb-0">
-                                            <li class="mb-3"><i class="bi bi-moon-stars text-info"></i> <strong>Total Days:</strong> <span id="totalDays" class="ms-2">Loading...</span></li>
-                                            <li class="mb-3"><i class="bi bi-cash text-info"></i> <strong>Total Amount:</strong> <span id="totalAmount" class="ms-2">Loading...</span></li>
-                                            <li><i class="bi bi-check-circle text-info"></i> <strong>Status:</strong> <span id="bookingStatus" class="ms-2">Loading...</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                    <i class="bi bi-x-circle"></i> Close
-                </button>
-                <button type="button" class="btn btn-danger" id="cancelBookingBtn">
-                    <i class="bi bi-trash"></i> Cancel Booking
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-function showBookingDetails(bookingId) {
-    if (!bookingId || isNaN(bookingId)) {
-        alert("Invalid booking ID.");
-        return;
+    @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        ViewBag.Title = "Admin Dashboard";
+        ViewBag.HideNavbar = true;
     }
 
-    $('#bookingDetailsModal').modal('show');
-    $('#guestName, #guestEmail, #guestPhone, #roomNumber, #roomType, #roomPrice, #bookingId, #bookingDate, #checkInDate, #checkOutDate, #totalDays, #totalAmount, #bookingStatus').text('Loading...');
-    $('#serviceInfoList').html('<li>Loading services...</li>');
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="~/Content/AdminDashboard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-    $.ajax({
-        url: '@Url.Action("GetBookingDetails", "Admin")',
-        type: 'GET',
-        data: { id: bookingId },
-        success: function (response) {
-            if (!response || response.success === false) {
-                alert(response?.message || "Booking not found.");
-                $('#bookingDetailsModal').modal('hide');
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <a href="@Url.Action("Index", "Home")" class="brand-container">
+                <img src="~/Content/image/favicon.png" alt="HMS Logo" class="brand-logo" />
+                <h1>HMS Admin</h1>
+            </a>
+            <nav class="nav flex-column">
+                <a class="nav-link active" data-bs-toggle="tab" href="#overview-tab-pane">
+                    <i class="bi bi-speedometer2"></i> Overview
+                </a>
+                <a class="nav-link" data-bs-toggle="tab" href="#rooms-tab-pane">
+                    <i class="bi bi-house-door"></i> Rooms
+                </a>
+                <a class="nav-link" data-bs-toggle="tab" href="#bookings-tab-pane">
+                    <i class="bi bi-calendar-check"></i> Bookings
+                </a>
+                <a class="nav-link" data-bs-toggle="tab" href="#services-tab-pane">
+                    <i class="bi bi-bell"></i> Services
+                </a>
+                <a class="nav-link" data-bs-toggle="tab" href="#users-tab-pane">
+                    <i class="bi bi-people"></i> Users
+                </a>
+                <a class="nav-link" data-bs-toggle="tab" href="#reports-tab-pane">
+                    <i class="bi bi-graph-up"></i> Reports
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content-wrapper">
+            <div class="top-bar">
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        @TempData["Success"]
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+                @if (TempData["Error"] != null)
+                {
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        @TempData["Error"]
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+                <div class="user-box">
+                    <div class="user-greeting">
+                        <p class="mb-0">Welcome back, Admin</p>
+                        <small class="text-muted">Manage your hotel system</small>
+                    </div>
+                    <div class="user-profile d-flex align-items-center justify-content-end">
+                        <div class="d-flex align-items-center me-3">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.9_MptOLxjJEGSGukPt9FWQHaHa" alt="Admin" class="user-avatar me-2" style="width: 40px; height: 40px; border-radius: 50%;" />
+                            <div>
+                                <div class="fw-bold">@Session["Username"]</div>
+                                <div class="text-muted small">Administrator</div>
+                            </div>
+                        </div>
+                        <a href="@Url.Action("Logout", "Account")" class="btn btn-outline-danger btn-sm">
+                            <i class="bi bi-box-arrow-right"></i> Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content p-4">
+                <!-- Overview Tab -->
+                <div class="tab-pane fade show active" id="overview-tab-pane">
+                    <h4 class="mb-4 fw-bold"><i class="bi bi-speedometer2"></i> Dashboard Overview</h4>
+
+                    <!-- Statistics Cards -->
+                    <div class="row g-4">
+                        <div class="col-md-3">
+                            <div class="stat-card bg-primary bg-gradient text-white">
+                                <div class="stat-icon">
+                                    <i class="bi bi-house-door"></i>
+                                </div>
+                                <div class="stat-details">
+                                    <h3>@ViewBag.TotalRooms</h3>
+                                    <p>Total Rooms</p>
+                                </div>
+                                <div class="stat-link">
+                                    <a href="#rooms-tab-pane" data-bs-toggle="tab" class="text-white">View Details <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-card bg-success bg-gradient text-white">
+                                <div class="stat-icon">
+                                    <i class="bi bi-calendar-check"></i>
+                                </div>
+                                <div class="stat-details">
+                                    <h3>@ViewBag.TotalBookings</h3>
+                                    <p>Active Bookings</p>
+                                </div>
+                                <div class="stat-link">
+                                    <a href="#bookings-tab-pane" data-bs-toggle="tab" class="text-white">View Details <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-card bg-warning bg-gradient text-white">
+                                <div class="stat-icon">
+                                    <i class="bi bi-bell"></i>
+                                </div>
+                                <div class="stat-details">
+                                    <h3>@ViewBag.TotalServices</h3>
+                                    <p>Available Services</p>
+                                </div>
+                                <div class="stat-link">
+                                    <a href="#services-tab-pane" data-bs-toggle="tab" class="text-white">View Details <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-card bg-danger bg-gradient text-white">
+                                <div class="stat-icon">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <div class="stat-details">
+                                    <h3>@ViewBag.TotalUsers</h3>
+                                    <p>Registered Users</p>
+                                </div>
+                                <div class="stat-link">
+                                    <a href="#users-tab-pane" data-bs-toggle="tab" class="text-white">View Details <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions mt-5">
+                        <h5 class="mb-3">Quick Actions</h5>
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <a href="#" class="action-card" data-bs-toggle="modal" data-bs-target="#addRoomModal">
+                                    <i class="bi bi-plus-circle"></i>
+                                    <span>Add New Room</span>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" class="action-card">
+                                    <i class="bi bi-calendar-plus"></i>
+                                    <span>Create Booking</span>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" class="action-card" data-bs-toggle="modal" data-bs-target="#addServiceModal">
+                                    <i class="bi bi-gear"></i>
+                                    <span>Add Service</span>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" class="action-card" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                                    <i class="bi bi-person-plus"></i>
+                                    <span>Add User</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rooms Tab -->
+                <div class="tab-pane fade" id="rooms-tab-pane">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="fw-bold"><i class="bi bi-house-door"></i> Room Management</h4>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRoomModal">
+                            <i class="bi bi-plus-lg"></i> Add New Room
+                        </button>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Room No.</th>
+                                            <th>Image</th>
+                                            <th>Type</th>
+                                            <th>Current Booking</th>
+                                            <th>Status</th>
+                                            <th>Price</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var room in ViewBag.Rooms)
+                                        {
+                                            var currentBooking = Model.FirstOrDefault(rb => rb.RoomId == room.RoomId && rb.Room.Available == "No");
+
+                                            <tr data-room-id="@room.RoomId">
+                                                <td>@room.RoomNumber</td>
+                                                <td>
+                                                    <img src="@room.Image" alt="Room @room.RoomNumber" class="room-thumbnail" style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px;">
+                                                </td>
+                                                <td>@(room.RoomType?.Name ?? "N/A")</td>
+                                                <td class="booking-info">
+                                                    @if (currentBooking != null && currentBooking.Booking != null && currentBooking.Booking.Guest != null)
+                                                    {
+                                                        <div>
+                                                            <small class="text-muted">Booked by:</small>
+                                                            <div>@currentBooking.Booking.Guest.GuestFirstName @currentBooking.Booking.Guest.GuestLastName</div>
+                                                            <small class="text-muted">Until: @currentBooking.Booking.CheckOutDate.ToString("yyyy-MM-dd")</small>
+                                                        </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="text-muted">No current booking</span>
+                                                    }
+                                                </td>
+                                                <td>
+                                                    @{
+                                                        var statusBadgeClass = "";
+                                                        var statusText = "";
+                                                        
+                                                        if (room.Available == "No")
+                                                        {
+                                                            var booking = Model.FirstOrDefault(rb => rb.RoomId == room.RoomId);
+                                                            if (booking != null && booking.Booking.Status == "Checkout")
+                                                    {
+                                                                statusBadgeClass = "danger";
+                                                                statusText = "Needs Cleaning";
+                                                    }
+                                                    else
+                                                    {
+                                                                statusBadgeClass = "warning";
+                                                                statusText = "Occupied";
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            statusBadgeClass = "success";
+                                                            statusText = "Available";
+                                                        }
+                                                    }
+                                                    <span class="badge bg-@statusBadgeClass">@statusText</span>
+                                                </td>
+                                                <td>$@(room.RoomType?.Cost ?? 0)</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-sm btn-outline-primary me-1" onclick="editRoom(@room.RoomId)">
+                                                        <i class="bi bi-pencil"></i>
+                                                    </a>
+                                                    @if (statusText == "Needs Cleaning")
+                                                    {
+                                                        <button class="btn btn-sm btn-outline-success me-1" onclick="markRoomAsCleaned(@room.RoomId)">
+                                                            <i class="bi bi-check2-circle"></i>
+                                                        </button>
+                                                    }
+                                                    <button class="btn btn-sm btn-outline-danger" onclick="deleteRoom(@room.RoomId)">
+                                                        <i class="bi bi-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bookings Tab -->
+                <div class="tab-pane fade" id="bookings-tab-pane">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="fw-bold"><i class="bi bi-calendar-check"></i> Booking Management</h4>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createBookingModal">
+                            <i class="bi bi-plus-lg"></i> Create Booking
+                        </button>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Booking ID</th>
+                                            <th>Guest</th>
+                                            <th>Room</th>
+                                            <th>Check-in</th>
+                                            <th>Check-out</th>
+                                            <th>Total Amount</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var roomBooked in Model)
+                                        {
+                                            <tr>
+                                                <td>#@roomBooked.BookingId</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div>
+                                                            <div class="fw-bold">@roomBooked.Booking.Guest.GuestFirstName @roomBooked.Booking.Guest.GuestLastName</div>
+                                                            <small class="text-muted">@roomBooked.Booking.Guest.GuestEmailAddress</small>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    Room @roomBooked.Room.RoomNumber
+                                                    <br />
+                                                    <small class="text-muted">@roomBooked.Room.RoomType.Name</small>
+                                                </td>
+                                                <td>@roomBooked.Booking.CheckInDate.ToString("yyyy-MM-dd")</td>
+                                                <td>@roomBooked.Booking.CheckOutDate.ToString("yyyy-MM-dd")</td>
+                                                <td>$@roomBooked.Booking.BookingAmount</td>
+                                                <td>
+                                                    @{
+                                                        var statusClass = roomBooked.Booking.Status == "Checkout" ? "secondary" :
+                                                                        roomBooked.Booking.Status == "Checkin" ? "success" : "warning";
+                                                    }
+                                                    <span class="badge bg-@statusClass">
+                                                        @roomBooked.Booking.Status
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="btn btn-sm btn-outline-primary me-1 booking-details-btn" data-booking-id="@roomBooked.Booking.BookingId">
+                                                        <i class="bi bi-eye"></i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-outline-danger" onclick="deleteBooking(@roomBooked.BookingId)">
+                                                        <i class="bi bi-trash"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services Tab -->
+                <div class="tab-pane fade" id="services-tab-pane">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="fw-bold"><i class="bi bi-bell"></i> Service Management</h4>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addServiceModal">
+                            <i class="bi bi-plus-lg"></i> Add New Service
+                        </button>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Service ID</th>
+                                            <th>Service Name</th>
+                                            <th>Description</th>
+                                            <th>Price</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var service in ViewBag.Services)
+                                        {
+                                            <tr>
+                                                <td>#@service.ServiceId</td>
+                                                <td>@service.ServiceName</td>
+                                                <td>@service.ServiceDescription</td>
+                                                <td>$@service.ServiceCost</td>
+                                                <td>
+                                                    <span class="badge bg-success">Active</span>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-primary me-1" onclick="editService(@service.ServiceId)">
+                                                        <i class="bi bi-pencil"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-danger" onclick="deleteService(@service.ServiceId)">
+                                                        <i class="bi bi-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Users Tab -->
+                <div class="tab-pane fade" id="users-tab-pane">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="fw-bold"><i class="bi bi-people"></i> User Management</h4>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                            <i class="bi bi-plus-lg"></i> Add New User
+                        </button>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>UserId</th>
+                                            <th>Username</th>
+                                            <th>Role</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var user in ViewBag.Users)
+                                        {
+                                            <tr>
+                                                <td>@user.LoginId</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+
+                                                        <div>@user.Username</div>
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <span class="badge bg-primary">User</span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-success">Active</span>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-primary me-1" onclick="editUser(@user.LoginId)">
+                                                        <i class="bi bi-pencil"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-danger" onclick="deleteUser(@user.LoginId)">
+                                                        <i class="bi bi-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reports Tab -->
+                <div class="tab-pane fade" id="reports-tab-pane">
+                    <h4 class="fw-bold mb-4"><i class="bi bi-graph-up"></i> Monthly Revenue Report</h4>
+                    
+                    <!-- Date Range Filter -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row align-items-end">
+                                <div class="col-md-4">
+                                    <label class="form-label">Time Period</label>
+                                    <select class="form-select" id="reportPeriod">
+                                        <option value="6">Last 6 months</option>
+                                        <option value="12" selected>Last 12 months</option>
+                                        <option value="24">Last 2 years</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-primary w-100" onclick="updateMonthlyReports()">
+                                        <i class="bi bi-arrow-clockwise"></i> Update
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Summary Cards -->
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-3">
+                            <div class="card bg-primary bg-gradient text-white h-100">
+                                <div class="card-body">
+                                    <h6 class="card-title">Total Revenue</h6>
+                                    <h3 class="mb-0" id="totalRevenue">$0</h3>
+                                    <small class="text-white-50" id="revenueChange">vs previous period</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-success bg-gradient text-white h-100">
+                                <div class="card-body">
+                                    <h6 class="card-title">Average Monthly Revenue</h6>
+                                    <h3 class="mb-0" id="avgMonthlyRevenue">$0</h3>
+                                    <small class="text-white-50">per month</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-info bg-gradient text-white h-100">
+                                <div class="card-body">
+                                    <h6 class="card-title">Best Performing Month</h6>
+                                    <h3 class="mb-0" id="bestMonth">-</h3>
+                                    <small class="text-white-50" id="bestMonthRevenue">$0</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-warning bg-gradient text-white h-100">
+                                <div class="card-body">
+                                    <h6 class="card-title">Average Bookings</h6>
+                                    <h3 class="mb-0" id="avgBookings">0</h3>
+                                    <small class="text-white-50">bookings per month</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monthly Revenue Chart -->
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">Monthly Revenue</h5>
+                            <div class="btn-group btn-group-sm">
+                                <button class="btn btn-outline-secondary active" data-chart-type="bar">Bar</button>
+                                <button class="btn btn-outline-secondary" data-chart-type="line">Line</button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div style="height: 400px; position: relative;">
+                                <canvas id="monthlyRevenueChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Room Modal -->
+    <div class="modal fade" id="addRoomModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="@Url.Action("CreateRoom", "Admin")" method="post" enctype="multipart/form-data">
+                    @Html.AntiForgeryToken()
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add New Room</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Room Number</label>
+                            <input type="text" class="form-control" name="RoomNumber" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Room Type</label>
+                            <select class="form-select" name="RoomTypeId" required>
+                                @if (ViewBag.RoomType != null && ViewBag.RoomType.Count > 0)
+                                {
+                                    foreach (var roomType in ViewBag.RoomType)
+                                    {
+                                        <option value="@roomType.RoomTypeId">@roomType.Name</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="">No room types available</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Room Image URL</label>
+                            <input type="url" class="form-control" name="Image" placeholder="Enter image URL" required>
+                            <small class="text-muted">Enter a direct link to the room image (e.g., https://example.com/image.jpg)</small>
+                        </div>
+                        <input type="hidden" name="Available" value="Yes">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Add Room</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Room Modal -->
+    <div class="modal fade" id="editRoomModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="editRoomForm">
+                    <div class="modal-header bg-warning text-dark">
+                        <h5 class="modal-title"><i class="bi bi-pencil-square"></i> Edit Room</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="editRoomId" name="RoomId" />
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Room Number</label>
+                            <input type="text" class="form-control" id="editRoomNumber" name="RoomNumber" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Room Type</label>
+                            <select class="form-select" id="editRoomTypeId" name="RoomTypeId" required>
+                                @if (ViewBag.RoomType != null && ViewBag.RoomType.Count > 0)
+                                {
+                                    foreach (var roomType in ViewBag.RoomType)
+                                    {
+                                        <option value="@roomType.RoomTypeId">@roomType.Name</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="">No room types available</option>
+                                }
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Room Image URL</label>
+                            <input type="url" class="form-control" id="editRoomImage" name="Image" placeholder="Enter image URL" required>
+                            <small class="text-muted">Enter a direct link to the room image (e.g., https://example.com/image.jpg)</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Status</label>
+                            <select class="form-select" id="editRoomAvailable" name="Available">
+                                <option value="Yes">Available</option>
+                                <option value="No">Not Available</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="bi bi-x-circle"></i> Cancel
+                        </button>
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-save"></i> Save Changes
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Service Modal -->
+    <div class="modal fade" id="addServiceModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="@Url.Action("CreateService", "Admin")" method="post">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add New Service</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Service Name</label>
+                            <input type="text" class="form-control" name="ServiceName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <input type="text" class="form-control" name="ServiceDescription" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Price</label>
+                            <input type="number" class="form-control" name="ServiceCost" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Add Service</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editServiceModal" tabindex="-1" aria-labelledby="editServiceModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-warning text-dark">
+                    <h5 class="modal-title" id="editServiceModalLabel"><i class="bi bi-pencil-square"></i> Edit Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="editServiceForm">
+                    <div class="modal-body">
+                        <input type="hidden" id="editServiceId" name="ServiceId" />
+
+                        <div class="mb-3">
+                            <label for="editServiceName" class="form-label">Service Name</label>
+                            <input type="text" class="form-control" id="editServiceName" name="ServiceName" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="editServicePrice" class="form-label">Price ($)</label>
+                            <input type="number" class="form-control" id="editServicePrice" name="Price" min="0" step="0.01" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="editServiceDescription" class="form-label">Description</label>
+                            <textarea class="form-control" id="editServiceDescription" name="Description" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="bi bi-x-circle"></i> Cancel
+                        </button>
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-save"></i> Save Changes
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit User Modal -->
+    <div class="modal fade" id="editUserModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="editUserForm">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title"><i class="bi bi-person-gear"></i> Edit User</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="editUserId" name="LoginId" />
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-control" id="editUsername" name="Username" required>
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="editPassword" name="Password">
+                            <small class="text-muted">Leave blank to keep current password.</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="editConfirmPassword">
+                            <small class="text-danger d-none" id="passwordMismatch">Passwords do not match!</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Role</label>
+                            <select class="form-select" id="editRole" name="TypeAccount">
+                                <option value="0">User</option>
+                                <option value="1">Admin</option>
+                            </select>
+            
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="bi bi-x-circle"></i> Cancel
+                        </button>
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-save"></i> Save Changes
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Details Modal -->
+    <div class="modal fade" id="bookingDetailsModal" tabindex="-1" aria-labelledby="bookingDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="bookingDetailsModalLabel"><i class="bi bi-info-circle"></i> Booking Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <!-- Guest Info -->
+                        <div class="col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-header bg-primary text-white">
+                                    <h6 class="card-title mb-0"><i class="bi bi-person-circle"></i> Guest Information</h6>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-3"><i class="bi bi-person text-primary"></i> <strong>Name:</strong> <span id="guestName" class="ms-2">Loading...</span></li>
+                                        <li class="mb-3"><i class="bi bi-envelope text-primary"></i> <strong>Email:</strong> <span id="guestEmail" class="ms-2">Loading...</span></li>
+                                        <li><i class="bi bi-telephone text-primary"></i> <strong>Phone:</strong> <span id="guestPhone" class="ms-2">Loading...</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Room Info -->
+                        <div class="col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-header bg-success text-white">
+                                    <h6 class="card-title mb-0"><i class="bi bi-house-door"></i> Room Details</h6>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-3"><i class="bi bi-door-closed text-success"></i> <strong>Room Number:</strong> <span id="roomNumber" class="ms-2">Loading...</span></li>
+                                        <li class="mb-3"><i class="bi bi-tag text-success"></i> <strong>Room Type:</strong> <span id="roomType" class="ms-2">Loading...</span></li>
+                                        <li><i class="bi bi-currency-dollar text-success"></i> <strong>Price:</strong> <span id="roomPrice" class="ms-2">Loading...</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Service Info -->
+                        <div class="col-12">
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-header bg-warning text-dark">
+                                    <h6 class="card-title mb-0"><i class="bi bi-cone-striped"></i> Service Booked</h6>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0" id="serviceInfoList">
+                                        <li>Loading services...</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Booking Info -->
+                        <div class="col-12">
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-header bg-info text-white">
+                                    <h6 class="card-title mb-0"><i class="bi bi-calendar-check"></i> Booking Information</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <ul class="list-unstyled mb-0">
+                                                <li class="mb-3"><i class="bi bi-hash text-info"></i> <strong>Booking ID:</strong> <span id="bookingId" class="ms-2">Loading...</span></li>
+                                                <li class="mb-3"><i class="bi bi-calendar text-info"></i> <strong>Booking Date:</strong> <span id="bookingDate" class="ms-2">Loading...</span></li>
+                                                <li class="mb-3"><i class="bi bi-calendar-event text-info"></i> <strong>Check-in:</strong> <span id="checkInDate" class="ms-2">Loading...</span></li>
+                                                <li><i class="bi bi-calendar-event-fill text-info"></i> <strong>Check-out:</strong> <span id="checkOutDate" class="ms-2">Loading...</span></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <ul class="list-unstyled mb-0">
+                                                <li class="mb-3"><i class="bi bi-moon-stars text-info"></i> <strong>Total Days:</strong> <span id="totalDays" class="ms-2">Loading...</span></li>
+                                                <li class="mb-3"><i class="bi bi-cash text-info"></i> <strong>Total Amount:</strong> <span id="totalAmount" class="ms-2">Loading...</span></li>
+                                                <li><i class="bi bi-check-circle text-info"></i> <strong>Status:</strong> <span id="bookingStatus" class="ms-2">Loading...</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle"></i> Close
+                    </button>
+                    <button type="button" class="btn btn-danger" id="cancelBookingBtn">
+                        <i class="bi bi-trash"></i> Cancel Booking
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Booking Modal -->
+    <div class="modal fade" id="createBookingModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form id="createBookingForm">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title"><i class="bi bi-calendar-plus"></i> Create New Booking</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row g-3">
+                            <!-- Guest Information -->
+                            <div class="col-md-6">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-header bg-light">
+                                        <h6 class="mb-0"><i class="bi bi-person"></i> Guest Information</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <label class="form-label">First Name</label>
+                                            <input type="text" class="form-control" id="guestFirstName" name="GuestFirstName" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Last Name</label>
+                                            <input type="text" class="form-control" id="guestLastName" name="GuestLastName" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="guestEmail" name="GuestEmailAddress" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Phone Number</label>
+                                            <input type="tel" class="form-control" id="guestPhone" name="GuestContactNumber" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Street Address</label>
+                                            <input type="text" class="form-control" id="guestStreet" name="Street" required>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="mb-3">
+                                                    <label class="form-label">City</label>
+                                                    <input type="text" class="form-control" id="guestCity" name="City" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label">ZIP Code</label>
+                                                    <input type="text" class="form-control" id="guestZip" name="Zip" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Booking Details -->
+                            <div class="col-md-6">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-header bg-light">
+                                        <h6 class="mb-0"><i class="bi bi-calendar-check"></i> Booking Details</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <label class="form-label">Select Room</label>
+                                            <select class="form-select" id="roomSelect" name="RoomId" required>
+                                                <option value="">Choose a room...</option>
+                                                @foreach (var room in ((IEnumerable<WebApplication1.Models.Room>)ViewBag.Rooms).Where(r => r.Available == "Yes"))
+                                                {
+                                                    <option value="@room.RoomId" data-price="@room.RoomType.Cost">
+                                                        Room @room.RoomNumber - @room.RoomType.Name ($@room.RoomType.Cost/night)
+                                                    </option>
+                                                }
+                                            </select>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Check-in Date</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="bi bi-calendar-event"></i></span>
+                                                    <input type="text" class="form-control date-picker" id="checkInDate" name="CheckInDate" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Check-out Date</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="bi bi-calendar-event-fill"></i></span>
+                                                    <input type="text" class="form-control date-picker" id="checkOutDate" name="CheckOutDate" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Additional Services</label>
+                                            <div class="service-list">
+                                                @foreach (var service in ViewBag.Services)
+                                                {
+                                                    <div class="form-check">
+                                                        <input class="form-check-input service-checkbox" type="checkbox" 
+                                                            value="@service.ServiceId" id="service@(service.ServiceId)" 
+                                                            data-cost="@service.ServiceCost">
+                                                        <label class="form-check-label" for="service@(service.ServiceId)">
+                                                            @service.ServiceName - $@service.ServiceCost
+                                                        </label>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+
+                                        <!-- Selected Dates Summary -->
+                                        <div class="selected-dates-summary mt-3 d-none">
+                                            <h6 class="mb-2">Selected Dates:</h6>
+                                            <div class="selected-dates-list small text-muted"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Cost Summary -->
+                                <div class="card border-0 shadow-sm mt-3">
+                                    <div class="card-header bg-success text-white">
+                                        <h6 class="mb-0"><i class="bi bi-receipt"></i> Cost Summary</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="mb-1">Room Cost:</p>
+                                                <h5 id="roomCost">$0.00</h5>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="mb-1">Services Cost:</p>
+                                                <h5 id="servicesCost">$0.00</h5>
+                                            </div>
+                                            <div class="col-12 mt-2">
+                                                <hr>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h6 class="mb-0">Total Cost:</h6>
+                                                    <h4 id="totalCost" class="text-success mb-0">$0.00</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="bi bi-x-circle"></i> Cancel
+                        </button>
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-check-circle"></i> Create Booking
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add User Modal -->
+    <div class="modal fade" id="addUserModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="addUserForm">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title"><i class="bi bi-person-plus"></i> Add New User</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-control" id="newUsername" name="Username" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" id="newPassword" name="Password" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="newConfirmPassword" required>
+                            <small class="text-danger d-none" id="newPasswordMismatch">Passwords do not match!</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Role</label>
+                            <select class="form-select" id="newRole" name="TypeAccount">
+                                <option value="0">User</option>
+                                <option value="1">Admin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="bi bi-x-circle"></i> Cancel
+                        </button>
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-person-plus"></i> Add User
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    $(document).ready(function () {
+        // Initialize variables
+        let selectedDates = [];
+        let currentRoomPrice = 0;
+        let selectedRoomId = null;
+
+        // Initialize Flatpickr for date inputs
+        const checkInInput = document.getElementById('checkInDate');
+        const checkOutInput = document.getElementById('checkOutDate');
+        let unavailableDates = [];
+
+        // Initialize Flatpickr immediately
+        initializeFlatpickr();
+
+        // Reset form and reinitialize Flatpickr when modal is shown
+        $('#createBookingModal').on('shown.bs.modal', function() {
+            selectedDates = [];
+            currentRoomPrice = 0;
+            selectedRoomId = null;
+            unavailableDates = [];
+            $('#roomSelect').val('');
+            checkInInput.value = '';
+            checkOutInput.value = '';
+            calculateTotalCost();
+            initializeFlatpickr();
+        });
+
+        function initializeFlatpickr() {
+            if (!checkInInput || !checkOutInput) {
+                console.error('Missing date inputs');
                 return;
             }
 
-            try {
-                const guest = response.guest || {};
-                $('#guestName').text(`${guest.GuestFirstName || ''} ${guest.GuestLastName || ''}`.trim() || 'N/A');
-                $('#guestEmail').text(guest.GuestEmailAddress || 'N/A');
-                $('#guestPhone').text(guest.GuestContactNumber || 'N/A');
-
-                const room = response.room || {};
-                $('#roomNumber').text(room.RoomNumber ? `Room ${room.RoomNumber}` : 'N/A');
-                $('#roomType').text(room.RoomType?.Name || 'N/A');
-                $('#roomPrice').text(room.RoomType?.Cost ? `$${room.RoomType.Cost}` : 'N/A');
-
-                const booking = response.booking || {};
-                $('#bookingId').text(booking.BookingId ? `#${booking.BookingId}` : 'N/A');
-
-                const bookingDate = booking.BookingDate ? new Date(booking.BookingDate) : null;
-                const checkIn = booking.CheckInDate ? new Date(booking.CheckInDate) : null;
-                const checkOut = booking.CheckOutDate ? new Date(booking.CheckOutDate) : null;
-
-                const dateOptions = { year: 'numeric', month: '2-digit', day: '2-digit' };
-                $('#bookingDate').text(bookingDate ? bookingDate.toLocaleDateString('en-US', dateOptions) : 'N/A');
-                $('#checkInDate').text(checkIn ? checkIn.toLocaleDateString('en-US', dateOptions) : 'N/A');
-                $('#checkOutDate').text(checkOut ? checkOut.toLocaleDateString('en-US', dateOptions) : 'N/A');
-
-                if (checkIn && checkOut && checkIn < checkOut) {
-                    const days = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
-                    $('#totalDays').text(`${days} ${days === 1 ? 'day' : 'days'}`);
-                } else {
-                    $('#totalDays').text('N/A');
-                }
-
-                $('#totalAmount').text(booking.BookingAmount != null ? `$${booking.BookingAmount}` : 'N/A');
-
-                const status = booking.Status || 'Unknown';
-                const statusClass = status.toLowerCase() === 'checkin' ? 'primary' :
-                                    status.toLowerCase() === 'checkout' ? 'success' : 'warning';
-                $('#bookingStatus').html(`<span class="badge bg-${statusClass}">${status}</span>`);
-
-                const canCancel = status.toLowerCase() === 'checkin';
-                $('#cancelBookingBtn')
-                    .prop('disabled', !canCancel)
-                    .toggleClass('btn-danger', canCancel)
-                    .toggleClass('btn-secondary', !canCancel)
-                    .data('booking-id', booking.BookingId);
-
-                // Service Info
-                const services = response.services || [];
-                const $serviceList = $('#serviceInfoList');
-                $serviceList.empty();
-
-                if (services.length > 0) {
-                    services.forEach(service => {
-                        const name = service.ServiceName || 'Unnamed Service';
-                        const price = service.Price != null ? `$${service.Price}` : 'N/A';
-                        $serviceList.append(`<li class="mb-2"><i class="bi bi-check2-circle text-warning"></i> <strong>${name}</strong>: <span class="ms-2">${price}</span></li>`);
-                    });
-                } else {
-                    $serviceList.append('<li><i class="bi bi-info-circle text-muted"></i> No additional services used.</li>');
-                }
-
-            } catch (err) {
-                console.error("Error processing booking details:", err);
-                alert("Error processing booking details. Please try again.");
+            // Destroy existing instances if any
+            if (checkInInput._flatpickr) {
+                checkInInput._flatpickr.destroy();
             }
-        },
-        error: function () {
-            alert("Error loading booking details. Please try again.");
-            $('#bookingDetailsModal').modal('hide');
+            if (checkOutInput._flatpickr) {
+                checkOutInput._flatpickr.destroy();
+            }
+
+            const commonConfig = {
+                dateFormat: "Y-m-d",
+                disable: unavailableDates,
+                minDate: "today",
+                allowInput: true,
+                disableMobile: true
+            };
+
+            flatpickr("#checkInDate", {
+                ...commonConfig,
+                onChange: function(selectedDates, dateStr) {
+                    // Update checkout min date
+                    if (selectedDates[0]) {
+                        const nextDay = new Date(selectedDates[0]);
+                        nextDay.setDate(nextDay.getDate() + 1);
+                        checkOutInput._flatpickr.set('minDate', nextDay);
+                    }
+                    calculateTotalCost();
+                    validateCheckinCheckoutLogic();
+                }
+            });
+
+            flatpickr("#checkOutDate", {
+                ...commonConfig,
+                onChange: function(selectedDates) {
+                    calculateTotalCost();
+                    validateCheckinCheckoutLogic();
+                }
+            });
+
+            console.log('Flatpickr initialized with config:', commonConfig);
         }
-    });
-}
 
-$(document).ready(function () {
-    $('.booking-details-btn').click(function (e) {
-        e.preventDefault();
-        const bookingId = $(this).data('booking-id');
-        showBookingDetails(bookingId);
-    });
+        function getFirstUnavailableAfter(dateStr) {
+            const date = new Date(dateStr);
+            const futureDates = unavailableDates
+                .map(d => new Date(d))
+                .filter(d => d > date)
+                .sort((a, b) => a - b);
+            return futureDates.length ? futureDates[0] : null;
+        }
 
-    $('#cancelBookingBtn').click(function () {
-        const bookingId = $(this).data('booking-id');
-        if (confirm('Are you sure you want to cancel this booking?')) {
-            $.post('@Url.Action("CancelBooking", "Admin")', { id: bookingId })
-                .done(function (result) {
-                    if (result.success) {
-                        $('#bookingDetailsModal').modal('hide');
+        function validateCheckinCheckoutLogic() {
+            if (!checkInInput._flatpickr || !checkOutInput._flatpickr) return;
+
+            const checkinDate = checkInInput._flatpickr.selectedDates[0];
+            const checkoutDate = checkOutInput._flatpickr.selectedDates[0];
+
+            if (!checkinDate || !checkoutDate) return;
+
+            console.log('Validating dates:', { checkinDate, checkoutDate });
+
+            const nextUnavailable = getFirstUnavailableAfter(checkinDate);
+            if (nextUnavailable && checkoutDate >= nextUnavailable) {
+                alert("Check-out date must be before the next unavailable date.");
+                checkOutInput._flatpickr.clear();
+                calculateTotalCost();
+            }
+        }
+
+        // Room selection handler
+        $('#roomSelect').change(function() {
+            selectedRoomId = $(this).val();
+            currentRoomPrice = parseFloat($(this).find('option:selected').data('price')) || 0;
+            console.log('Selected room ID:', selectedRoomId);
+            console.log('Room price:', currentRoomPrice);
+
+            if (!selectedRoomId) {
+                checkInInput.value = '';
+                checkOutInput.value = '';
+                selectedDates = [];
+                calculateTotalCost();
+                return;
+            }
+
+            // Get unavailable dates
+            $.ajax({
+                url: '@Url.Action("GetUnavailableDates", "Admin")',
+                type: 'GET',
+                data: { roomId: selectedRoomId },
+                success: function(response) {
+                    console.log('Unavailable dates response:', response);
+                    if (response.success && response.dates) {
+                        unavailableDates = response.dates;
+                        initializeFlatpickr();
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error getting unavailable dates:', error);
+                }
+            });
+        });
+
+        function calculateTotalCost() {
+            try {
+                let roomCost = 0;
+                let servicesCost = 0;
+
+                // Calculate room cost
+                if (checkInInput._flatpickr && checkOutInput._flatpickr) {
+                    const checkinDate = checkInInput._flatpickr.selectedDates[0];
+                    const checkoutDate = checkOutInput._flatpickr.selectedDates[0];
+                    
+                    console.log('Calculating cost for dates:', { checkinDate, checkoutDate, currentRoomPrice });
+                    
+                    if (checkinDate && checkoutDate && checkoutDate > checkinDate) {
+                        const days = Math.ceil((checkoutDate - checkinDate) / (1000 * 60 * 60 * 24));
+                        roomCost = currentRoomPrice * days;
+                        console.log('Calculated room cost:', { days, roomCost });
+                    }
+                }
+
+                // Calculate services cost
+                $('.service-checkbox:checked').each(function() {
+                    const cost = parseFloat($(this).data('cost'));
+                    if (!isNaN(cost)) {
+                        servicesCost += cost;
+                    }
+                });
+
+                // Update display
+                $('#roomCost').text(`$${roomCost.toFixed(2)}`);
+                $('#servicesCost').text(`$${servicesCost.toFixed(2)}`);
+                $('#totalCost').text(`$${(roomCost + servicesCost).toFixed(2)}`);
+
+            } catch (error) {
+                console.error('Error calculating cost:', error);
+                $('#roomCost').text('$0.00');
+                $('#servicesCost').text('$0.00');
+                $('#totalCost').text('$0.00');
+            }
+        }
+
+        // Service checkbox handler
+        $('.service-checkbox').change(calculateTotalCost);
+
+        // Form submission
+        $('#createBookingForm').on('submit', function(e) {
+            e.preventDefault();
+
+            if (!selectedRoomId || !checkInInput._flatpickr || !checkOutInput._flatpickr) {
+                alert('Please complete all booking information');
+                return;
+            }
+
+            const formData = {
+                GuestFirstName: $('#guestFirstName').val(),
+                GuestLastName: $('#guestLastName').val(),
+                GuestEmailAddress: $('#guestEmail').val(),
+                GuestContactNumber: $('#guestPhone').val(),
+                Street: $('#guestStreet').val(),
+                City: $('#guestCity').val(),
+                Zip: $('#guestZip').val(),
+                RoomId: selectedRoomId,
+                CheckInDate: checkInInput._flatpickr.selectedDates[0].toISOString().split('T')[0],
+                CheckOutDate: checkOutInput._flatpickr.selectedDates[0].toISOString().split('T')[0],
+                Services: $('.service-checkbox:checked').map(function() {
+                    return $(this).val();
+                }).get(),
+                TotalAmount: parseFloat($('#totalCost').text().replace('$', ''))
+            };
+
+            $.ajax({
+                url: '@Url.Action("CreateBooking", "Admin")',
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                    if (response.success) {
+                        alert('Booking created successfully!');
+                        $('#createBookingModal').modal('hide');
                         location.reload();
                     } else {
-                        alert(result.message || 'Error cancelling booking');
+                        alert(response.message || 'Failed to create booking');
                     }
-                })
-                .fail(function () {
-                    alert('Error cancelling booking. Please try again.');
-                });
-        }
+                },
+                error: function() {
+                    alert('Error occurred while creating booking');
+                }
+            });
+        });
+
+        // Reset form when modal is hidden
+        $('#createBookingModal').on('hidden.bs.modal', function() {
+            $('#createBookingForm')[0].reset();
+            selectedDates = [];
+            selectedRoomId = null;
+            currentRoomPrice = 0;
+            calculateTotalCost();
+        });
     });
-});
 
-function editService(serviceId) {
-
-    $('#editServiceForm')[0].reset();
-
-    $.ajax({
-        url: '@Url.Action("GetService", "Admin")',
-        type: 'GET',
-        data: { id: serviceId },
-        success: function(response) {
-            if (!response.success) {
-                alert(response.message || 'Error loading service details');
-                return;
-            }
-            
-            const service = response.service;
-            $('#editServiceId').val(service.ServiceId);
-            $('#editServiceName').val(service.ServiceName);
-            $('#editServiceDescription').val(service.ServiceDescription);
-            $('#editServicePrice').val(service.ServiceCost);
-            
-            // Show modal
-            $('#editServiceModal').modal('show');
-        },
-        error: function() {
-            alert('Error loading service details. Please try again.');
+    function showBookingDetails(bookingId) {
+        if (!bookingId || isNaN(bookingId)) {
+            alert("Invalid booking ID.");
+            return;
         }
-    });
-}
 
-$(document).ready(function() {
-    $('#editServiceForm').on('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = {
-            ServiceId: $('#editServiceId').val(),
-            ServiceName: $('#editServiceName').val(),
-            ServiceDescription: $('#editServiceDescription').val(),
-            ServiceCost: $('#editServicePrice').val()
-        };
-        
+        $('#bookingDetailsModal').modal('show');
+        $('#guestName, #guestEmail, #guestPhone, #roomNumber, #roomType, #roomPrice, #bookingId, #bookingDate, #checkInDate, #checkOutDate, #totalDays, #totalAmount, #bookingStatus').text('Loading...');
+        $('#serviceInfoList').html('<li>Loading services...</li>');
+
         $.ajax({
-            url: '@Url.Action("EditService", "Admin")',
-            type: 'POST',
-            data: formData,
-            success: function(response) {
-                $('#editServiceModal').modal('hide');
-                location.reload(); // Reload page to show updated data
+            url: '@Url.Action("GetBookingDetails", "Admin")',
+            type: 'GET',
+            data: { id: bookingId },
+            success: function (response) {
+                if (!response || response.success === false) {
+                    alert(response?.message || "Booking not found.");
+                    $('#bookingDetailsModal').modal('hide');
+                    return;
+                }
+
+                try {
+                    const guest = response.guest || {};
+                    $('#guestName').text(`${guest.GuestFirstName || ''} ${guest.GuestLastName || ''}`.trim() || 'N/A');
+                    $('#guestEmail').text(guest.GuestEmailAddress || 'N/A');
+                    $('#guestPhone').text(guest.GuestContactNumber || 'N/A');
+
+                    const room = response.room || {};
+                    $('#roomNumber').text(room.RoomNumber ? `Room ${room.RoomNumber}` : 'N/A');
+                    $('#roomType').text(room.RoomType?.Name || 'N/A');
+                    $('#roomPrice').text(room.RoomType?.Cost ? `$${room.RoomType.Cost}` : 'N/A');
+
+                    const booking = response.booking || {};
+                    $('#bookingId').text(booking.BookingId ? `#${booking.BookingId}` : 'N/A');
+
+                    const bookingDate = booking.BookingDate ? new Date(booking.BookingDate) : null;
+                    const checkIn = booking.CheckInDate ? new Date(booking.CheckInDate) : null;
+                    const checkOut = booking.CheckOutDate ? new Date(booking.CheckOutDate) : null;
+
+                    const dateOptions = { year: 'numeric', month: '2-digit', day: '2-digit' };
+                    $('#bookingDate').text(bookingDate ? bookingDate.toLocaleDateString('en-US', dateOptions) : 'N/A');
+                    $('#checkInDate').text(checkIn ? checkIn.toLocaleDateString('en-US', dateOptions) : 'N/A');
+                    $('#checkOutDate').text(checkOut ? checkOut.toLocaleDateString('en-US', dateOptions) : 'N/A');
+
+                    if (checkIn && checkOut && checkIn < checkOut) {
+                        const days = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+                        $('#totalDays').text(`${days} ${days === 1 ? 'day' : 'days'}`);
+                    } else {
+                        $('#totalDays').text('N/A');
+                    }
+
+                    $('#totalAmount').text(booking.BookingAmount != null ? `$${booking.BookingAmount}` : 'N/A');
+
+                    const status = booking.Status || 'Unknown';
+                    const statusClass = status.toLowerCase() === 'checkin' ? 'primary' :
+                                        status.toLowerCase() === 'checkout' ? 'success' : 'warning';
+                    $('#bookingStatus').html(`<span class="badge bg-${statusClass}">${status}</span>`);
+
+                    const canCancel = status.toLowerCase() === 'checkin';
+                    $('#cancelBookingBtn')
+                        .prop('disabled', !canCancel)
+                        .toggleClass('btn-danger', canCancel)
+                        .toggleClass('btn-secondary', !canCancel)
+                        .data('booking-id', booking.BookingId);
+
+                    // Service Info
+                    const services = response.services || [];
+                    const $serviceList = $('#serviceInfoList');
+                    $serviceList.empty();
+
+                    if (services.length > 0) {
+                        services.forEach(service => {
+                            const name = service.ServiceName || 'Unnamed Service';
+                            const price = service.Price != null ? `$${service.Price}` : 'N/A';
+                            $serviceList.append(`<li class="mb-2"><i class="bi bi-check2-circle text-warning"></i> <strong>${name}</strong>: <span class="ms-2">${price}</span></li>`);
+                        });
+                    } else {
+                        $serviceList.append('<li><i class="bi bi-info-circle text-muted"></i> No additional services used.</li>');
+                    }
+
+                } catch (err) {
+                    console.error("Error processing booking details:", err);
+                    alert("Error processing booking details. Please try again.");
+                }
             },
-            error: function() {
-                alert('Error updating service. Please try again.');
+            error: function () {
+                alert("Error loading booking details. Please try again.");
+                $('#bookingDetailsModal').modal('hide');
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $('.booking-details-btn').click(function (e) {
+            e.preventDefault();
+            const bookingId = $(this).data('booking-id');
+            showBookingDetails(bookingId);
+        });
+
+        $('#cancelBookingBtn').click(function () {
+            const bookingId = $(this).data('booking-id');
+            if (confirm('Are you sure you want to cancel this booking?')) {
+                $.post('@Url.Action("CancelBooking", "Admin")', { id: bookingId })
+                    .done(function (result) {
+                        if (result.success) {
+                            $('#bookingDetailsModal').modal('hide');
+                            location.reload();
+                        } else {
+                            alert(result.message || 'Error cancelling booking');
+                        }
+                    })
+                    .fail(function () {
+                        alert('Error cancelling booking. Please try again.');
+                    });
             }
         });
     });
-});
 
-function editRoom(roomId) {
-    // Reset form
-    $('#editRoomForm')[0].reset();
-    
-    // Get room details
-    $.ajax({
-        url: '@Url.Action("GetRoom", "Admin")',
-        type: 'GET',
-        data: { id: roomId },
-        success: function(response) {
-            if (!response.success) {
-                alert(response.message || 'Error loading room details');
-                return;
-            }
-            
-            const room = response.room;
-            $('#editRoomId').val(room.RoomId);
-            $('#editRoomNumber').val(room.RoomNumber);
-            $('#editRoomTypeId').val(room.RoomTypeId);
-            $('#editRoomImage').val(room.Image);
-            $('#editRoomAvailable').val(room.Available);
-            
-            // Show modal
-            $('#editRoomModal').modal('show');
-        },
-        error: function() {
-            alert('Error loading room details. Please try again.');
-        }
-    });
-}
+    function editService(serviceId) {
 
-function editUser(userId) {
-    // Reset form
-    $('#editUserForm')[0].reset();
-    
-    // Get user details
-    $.ajax({
-        url: '@Url.Action("GetUser", "Admin")',
-        type: 'GET',
-        data: { id: userId },
-        success: function(response) {
-            if (!response.success) {
-                alert(response.message || 'Error loading user details');
-                return;
-            }
-            
-            const user = response.user;
-            $('#editUserId').val(user.LoginId);
-            $('#editUsername').val(user.Username);
-            $('#editEmail').val(user.Email);
-            $('#editRole').val(user.Role);
-            $('#editStatus').val(user.Status);
-            
-            // Clear password field as it's for new password only
-            $('#editPassword').val('');
-            
-            // Show modal
-            $('#editUserModal').modal('show');
-        },
-        error: function() {
-            alert('Error loading user details. Please try again.');
-        }
-    });
-}
+        $('#editServiceForm')[0].reset();
 
-$(document).ready(function() {
-    // Handle edit user form submission
-    $('#editUserForm').on('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = {
-            LoginId: $('#editUserId').val(),
-            Username: $('#editUsername').val(),
-            Email: $('#editEmail').val(),
-            Password: $('#editPassword').val(), // Will be empty if not changed
-            Role: $('#editRole').val(),
-            Status: $('#editStatus').val()
-        };
-        
         $.ajax({
-            url: '@Url.Action("EditUser", "Admin")',
-            type: 'POST',
-            data: formData,
+            url: '@Url.Action("GetService", "Admin")',
+            type: 'GET',
+            data: { id: serviceId },
+            success: function(response) {
+                if (!response.success) {
+                    alert(response.message || 'Error loading service details');
+                    return;
+                }
+
+                const service = response.service;
+                $('#editServiceId').val(service.ServiceId);
+                $('#editServiceName').val(service.ServiceName);
+                $('#editServiceDescription').val(service.ServiceDescription);
+                $('#editServicePrice').val(service.ServiceCost);
+
+                // Show modal
+                $('#editServiceModal').modal('show');
+            },
+            error: function() {
+                alert('Error loading service details. Please try again.');
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        $('#editServiceForm').on('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                ServiceId: $('#editServiceId').val(),
+                ServiceName: $('#editServiceName').val(),
+                ServiceDescription: $('#editServiceDescription').val(),
+                ServiceCost: $('#editServicePrice').val()
+            };
+
+            $.ajax({
+                url: '@Url.Action("EditService", "Admin")',
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                    $('#editServiceModal').modal('hide');
+                    location.reload(); // Reload page to show updated data
+                },
+                error: function() {
+                    alert('Error updating service. Please try again.');
+                }
+            });
+        });
+    });
+
+    function editRoom(roomId) {
+        // Reset form
+        $('#editRoomForm')[0].reset();
+
+        // Get room details
+        $.ajax({
+            url: '@Url.Action("GetRoom", "Admin")',
+            type: 'GET',
+            data: { id: roomId },
+            success: function(response) {
+                if (!response.success) {
+                    alert(response.message || 'Error loading room details');
+                    return;
+                }
+
+                const room = response.room;
+                $('#editRoomId').val(room.RoomId);
+                $('#editRoomNumber').val(room.RoomNumber);
+                $('#editRoomTypeId').val(room.RoomTypeId);
+                $('#editRoomImage').val(room.Image);
+                $('#editRoomAvailable').val(room.Available);
+
+                // Show modal
+                $('#editRoomModal').modal('show');
+            },
+            error: function() {
+                alert('Error loading room details. Please try again.');
+            }
+        });
+    }
+
+    function editUser(userId) {
+        // Reset form
+        $('#editUserForm')[0].reset();
+        $('#passwordMismatch').addClass('d-none');
+
+        // Get user details
+        $.ajax({
+            url: '@Url.Action("GetUser", "Admin")',
+            type: 'GET',
+            data: { id: userId },
+            success: function(response) {
+                if (!response.success) {
+                    alert(response.message || 'Error loading user details');
+                    return;
+                }
+
+                const user = response.user;
+                $('#editUserId').val(user.LoginId);
+                $('#editUsername').val(user.Username);
+                $('#editRole').val(user.TypeAccount);
+
+                // Clear password fields
+                $('#editPassword').val('');
+                $('#editConfirmPassword').val('');
+
+                // Show modal
+                $('#editUserModal').modal('show');
+            },
+            error: function() {
+                alert('Error loading user details. Please try again.');
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        // Password validation
+        $('#editPassword, #editConfirmPassword').on('input', function() {
+            const password = $('#editPassword').val();
+            const confirmPassword = $('#editConfirmPassword').val();
+
+            if (password || confirmPassword) {
+                if (password !== confirmPassword) {
+                    $('#passwordMismatch').removeClass('d-none');
+                } else {
+                    $('#passwordMismatch').addClass('d-none');
+                }
+            } else {
+                $('#passwordMismatch').addClass('d-none');
+            }
+        });
+
+        // Handle edit user form submission
+        $('#editUserForm').on('submit', function(e) {
+            e.preventDefault();
+
+            const password = $('#editPassword').val();
+            const confirmPassword = $('#editConfirmPassword').val();
+
+            // Validate passwords match if either field is filled
+            if (password || confirmPassword) {
+                if (password !== confirmPassword) {
+                    $('#passwordMismatch').removeClass('d-none');
+                    return;
+                }
+            }
+
+            const formData = {
+                LoginId: $('#editUserId').val(),
+                Username: $('#editUsername').val(),
+                Password: password, // Will be empty if not changed
+                TypeAccount: parseInt($('#editRole').val()) // Ensure it's sent as a number
+            };
+
+            $.ajax({
+                url: '@Url.Action("EditUser", "Admin")',
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                    if (response.success) {
+                        $('#editUserModal').modal('hide');
+                        alert(response.message || 'User updated successfully');
+                        location.reload(); // Reload page to show updated data
+                    } else {
+                        alert(response.message || 'Error updating user');
+                    }
+                },
+                error: function() {
+                    alert('Error updating user. Please try again.');
+                }
+            });
+        });
+
+        // Handle edit room form submission
+        $('#editRoomForm').on('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                RoomId: $('#editRoomId').val(),
+                RoomNumber: $('#editRoomNumber').val(),
+                RoomTypeId: $('#editRoomTypeId').val(),
+                Image: $('#editRoomImage').val(),
+                Available: $('#editRoomAvailable').val()
+            };
+
+            $.ajax({
+                url: '@Url.Action("EditRoom", "Admin")',
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                    if (response.success) {
+                        $('#editRoomModal').modal('hide');
+                        location.reload(); // Reload page to show updated data
+                    } else {
+                        alert(response.message || 'Error updating room');
+                    }
+                },
+                error: function() {
+                    alert('Error updating room. Please try again.');
+                }
+            });
+        });
+    });
+
+        // Add User form validation and submission
+        $('#newPassword, #newConfirmPassword').on('input', function() {
+            const password = $('#newPassword').val();
+            const confirmPassword = $('#newConfirmPassword').val();
+
+            if (password || confirmPassword) {
+                if (password !== confirmPassword) {
+                    $('#newPasswordMismatch').removeClass('d-none');
+                } else {
+                    $('#newPasswordMismatch').addClass('d-none');
+                }
+            } else {
+                $('#newPasswordMismatch').addClass('d-none');
+            }
+        });
+
+        $('#addUserForm').on('submit', function(e) {
+            e.preventDefault();
+
+            const password = $('#newPassword').val();
+            const confirmPassword = $('#newConfirmPassword').val();
+
+            // Validate passwords match
+            if (password !== confirmPassword) {
+                $('#newPasswordMismatch').removeClass('d-none');
+                return;
+            }
+
+            const formData = {
+                Username: $('#newUsername').val(),
+                Password: password,
+                TypeAccount: parseInt($('#newRole').val())
+            };
+
+            $.ajax({
+                url: '@Url.Action("CreateUser", "Admin")',
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                    if (response.success) {
+                        $('#addUserModal').modal('hide');
+                        alert(response.message || 'User created successfully');
+                        location.reload();
+                    } else {
+                        alert(response.message || 'Error creating user');
+                    }
+                },
+                error: function() {
+                    alert('Error creating user. Please try again.');
+                }
+            });
+        });
+
+
+    function deleteUser(userId) {
+        if (confirm('Are you sure you want to delete this user?')) {
+            $.ajax({
+                url: '@Url.Action("DeleteUser", "Admin")',
+                type: 'POST',
+                data: { id: userId },
+                success: function(response) {
+                    if (response.success) {
+                        alert('User deleted successfully!');
+                        location.reload();
+                    } else {
+                        alert(response.message || 'Error deleting user');
+                    }
+                },
+                error: function() {
+                    alert('Error deleting user. Please try again.');
+                }
+            });
+        }
+    }
+
+    function deleteRoom(roomId) {
+        if (confirm('Are you sure you want to delete this room?')) {
+            $.ajax({
+                url: '@Url.Action("DeleteRoom", "Admin")',
+                type: 'POST',
+                data: { id: roomId },
+                success: function(response) {
+                    if (response.success) {
+                        alert('Room deleted successfully!');
+                        location.reload();
+                    } else {
+                        alert(response.message || 'Error deleting room');
+                    }
+                },
+                error: function() {
+                    alert('Error deleting room. Please try again.');
+                }
+            });
+        }
+    }
+
+    function deleteService(serviceId) {
+        if (confirm('Are you sure you want to delete this service?')) {
+            $.ajax({
+                url: '@Url.Action("DeleteService", "Admin")',
+                type: 'POST',
+                data: { id: serviceId },
+                success: function(response) {
+                    if (response.success) {
+                        alert('Service deleted successfully!');
+                        location.reload();
+                    } else {
+                        alert(response.message || 'Error deleting service');
+                    }
+                },
+                error: function() {
+                    alert('Error deleting service. Please try again.');
+                }
+            });
+        }
+    }
+
+    function deleteBooking(bookingId) {
+        if (confirm('Are you sure you want to delete this booking?')) {
+            $.ajax({
+                url: '@Url.Action("DeleteBooking", "Admin")',
+                type: 'POST',
+                data: { id: bookingId },
+                success: function(response) {
+                    if (response.success) {
+                        alert('Booking deleted successfully!');
+                        location.reload();
+                    } else {
+                        alert(response.message || 'Error deleting booking');
+                    }
+                },
+                error: function() {
+                    alert('Error deleting booking. Please try again.');
+                }
+            });
+        }
+    }
+
+    function markRoomAsCleaned(roomId) {
+        if (confirm('Mark this room as cleaned and available?')) {
+            $.ajax({
+                url: '@Url.Action("MarkRoomAsCleaned", "Admin")',
+                type: 'POST',
+                data: { id: roomId },
+                success: function(response) {
+                    if (response.success) {
+                        alert('Room marked as cleaned and available!');
+                        location.reload();
+                    } else {
+                        alert(response.message || 'Error updating room status');
+                    }
+                },
+                error: function() {
+                    alert('Error updating room status. Please try again.');
+                }
+            });
+        }
+    }
+
+    // Chart configurations
+    let revenueChart = null;
+    let bookingsChart = null;
+
+    function initializeCharts() {
+        console.log('Initializing charts...');
+        // Monthly Revenue Chart
+        const monthlyCtx = document.getElementById('monthlyRevenueChart');
+        if (monthlyCtx) {
+            console.log('Found chart canvas element');
+            monthlyRevenueChart = new Chart(monthlyCtx, {
+                type: 'bar',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Room Revenue',
+                        data: [],
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1,
+                        stack: 'stack'
+                    },
+                    {
+                        label: 'Service Revenue',
+                        data: [],
+                        backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1,
+                        stack: 'stack'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': $' + context.raw.toLocaleString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            console.log('Chart initialized successfully');
+        } else {
+            console.error('Could not find chart canvas element');
+        }
+    }
+
+    function updateCharts(data) {
+        console.log('Updating charts with data:', data);
+        if (monthlyRevenueChart) {
+            // Update Monthly Revenue Chart with both room and service revenue
+            monthlyRevenueChart.data.labels = data.labels;
+            monthlyRevenueChart.data.datasets[0].data = data.roomRevenue;
+            monthlyRevenueChart.data.datasets[1].data = data.serviceRevenue;
+            monthlyRevenueChart.update();
+
+            console.log('Chart data updated:', {
+                labels: data.labels,
+                roomRevenue: data.roomRevenue,
+                serviceRevenue: data.serviceRevenue
+            });
+        } else {
+            console.error('Chart not initialized');
+        }
+    }
+
+    function updateReports() {
+        const days = parseInt($('#reportRange').val());
+
+        $.ajax({
+            url: '@Url.Action("GetReportData", "Admin")',
+            type: 'GET',
+            data: { days: days },
             success: function(response) {
                 if (response.success) {
-                    $('#editUserModal').modal('hide');
-                    location.reload(); // Reload page to show updated data
-                } else {
-                    alert(response.message || 'Error updating user');
+                    updateCharts(response.data);
+                    updateSummaryCards(response.summary);
                 }
             },
             error: function() {
-                alert('Error updating user. Please try again.');
+                alert('Error loading report data');
             }
         });
-    });
+    }
 
-    // Handle edit room form submission
-    $('#editRoomForm').on('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = {
-            RoomId: $('#editRoomId').val(),
-            RoomNumber: $('#editRoomNumber').val(),
-            RoomTypeId: $('#editRoomTypeId').val(),
-            Image: $('#editRoomImage').val(),
-            Available: $('#editRoomAvailable').val()
-        };
-        
-        $.ajax({
-            url: '@Url.Action("EditRoom", "Admin")',
-            type: 'POST',
-            data: formData,
-            success: function(response) {
-                if (response.success) {
-                    $('#editRoomModal').modal('hide');
-                    location.reload(); // Reload page to show updated data
-                } else {
-                    alert(response.message || 'Error updating room');
-                }
-            },
-            error: function() {
-                alert('Error updating room. Please try again.');
-            }
-        });
-    });
-});
+    function updateSummaryCards(summary) {
+        $('#totalRevenue').text('$' + summary.totalRevenue.toFixed(2));
+        $('#totalBookings').text(summary.totalBookings);
+        $('#avgDailyRate').text('$' + summary.avgDailyRate.toFixed(2));
+        $('#occupancyRate').text(summary.occupancyRate.toFixed(1) + '%');
 
-function editUser(userId) {
-    // Reset form
-    $('#editUserForm')[0].reset();
-    
-    // Get user details
-    $.ajax({
-        url: '@Url.Action("GetUser", "Admin")',
-        type: 'GET',
-        data: { id: userId },
-        success: function(response) {
-            if (!response.success) {
-                alert(response.message || 'Error loading user details');
-                return;
+        $('#revenueChange').text(formatChange(summary.revenueChange));
+        $('#bookingsChange').text(formatChange(summary.bookingsChange));
+        $('#rateChange').text(formatChange(summary.rateChange));
+        $('#occupancyChange').text(formatChange(summary.occupancyChange));
+    }
+
+    // Initialize charts when tab is shown
+    $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+        if (e.target.getAttribute('href') === '#reports-tab-pane') {
+            console.log('Reports tab shown');
+            if (!monthlyRevenueChart) {
+                console.log('Initializing chart');
+                initializeCharts();
             }
-            
-            const user = response.user;
-            $('#editUserId').val(user.LoginId);
-            $('#editUsername').val(user.Username);
-            $('#editEmail').val(user.Email);
-            $('#editRole').val(user.Role);
-            $('#editStatus').val(user.Status);
-            
-            // Clear password field as it's for new password only
-            $('#editPassword').val('');
-            
-            // Show modal
-            $('#editUserModal').modal('show');
-        },
-        error: function() {
-            alert('Error loading user details. Please try again.');
+            updateMonthlyReports();
         }
     });
-}
 
-$(document).ready(function() {
-    // Handle edit user form submission
-    $('#editUserForm').on('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = {
-            LoginId: $('#editUserId').val(),
-            Username: $('#editUsername').val(),
-            Email: $('#editEmail').val(),
-            Password: $('#editPassword').val(), // Will be empty if not changed
-            Role: $('#editRole').val(),
-            Status: $('#editStatus').val()
-        };
-        
+    // Handle view toggle buttons
+    $('.btn-group [data-view]').click(function() {
+        const $btn = $(this);
+        const view = $btn.data('view');
+
+        // Update active state
+        $btn.parent().find('.btn').removeClass('active');
+        $btn.addClass('active');
+
+        // Update charts based on view
+        updateReports();
+    });
+
+    let monthlyRevenueChart = null;
+    let revenueDistributionChart = null;
+
+    function initializeCharts() {
+        console.log('Initializing charts...');
+        // Monthly Revenue Chart
+        const monthlyCtx = document.getElementById('monthlyRevenueChart');
+        if (monthlyCtx) {
+            console.log('Found chart canvas element');
+            monthlyRevenueChart = new Chart(monthlyCtx, {
+                type: 'bar',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Room Revenue',
+                        data: [],
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1,
+                        stack: 'stack'
+                    },
+                    {
+                        label: 'Service Revenue',
+                        data: [],
+                        backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1,
+                        stack: 'stack'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': $' + context.raw.toLocaleString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            console.log('Chart initialized successfully');
+        } else {
+            console.error('Could not find chart canvas element');
+        }
+    }
+
+    function updateMonthlyReports() {
+        const months = parseInt($('#reportPeriod').val());
+
         $.ajax({
-            url: '@Url.Action("EditUser", "Admin")',
-            type: 'POST',
-            data: formData,
+            url: '@Url.Action("GetMonthlyRevenue", "Admin")',
+            type: 'GET',
+            data: { months: months },
             success: function(response) {
+                console.log('Server response:', response);
                 if (response.success) {
-                    $('#editUserModal').modal('hide');
-                    location.reload(); // Reload page to show updated data
+                    console.log('Chart data:', response.data);
+                    console.log('Summary:', response.summary);
+                    updateCharts(response.data);
+                    updateSummaryCards(response.summary);
                 } else {
-                    alert(response.message || 'Error updating user');
+                    console.error('Error in response:', response);
                 }
             },
-            error: function() {
-                alert('Error updating user. Please try again.');
+            error: function(xhr, status, error) {
+                console.error('AJAX error:', error);
+                alert('Error loading report data');
+            }
+        });
+    }
+
+    function updateSummaryCards(summary) {
+        if (!summary) {
+            console.error('No summary data provided');
+            return;
+        }
+
+        console.log('Updating summary cards with:', summary);
+
+        $('#totalRevenue').text('$' + (summary.totalRevenue || 0).toLocaleString());
+        $('#avgMonthlyRevenue').text('$' + (summary.averageMonthlyRevenue || 0).toLocaleString());
+        $('#bestMonth').text(summary.bestMonth || '-');
+        $('#bestMonthRevenue').text('$' + (summary.bestMonthRevenue || 0).toLocaleString());
+        $('#avgBookings').text(Math.round(summary.averageBookingsPerMonth || 0));
+
+        const changeText = summary.percentageChange >= 0
+            ? `+${(summary.percentageChange || 0).toFixed(1)}% vs previous period`
+            : `${(summary.percentageChange || 0).toFixed(1)}% vs previous period`;
+        $('#revenueChange').text(changeText);
+    }
+
+    // Initialize charts when tab is shown
+    $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+        if (e.target.getAttribute('href') === '#reports-tab-pane') {
+            console.log('Reports tab shown');
+            if (!monthlyRevenueChart) {
+                console.log('Initializing chart');
+                initializeCharts();
+            }
+            updateMonthlyReports();
+        }
+    });
+
+    // Handle chart type toggle
+    $('.btn-group [data-chart-type]').click(function() {
+        const $btn = $(this);
+        const chartType = $btn.data('chart-type');
+
+        // Update active state
+        $btn.parent().find('.btn').removeClass('active');
+        $btn.addClass('active');
+
+        if (monthlyRevenueChart) {
+            console.log('Changing chart type to:', chartType);
+            monthlyRevenueChart.config.type = chartType;
+            monthlyRevenueChart.update();
+        } else {
+            console.error('Chart not initialized');
+        }
+    });
+
+    // Initialize charts on document ready
+    $(document).ready(function() {
+        console.log('Document ready');
+
+        // Initialize charts if reports tab is active on page load
+        if ($('#reports-tab-pane').hasClass('active')) {
+            console.log('Reports tab is active on page load');
+            setTimeout(function() {
+                initializeCharts();
+                updateMonthlyReports();
+            }, 500);
+        }
+
+        // Handle tab show event
+        $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+            if (e.target.getAttribute('href') === '#reports-tab-pane') {
+                console.log('Reports tab shown');
+                setTimeout(function() {
+                    if (!monthlyRevenueChart) {
+                        console.log('Initializing chart on tab show');
+                        initializeCharts();
+                    }
+                    updateMonthlyReports();
+                }, 500);
+            }
+        });
+
+        // Handle report period change
+        $('#reportPeriod').change(function() {
+            console.log('Report period changed');
+            updateMonthlyReports();
+        });
+
+        // Handle chart type toggle
+        $('.btn-group [data-chart-type]').click(function() {
+            const $btn = $(this);
+            const chartType = $btn.data('chart-type');
+
+            // Update active state
+            $btn.parent().find('.btn').removeClass('active');
+            $btn.addClass('active');
+
+            if (monthlyRevenueChart) {
+                console.log('Changing chart type to:', chartType);
+                monthlyRevenueChart.config.type = chartType;
+                monthlyRevenueChart.update();
+            } else {
+                console.error('Chart not initialized');
             }
         });
     });
-});
-</script>
+
+  
+    </script>

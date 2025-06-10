@@ -31,7 +31,7 @@ body {
 }
 
 /* =============================
-   Step Indicator
+   Step Indicator (Updated)
 ============================= */
 .steps {
     display: flex;
@@ -41,8 +41,8 @@ body {
 }
 
 .step {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     background-color: #e0e0e0;
     color: #333;
     border-radius: 50%;
@@ -50,11 +50,16 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px #ccc;
+    transition: all 0.3s ease;
 }
 
     .step.done {
-        background-color: #1a3eb1;
+        background-color: #28a745; /* Green */
         color: white;
+        border: 2px solid white;
+        box-shadow: 0 0 0 2px #28a745;
     }
 
 /* =============================
