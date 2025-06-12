@@ -3,16 +3,104 @@
   "WorkspaceRootPath": "D:\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\views\\user\\userdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\user\\userdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|d:\\webapplication1\\webapplication1\\views\\booking\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\booking\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|d:\\webapplication1\\webapplication1\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|d:\\webapplication1\\webapplication1\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\models\\servicesused.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\servicesused.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\models\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|d:\\webapplication1\\webapplication1\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\content\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\views\\booking\\bookingpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\booking\\bookingpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\views\\booking\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\booking\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\views\\admin\\admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\admin\\admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\views\\user\\userdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\user\\userdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\content\\paymentfailed.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\paymentfailed.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\views\\payment\\paymentfail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\payment\\paymentfail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\models\\roombooked.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\roombooked.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\models\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\content\\userdashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\userdashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\views\\payment\\paymentsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -27,22 +115,6 @@
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\servicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\models\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -55,28 +127,12 @@
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\views\\payment\\paymentfail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\payment\\paymentfail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\views\\room\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\room\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\models\\roombooked.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\roombooked.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -87,40 +143,8 @@
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\views\\admin\\admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\admin\\admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\content\\userdashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\userdashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -137,14 +161,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\views\\shared\\debuginfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\debuginfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\content\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\content\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|D:\\WebApplication1\\webapplication1\\models\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1F7D65C-2DEF-42B4-86D7-64005320413E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -154,7 +170,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -166,141 +182,59 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Web.config",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Web.config",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Views\\Web.config",
+              "RelativeToolTip": "WebApplication1\\Views\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-06-12T02:59:19.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "BookingPage.cshtml",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Booking\\BookingPage.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Booking\\BookingPage.cshtml",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Views\\Booking\\BookingPage.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Booking\\BookingPage.cshtml",
-              "ViewState": "AgIAAKEAAAAAAAAAAAAiwO4AAAAJAAAAAAAAAA==",
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-07T15:25:28.014Z"
+              "WhenOpened": "2025-06-12T02:59:16.86Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAANwCAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T15:11:16.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "BookingController.cs",
               "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Controllers\\BookingController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\BookingController.cs",
               "ToolTip": "D:\\WebApplication1\\WebApplication1\\Controllers\\BookingController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\BookingController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAqwIcAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAYwHQAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T14:18:55.827Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\AppDbContext.cs",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Models\\AppDbContext.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T08:01:12.896Z"
+              "WhenOpened": "2025-06-08T14:18:55.827Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Controllers\\UserController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBMAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T15:20:38.025Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ServicesController.cs",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Controllers\\ServicesController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\ServicesController.cs",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Controllers\\ServicesController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\ServicesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T15:20:37.555Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Payment.cshtml",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Booking\\Payment.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Booking\\Payment.cshtml",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Views\\Booking\\Payment.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Booking\\Payment.cshtml",
-              "ViewState": "AgIAAJAAAAAAAAAAAAAAAKoAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-10T09:36:48.735Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserDashBoard.cshtml",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\User\\UserDashBoard.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\User\\UserDashBoard.cshtml",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Views\\User\\UserDashBoard.cshtml*",
-              "RelativeToolTip": "WebApplication1\\Views\\User\\UserDashBoard.cshtml*",
-              "ViewState": "AgIAAJkAAAAAAAAAAAAqwCYBAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-07T15:25:21.721Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PaymentSuccess.cshtml",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Payment\\PaymentSuccess.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Payment\\PaymentSuccess.cshtml",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Views\\Payment\\PaymentSuccess.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Payment\\PaymentSuccess.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-10T10:08:24.925Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Payment.cs",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\Payment.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\Payment.cs",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Models\\Payment.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\Payment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T15:34:30.934Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RoomController.cs",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Controllers\\RoomController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\RoomController.cs",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Controllers\\RoomController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\RoomController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T15:26:21.202Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Guest.cs",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\Guest.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\Guest.cs",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Models\\Guest.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\Guest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T09:34:23.859Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "Booking.cs",
               "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\Booking.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\Booking.cs",
@@ -308,47 +242,101 @@
               "RelativeToolTip": "WebApplication1\\Models\\Booking.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T15:34:32.559Z"
+              "WhenOpened": "2025-06-07T15:34:32.559Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Login.cs",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\Login.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\Login.cs",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Models\\Login.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\Login.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\AppDbContext.cs",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Models\\AppDbContext.cs*",
+              "RelativeToolTip": "WebApplication1\\Models\\AppDbContext.cs*",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA5wBoAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T15:25:02.9Z"
+              "WhenOpened": "2025-06-10T08:01:12.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Guest.cs",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\Guest.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Guest.cs",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Models\\Guest.cs*",
+              "RelativeToolTip": "WebApplication1\\Models\\Guest.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T09:34:23.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Web.config",
+              "RelativeDocumentMoniker": "WebApplication1\\Web.config",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Web.config*",
+              "RelativeToolTip": "WebApplication1\\Web.config*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-06-10T09:33:42.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACEAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T18:09:16.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ServicesUsed.cs",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\ServicesUsed.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\ServicesUsed.cs",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Models\\ServicesUsed.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\ServicesUsed.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T02:56:50.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwEkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T15:26:23.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "paymentfailed.css",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Content\\paymentfailed.css",
+              "RelativeDocumentMoniker": "WebApplication1\\Content\\paymentfailed.css",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Content\\paymentfailed.css",
+              "RelativeToolTip": "WebApplication1\\Content\\paymentfailed.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-06-11T03:11:54.661Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "Room.cs",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\Room.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\Room.cs",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Models\\Room.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\Room.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T09:49:43.056Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "LoginViewModel.cs",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\LoginViewModel.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\LoginViewModel.cs",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Models\\LoginViewModel.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\LoginViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T15:24:59.875Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
               "Title": "Service.cs",
               "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\Service.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\Service.cs",
@@ -360,31 +348,103 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BookingPage.cshtml",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Booking\\BookingPage.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Booking\\BookingPage.cshtml",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Views\\Booking\\BookingPage.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Booking\\BookingPage.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAO4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-07T15:25:28.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Payment.cshtml",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Booking\\Payment.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Booking\\Payment.cshtml",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Views\\Booking\\Payment.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Booking\\Payment.cshtml",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAiwJIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-10T09:36:48.735Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AdminDashBoard.cshtml",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Admin\\AdminDashBoard.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Admin\\AdminDashBoard.cshtml",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Views\\Admin\\AdminDashBoard.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Admin\\AdminDashBoard.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPkGAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-04T15:12:19.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "style.css",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Content\\style.css",
+              "RelativeDocumentMoniker": "WebApplication1\\Content\\style.css",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Content\\style.css",
+              "RelativeToolTip": "WebApplication1\\Content\\style.css",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAqwOwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-06-09T10:08:48.126Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 16,
+              "Title": "UserDashBoard.cshtml",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\User\\UserDashBoard.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\User\\UserDashBoard.cshtml",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Views\\User\\UserDashBoard.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\User\\UserDashBoard.cshtml",
+              "ViewState": "AgIAAMIAAAAAAAAAAAAiwOgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-07T15:25:21.721Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\PaymentController.cs",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\PaymentController.cs",
+              "ViewState": "AgIAANEAAAAAAAAAAAAgwMsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T15:26:22.149Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "PaymentFail.cshtml",
               "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Payment\\PaymentFail.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Payment\\PaymentFail.cshtml",
               "ToolTip": "D:\\WebApplication1\\WebApplication1\\Views\\Payment\\PaymentFail.cshtml",
               "RelativeToolTip": "WebApplication1\\Views\\Payment\\PaymentFail.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-10T09:54:51.883Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Room\\Details.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Room\\Details.cshtml",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Views\\Room\\Details.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Room\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 22,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADcAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-07T15:25:35.24Z"
+              "WhenOpened": "2025-06-10T09:39:30.223Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "RoomBooked.cs",
               "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\RoomBooked.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\RoomBooked.cs",
@@ -396,7 +456,139 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
+              "Title": "RoomType.cs",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\RoomType.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\RoomType.cs",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Models\\RoomType.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\RoomType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T08:12:06.985Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ServicesController.cs",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Controllers\\ServicesController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\ServicesController.cs",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Controllers\\ServicesController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\ServicesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T15:20:37.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "UserDashBoard.css",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Content\\UserDashBoard.css",
+              "RelativeDocumentMoniker": "WebApplication1\\Content\\UserDashBoard.css",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Content\\UserDashBoard.css",
+              "RelativeToolTip": "WebApplication1\\Content\\UserDashBoard.css",
+              "ViewState": "AgIAANgAAAAAAAAAAAAAACsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-06-09T09:27:37.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Controllers\\UserController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAWwCIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T15:20:38.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "PaymentSuccess.cshtml",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Payment\\PaymentSuccess.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Payment\\PaymentSuccess.cshtml",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Views\\Payment\\PaymentSuccess.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Payment\\PaymentSuccess.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-10T10:08:24.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Payment.cs",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Models\\Payment.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Payment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T15:34:30.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "RoomController.cs",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Controllers\\RoomController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\RoomController.cs",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Controllers\\RoomController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\RoomController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T15:26:21.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Login.cs",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\Login.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Login.cs",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Models\\Login.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Login.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T15:25:02.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Room.cs",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\Room.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Room.cs",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Models\\Room.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Room.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T09:49:43.056Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\LoginViewModel.cs",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Models\\LoginViewModel.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T15:24:59.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Room\\Details.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Room\\Details.cshtml",
+              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Views\\Room\\Details.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Room\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-07T15:25:35.24Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\RegisterViewModel.cs",
@@ -408,31 +600,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "PaymentController.cs",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Controllers\\PaymentController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\PaymentController.cs",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Controllers\\PaymentController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\PaymentController.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAwwGkAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T15:26:22.149Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCEAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T18:09:16.733Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 34,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Index.cshtml",
@@ -444,68 +612,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\AdminController.cs",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAADYBAAAAAAAAAAAwwFQBAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T15:11:16.049Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Login.cshtml",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-10T09:39:30.223Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "WebApplication1\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T15:26:23.489Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Web.config",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Web.config",
-              "RelativeDocumentMoniker": "WebApplication1\\Web.config",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Web.config",
-              "RelativeToolTip": "WebApplication1\\Web.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-06-10T09:33:42.761Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "AdminDashBoard.cshtml",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Admin\\AdminDashBoard.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Admin\\AdminDashBoard.cshtml",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Views\\Admin\\AdminDashBoard.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Admin\\AdminDashBoard.cshtml",
-              "ViewState": "AgIAADwEAAAAAAAAAAAAADUFAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-04T15:12:19.906Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 35,
               "Title": "Error.cshtml",
               "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\Error.cshtml",
@@ -517,7 +624,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 36,
               "Title": "BundleConfig.cs",
               "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\App_Start\\BundleConfig.cs",
               "RelativeDocumentMoniker": "WebApplication1\\App_Start\\BundleConfig.cs",
@@ -529,19 +636,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "UserDashBoard.css",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Content\\UserDashBoard.css",
-              "RelativeDocumentMoniker": "WebApplication1\\Content\\UserDashBoard.css",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Content\\UserDashBoard.css",
-              "RelativeToolTip": "WebApplication1\\Content\\UserDashBoard.css",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAACsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-09T09:27:37.037Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 37,
               "Title": "WebApiConfig.cs",
               "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\App_Start\\WebApiConfig.cs",
               "RelativeDocumentMoniker": "WebApplication1\\App_Start\\WebApiConfig.cs",
@@ -553,7 +648,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 39,
               "Title": "DebugInfo.cshtml",
               "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Shared\\DebugInfo.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\DebugInfo.cshtml",
@@ -565,7 +660,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 38,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
@@ -574,30 +669,6 @@
               "ViewState": "AgIAACgAAAAAAAAAAAAiwFQAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-07T15:25:56.95Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "style.css",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Content\\style.css",
-              "RelativeDocumentMoniker": "WebApplication1\\Content\\style.css",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Content\\style.css",
-              "RelativeToolTip": "WebApplication1\\Content\\style.css",
-              "ViewState": "AgIAAKoAAAAAAAAAAAAqwOwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-09T10:08:48.126Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "RoomType.cs",
-              "DocumentMoniker": "D:\\WebApplication1\\WebApplication1\\Models\\RoomType.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\RoomType.cs",
-              "ToolTip": "D:\\WebApplication1\\WebApplication1\\Models\\RoomType.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\RoomType.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T08:12:06.985Z"
             }
           ]
         }

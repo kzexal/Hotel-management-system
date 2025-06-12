@@ -103,7 +103,10 @@ namespace WebApplication1.Controllers
                     return RedirectToAction("PaymentFail");
                 }
 
-                var guest = db.Guests.FirstOrDefault(g => g.CCCD == cccd);
+                var currentUserId = Session["UserId"] != null ? Convert.ToInt32(Session["UserId"]) : (int?)null;
+
+ 
+                var guest = db.Guests.FirstOrDefault(g => g.CCCD == cccd && g.UserId == currentUserId);
 
                 if (guest == null)
                 {
@@ -117,7 +120,7 @@ namespace WebApplication1.Controllers
                         Street = street,
                         City = city,
                         Status = "Reserved",
-                        UserId = Session["UserId"] != null ? Convert.ToInt32(Session["UserId"]) : (int?)null
+                        UserId = currentUserId
                     };
                     db.Guests.Add(guest);
                     db.SaveChanges();

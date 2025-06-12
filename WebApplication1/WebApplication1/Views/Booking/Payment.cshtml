@@ -131,13 +131,20 @@
                         <input name="Street" class="form-control mb-2" placeholder="Street Address" required value="@guestStreet" />
                         <input name="City" class="form-control mb-2" placeholder="City" required value="@guestCity" />
                         <input name="CCCD"
-                               class="form-control mb-2"
+                               class="form-control mb-2 @(ViewBag.BookingError != null ? "is-invalid" : "")"
                                placeholder="CCCD (12 digits)"
                                required
                                pattern="[0-9]{12}"
                                title="CCCD must be exactly 12 digits"
                                oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 12);"
                                value="@guestId" />
+                        @if (ViewBag.BookingError != null)
+                        {
+                            <div class="invalid-feedback d-block">
+                                @ViewBag.BookingError
+                            </div>
+                        }
+
                     </div>
                 </div>
             </div>

@@ -33,7 +33,7 @@ namespace WebApplication1.Controllers
                 var today = DateTime.Today;
                 var yesterday = today.AddDays(-1);
 
-                // Lấy danh sách phòng cần set Available = "No" (phòng được check-in hôm nay)
+
                 var roomsToSetNo = db.RoomBooked
                     .Include(rb => rb.Booking)
                     .Where(rb => DbFunctions.TruncateTime(rb.Booking.CheckInDate) == today)
@@ -50,7 +50,7 @@ namespace WebApplication1.Controllers
                     }
                 }
 
-                // Lấy danh sách phòng cần set Available = "Yes" (phòng đã check-out hôm qua)
+ 
                 var roomsToSetYes = db.RoomBooked
                     .Include(rb => rb.Booking)
                     .Where(rb => DbFunctions.TruncateTime(rb.Booking.CheckOutDate) == yesterday)
@@ -71,7 +71,7 @@ namespace WebApplication1.Controllers
             }
             catch (Exception ex)
             {
-                // Log lỗi nếu cần
+             
                 System.Diagnostics.Debug.WriteLine("Error in UpdateRoomStatusByToday: " + ex.Message);
             }
         }

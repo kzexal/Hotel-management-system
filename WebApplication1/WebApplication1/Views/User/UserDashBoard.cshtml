@@ -78,7 +78,8 @@
                     <div class="card-container">
                         @foreach (var rb in Model)
                         {
-                            <div class="card">
+                            var isPast = rb.Booking.CheckOutDate < DateTime.Today;
+                            <div class="card @(isPast ? "past-booking" : "")">
                                 <div class="card-img">
                                     <img src="@rb.Room.Image" alt="Room Image" />
                                 </div>
@@ -86,18 +87,29 @@
                                     <h3>Room @rb.Room.RoomNumber - @rb.Room.RoomType.Name</h3>
                                     <p><i class="bi bi-calendar-check"></i> Check-in: @rb.Booking.CheckInDate.ToString("dd MMM yyyy")</p>
                                     <p><i class="bi bi-calendar-x"></i> Check-out: @rb.Booking.CheckOutDate.ToString("dd MMM yyyy")</p>
-                                    <p><i class="bi bi-info-circle"></i> Status: Booked</p>
+                                    <p>
+                                        <i class="bi bi-info-circle"></i> Status:
+                                        @if (isPast)
+                                        {
+                                            <span class="text-muted">Expired</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-success">Booked</span>
+                                        }
+                                    </p>
                                     <div class="actions">
-                                        <button class="btn btn-primary" onclick="openServiceModal(@rb.Booking.BookingId)">
+                                        <button class="btn btn-primary" onclick="openServiceModal(@rb.Booking.BookingId)" @(isPast ? "disabled" : "")>
                                             <i class="bi bi-plus-circle"></i> Book Service
                                         </button>
-                                        <button class="btn btn-danger">
+                                        <button class="btn btn-danger" @(isPast ? "disabled" : "")>
                                             <i class="bi bi-trash"></i> Delete
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         }
+
                     </div>
                 </div>
             </div>
@@ -134,15 +146,14 @@
                                 {
                                     <p class="fw-semibold mb-1"><i class="bi bi-bell"></i> Services Used:</p>
                                     <ul class="list-group list-group-flush mb-0">
-                                        @foreach (var s in rb.Booking.ServicesUsed)
+                                        @foreach (var s in rb.Booking.ServicesUsed.OrderBy(s => s.ServiceBookingDate))
                                         {
-                                            <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
-                                                <div>
-                                                    <span class="fw-semibold">@s.Service.ServiceName</span>
-                                                    - <span class="text-success">$@s.Service.ServiceCost</span>
-                                                </div>
+                                            <li class="list-group-item px-0">
+                                                <span class="fw-semibold">@s.Service.ServiceName</span>
+                                                - <span class="text-success">$@s.Service.ServiceCost</span>
+                                                <br />
                                                 <small class="text-muted">
-                                                    <i class="bi bi-calendar-event"></i> @s.ServiceBookingDate.ToString("dd MMM yyyy")
+                                                    <i class="bi bi-calendar-event"></i> Booked on: @s.ServiceBookingDate.ToString("dd MMM yyyy")
                                                 </small>
                                             </li>
                                         }
@@ -160,6 +171,7 @@
         </div>
     </div>
 </div>
+
 <!-- Service Modal -->
 <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -218,29 +230,13 @@
     </div>
 </div>
 
+
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
     function openServiceModal(bookingId) {
         document.getElementById("bookingIdInput").value = bookingId;
-
-        // First get booking details to get guest information
-        fetch(`/Admin/GetBookingDetails?id=${bookingId}`)
-            .then(res => res.json())
-            .then(bookingData => {
-                if (bookingData.success) {
-                    const guest = bookingData.guest;
-                    window.guestInfo = {
-                        phone: guest.GuestContactNumber,
-                        firstName: guest.GuestFirstName,
-                        lastName: guest.GuestLastName
-                    };
-                    updateTransferContent();
-                }
-            });
-
-        // Then get services
         fetch('/Service/GetServices')
             .then(res => res.json())
             .then(services => {
@@ -250,7 +246,8 @@
                     const div = document.createElement("div");
                     div.className = "form-check";
                     div.innerHTML = `
-                        <input class="form-check-input service-checkbox" type="checkbox" name="selectedServiceIds" value="${s.ServiceId}" id="s${s.ServiceId}" data-cost="${s.ServiceCost}">
+                        <input class="form-check-input service-checkbox" type="checkbox" name="selectedServiceIds" 
+                               value="${s.ServiceId}" id="s${s.ServiceId}" data-cost="${s.ServiceCost}">
                         <label class="form-check-label" for="s${s.ServiceId}">
                             ${s.ServiceName} - $${s.ServiceCost}
                         </label>
@@ -258,38 +255,30 @@
                     container.appendChild(div);
                 });
 
-                // Add event listeners to checkboxes
+                // Add event listeners to all checkboxes
                 document.querySelectorAll('.service-checkbox').forEach(checkbox => {
-                    checkbox.addEventListener('change', () => {
-                        updateTotalAmount();
-                        updateTransferContent();
-                    });
+                    checkbox.addEventListener('change', updateTotalAmount);
                 });
 
                 const modalEl = document.getElementById('serviceModal');
                 const modal = new bootstrap.Modal(modalEl);
                 modal.show();
+
+                // Reset total amount when modal opens
+                updateTotalAmount();
             });
     }
 
-    // Update total amount when services are selected/deselected
     function updateTotalAmount() {
-        const checkboxes = document.querySelectorAll('.service-checkbox:checked');
-        const total = Array.from(checkboxes).reduce((sum, checkbox) => {
-            return sum + parseFloat(checkbox.dataset.cost);
-        }, 0);
+        let total = 0;
+        document.querySelectorAll('.service-checkbox:checked').forEach(checkbox => {
+            total += parseInt(checkbox.dataset.cost);
+        });
         document.getElementById('totalAmount').textContent = `$${total}`;
-    }
-
-    // Update transfer content when services are selected
-    function updateTransferContent() {
-        if (!window.guestInfo) {
-            document.getElementById('transferContent').textContent = "Loading guest information...";
-            return;
-        }
-
-        const total = document.getElementById('totalAmount').textContent;
-        const content = `${window.guestInfo.phone}_${window.guestInfo.firstName} ${window.guestInfo.lastName}`;
-        document.getElementById('transferContent').textContent = content;
+        
+        // Update transfer content
+        const bookingId = document.getElementById('bookingIdInput').value;
+        const transferContent = `HMS-SV-${bookingId}-${total}`;
+        document.getElementById('transferContent').textContent = transferContent;
     }
 </script>

@@ -286,6 +286,52 @@
                             <i class="bi bi-plus-lg"></i> Create Booking
                         </button>
                     </div>
+
+                    <!-- Search Filters -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-label">Booking ID</label>
+                                        <input type="text" class="form-control" id="searchBookingId" placeholder="Enter booking ID">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-label">CCCD</label>
+                                        <input type="text" class="form-control" id="searchCCCD" placeholder="Enter CCCD">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-label">Room Number</label>
+                                        <input type="text" class="form-control" id="searchRoomNumber" placeholder="Enter room number">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-label">From Date</label>
+                                        <input type="date" class="form-control" id="searchFromDate">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-label">To Date</label>
+                                        <input type="date" class="form-control" id="searchToDate">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 d-flex align-items-end">
+                                    <button class="btn btn-primary me-2" onclick="searchBookings()">
+                                        <i class="bi bi-search"></i> Search
+                                    </button>
+                                    <button class="btn btn-secondary" onclick="resetSearch()">
+                                        <i class="bi bi-x-circle"></i> Reset
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="card">
                         <div class="card-body">
                             <div class="table-responsive">
@@ -311,6 +357,7 @@
                                                     <div class="d-flex align-items-center">
                                                         <div>
                                                             <div class="fw-bold">@roomBooked.Booking.Guest.GuestFirstName @roomBooked.Booking.Guest.GuestLastName</div>
+                                                            <small class="text-muted">CCCD: @roomBooked.Booking.Guest.CCCD</small><br/>
                                                             <small class="text-muted">@roomBooked.Booking.Guest.GuestEmailAddress</small>
                                                         </div>
                                                     </div>
@@ -790,6 +837,7 @@
                                 <div class="card-body">
                                     <ul class="list-unstyled mb-0">
                                         <li class="mb-3"><i class="bi bi-person text-primary"></i> <strong>Name:</strong> <span id="guestName" class="ms-2">Loading...</span></li>
+                                        <li class="mb-3"><i class="bi bi-credit-card text-primary"></i> <strong>CCCD:</strong> <span id="guestCCCD" class="ms-2">Loading...</span></li>
                                         <li class="mb-3"><i class="bi bi-envelope text-primary"></i> <strong>Email:</strong> <span id="guestEmail" class="ms-2">Loading...</span></li>
                                         <li><i class="bi bi-telephone text-primary"></i> <strong>Phone:</strong> <span id="guestPhone" class="ms-2">Loading...</span></li>
                                     </ul>
@@ -917,8 +965,8 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="mb-3">
-                                                    <label class="form-label">ZIP Code</label>
-                                                    <input type="text" class="form-control" id="guestZip" name="Zip" required>
+                                                    <label class="form-label">CCCD</label>
+                                                    <input type="text" class="form-control" id="guestCCCD" name="CCCD" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -997,17 +1045,17 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <p class="mb-1">Room Cost:</p>
-                                                <h5 id="roomCost">$0.00</h5>
+                                                <h5 id="roomCost">$0</h5>
                                             </div>
                                             <div class="col-6">
                                                 <p class="mb-1">Services Cost:</p>
-                                                <h5 id="servicesCost">$0.00</h5>
+                                                <h5 id="servicesCost">$0</h5>
                                             </div>
                                             <div class="col-12 mt-2">
                                                 <hr>
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <h6 class="mb-0">Total Cost:</h6>
-                                                    <h4 id="totalCost" class="text-success mb-0">$0.00</h4>
+                                                    <h4 id="totalCost" class="text-success mb-0">$0</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -1357,6 +1405,7 @@
                 try {
                     const guest = response.guest || {};
                     $('#guestName').text(`${guest.GuestFirstName || ''} ${guest.GuestLastName || ''}`.trim() || 'N/A');
+                    $('#guestCCCD').text(guest.CCCD || 'N/A');
                     $('#guestEmail').text(guest.GuestEmailAddress || 'N/A');
                     $('#guestPhone').text(guest.GuestContactNumber || 'N/A');
 
@@ -2141,6 +2190,86 @@
             }
         });
     });
+        function searchBookings() {
+            const bookingId = $('#searchBookingId').val().toLowerCase();
+            const cccd = $('#searchCCCD').val().toLowerCase();
+            const roomNumber = $('#searchRoomNumber').val().toLowerCase();
+            const fromDate = $('#searchFromDate').val();
+            const toDate = $('#searchToDate').val();
+
+            // Hide all rows initially
+            const rows = $('#bookings-tab-pane tbody tr');
+            rows.hide();
+
+            // Filter rows based on search criteria
+            rows.each(function () {
+                const row = $(this);
+                const rowBookingId = row.find('td:first').text().toLowerCase();
+                const rowGuestInfo = row.find('td:nth-child(2)').text().toLowerCase();
+                const rowRoomNumber = row.find('td:nth-child(3)').text().toLowerCase();
+                const rowCheckIn = new Date(row.find('td:nth-child(4)').text());
+                const rowCheckOut = new Date(row.find('td:nth-child(5)').text());
+
+                let matches = true;
+
+                // Check each filter condition
+                if (bookingId && !rowBookingId.includes(bookingId)) matches = false;
+                if (cccd) {
+                    const rowCCCD = row.find('td:nth-child(2) small:contains("CCCD:")').text().toLowerCase().replace('cccd:', '').trim();
+                    if (!rowCCCD.includes(cccd)) matches = false;
+                }
+                if (roomNumber && !rowRoomNumber.includes(roomNumber)) matches = false;
+
+                // Date range check
+                if (fromDate) {
+                    const fromDateObj = new Date(fromDate);
+                    if (rowCheckIn < fromDateObj) matches = false;
+                }
+                if (toDate) {
+                    const toDateObj = new Date(toDate);
+                    if (rowCheckOut > toDateObj) matches = false;
+                }
+
+                // Show row if all conditions match
+                if (matches) {
+                    row.show();
+                }
+            });
+
+            // Show message if no results found
+            const visibleRows = rows.filter(':visible').length;
+            if (visibleRows === 0) {
+                if (!$('#no-results-message').length) {
+                    $('#bookings-tab-pane tbody').append(
+                        '<tr id="no-results-message"><td colspan="8" class="text-center py-3">' +
+                        '<i class="bi bi-info-circle me-2"></i>No bookings found matching your search criteria</td></tr>'
+                    );
+                }
+            } else {
+                $('#no-results-message').remove();
+            }
+        }
+
+        function resetSearch() {
+            // Clear all search inputs
+            $('#searchBookingId').val('');
+            $('#searchCCCD').val('');
+            $('#searchRoomNumber').val('');
+            $('#searchFromDate').val('');
+            $('#searchToDate').val('');
+
+            // Show all rows
+            $('#bookings-tab-pane tbody tr').show();
+            $('#no-results-message').remove();
+        }
+
+        // Add event listeners for real-time search
+        $(document).ready(function () {
+            const searchInputs = '#searchBookingId, #searchGuestName, #searchRoomNumber, #searchStatus, #searchFromDate, #searchToDate';
+            $(searchInputs).on('input change', function () {
+                searchBookings();
+            });
+        });
 
   
     </script>

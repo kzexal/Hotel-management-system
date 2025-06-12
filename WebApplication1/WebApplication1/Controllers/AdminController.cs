@@ -462,7 +462,8 @@ namespace WebApplication1.Controllers
                         roomBooked.Booking.Guest.GuestFirstName,
                         roomBooked.Booking.Guest.GuestLastName,
                         roomBooked.Booking.Guest.GuestEmailAddress,
-                        roomBooked.Booking.Guest.GuestContactNumber
+                        roomBooked.Booking.Guest.GuestContactNumber,
+                        roomBooked.Booking.Guest.CCCD
                     },
                     room = new
                     {
@@ -998,5 +999,6 @@ namespace WebApplication1.Controllers
                 return Json(new { success = false, message = ex.Message }, JsonRequestBehavior.AllowGet);
             }
         }
+
     }
 }
